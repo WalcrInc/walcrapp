@@ -11,7 +11,7 @@ export const OnboardingStyle = styled.div`
   }
 
   .icon {
-    margin: 100px auto;
+    margin: 80px auto;
   }
 
   .text {
