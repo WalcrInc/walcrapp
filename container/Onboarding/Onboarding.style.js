@@ -1,18 +1,17 @@
 import styled from "styled-components";
 
 export const OnboardingStyle = styled.div`
-  padding: 6% 4%;
+  padding: 6% 5%;
   display: flex;
   flex-direction: column;
   justify-content:space-evenly ;
-  height:100dvh ;
+  height:100% ;
   .logo {
     margin: auto;
   }
 
   .icon {
-    margin-top: 90px ;
-    margin-bottom: 60px ;
+    margin: 100px auto;
   }
 
   .text {
@@ -21,7 +20,7 @@ export const OnboardingStyle = styled.div`
     gap: 10px;
   }
   .text h1 {
-    font-size: 50px;
+    font-size: 35px;
     font-weight: 500;
     line-height: 50px;
   }
@@ -34,7 +33,7 @@ export const OnboardingStyle = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top:5px;
+    margin-top:25px;
   }
 
   .page-indicator span {
