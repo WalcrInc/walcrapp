@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const OnboardingStyle = styled.div`
-  padding: 6% 5%;
+  padding: 3% 5%;
   display: flex;
   flex-direction: column;
   justify-content:space-evenly ;
