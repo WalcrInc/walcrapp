@@ -1,8 +1,11 @@
+import { Login } from '@/container/Login'
 import React from 'react'
 
 const login = () => {
   return (
-    <div>login</div>
+    <div>
+      <Login/>
+    </div>
   )
 }
 
