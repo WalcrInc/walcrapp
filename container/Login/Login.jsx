@@ -3,6 +3,8 @@ import { LoginStyle } from "./Login.style";
 import { Input, FormControl, FormLabel, Box, Button } from "@chakra-ui/react";
 import Link from "next/link";
 import { AppleIcon, GoogleIcon } from "@/assets";
+import PhoneInput from 'react-phone-input-2'
+import 'react-phone-input-2/lib/style.css'
 
 const Login = () => {
   const [selectedOption, setSelectedOption] = useState("email");
@@ -78,7 +80,7 @@ const Login = () => {
               <input type="checkbox" /> Keep me signed in
             </div>
             <span className="span">
-              <Link href={"/login"}>Forgot password</Link>
+              <Link href={"/forgot-password"}>Forgot password</Link>
             </span>
           </Box>
           <Button
@@ -99,11 +101,14 @@ const Login = () => {
             <FormLabel fontSize={"16px"} color={"#1A1A1A"} fontWeight={"700"}>
               Phone number
             </FormLabel>
-            <Input
+            <PhoneInput
+             inputStyle={ {border: '1px solid #CDD1DC', height: '56px ',width:"100%", fontSize: '16px'} }
+  country={'us'}
+/>
+            {/* <Input
               box-shadow={"0px 0px 0px 1px #CDD1DC"}
               padding={"25px 14px"}
-              type="tel"
-            />
+            /> */}
           </FormControl>
           <FormControl>
             <FormLabel fontSize={"16px"} color={"#1A1A1A"} fontWeight={"700"}>
@@ -120,7 +125,7 @@ const Login = () => {
               <input type="checkbox" /> Keep me signed in
             </div>
             <span className="span">
-              <Link href={"/login"}>Forgot password</Link>
+              {/* <Link href={"/"}>Forgot password</Link> */}
             </span>
           </Box>
           <Button

@@ -14,7 +14,10 @@ export const AuthStyle = styled.div`
     font-weight: 400;
     color: #5b6178;
   }
-
+.custom-phone-input{
+    box-shadow:0 0 0 1px #CDD1DC ;
+    border:none ;
+}
   .active {
     border-bottom: 2px solid #f18341;
     transition: 0.5s ease-in-out;

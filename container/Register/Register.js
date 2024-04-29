@@ -93,7 +93,7 @@ const Register = () => {
         Already have an account?
         <span style={{ color: "#1A1A1A", fontWeight: "700" }}>
           {" "}
-          <Link href={"/register"}>Login</Link>{" "}
+          <Link href={"/login"}>Login</Link>{" "}
         </span>
       </Box>
     </>
