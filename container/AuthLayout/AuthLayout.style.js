@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const LoginStyle = styled.div`
+export const AuthStyle = styled.div`
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -15,9 +15,9 @@ export const LoginStyle = styled.div`
     color: #5b6178;
   }
 
-  .active{
-    border-bottom:2px solid #f18341 ;
-    transition:0.5s ease-in-out ;
+  .active {
+    border-bottom: 2px solid #f18341;
+    transition: 0.5s ease-in-out;
   }
 
   .options {
@@ -34,6 +34,9 @@ export const LoginStyle = styled.div`
     color: #1a1a1a;
     font-size: 16px;
     font-weight: 400;
+  }
+  .checkbox span {
+    color: #f18341;
   }
   .span a {
     color: #1a1a1a;

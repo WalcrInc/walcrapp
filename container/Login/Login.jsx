@@ -29,7 +29,7 @@ const Login = () => {
     setSelectedOption(option);
   };
   return (
-    <LoginStyle>
+    <>
       <div className="header">
         <h1>Login</h1>
         <p>Welcome back to the app</p>
@@ -166,21 +166,14 @@ const Login = () => {
       >
         <AppleIcon /> Continue with Apple
       </Button>
-      <Box
-        position={"absolute"}
-        bottom={"10px"}
-        left={"0"}
-        right={"0"}
-        textAlign={"center"}
-        color={"#8C92AB"}
-      >
+      <Box textAlign={"center"} color={"#8C92AB"}>
         Don’t have an account?
         <span style={{ color: "#1A1A1A", fontWeight: "700" }}>
           {" "}
-          <Link href={"/login"}>Sign up</Link>{" "}
+          <Link href={"/register"}>Sign up</Link>{" "}
         </span>
       </Box>
-    </LoginStyle>
+    </>
   );
 };
 

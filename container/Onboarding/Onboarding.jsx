@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 
 const Onboarding = () => {
   const [currentStep, setCurrentStep] = useState(1);
-  const totalSteps = 3; // Total number of steps in the onboarding process
+  const totalSteps = 3;
   const router = useRouter();
 
   const handleNext = () => {
@@ -23,7 +23,7 @@ const Onboarding = () => {
         <Logo />
       </div>
 
-      <div className="text">
+      <div className="icons">
         {currentStep === 1 && (
           <>
             <div className="icon">
@@ -34,8 +34,6 @@ const Onboarding = () => {
                 alt="bike"
               />
             </div>
-            <h1>Lorem ipsum dolor sit amet</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           </>
         )}
         {currentStep === 2 && (
@@ -49,8 +47,6 @@ const Onboarding = () => {
                 objectFit="contain"
               />
             </div>
-            <h1>Lorem ipsum dolor sit amet</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           </>
         )}
         {currentStep === 3 && (
@@ -64,30 +60,48 @@ const Onboarding = () => {
                 objectFit="cover"
               />
             </div>
-            <h1>Lorem ipsum dolor sit amet</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           </>
         )}
       </div>
 
       <div className="bottom">
-        <div className="page-indicator">
-          {[...Array(totalSteps)].map((_, index) => (
-            <span
-              key={index}
-              className={currentStep === index + 1 ? "active" : ""}
-            ></span>
-          ))}
-        </div>
-        {currentStep === totalSteps ? (
-          <span onClick={handleRoute}>
-            <Next_Icon />
-          </span>
-        ) : (
-          <span onClick={handleNext}>
-            <Next_Icon />
-          </span>
+        {currentStep === 1 && (
+          <div className="text">
+            <h1>Lorem ipsum dolor sit amet</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
         )}
+        {currentStep === 2 && (
+          <div className="text">
+            <h1>Lorem ipsum dolor sit amet</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        )}
+        {currentStep === 3 && (
+          <div className="text">
+            <h1>Lorem ipsum dolor sit amet</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        )}
+        <div className="indicator">
+          <div className="page-indicator">
+            {[...Array(totalSteps)].map((_, index) => (
+              <span
+                key={index}
+                className={currentStep === index + 1 ? "active" : ""}
+              ></span>
+            ))}
+          </div>
+          {currentStep === totalSteps ? (
+            <span onClick={handleRoute}>
+              <Next_Icon />
+            </span>
+          ) : (
+            <span onClick={handleNext}>
+              <Next_Icon />
+            </span>
+          )}
+        </div>
       </div>
     </OnboardingStyle>
   );
