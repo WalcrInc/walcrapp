@@ -5,8 +5,6 @@ import { OTPStyle } from "./OTP.style";
 import Link from "next/link";
 
 const OTP = () => {
-  
-
   const [otpValues, setOtpValues] = useState(["", "", "", ""]);
 
   const handleOtpChange = (index, value) => {
@@ -24,7 +22,6 @@ const OTP = () => {
     }
   };
 
- 
   return (
     <OTPStyle>
       <Link href={"/forgot-password"}>
@@ -47,13 +44,14 @@ const OTP = () => {
                 onChange={(e) => handleOtpChange(index, e.target.value)}
                 maxLength={1}
                 className="input-field"
-                width={"100%"}
+                width={"87px"}
                 height={"72px"}
                 background={"#E6E6E6"}
                 border={"none"}
                 outline={"none"}
                 fontSize={"34px"}
                 fontWeight={"700"}
+                focusBorderColor="0.5px solid #CDD1DC"
                 _focus={{
                   border: "2px solid #1A1A1A",
                   outline: "none",

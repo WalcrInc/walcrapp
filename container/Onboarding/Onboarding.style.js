@@ -3,11 +3,11 @@ import styled from "styled-components";
 export const OnboardingStyle = styled.div`
   padding: 0px 5%;
   display: grid;
-  grid-template-rows: repeat(3, auto); /* Adjust as needed */
+  grid-template-rows: repeat(3, auto); 
   row-gap: 70px;
   height: 100dvh;
   .logo {
-    margin: 10px auto;
+    margin: 20px auto;
   }
 
   .icon {
@@ -28,6 +28,7 @@ export const OnboardingStyle = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    align-items:center ;
     gap:20px;
   }
 

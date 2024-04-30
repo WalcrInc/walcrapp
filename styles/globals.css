@@ -124,6 +124,13 @@ body {
     height: 100dvh;
     font-family: "Mulish", sans-serif !important;
   }
+  /* input{
+   
+  } */
+  input:focus{
+    outline: none !important;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
+  }
 }
 @media screen and (max-width: 769px) {
   body {

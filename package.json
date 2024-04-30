@@ -14,12 +14,14 @@
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "eslint-config-next": "14.2.2",
+    "formik": "^2.4.6",
     "framer-motion": "^11.1.7",
     "next": "14.2.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-phone-input-2": "^2.15.1",
-    "styled-components": "^6.1.8"
+    "styled-components": "^6.1.8",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "eslint": "^8.0.0"

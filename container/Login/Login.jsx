@@ -7,28 +7,46 @@ import { Box, Button } from "@chakra-ui/react";
 
 const Login = () => {
   const [selectedOption, setSelectedOption] = useState("email");
-  const [email, setEmail] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
+  const [emailOption, setEmailOption] = useState({
+    email: "",
+    password: "",
+  });
+  const [phoneNumberOption, setPhoneNumberOption] = useState({
+    phoneNumber: "",
+    password: "",
+  });
 
-  const handlePhoneChange = (value) => {
-    setPhoneNumber(value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission based on the selected option (email or phone)
-    if (selectedOption === "email") {
-      console.log("Submitting email:", email);
-    } else {
-      console.log("Submitting phone number:", phoneNumber);
-    }
-  };
   const handleSelected = (option) => {
     setSelectedOption(option);
   };
+
+  const handleEmailChange = (e) => {
+    const { name, value } = e.target;
+    setEmailOption((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handlePhoneChange = (value) => {
+    setPhoneNumberOption((prevData) => ({
+      ...prevData,
+      phoneNumber: value,
+    }));
+  };
+  
+
+ 
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (selectedOption === "email") {
+      console.log("Submitting email:", emailOption);
+    } else {
+      console.log("Submitting phone number:", phoneNumberOption);
+    }
+  };
+
   return (
     <>
       <div className="header">
@@ -37,23 +55,34 @@ const Login = () => {
       </div>
 
       <div className="options">
-        <div className="options">
-          <p
-            className={selectedOption === "email" ? "active" : ""}
-            onClick={() => handleSelected("email")}
-          >
-            Email
-          </p>
-          <p
-            className={selectedOption === "phone" ? "active" : ""}
-            onClick={() => handleSelected("phone")}
-          >
-            Phone Number
-          </p>
-        </div>
+        <p
+          className={selectedOption === "email" ? "active" : ""}
+          onClick={() => handleSelected("email")}
+        >
+          Email
+        </p>
+        <p
+          className={selectedOption === "phone" ? "active" : ""}
+          onClick={() => handleSelected("phone")}
+        >
+          Phone Number
+        </p>
       </div>
-      {selectedOption === "email" && <FormWithEmail />}
-      {selectedOption === "phone" && <FormWithPhone />}
+
+      {selectedOption === "email" && (
+        <FormWithEmail
+          emailOption={emailOption}
+          handleEmailChange={handleEmailChange}
+          handleSubmit={handleSubmit}
+        />
+      )}
+      {selectedOption === "phone" && (
+        <FormWithPhone
+          phoneNumberOption={phoneNumberOption}
+          handlePhoneChange={handlePhoneChange}
+          handleSubmit={handleSubmit}
+        />
+      )}
 
       <div className="or">or</div>
 

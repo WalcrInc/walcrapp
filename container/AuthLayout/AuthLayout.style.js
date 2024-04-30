@@ -5,6 +5,12 @@ export const AuthStyle = styled.div`
   flex-direction: column;
   gap: 25px;
   padding: 6% 4% 3% 4%;
+  input:focus{
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
+  }
+  button:focus{
+   background: black;
+  }
   .header h1 {
     font-size: 30px;
     font-weight: 700;

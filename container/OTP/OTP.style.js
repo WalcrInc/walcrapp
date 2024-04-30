@@ -34,4 +34,7 @@ export const OTPStyle = styled.div`
 .timer span{
     font-weight:700 ;
 }
+input:focus{
+    box-shadow:0 0 0 0 rgba(0,0,0,0) ;
+}
 `;
