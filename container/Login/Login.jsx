@@ -3,6 +3,7 @@ import Link from "next/link";
 import { AppleIcon, GoogleIcon } from "@/assets";
 import { FormWithEmail } from "./Form/FormWithEmail";
 import { FormWithPhone } from "./Form/FormWithPhone";
+import { Box, Button } from "@chakra-ui/react";
 
 const Login = () => {
   const [selectedOption, setSelectedOption] = useState("email");
