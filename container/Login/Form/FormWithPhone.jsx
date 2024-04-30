@@ -35,7 +35,7 @@ const FormWithPhone = () => {
           <input type="checkbox" /> Keep me signed in
         </div>
         <span className="span">
-          <Link href={"/"}>Forgot password</Link>
+          <Link href={"/forgot-password"}>Forgot password</Link>
         </span>
       </Box>
       <Button
