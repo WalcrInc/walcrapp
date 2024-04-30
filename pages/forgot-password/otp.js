@@ -1,9 +1,13 @@
-import React from 'react'
+import AuthLayout from "@/container/AuthLayout/AuthLayout";
+import { OTP } from "@/container/OTP";
+import React from "react";
 
 const otp = () => {
   return (
-    <div>otp</div>
-  )
-}
+    <>
+      <OTP />
+    </>
+  );
+};
 
-export default otp
+export default otp;
