@@ -7,17 +7,22 @@ import { Box, Button } from "@chakra-ui/react";
 
 const Login = () => {
   const [selectedOption, setSelectedOption] = useState("email");
+  const [phone, setPhone] = useState("");
+  const [password, setPassword] = useState("");
   const [emailOption, setEmailOption] = useState({
     email: "",
-    password: "",
-  });
-  const [phoneNumberOption, setPhoneNumberOption] = useState({
-    phoneNumber: "",
     password: "",
   });
 
   const handleSelected = (option) => {
     setSelectedOption(option);
+  };
+
+  const handlePhone = (value) => {
+    setPhone(value);
+  };
+  const handlePassword = (value) => {
+    setPassword(value);
   };
 
   const handleEmailChange = (e) => {
@@ -28,25 +33,15 @@ const Login = () => {
     }));
   };
 
-  const handlePhoneChange = (value) => {
-    setPhoneNumberOption((prevData) => ({
-      ...prevData,
-      phoneNumber: value,
-    }));
-  };
-  
-
- 
-
   const handleSubmit = (e) => {
     e.preventDefault();
     if (selectedOption === "email") {
       console.log("Submitting email:", emailOption);
     } else {
-      console.log("Submitting phone number:", phoneNumberOption);
+      console.log("Submitting phone number:", { phone, password });
     }
   };
-
+  console.log(password);
   return (
     <>
       <div className="header">
@@ -69,20 +64,41 @@ const Login = () => {
         </p>
       </div>
 
-      {selectedOption === "email" && (
-        <FormWithEmail
-          emailOption={emailOption}
-          handleEmailChange={handleEmailChange}
-          handleSubmit={handleSubmit}
-        />
-      )}
-      {selectedOption === "phone" && (
-        <FormWithPhone
-          phoneNumberOption={phoneNumberOption}
-          handlePhoneChange={handlePhoneChange}
-          handleSubmit={handleSubmit}
-        />
-      )}
+      <form onSubmit={handleSubmit}>
+        {selectedOption === "email" && (
+          <FormWithEmail
+            emailOption={emailOption}
+            handleEmailChange={handleEmailChange}
+          />
+        )}
+        {selectedOption === "phone" && (
+          <FormWithPhone
+            password={password}
+            handlePassword={handlePassword}
+            phone={phone}
+            handlePhone={handlePhone}
+          />
+        )}
+        <Box display={"flex"} justifyContent={"space-between"}>
+          <div className="checkbox">
+            <input type="checkbox" /> Keep me signed in
+          </div>
+          <span className="span">
+            <Link href={"/forgot-password"}>Forgot password</Link>
+          </span>
+        </Box>
+        <Button
+          type="submit"
+          border={"none"}
+          outline={"none"}
+          color={"#fff"}
+          background={"#1A1A1A"}
+          padding={"25px 14px"}
+          borderRadius={"16px"}
+        >
+          Continue
+        </Button>
+      </form>
 
       <div className="or">or</div>
 

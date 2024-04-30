@@ -7,7 +7,7 @@ const FormWithEmail = ({ emailOption, handleEmailChange, handleSubmit }) => {
   const { handleShow, show } = ShowPassword();
 
   return (
-    <form onSubmit={handleSubmit}>
+    <>
       <FormControl>
         <FormLabel fontSize={"16px"} color={"#1A1A1A"} fontWeight={"700"}>
           Email address
@@ -48,26 +48,7 @@ const FormWithEmail = ({ emailOption, handleEmailChange, handleSubmit }) => {
           </span>
         </Box>
       </FormControl>
-      <Box display={"flex"} justifyContent={"space-between"}>
-        <div className="checkbox">
-          <input type="checkbox" /> Keep me signed in
-        </div>
-        <span className="span">
-          <Link href={"/forgot-password"}>Forgot password</Link>
-        </span>
-      </Box>
-      <Button
-        type="submit"
-        border={"none"}
-        outline={"none"}
-        color={"#fff"}
-        background={"#1A1A1A"}
-        padding={"25px 14px"}
-        borderRadius={"16px"}
-      >
-        Continue
-      </Button>
-    </form>
+    </>
   );
 };
 
