@@ -3,45 +3,23 @@ import Link from "next/link";
 import { AppleIcon, GoogleIcon } from "@/assets";
 import { FormWithEmail } from "./Form/FormWithEmail";
 import { FormWithPhone } from "./Form/FormWithPhone";
-import { Box, Button } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
+import useLogin from "@/hooks/useLoginHook/useLoginHook";
+import { CustomButton } from "@/components/Button/Button";
 
 const Login = () => {
-  const [selectedOption, setSelectedOption] = useState("email");
-  const [phone, setPhone] = useState("");
-  const [password, setPassword] = useState("");
-  const [emailOption, setEmailOption] = useState({
-    email: "",
-    password: "",
-  });
+  const {
+    handleSelected,
+    handleEmailChange,
+    emailOption,
+    password,
+    phone,
+    handlePhone,
+    selectedOption,
+    handlePassword,
+    handleSubmit,
+  } = useLogin();
 
-  const handleSelected = (option) => {
-    setSelectedOption(option);
-  };
-
-  const handlePhone = (value) => {
-    setPhone(value);
-  };
-  const handlePassword = (value) => {
-    setPassword(value);
-  };
-
-  const handleEmailChange = (e) => {
-    const { name, value } = e.target;
-    setEmailOption((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (selectedOption === "email") {
-      console.log("Submitting email:", emailOption);
-    } else {
-      console.log("Submitting phone number:", { phone, password });
-    }
-  };
-  console.log(password);
   return (
     <>
       <div className="header">
@@ -87,49 +65,17 @@ const Login = () => {
             <Link href={"/forgot-password"}>Forgot password</Link>
           </span>
         </Box>
-        <Button
-          type="submit"
-          border={"none"}
-          outline={"none"}
-          color={"#fff"}
-          background={"#1A1A1A"}
-          padding={"25px 14px"}
-          borderRadius={"16px"}
-        >
-          Continue
-        </Button>
+        <CustomButton variant={"default"}>Continue</CustomButton>
       </form>
 
       <div className="or">or</div>
 
-      <Button
-        border={"1px solid #1A1A1A"}
-        outline={"none"}
-        color={"#000"}
-        background={"transparent"}
-        padding={"25px 14px"}
-        borderRadius={"16px"}
-        display={"flex"}
-        gap={"10px"}
-        alignItems={"center"}
-        fontSize={"16px"}
-      >
+      <CustomButton variant={"transparent "}>
         <GoogleIcon /> Continue with Google
-      </Button>
-      <Button
-        border={"1px solid #1A1A1A"}
-        outline={"none"}
-        color={"#000"}
-        background={"transparent"}
-        padding={"25px 14px"}
-        borderRadius={"16px"}
-        display={"flex"}
-        gap={"10px"}
-        alignItems={"center"}
-        fontSize={"16px"}
-      >
+      </CustomButton>
+      <CustomButton variant={"transparent "}>
         <AppleIcon /> Continue with Apple
-      </Button>
+      </CustomButton>
       <Box textAlign={"center"} color={"#8C92AB"}>
         Don’t have an account?
         <span style={{ color: "#1A1A1A", fontWeight: "700" }}>

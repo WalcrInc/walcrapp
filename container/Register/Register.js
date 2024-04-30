@@ -1,7 +1,8 @@
-import { Box, Button, FormControl, FormLabel, Input } from "@chakra-ui/react";
+import { Box, FormControl, FormLabel, Input } from "@chakra-ui/react";
 import React from "react";
 import Link from "next/link";
 import { AppleIcon, GoogleIcon } from "@/assets";
+import { CustomButton } from "@/components/Button/Button";
 
 const Register = () => {
   return (
@@ -48,47 +49,16 @@ const Register = () => {
             <span>Terms of Service </span> and <span>Policy</span>
           </div>
         </Box>
-        <Button
-          border={"none"}
-          outline={"none"}
-          color={"#fff"}
-          background={"#1A1A1A"}
-          padding={"25px 14px"}
-          borderRadius={"16px"}
-        >
-          Continue
-        </Button>
+        <CustomButton variant={"default"}>Continue</CustomButton>
       </form>
       <div className="or">or</div>
 
-      <Button
-        border={"1px solid #1A1A1A"}
-        outline={"none"}
-        color={"#000"}
-        background={"transparent"}
-        padding={"25px 14px"}
-        borderRadius={"16px"}
-        display={"flex"}
-        gap={"10px"}
-        alignItems={"center"}
-        fontSize={"16px"}
-      >
+      <CustomButton variant={"transparent"}>
         <GoogleIcon /> Continue with Google
-      </Button>
-      <Button
-        border={"1px solid #1A1A1A"}
-        outline={"none"}
-        color={"#000"}
-        background={"transparent"}
-        padding={"25px 14px"}
-        borderRadius={"16px"}
-        display={"flex"}
-        gap={"10px"}
-        alignItems={"center"}
-        fontSize={"16px"}
-      >
+      </CustomButton>
+      <CustomButton variant={"transparent"}>
         <AppleIcon /> Continue with Apple
-      </Button>
+      </CustomButton>
       <Box textAlign={"center"} color={"#8C92AB"}>
         Already have an account?
         <span style={{ color: "#1A1A1A", fontWeight: "700" }}>

@@ -1,9 +1,9 @@
 import { Show } from "@/assets";
-import ShowPassword from "@/hooks/ShowPassword/ShowPassword";
+import ShowPassword from "@/hooks/useLoginHook/useLoginHook";
 import { Button, FormControl, FormLabel, Input, Box } from "@chakra-ui/react";
 import Link from "next/link";
 
-const FormWithEmail = ({ emailOption, handleEmailChange, handleSubmit }) => {
+const FormWithEmail = ({ emailOption, handleEmailChange }) => {
   const { handleShow, show } = ShowPassword();
 
   return (

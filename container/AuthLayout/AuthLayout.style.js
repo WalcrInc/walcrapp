@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const AuthStyle = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 30px;
   padding: 6% 4% 3% 4%;
   input:focus{
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;

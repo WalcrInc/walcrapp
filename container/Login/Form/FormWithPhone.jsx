@@ -3,7 +3,7 @@ import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import Link from "next/link";
 import { Show } from "@/assets";
-import ShowPassword from "@/hooks/ShowPassword/ShowPassword";
+import ShowPassword from "@/hooks/useLoginHook/useLoginHook";
 
 // Inside FormWithPhone component
 const FormWithPhone = ({
