@@ -8,17 +8,7 @@ import useLogin from "@/hooks/useLoginHook/useLoginHook";
 import { CustomButton } from "@/components/Button/Button";
 
 const Login = () => {
-  const {
-    handleSelected,
-    handleEmailChange,
-    emailOption,
-    password,
-    phone,
-    handlePhone,
-    selectedOption,
-    handlePassword,
-    handleSubmit,
-  } = useLogin();
+  const { handleSelected, handlePhone, selectedOption, formik } = useLogin();
 
   return (
     <>
@@ -42,21 +32,12 @@ const Login = () => {
         </p>
       </div>
 
-      <form onSubmit={handleSubmit}>
-        {selectedOption === "email" && (
-          <FormWithEmail
-            emailOption={emailOption}
-            handleEmailChange={handleEmailChange}
-          />
-        )}
+      <form onSubmit={formik.handleSubmit}>
+        {selectedOption === "email" && <FormWithEmail formik={formik} />}
         {selectedOption === "phone" && (
-          <FormWithPhone
-            password={password}
-            handlePassword={handlePassword}
-            phone={phone}
-            handlePhone={handlePhone}
-          />
+          <FormWithPhone formik={formik} handlePhone={handlePhone} />
         )}
+
         <Box display={"flex"} justifyContent={"space-between"}>
           <div className="checkbox">
             <input type="checkbox" /> Keep me signed in
@@ -65,7 +46,14 @@ const Login = () => {
             <Link href={"/forgot-password"}>Forgot password</Link>
           </span>
         </Box>
-        <CustomButton variant={"default"}>Continue</CustomButton>
+        {/* <button type="submit">heyy</button> */}
+        <CustomButton
+          type={"submit"}
+          variant={"default"}
+          onClick={formik.handleSubmit}
+        >
+          Continue
+        </CustomButton>
       </form>
 
       <div className="or">or</div>
@@ -73,9 +61,11 @@ const Login = () => {
       <CustomButton variant={"transparent "}>
         <GoogleIcon /> Continue with Google
       </CustomButton>
+
       <CustomButton variant={"transparent "}>
         <AppleIcon /> Continue with Apple
       </CustomButton>
+
       <Box textAlign={"center"} color={"#8C92AB"}>
         Don’t have an account?
         <span style={{ color: "#1A1A1A", fontWeight: "700" }}>

@@ -3,7 +3,7 @@ import ShowPassword from "@/hooks/useLoginHook/useLoginHook";
 import { Button, FormControl, FormLabel, Input, Box } from "@chakra-ui/react";
 import Link from "next/link";
 
-const FormWithEmail = ({ emailOption, handleEmailChange }) => {
+const FormWithEmail = ({ formik }) => {
   const { handleShow, show } = ShowPassword();
 
   return (
@@ -16,8 +16,8 @@ const FormWithEmail = ({ emailOption, handleEmailChange }) => {
           padding={"25px 14px"}
           type="email"
           name="email"
-          value={emailOption.email}
-          onChange={handleEmailChange}
+          value={formik.values.email}
+          onChange={formik.handleChange}
           focusBorderColor="0.5px solid #CDD1DC"
         />
       </FormControl>
@@ -38,9 +38,9 @@ const FormWithEmail = ({ emailOption, handleEmailChange }) => {
             border={"none"}
             type={show ? "text" : "password"}
             padding={"0"}
-            name="password"
-            value={emailOption.password}
-            onChange={handleEmailChange}
+            name="emailPassword"
+            value={formik.values.emailPassword}
+            onChange={formik.handleChange}
           />
           <span onClick={handleShow}>
             {" "}

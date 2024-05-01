@@ -1,17 +1,11 @@
 import { Box, Button, FormControl, FormLabel, Input } from "@chakra-ui/react";
-import PhoneInput from 'react-phone-input-2'
-import 'react-phone-input-2/lib/style.css'
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 import Link from "next/link";
 import { Show } from "@/assets";
 import ShowPassword from "@/hooks/useLoginHook/useLoginHook";
 
-// Inside FormWithPhone component
-const FormWithPhone = ({
-  password,
-  handlePassword,
-  handlePhone,
-  phone
-}) => {
+const FormWithPhone = ({ handlePhone, formik }) => {
   const { handleShow, show } = ShowPassword();
 
   return (
@@ -21,10 +15,13 @@ const FormWithPhone = ({
           Phone number
         </FormLabel>
         <PhoneInput
-          name="phone"
-          value={phone}
+          name="phoneNumber"
+          value={formik.values.phoneNumber}
           country={"us"}
-          onChange={handlePhone}
+          onChange={(value) => {
+            formik.setFieldValue("phoneNumber", value);
+            handlePhone(value);
+          }}
           inputStyle={{
             border: "1px solid #CDD1DC",
             height: "56px",
@@ -50,9 +47,9 @@ const FormWithPhone = ({
             border={"none"}
             type={show ? "text" : "password"}
             padding={"0"}
-            value={password} // Bind the value to the password state
-            onChange={(e) => handlePassword(e.target.value)} // Call handlePassword on input change
-          
+            name="phonePassword"
+            value={formik.values.phonePassword}
+            onChange={formik.handleChange}
           />
           <span onClick={handleShow}>
             <Show />
