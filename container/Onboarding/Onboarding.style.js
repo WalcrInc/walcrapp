@@ -6,9 +6,9 @@ export const OnboardingStyle = styled.div`
   height: 100dvh;
   .step-one .image {
     background-image: url("/images/dress.png");
-    background-size:contain ;
+    background-size: cover;
+    background-repeat: no-repeat;
     height: 55vh;
-    grid-template-rows: auto 1fr auto;
   }
 
   .text h1 {
@@ -45,7 +45,7 @@ export const OnboardingStyle = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 5%;
+    padding: 20px 5%;
   }
 
   .bottom .text {

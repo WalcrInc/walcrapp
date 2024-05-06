@@ -28,7 +28,13 @@ export const AuthStyle = styled.div`
     border-bottom: 2px solid #f18341;
     transition: 0.5s ease-in-out;
   }
-
+  .error{
+    color:#FB2047 ;
+    font-size:12px ;
+    display:flex ;
+    gap:10px;
+    margin-top:10px ;
+  }
   .options {
     display: flex;
     gap: 20px;

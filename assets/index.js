@@ -349,7 +349,7 @@ export const BackIcon = () => (
   </svg>
 );
 
-export const AletIcon = () => (
+export const AlertIcon = () => (
   <svg
     width="16"
     height="16"

@@ -1,54 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import "yup-phone-lite";
 import { useDispatch, useSelector } from "react-redux";
-import register from "@/pages/register";
+import { login, register } from "@/features/Redux/authSlice";
+import {
+  Alert,
+  AlertIcon,
+  AlertTitle,
+  AlertDescription,
+} from "@chakra-ui/react";
 
 const useLogin = () => {
-  // const {isSuccess, isError, user} = useSelector((state)=>state.user)
-  const dispatch = useDispatch()
+  const { isSuccess, isError, user, message } = useSelector(
+    (state) => state.auth
+  );
+  const dispatch = useDispatch();
   const [show, setShow] = useState(false);
   const [selectedOption, setSelectedOption] = useState("email");
-  const [phone, setPhone] = useState("");
-  const [password, setPassword] = useState("");
-  const [emailOption, setEmailOption] = useState({
-    email: "",
-    password: "",
-  });
 
   const handleShow = () => {
     setShow(!show);
   };
   const handleSelected = (option) => {
     setSelectedOption(option);
-  };
-
-  const handlePhone = (value) => {
-    setPhone(value);
-  };
-  const handlePassword = (value) => {
-    setPassword(value);
-  };
-
-  const handleEmailChange = (e) => {
-    const { name, value } = e.target;
-    setEmailOption((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    console.log("HandleSubmit called"); // Debug statement to check if handleSubmit is called
-    console.log("Selected option:", selectedOption); // Log selectedOption to check its value
-
-    e.preventDefault();
-    if (selectedOption === "email") {
-      console.log("Submitting email:", emailOption);
-    } else {
-      console.log("Submitting phone number:", { phone, password });
-    }
   };
 
   const formik = useFormik({
@@ -84,7 +59,7 @@ const useLogin = () => {
         }
       }
 
-      console.log(errors)
+      console.log(errors);
       return errors;
     },
     onSubmit: async (values) => {
@@ -92,7 +67,7 @@ const useLogin = () => {
       let formData;
       if (selectedOption === "email") {
         formData = { email: values.email, password: values.emailPassword };
-        dispatch(register(formData))
+        dispatch(login(formData));
       } else if (selectedOption === "phone") {
         formData = {
           phoneNumber: values.phoneNumber,
@@ -103,16 +78,27 @@ const useLogin = () => {
     },
   });
 
+  // useEffect(() => {
+  //   if (isSuccess && user) {
+  //     <Alert status="success">
+  //       <AlertIcon />
+  //       {message}
+  //     </Alert>;
+  //     router.push("/dahboard");
+  //   }
+
+  //   if (isError) {
+  //     <Alert status="error">
+  //       <AlertIcon />
+  //       {message}
+  //     </Alert>;
+  //   }
+  // }, [isError, message, isSuccess, user]);
+
   return {
     show,
-    emailOption,
-    password,
-    phone,
     selectedOption,
     handleShow,
-    handleEmailChange,
-    handlePassword,
-    handlePhone,
     handleSelected,
     formik,
   };

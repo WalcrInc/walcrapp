@@ -2,7 +2,7 @@ import { Box, Button, FormControl, FormLabel, Input } from "@chakra-ui/react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import Link from "next/link";
-import { Show, USA } from "@/assets";
+import { AlertIcon, Show, USA } from "@/assets";
 import ShowPassword from "@/hooks/useLoginHook/useLoginHook";
 
 const FormWithPhone = ({ handlePhone, formik }) => {
@@ -21,18 +21,32 @@ const FormWithPhone = ({ handlePhone, formik }) => {
             gap={"10px"}
             padding={" 12px"}
             alignItems={"center"}
-            border={"1px solid #CDD1DC"}
             borderRadius={"4px"}
+            border={
+              formik.errors.phoneNumber
+                ? "1px solid #FB2047"
+                : "1px solid  #CDD1DC"
+            }
           >
             <USA />
           </Box>
           <Input
             padding={"25px 14px"}
             type="tel"
-            focusBorderColor="0.5px solid #CDD1DC"
+            border={
+              formik.errors.phoneNumber
+                ? "1px solid #FB2047"
+                : "1px solid  #CDD1DC"
+            }
             {...formik.getFieldProps("phoneNumber")}
           />
         </Box>
+        {formik.errors.phoneNumber && formik.touched.phoneNumber ? (
+          <span className="error">
+            <AlertIcon />
+            {formik.errors.phoneNumber}
+          </span>
+        ) : null}
       </FormControl>
       <FormControl>
         <FormLabel fontSize={"16px"} color={"#1A1A1A"} fontWeight={"700"}>
@@ -41,10 +55,14 @@ const FormWithPhone = ({ handlePhone, formik }) => {
         <Box
           display={"flex"}
           alignItems={"center"}
-          border={"1px solid #CDD1DC"}
           borderRadius={"6px"}
           padding={"5px 15px"}
           focusBorderColor="0.5px solid #CDD1DC"
+          border={
+            formik.errors.phonePassword
+              ? "1px solid #FB2047"
+              : "1px solid  #CDD1DC"
+          }
         >
           <Input
             width={"100%"}
@@ -57,6 +75,12 @@ const FormWithPhone = ({ handlePhone, formik }) => {
             <Show />
           </span>
         </Box>
+        {formik.errors.phonePassword && formik.touched.phonePassword ? (
+          <span className="error">
+            <AlertIcon />
+            {formik.errors.phonePassword}
+          </span>
+        ) : null}
       </FormControl>
     </>
   );

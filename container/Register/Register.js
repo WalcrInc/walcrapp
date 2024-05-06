@@ -1,10 +1,12 @@
 import { Box, FormControl, FormLabel, Input } from "@chakra-ui/react";
 import React from "react";
 import Link from "next/link";
-import { AppleIcon, GoogleIcon } from "@/assets";
+import { AlertIcon, AppleIcon, GoogleIcon, Show } from "@/assets";
 import { CustomButton } from "@/components/Button/Button";
+import useRegister from "@/hooks/useRegisterHook/useRegister";
 
 const Register = () => {
+  const { formik, show, handleShow } = useRegister();
   return (
     <>
       <div className="header">
@@ -20,8 +22,8 @@ const Register = () => {
       </CustomButton>
 
       <div className="or">or</div>
-      
-      <form>
+
+      <form onSubmit={formik.handleSubmit}>
         <FormControl>
           <FormLabel fontSize={"16px"} color={"#1A1A1A"} fontWeight={"700"}>
             Name
@@ -30,7 +32,17 @@ const Register = () => {
             box-shadow={"0px 0px 0px 1px #CDD1DC"}
             padding={"25px 14px"}
             type="text"
+            border={
+              formik.errors.name ? "1px solid #FB2047" : "1px solid  #CDD1DC"
+            }
+            {...formik.getFieldProps("name")}
           />
+          {formik.errors.name && formik.touched.name ? (
+            <span className="error">
+              <AlertIcon />
+              {formik.errors.name}
+            </span>
+          ) : null}
         </FormControl>
         <FormControl>
           <FormLabel fontSize={"16px"} color={"#1A1A1A"} fontWeight={"700"}>
@@ -40,18 +52,52 @@ const Register = () => {
             box-shadow={"0px 0px 0px 1px #CDD1DC"}
             padding={"25px 14px"}
             type="email"
+            {...formik.getFieldProps("email")}
+            border={
+              formik.errors.email ? "1px solid #FB2047" : "1px solid  #CDD1DC"
+            }
           />
+          {formik.errors.email && formik.touched.email ? (
+            <span className="error">
+              <AlertIcon />
+              {formik.errors.email}
+            </span>
+          ) : null}
         </FormControl>
         <FormControl>
-          <FormLabel fontSize={"16px"} color={"#1A1A1A"} fontWeight={"700"}>
-            Password
-          </FormLabel>
+        <FormLabel fontSize={"16px"} color={"#1A1A1A"} fontWeight={"700"}>
+          Password
+        </FormLabel>
+        <Box
+          display={"flex"}
+          alignItems={"center"}
+          borderRadius={"6px"}
+          padding={"5px 15px"}
+          focusBorderColor="0.5px solid #CDD1DC"
+          border={
+            formik.errors.password
+              ? "1px solid #FB2047"
+              : "1px solid  #CDD1DC"
+          }
+        >
           <Input
-            box-shadow={"0px 0px 0px 1px #CDD1DC"}
-            padding={"25px 14px"}
-            type="password"
+            width={"100%"}
+            border={"none"}
+            type={show ? "text" : "password"}
+            padding={"0"}
+            {...formik.getFieldProps("password")}
           />
-        </FormControl>
+          <span onClick={handleShow}>
+            <Show />
+          </span>
+        </Box>
+        {formik.errors.password && formik.touched.password ? (
+          <span className="error">
+            <AlertIcon />
+            {formik.errors.password}
+          </span>
+        ) : null}
+      </FormControl>
         <Box display={"flex"} justifyContent={"space-between"}>
           <div className="checkbox">
             <input type="checkbox" /> I agree to the{" "}
@@ -60,7 +106,6 @@ const Register = () => {
         </Box>
         <CustomButton variant={"default"}>Continue</CustomButton>
       </form>
-     
 
       <Box textAlign={"center"} color={"#8C92AB"}>
         Already have an account?
