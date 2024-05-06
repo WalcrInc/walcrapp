@@ -1,16 +1,19 @@
 import { useState } from "react";
 import { OnboardingStyle } from "./Onboarding.style";
-import { Logo, Next_Icon, Truck } from "@/assets";
+import { BackIcon, Logo, Next_Icon, Truck } from "@/assets";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
 const Onboarding = () => {
   const [currentStep, setCurrentStep] = useState(1);
-  const totalSteps = 3;
+  const totalSteps = 2;
   const router = useRouter();
 
   const handleNext = () => {
     setCurrentStep((prev) => prev + 1);
+  };
+  const handlPrev = () => {
+    setCurrentStep((prev) => prev - 1);
   };
 
   const handleRoute = () => {
@@ -18,20 +21,29 @@ const Onboarding = () => {
   };
 
   return (
-    <OnboardingStyle>
-      <div className="logo">
-        <Logo />
-      </div>
+    <OnboardingStyle >
+      <header>
+        {currentStep === 2 && (
+          <header className="header">
+            <span onClick={handlPrev}>
+              <BackIcon />
+            </span>
 
+            <p onClick={handleRoute}>Skip</p>
+          </header>
+        )}
+      </header>
+      
       <div className="icons">
         {currentStep === 1 && (
           <>
             <div className="icon">
               <Image
-                src={"/images/car.svg"}
-                width={355}
-                height={148}
-                alt="bike"
+                src={"/images/dress.svg"}
+                width={611}
+                height={0}
+                objectFit="contain"
+                className="image"
               />
             </div>
           </>
@@ -40,24 +52,11 @@ const Onboarding = () => {
           <>
             <div className="icon">
               <Image
-                src={"/images/car.svg"}
+                src={"/images/person.svg"}
                 width={355}
-                height={148}
+                height={404}
                 alt="bike"
                 objectFit="contain"
-              />
-            </div>
-          </>
-        )}
-        {currentStep === 3 && (
-          <>
-            <div className="icon">
-              <Image
-                src={"/images/takeout.svg"}
-                width={355}
-                height={148}
-                alt="bike"
-                objectFit="cover"
               />
             </div>
           </>
@@ -77,12 +76,7 @@ const Onboarding = () => {
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           </div>
         )}
-        {currentStep === 3 && (
-          <div className="text">
-            <h1>Lorem ipsum dolor sit amet</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-        )}
+
         <div className="indicator">
           <div className="page-indicator">
             {[...Array(totalSteps)].map((_, index) => (

@@ -12,6 +12,15 @@ const Register = () => {
         <p>Welcome! Please enter your details to continue</p>
       </div>
 
+      <CustomButton variant={"transparent"}>
+        <GoogleIcon /> Continue with Google
+      </CustomButton>
+      <CustomButton variant={"transparent"}>
+        <AppleIcon /> Continue with Apple
+      </CustomButton>
+
+      <div className="or">or</div>
+      
       <form>
         <FormControl>
           <FormLabel fontSize={"16px"} color={"#1A1A1A"} fontWeight={"700"}>
@@ -51,14 +60,8 @@ const Register = () => {
         </Box>
         <CustomButton variant={"default"}>Continue</CustomButton>
       </form>
-      <div className="or">or</div>
+     
 
-      <CustomButton variant={"transparent"}>
-        <GoogleIcon /> Continue with Google
-      </CustomButton>
-      <CustomButton variant={"transparent"}>
-        <AppleIcon /> Continue with Apple
-      </CustomButton>
       <Box textAlign={"center"} color={"#8C92AB"}>
         Already have an account?
         <span style={{ color: "#1A1A1A", fontWeight: "700" }}>

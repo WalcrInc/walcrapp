@@ -446,3 +446,31 @@ export const LocationIcon = () => (
     />
   </svg>
 );
+
+export const USA = () => (
+  <svg
+    width="24"
+    height="18"
+    viewBox="0 0 24 18"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g clip-path="url(#clip0_209_1230)">
+      <path d="M0 0H24V18H0" fill="#BD3D44" />
+      <path
+        d="M0 2.07373H24H0ZM0 4.83748H24H0ZM0 7.61248H24H0ZM0 10.3875H24H0ZM0 13.1625H24H0ZM0 15.9375H24H0Z"
+        fill="black"
+      />
+      <path
+        d="M0 2.07373H24M0 4.83748H24M0 7.61248H24M0 10.3875H24M0 13.1625H24M0 15.9375H24"
+        stroke="white"
+      />
+      <path d="M0 0H13.68V9.69375H0" fill="#192F5D" />
+    </g>
+    <defs>
+      <clipPath id="clip0_209_1230">
+        <rect width="24" height="18" rx="4" fill="white" />
+      </clipPath>
+    </defs>
+  </svg>
+);

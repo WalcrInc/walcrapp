@@ -2,7 +2,7 @@ import { Box, Button, FormControl, FormLabel, Input } from "@chakra-ui/react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import Link from "next/link";
-import { Show } from "@/assets";
+import { Show, USA } from "@/assets";
 import ShowPassword from "@/hooks/useLoginHook/useLoginHook";
 
 const FormWithPhone = ({ handlePhone, formik }) => {
@@ -14,21 +14,25 @@ const FormWithPhone = ({ handlePhone, formik }) => {
         <FormLabel fontSize={"16px"} color={"#1A1A1A"} fontWeight={"700"}>
           Phone number
         </FormLabel>
-        <PhoneInput
-          name="phoneNumber"
-          value={formik.values.phoneNumber}
-          country={"us"}
-          onChange={(value) => {
-            formik.setFieldValue("phoneNumber", value);
-            handlePhone(value);
-          }}
-          inputStyle={{
-            border: "1px solid #CDD1DC",
-            height: "56px",
-            width: "100%",
-            fontSize: "16px",
-          }}
-        />
+        <Box display={"flex"} gap={"10px"}>
+          <Box
+            display={"flex"}
+            width={"20%"}
+            gap={"10px"}
+            padding={" 12px"}
+            alignItems={"center"}
+            border={"1px solid #CDD1DC"}
+            borderRadius={"4px"}
+          >
+            <USA /> +1
+          </Box>
+          <Input
+            padding={"25px 14px"}
+            type="tel"
+            focusBorderColor="0.5px solid #CDD1DC"
+            {...formik.getFieldProps("phoneNumber")}
+          />
+        </Box>
       </FormControl>
       <FormControl>
         <FormLabel fontSize={"16px"} color={"#1A1A1A"} fontWeight={"700"}>
@@ -47,9 +51,7 @@ const FormWithPhone = ({ handlePhone, formik }) => {
             border={"none"}
             type={show ? "text" : "password"}
             padding={"0"}
-            name="phonePassword"
-            value={formik.values.phonePassword}
-            onChange={formik.handleChange}
+            {...formik.getFieldProps("phonePassword")}
           />
           <span onClick={handleShow}>
             <Show />

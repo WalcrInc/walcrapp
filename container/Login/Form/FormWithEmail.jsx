@@ -15,10 +15,8 @@ const FormWithEmail = ({ formik }) => {
         <Input
           padding={"25px 14px"}
           type="email"
-          name="email"
-          value={formik.values.email}
-          onChange={formik.handleChange}
           focusBorderColor="0.5px solid #CDD1DC"
+          {...formik.getFieldProps("email")}
         />
       </FormControl>
       <FormControl>
@@ -38,9 +36,7 @@ const FormWithEmail = ({ formik }) => {
             border={"none"}
             type={show ? "text" : "password"}
             padding={"0"}
-            name="emailPassword"
-            value={formik.values.emailPassword}
-            onChange={formik.handleChange}
+            {...formik.getFieldProps("emailPassword")}
           />
           <span onClick={handleShow}>
             {" "}

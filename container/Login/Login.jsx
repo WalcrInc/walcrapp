@@ -17,6 +17,16 @@ const Login = () => {
         <p>Welcome back to the app</p>
       </div>
 
+      <CustomButton variant={"transparent"}>
+        <GoogleIcon /> Continue with Google
+      </CustomButton>
+
+      <CustomButton variant={"transparent"}>
+        <AppleIcon /> Continue with Apple
+      </CustomButton>
+
+      <div className="or">or</div>
+
       <div className="options">
         <p
           className={selectedOption === "email" ? "active" : ""}
@@ -55,16 +65,6 @@ const Login = () => {
           Continue
         </CustomButton>
       </form>
-
-      <div className="or">or</div>
-
-      <CustomButton variant={"transparent "}>
-        <GoogleIcon /> Continue with Google
-      </CustomButton>
-
-      <CustomButton variant={"transparent "}>
-        <AppleIcon /> Continue with Apple
-      </CustomButton>
 
       <Box textAlign={"center"} color={"#8C92AB"}>
         Don’t have an account?
