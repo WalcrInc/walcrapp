@@ -3,31 +3,12 @@ import styled from "styled-components";
 export const OnboardingStyle = styled.div`
   display: grid;
   grid-template-rows: auto 1fr auto;
-  height: 100vh;
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5%;
-  }
-
-  .icons {
-    margin: auto;
-  }
-
- 
-
-  .bottom {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px 5%;
-  }
-
-  .bottom .text {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  height: 100dvh;
+  .step-one .image {
+    background-image: url("/images/dress.png");
+    background-size:contain ;
+    height: 55vh;
+    grid-template-rows: auto 1fr auto;
   }
 
   .text h1 {
@@ -40,6 +21,39 @@ export const OnboardingStyle = styled.div`
     font-weight: 400;
     color: #5b6178;
   }
+
+  .step-one .text {
+    padding: 20px 5%;
+  }
+  .step-two {
+    padding: 5%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .icon {
+    margin: auto;
+  }
+
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+  }
+
+  .bottom .text {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
   .indicator {
     display: flex;
     justify-content: space-between;

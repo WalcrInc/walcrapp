@@ -24,7 +24,7 @@ const FormWithPhone = ({ handlePhone, formik }) => {
             border={"1px solid #CDD1DC"}
             borderRadius={"4px"}
           >
-            <USA /> +1
+            <USA />
           </Box>
           <Input
             padding={"25px 14px"}

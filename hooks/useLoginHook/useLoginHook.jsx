@@ -2,8 +2,12 @@ import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import "yup-phone-lite";
+import { useDispatch, useSelector } from "react-redux";
+import register from "@/pages/register";
 
 const useLogin = () => {
+  // const {isSuccess, isError, user} = useSelector((state)=>state.user)
+  const dispatch = useDispatch()
   const [show, setShow] = useState(false);
   const [selectedOption, setSelectedOption] = useState("email");
   const [phone, setPhone] = useState("");
@@ -88,6 +92,7 @@ const useLogin = () => {
       let formData;
       if (selectedOption === "email") {
         formData = { email: values.email, password: values.emailPassword };
+        dispatch(register(formData))
       } else if (selectedOption === "phone") {
         formData = {
           phoneNumber: values.phoneNumber,

@@ -21,35 +21,31 @@ const Onboarding = () => {
   };
 
   return (
-    <OnboardingStyle >
-      <header>
-        {currentStep === 2 && (
-          <header className="header">
-            <span onClick={handlPrev}>
-              <BackIcon />
-            </span>
-
-            <p onClick={handleRoute}>Skip</p>
-          </header>
-        )}
-      </header>
-      
-      <div className="icons">
+    <OnboardingStyle>
+      <div className="step-one">
         {currentStep === 1 && (
           <>
-            <div className="icon">
-              <Image
-                src={"/images/dress.svg"}
-                width={611}
-                height={0}
-                objectFit="contain"
-                className="image"
-              />
+            <div className="image">
+              
+            </div>
+            <div className="text">
+              <h1>Lorem ipsum dolor sit amet</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
           </>
         )}
+      </div>
+
+      <div className="step-two">
         {currentStep === 2 && (
           <>
+            <header className="header">
+              <span onClick={handlPrev}>
+                <BackIcon />
+              </span>
+
+              <p onClick={handleRoute}>Skip</p>
+            </header>
             <div className="icon">
               <Image
                 src={"/images/person.svg"}
@@ -59,26 +55,16 @@ const Onboarding = () => {
                 objectFit="contain"
               />
             </div>
+            <div className="text">
+              <h1>Lorem ipsum dolor sit amet</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
           </>
         )}
       </div>
 
       <div className="bottom">
-        {currentStep === 1 && (
-          <div className="text">
-            <h1>Lorem ipsum dolor sit amet</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-        )}
-        {currentStep === 2 && (
-          <div className="text">
-            <h1>Lorem ipsum dolor sit amet</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-        )}
-
-        <div className="indicator">
-          <div className="page-indicator">
+      <div className="page-indicator">
             {[...Array(totalSteps)].map((_, index) => (
               <span
                 key={index}
@@ -86,6 +72,7 @@ const Onboarding = () => {
               ></span>
             ))}
           </div>
+        <div className="next">
           {currentStep === totalSteps ? (
             <span onClick={handleRoute}>
               <Next_Icon />
