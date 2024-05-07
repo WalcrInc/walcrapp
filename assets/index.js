@@ -382,22 +382,21 @@ export const NotificationIcon = () => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <rect width="24" height="24" fill="white" />
     <path
       d="M5.15837 11.491C5.08489 12.887 5.16936 14.373 3.92213 15.3084C3.34164 15.7438 3 16.427 3 17.1527C3 18.1508 3.7818 19 4.8 19H19.2C20.2182 19 21 18.1508 21 17.1527C21 16.427 20.6584 15.7438 20.0779 15.3084C18.8306 14.373 18.9151 12.887 18.8416 11.491C18.6501 7.85223 15.6438 5 12 5C8.35617 5 5.34988 7.85222 5.15837 11.491Z"
-      stroke="#1E202C"
+      stroke="white"
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
     />
     <path
       d="M10.5 3.125C10.5 3.95343 11.1716 5 12 5C12.8284 5 13.5 3.95343 13.5 3.125C13.5 2.29657 12.8284 2 12 2C11.1716 2 10.5 2.29657 10.5 3.125Z"
-      stroke="#1E202C"
+      stroke="white"
       stroke-width="2"
     />
     <path
       d="M15 19C15 20.6569 13.6569 22 12 22C10.3431 22 9 20.6569 9 19"
-      stroke="#1E202C"
+      stroke="white"
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
@@ -417,13 +416,13 @@ export const Hamburger = () => (
       fill-rule="evenodd"
       clip-rule="evenodd"
       d="M2.0625 9C2.0625 8.48223 2.48223 8.0625 3 8.0625H21C21.5178 8.0625 21.9375 8.48223 21.9375 9C21.9375 9.51777 21.5178 9.9375 21 9.9375H3C2.48223 9.9375 2.0625 9.51777 2.0625 9Z"
-      fill="#1E202C"
+      fill="white"
     />
     <path
       fill-rule="evenodd"
       clip-rule="evenodd"
       d="M2.0625 15C2.0625 14.4822 2.48223 14.0625 3 14.0625H17.25C17.7678 14.0625 18.1875 14.4822 18.1875 15C18.1875 15.5178 17.7678 15.9375 17.25 15.9375H3C2.48223 15.9375 2.0625 15.5178 2.0625 15Z"
-      fill="#1E202C"
+      fill="white"
     />
   </svg>
 );
@@ -438,11 +437,11 @@ export const LocationIcon = () => (
   >
     <path
       d="M9.07847 14.2443C8.7894 14.515 8.40293 14.6663 8.00073 14.6663C7.59853 14.6663 7.21213 14.515 6.923 14.2443C4.27535 11.7503 0.727174 8.96427 2.45751 4.91945C3.39309 2.73245 5.63889 1.33301 8.00073 1.33301C10.3626 1.33301 12.6084 2.73245 13.544 4.91945C15.2721 8.95921 11.7327 11.7589 9.07847 14.2443Z"
-      stroke="#8C92AB"
+      stroke="white"
     />
     <path
       d="M10.3332 7.33333C10.3332 8.622 9.2885 9.66667 7.99984 9.66667C6.71117 9.66667 5.6665 8.622 5.6665 7.33333C5.6665 6.04467 6.71117 5 7.99984 5C9.2885 5 10.3332 6.04467 10.3332 7.33333Z"
-      stroke="#8C92AB"
+      stroke="white"
     />
   </svg>
 );
@@ -472,5 +471,118 @@ export const USA = () => (
         <rect width="24" height="18" rx="4" fill="white" />
       </clipPath>
     </defs>
+  </svg>
+);
+
+export const AddIcon = () => (
+  <svg
+    width="44"
+    height="56"
+    viewBox="0 0 44 56"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect y="0.5" width="44" height="55" rx="16" fill="#1A1A1A" />
+    <path
+      d="M22 24V32M26 28H18"
+      stroke="#F7F7F7"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M12.5 28C12.5 23.5217 12.5 21.2825 13.8912 19.8912C15.2825 18.5 17.5217 18.5 22 18.5C26.4783 18.5 28.7175 18.5 30.1088 19.8912C31.5 21.2825 31.5 23.5217 31.5 28C31.5 32.4783 31.5 34.7175 30.1088 36.1088C28.7175 37.5 26.4783 37.5 22 37.5C17.5217 37.5 15.2825 37.5 13.8912 36.1088C12.5 34.7175 12.5 32.4783 12.5 28Z"
+      stroke="#F7F7F7"
+      stroke-width="1.5"
+    />
+  </svg>
+);
+
+export const Delivery_Box_Orange = () => (
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M2 13.4286V8H22V13.4286C22 17.4692 22 19.4895 20.6983 20.7447C19.3965 22 17.3014 22 13.1111 22H10.8889C6.69863 22 4.6035 22 3.30175 20.7447C2 19.4895 2 17.4692 2 13.4286Z"
+      stroke="#F18341"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M2 8L2.96154 5.69231C3.70726 3.90257 4.08013 3.0077 4.8359 2.50385C5.59167 2 6.56112 2 8.5 2H15.5C17.4389 2 18.4083 2 19.1641 2.50385C19.9199 3.0077 20.2927 3.90257 21.0385 5.69231L22 8"
+      stroke="#F18341"
+      stroke-width="2"
+      stroke-linecap="round"
+    />
+    <path
+      d="M12 8V2"
+      stroke="#F18341"
+      stroke-width="2"
+      stroke-linecap="round"
+    />
+    <path
+      d="M10 12H14"
+      stroke="#F18341"
+      stroke-width="2"
+      stroke-linecap="round"
+    />
+  </svg>
+);
+
+export const Delivery_Box_Green = () => (
+  <svg
+    width="40"
+    height="40"
+    viewBox="0 0 40 40"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect width="40" height="40" rx="8" fill="#C8FFC7" fill-opacity="0.5" />
+    <path
+      d="M10 21.4286V16H30V21.4286C30 25.4692 30 27.4895 28.6983 28.7447C27.3965 30 25.3014 30 21.1111 30H18.8889C14.6986 30 12.6035 30 11.3017 28.7447C10 27.4895 10 25.4692 10 21.4286Z"
+      stroke="#0D7D0B"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M10 16L10.9615 13.6923C11.7073 11.9026 12.0801 11.0077 12.8359 10.5038C13.5917 10 14.5611 10 16.5 10H23.5C25.4389 10 26.4083 10 27.1641 10.5038C27.9199 11.0077 28.2927 11.9026 29.0385 13.6923L30 16"
+      stroke="#0D7D0B"
+      stroke-width="2"
+      stroke-linecap="round"
+    />
+    <path
+      d="M20 16V10"
+      stroke="#0D7D0B"
+      stroke-width="2"
+      stroke-linecap="round"
+    />
+    <path
+      d="M18 20H22"
+      stroke="#0D7D0B"
+      stroke-width="2"
+      stroke-linecap="round"
+    />
+  </svg>
+);
+export const ForwardIcon = () => (
+  <svg
+    width="32"
+    height="32"
+    viewBox="0 0 32 32"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M11.724 7.72353C12.2447 7.20283 13.0889 7.20283 13.6096 7.72353L20.943 15.0569C21.4637 15.5776 21.4637 16.4218 20.943 16.9425L13.6096 24.2758C13.0889 24.7965 12.2447 24.7965 11.724 24.2758C11.2033 23.7551 11.2033 22.9109 11.724 22.3902L18.1145 15.9997L11.724 9.60915C11.2033 9.08845 11.2033 8.24423 11.724 7.72353Z"
+      fill="#1E202C"
+    />
   </svg>
 );
