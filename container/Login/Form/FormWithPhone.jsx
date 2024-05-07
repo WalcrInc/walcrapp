@@ -33,6 +33,7 @@ const FormWithPhone = ({ handlePhone, formik }) => {
           <Input
             padding={"25px 14px"}
             type="tel"
+            placeholder="Enter phone number"
             border={
               formik.errors.phoneNumber
                 ? "1px solid #FB2047"
@@ -66,6 +67,10 @@ const FormWithPhone = ({ handlePhone, formik }) => {
         >
           <Input
             width={"100%"}
+            placeholder="*****"
+            _placeholder={{
+             fontSize:"16px"
+            }}
             border={"none"}
             type={show ? "text" : "password"}
             padding={"0"}

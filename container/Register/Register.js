@@ -44,6 +44,7 @@ const Register = () => {
             </span>
           ) : null}
         </FormControl>
+
         <FormControl>
           <FormLabel fontSize={"16px"} color={"#1A1A1A"} fontWeight={"700"}>
             Email address
@@ -64,6 +65,49 @@ const Register = () => {
             </span>
           ) : null}
         </FormControl>
+
+        <FormControl>
+          <FormLabel fontSize={"16px"} color={"#1A1A1A"} fontWeight={"700"}>
+            Phone Number
+          </FormLabel>
+          <Input
+            box-shadow={"0px 0px 0px 1px #CDD1DC"}
+            padding={"25px 14px"}
+            type="tel"
+            {...formik.getFieldProps("phone_number")}
+            border={
+              formik.errors.phone_number ? "1px solid #FB2047" : "1px solid  #CDD1DC"
+            }
+          />
+          {formik.errors.phone_number && formik.touched.phone_number ? (
+            <span className="error">
+              <AlertIcon />
+              {formik.errors.phone_number}
+            </span>
+          ) : null}
+        </FormControl>
+
+        <FormControl>
+          <FormLabel fontSize={"16px"} color={"#1A1A1A"} fontWeight={"700"}>
+           Address
+          </FormLabel>
+          <Input
+            box-shadow={"0px 0px 0px 1px #CDD1DC"}
+            padding={"25px 14px"}
+            type="tel"
+            {...formik.getFieldProps("address")}
+            border={
+              formik.errors.address ? "1px solid #FB2047" : "1px solid  #CDD1DC"
+            }
+          />
+          {formik.errors.address && formik.touched.address ? (
+            <span className="error">
+              <AlertIcon />
+              {formik.errors.address}
+            </span>
+          ) : null}
+        </FormControl>
+
         <FormControl>
         <FormLabel fontSize={"16px"} color={"#1A1A1A"} fontWeight={"700"}>
           Password

@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { useFormik } from "formik";
+import { useDispatch } from "react-redux";
+import { register } from "@/features/Redux/authSlice";
 
 const useRegister = () => {
+    const dispatch = useDispatch()
   const [show, setShow] = useState(false);
   const handleShow = () => {
     setShow(!show);
@@ -10,7 +13,9 @@ const useRegister = () => {
     initialValues: {
       name: "",
       email: "",
+      phone_number:"+1",
       password: "",
+      address:""
     },
     validate: (values) => {
       const errors = {};
@@ -26,6 +31,18 @@ const useRegister = () => {
         errors.email = "Invalid email address";
       }
 
+      if (!values.phone_number) {
+        errors.phone_number = "Required";
+      } else if (
+        !/^\+1\d{10}$/.test(values.phone_number)
+      ) {
+        errors.phone_number = "Invalid US phone number";
+      }
+
+      if (!values.address){
+        errors.address="Required"
+      }
+
       if (!values.password) {
         errors.password = "Required";
       } else if (values.password.length < 8) {
@@ -36,6 +53,7 @@ const useRegister = () => {
     },
     onSubmit: async (values) => {
       console.log(values);
+      dispatch(register(values))
     },
   });
   return { formik, show , handleShow};

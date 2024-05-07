@@ -13,8 +13,8 @@ const Login = () => {
   return (
     <>
       <div className="header">
-        <h1>Login</h1>
-        <p>Welcome back to the app</p>
+        <h1>Sign In</h1>
+        <p>Welcome back! Log in to Walcr</p>
       </div>
 
       <CustomButton variant={"transparent"}>

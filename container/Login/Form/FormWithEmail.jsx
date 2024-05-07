@@ -15,6 +15,7 @@ const FormWithEmail = ({ formik }) => {
         <Input
           padding={"25px 14px"}
           type="email"
+          placeholder="name@example.com"
           border={
             formik.errors.email ? "1px solid #FB2047" : "1px solid  #CDD1DC"
           }
@@ -47,6 +48,7 @@ const FormWithEmail = ({ formik }) => {
             border={"none"}
             type={show ? "text" : "password"}
             padding={"0"}
+            placeholder="**********"
             {...formik.getFieldProps("emailPassword")}
           />
           <span onClick={handleShow}>
