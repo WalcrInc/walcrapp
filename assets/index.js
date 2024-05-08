@@ -685,8 +685,8 @@ export const ProfileIcon = () => (
 );
 export const HomeIcon = () => (
   <svg
-    width="21"
-    height="20"
+    width="25px"
+    height="24px"
     viewBox="0 0 21 20"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

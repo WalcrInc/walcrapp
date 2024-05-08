@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const HomeStyle = styled.div`
   .header {
     padding: 6%;
-    height: 230px;
+    height: 269px;
     background: #1a1a1a;
     display: flex;
     flex-direction: column;
@@ -32,12 +32,12 @@ export const HomeStyle = styled.div`
     background: #F7F7F7;
     position: relative;
     border-radius: 32px 32px 16px 16px;
-    /* height:100px ; */
+    height:100px ;
     padding: 5%;
     width: 90%;
     left: 0;
     margin: auto;
-    top: -60px;
+    top: -70px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -62,6 +62,8 @@ export const HomeStyle = styled.div`
     flex-direction: column;
     gap: 20px;
     padding: 0 6%;
+    position: relative;
+    top:-20px;
   }
 
   .quick-actions h1 {

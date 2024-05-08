@@ -9,12 +9,31 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { EmailIcon, PasswordIcon, PhoneIcon, UserIcon } from "@/assets";
+import useFetchData from "@/hooks/useFetchDataHook/useFetchData";
+import { useSelector } from "react-redux";
 
 const Profile = () => {
+  const { user } = useSelector((state) => state.auth);
+  const accessToken = user ? user.data : "";
+
+  const { data } = useFetchData({
+    url: "https://walcr-backend.onrender.com/auth/user",
+    token: accessToken,
+  });
+
+  //   const [userData, setUserData] = ({
+  //     name:data?.name,
+  //     email:data?.email,
+  //     phone_number:data?.phone_number,
+  //     password:""
+
+  //   })
   return (
     <ProfileStyle>
       <h1>Profile</h1>
-
+      <div className="info">
+        Brandon Joe 2693 Burnside Court, Phoenix, Arizona
+      </div>
       <form>
         <FormControl>
           <FormLabel>Name</FormLabel>
@@ -55,34 +74,6 @@ const Profile = () => {
               <PhoneIcon />
             </InputLeftElement>
             <Input placeholder="Phone Number" />
-          </InputGroup>
-        </FormControl>
-
-        <FormControl>
-          <FormLabel>Password</FormLabel>
-          <InputGroup
-            boxShadow={" 0px 0px 0px 1px #CDD1DC"}
-            borderRadius={"8px"}
-            size={"lg"}
-          >
-            <InputLeftElement>
-              <PasswordIcon />
-            </InputLeftElement>
-            <Input placeholder="Password" />
-          </InputGroup>
-        </FormControl>
-
-        <FormControl>
-          <FormLabel>Password</FormLabel>
-          <InputGroup
-            boxShadow={" 0px 0px 0px 1px #CDD1DC"}
-            borderRadius={"8px"}
-            size={"lg"}
-          >
-            <InputLeftElement>
-              <PasswordIcon />
-            </InputLeftElement>
-            <Input placeholder="Password" />
           </InputGroup>
         </FormControl>
 

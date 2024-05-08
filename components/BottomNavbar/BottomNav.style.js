@@ -6,7 +6,7 @@ display:flex ;
 justify-content:space-between ;
 padding:5% ;
 
-position:absolute ;
+position:fixed ;
 bottom: 0;
 width:95% ;
 margin:0 auto ;

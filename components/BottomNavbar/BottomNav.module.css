@@ -4,7 +4,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2.5px;
+    transition: color 0.3s ease;
+    /* gap: 8px; */
   }
   
   .active::before {
@@ -13,11 +14,12 @@
     bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
-    border-radius: 100%;
-    color: #1a1a1a;
+    border-radius: 50%; /* Use 50% for a perfect circle */
+    background-color: #1a1a1a; 
     height: 8px;
     width: 8px;
-    background-color: #1a1a1a; 
+    transition: background-color 0.3s ease;
+    
   }
   
   .link {
@@ -25,6 +27,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
+    /* gap: 5px; */
   }
   
