@@ -38,7 +38,7 @@ const Home = () => {
         </div>
         <div className="text">
           <h1>
-            Welcome, <Text fontWeight={"800"}>{info?.name}</Text>{" "}
+            Welcome, <span>{info?.name}</span>{" "}
           </h1>
 
           <p>

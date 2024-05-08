@@ -2,14 +2,9 @@ import styled from "styled-components";
 
 export const OnboardingStyle = styled.div`
   display: grid;
-  grid-template-rows: auto 1fr auto;
-  height: 100dvh;
-  .step-one .image {
-    background-image: url("/images/dress.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 55vh;
-  }
+  /* grid-template-rows: auto 1fr auto; */
+  /* height: 100dvh; */
+  
 
   .text h1 {
     font-size: 35px;
@@ -22,16 +17,18 @@ export const OnboardingStyle = styled.div`
     color: #5b6178;
   }
 
-  .step-one .text {
-    padding: 20px 5%;
+  .step-two .text {
+    padding: 6%;
   }
   .step-two {
-    padding: 5%;
+    
     display: grid;
-    grid-template-rows: auto 1fr auto;
+    /* grid-template-rows: auto 1fr auto; */
+    row-gap:60px;
   }
 
   .header {
+    padding: 6%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -52,6 +49,7 @@ export const OnboardingStyle = styled.div`
     display: flex;
     flex-direction: column;
     gap: 15px;
+    
   }
 
   .indicator {
@@ -75,5 +73,15 @@ export const OnboardingStyle = styled.div`
     background-color: #000;
     width: 30px;
     border-radius: 10px;
+  }
+
+
+  @media screen and (max-width: 500px){
+    .step-two {
+    
+    display: grid;
+    /* grid-template-rows: auto 1fr auto; */
+    row-gap:10px;
+  }
   }
 `;

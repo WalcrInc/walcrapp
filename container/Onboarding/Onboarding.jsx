@@ -22,11 +22,24 @@ const Onboarding = () => {
 
   return (
     <OnboardingStyle>
-      <div className="step-one">
-        {currentStep === 1 && (
+      <div className="step-two">
+      {currentStep === 1 && (
           <>
-            <div className="image">
-              
+            <header className="header">
+              {/* <span onClick={handlPrev}>
+                <BackIcon />
+              </span> */}
+
+              <p style={{color:"white"}} onClick={handleRoute}>Skip</p>
+            </header>
+            <div className="icon">
+              <Image
+                src={"/images/one.svg"}
+                width={355}
+                height={404}
+                alt="bike"
+                objectFit="contain"
+              />
             </div>
             <div className="text">
               <h1>Lorem ipsum dolor sit amet</h1>
@@ -64,14 +77,14 @@ const Onboarding = () => {
       </div>
 
       <div className="bottom">
-      <div className="page-indicator">
-            {[...Array(totalSteps)].map((_, index) => (
-              <span
-                key={index}
-                className={currentStep === index + 1 ? "active" : ""}
-              ></span>
-            ))}
-          </div>
+        <div className="page-indicator">
+          {[...Array(totalSteps)].map((_, index) => (
+            <span
+              key={index}
+              className={currentStep === index + 1 ? "active" : ""}
+            ></span>
+          ))}
+        </div>
         <div className="next">
           {currentStep === totalSteps ? (
             <span onClick={handleRoute}>

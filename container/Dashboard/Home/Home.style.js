@@ -17,8 +17,10 @@ export const HomeStyle = styled.div`
   }
 
   .header .text h1 {
-    display: flex;
-    gap: 5px;
+    font-size: 18px;
+  }
+  .header .text h1 span {
+   font-weight:800;
     font-size: 18px;
   }
   .header .text p {
@@ -31,8 +33,8 @@ export const HomeStyle = styled.div`
   .wallet-balance {
     background: #F7F7F7;
     position: relative;
-    border-radius: 32px 32px 16px 16px;
-    height:100px ;
+    border-radius:  16px;
+    /* height:100px ; */
     padding: 5%;
     width: 90%;
     left: 0;

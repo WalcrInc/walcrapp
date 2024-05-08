@@ -17,13 +17,15 @@ const Login = () => {
         <p>Welcome back! Log in to Walcr</p>
       </div>
 
-      <CustomButton variant={"transparent"}>
-        <GoogleIcon /> Continue with Google
-      </CustomButton>
+      <Box display={"flex"} flexDirection={"column"} gap={"10px"}>
+        <CustomButton variant={"transparent"}>
+          <GoogleIcon /> Continue with Google
+        </CustomButton>
 
-      <CustomButton variant={"transparent"}>
-        <AppleIcon /> Continue with Apple
-      </CustomButton>
+        <CustomButton variant={"transparent"}>
+          <AppleIcon /> Continue with Apple
+        </CustomButton>
+      </Box>
 
       <div className="or">or</div>
 

@@ -14,12 +14,15 @@ const Register = () => {
         <p>Welcome! Please enter your details to continue</p>
       </div>
 
-      <CustomButton variant={"transparent"}>
-        <GoogleIcon /> Continue with Google
-      </CustomButton>
-      <CustomButton variant={"transparent"}>
-        <AppleIcon /> Continue with Apple
-      </CustomButton>
+      <Box display={"flex"} flexDirection={"column"} gap={"10px"}>
+        <CustomButton variant={"transparent"}>
+          <GoogleIcon /> Continue with Google
+        </CustomButton>
+
+        <CustomButton variant={"transparent"}>
+          <AppleIcon /> Continue with Apple
+        </CustomButton>
+      </Box>
 
       <div className="or">or</div>
 
@@ -76,7 +79,9 @@ const Register = () => {
             type="tel"
             {...formik.getFieldProps("phone_number")}
             border={
-              formik.errors.phone_number ? "1px solid #FB2047" : "1px solid  #CDD1DC"
+              formik.errors.phone_number
+                ? "1px solid #FB2047"
+                : "1px solid  #CDD1DC"
             }
           />
           {formik.errors.phone_number && formik.touched.phone_number ? (
@@ -89,7 +94,7 @@ const Register = () => {
 
         <FormControl>
           <FormLabel fontSize={"16px"} color={"#1A1A1A"} fontWeight={"700"}>
-           Address
+            Address
           </FormLabel>
           <Input
             box-shadow={"0px 0px 0px 1px #CDD1DC"}
@@ -109,39 +114,39 @@ const Register = () => {
         </FormControl>
 
         <FormControl>
-        <FormLabel fontSize={"16px"} color={"#1A1A1A"} fontWeight={"700"}>
-          Password
-        </FormLabel>
-        <Box
-          display={"flex"}
-          alignItems={"center"}
-          borderRadius={"6px"}
-          padding={"5px 15px"}
-          focusBorderColor="0.5px solid #CDD1DC"
-          border={
-            formik.errors.password
-              ? "1px solid #FB2047"
-              : "1px solid  #CDD1DC"
-          }
-        >
-          <Input
-            width={"100%"}
-            border={"none"}
-            type={show ? "text" : "password"}
-            padding={"0"}
-            {...formik.getFieldProps("password")}
-          />
-          <span onClick={handleShow}>
-            <Show />
-          </span>
-        </Box>
-        {formik.errors.password && formik.touched.password ? (
-          <span className="error">
-            <AlertIcon />
-            {formik.errors.password}
-          </span>
-        ) : null}
-      </FormControl>
+          <FormLabel fontSize={"16px"} color={"#1A1A1A"} fontWeight={"700"}>
+            Password
+          </FormLabel>
+          <Box
+            display={"flex"}
+            alignItems={"center"}
+            borderRadius={"6px"}
+            padding={"5px 15px"}
+            focusBorderColor="0.5px solid #CDD1DC"
+            border={
+              formik.errors.password
+                ? "1px solid #FB2047"
+                : "1px solid  #CDD1DC"
+            }
+          >
+            <Input
+              width={"100%"}
+              border={"none"}
+              type={show ? "text" : "password"}
+              padding={"0"}
+              {...formik.getFieldProps("password")}
+            />
+            <span onClick={handleShow}>
+              <Show />
+            </span>
+          </Box>
+          {formik.errors.password && formik.touched.password ? (
+            <span className="error">
+              <AlertIcon />
+              {formik.errors.password}
+            </span>
+          ) : null}
+        </FormControl>
         <Box display={"flex"} justifyContent={"space-between"}>
           <div className="checkbox">
             <input type="checkbox" /> I agree to the{" "}
