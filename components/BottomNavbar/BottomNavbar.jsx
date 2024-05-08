@@ -3,46 +3,55 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import styled from "./BottomNav.module.css";
 import { Container } from "./BottomNav.style";
+import { ActivityIcon, HomeIcon, ProfileIcon, ServiceIcon } from "@/assets";
 
 const BottomNavbar = () => {
   const router = useRouter();
   return (
     <Container>
       <Link
-        href={"/"}
+        href={"/dashboard"}
         className={
-          router.pathname === "/" ? `${styled.active}` : `${styled.link}`
-
+          router.pathname === "/dashboard"
+            ? `${styled.active}`
+            : `${styled.link}`
         }
       >
+        <HomeIcon/>
         Home
       </Link>
       <Link
-        href={"/"}
+        href={"/dashboard/services"}
         className={
-          router.pathname === "/" ? `${styled.active}` : `${styled.link}`
-
+          router.pathname === "/dashboard/services"
+            ? `${styled.active}`
+            : `${styled.link}`
         }
       >
-        Home
+        <ServiceIcon/>
+        Services
       </Link>
       <Link
-        href={"/"}
+        href={"/dashboard/activities"}
         className={
-          router.pathname === "/" ? `${styled.active}` : `${styled.link}`
-
+          router.pathname === "/dashboard/activities"
+            ? `${styled.active}`
+            : `${styled.link}`
         }
       >
-        Home
+        <ActivityIcon/>
+        Activity
       </Link>
       <Link
-        href={"/"}
+        href={"/dashboard/profile"}
         className={
-          router.pathname === "/" ? `${styled.active}` : `${styled.link}`
-
+          router.pathname === "/dashbaord/profile"
+            ? `${styled.active}`
+            : `${styled.link}`
         }
       >
-        Home
+        <ProfileIcon/>
+        Profile
       </Link>
     </Container>
   );

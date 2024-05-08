@@ -29,7 +29,7 @@ export const HomeStyle = styled.div`
   }
 
   .wallet-balance {
-    background: #fff;
+    background: #F7F7F7;
     position: relative;
     border-radius: 32px 32px 16px 16px;
     /* height:100px ; */
@@ -87,10 +87,10 @@ export const HomeStyle = styled.div`
   }
 
   .option h1 {
-    font-size: 16px;
+    font-size: 12px;
   }
   .option p {
-    font-size: 14px;
+    font-size: 10px;
     color: #5b6178;
   }
   .option span {

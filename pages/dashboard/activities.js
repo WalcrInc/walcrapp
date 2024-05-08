@@ -1,8 +1,11 @@
+import { BottomNavbar } from '@/components/BottomNavbar'
 import React from 'react'
 
 const activities = () => {
   return (
-    <div>activities</div>
+    <div>
+      <BottomNavbar/>
+    </div>
   )
 }
 

@@ -1,8 +1,11 @@
+import { BottomNavbar } from '@/components/BottomNavbar'
 import React from 'react'
 
 const services = () => {
   return (
-    <div>services</div>
+    <div>
+      <BottomNavbar/>
+    </div>
   )
 }
 

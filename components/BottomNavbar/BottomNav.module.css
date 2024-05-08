@@ -1,0 +1,30 @@
+.active {
+    color: #1a1a1a;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5px;
+  }
+  
+  .active::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 100%;
+    color: #1a1a1a;
+    height: 8px;
+    width: 8px;
+    background-color: #1a1a1a; 
+  }
+  
+  .link {
+    color: #8c92ab;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+  
