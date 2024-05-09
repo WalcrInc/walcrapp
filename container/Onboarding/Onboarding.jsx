@@ -71,10 +71,9 @@ const Onboarding = () => {
         )}
       </div>
 
-      <div className="step-two">
+     
         {currentStep === 3 && (
-          <>
-          
+         <div className="step-two">
             <div className="icon">
               <Image
                 src={"/images/person.svg"}
@@ -88,9 +87,9 @@ const Onboarding = () => {
               <h1>Lorem ipsum dolor sit amet</h1>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
-          </>
+        </div>
         )}
-      </div>
+    
 
       <div className="bottom">
         <div className="page-indicator">

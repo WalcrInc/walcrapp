@@ -1,4 +1,13 @@
-import Document, { Html, Head, Main, NextScript } from "next/document";
+
+
+
+
+import Document, {
+  Html,
+  Head,
+  Main,
+  NextScript,
+} from "next/document";
 import { ServerStyleSheet } from "styled-components";
 
 export default class MyDocument extends Document {
@@ -6,18 +15,18 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-          />
-          <meta name="HandheldFriendly" content="true" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
             rel="preconnect"
             href="https://fonts.gstatic.com"
             crossOrigin="anonymous"
           />
-          <NextScript />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200&display=swap"
+            rel="stylesheet"
+          ></link>
+        </Head>
+        <NextScript />
           {/* Disable pinch zooming */}
           <script
             dangerouslySetInnerHTML={{
@@ -28,7 +37,6 @@ export default class MyDocument extends Document {
               `,
             }}
           />
-        </Head>
         <body>
           {/* <ColorModeScript initialColorMode={chTheme.config.initialColorMode} /> */}
           <Main />
@@ -64,3 +72,4 @@ export default class MyDocument extends Document {
     }
   }
 }
+
