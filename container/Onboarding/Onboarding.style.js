@@ -39,7 +39,7 @@ export const OnboardingStyle = styled.div`
   .step-three .text {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
     padding: 3% 6%;
   }
 
@@ -65,7 +65,7 @@ export const OnboardingStyle = styled.div`
   }
 
   .bottom .body {
-    margin-bottom: 20px;
+    /* margin-bottom: -10px; */
   }
 
   .indicator {
