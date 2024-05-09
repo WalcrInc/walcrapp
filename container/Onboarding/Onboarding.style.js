@@ -10,7 +10,7 @@ export const OnboardingStyle = styled.div`
   
 
   .text h1 {
-    font-size: 35px;
+    font-size: 50px;
     font-weight: 800;
     line-height: 50px;
   }
@@ -31,7 +31,7 @@ export const OnboardingStyle = styled.div`
     flex-direction:column ;
     position:absolute ;
     top:150px ;
-    margin:40%  auto;
+    margin:70%  auto ;
 
   }
 
