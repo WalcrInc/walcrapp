@@ -2,76 +2,78 @@ import styled from "styled-components";
 
 export const OnboardingStyle = styled.div`
   display: flex;
-  flex-direction:column ;
-  width:100% ;
-  height:100% ;
-  
-
-  .text h1 {
-    font-size: 40px;
-    font-weight: 800;
-  }
-  .text p {
-    font-size: 16px;
-    font-weight: 400;
-    color: #5b6178;
-  }
-
-  .step-two .text {
-    padding:0 6%;
-    display:flex ;
-    flex-direction:column;
-    gap:10px;
-  }
-  .step-two {
-    display:flex ;
-    flex-direction:column ;
-    gap:10px;
-   position:fixed ;
-  margin:auto ;
-  top:20% ;
-
-  }
+  flex-direction: column;
+  /* gap:20px; */
+  width: 100%;
+  height: 100dvh;
 
   .header {
     padding: 6%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position:absolute ;
-    top:0 ;
-    width:100% ;
-    
+    height: 10vh;
   }
 
-
+  .step-one,
+  .step-two,
+  .step-three {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: fit-content;
+    margin: auto;
+  }
 
   .icon {
-    margin: auto;
+    background: url("/images/person.svg");
+    height: 300px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .step-one .text,
+  .step-two .text,
+  .step-three .text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 3% 6%;
+  }
+
+  .text h1 {
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 50px;
+  }
+  .text p {
+    font-size: 18px;
+    font-weight: 400;
+    color: #5b6178;
   }
 
   .bottom {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    padding:  5%;
-    position:absolute ;
-    bottom:0% ;
-    width:100% ;
+    position: absolute;
+    bottom: 2%;
+    width: 100%;
+    left: 0;
   }
 
-  .bottom .text {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    
+  .bottom .body {
+    margin-bottom: 20px;
   }
 
   .indicator {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    width: 100%;
+    padding: 0 6%;
   }
 
   .page-indicator span {
@@ -81,6 +83,7 @@ export const OnboardingStyle = styled.div`
     border-radius: 50%;
     margin-right: 8px;
     background-color: #8c92ab;
+    transition: 0.5s ease-in-out;
   }
 
   .page-indicator span.active {
@@ -88,7 +91,4 @@ export const OnboardingStyle = styled.div`
     width: 30px;
     border-radius: 10px;
   }
-
-
-  
 `;

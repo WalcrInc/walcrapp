@@ -23,75 +23,66 @@ const Onboarding = () => {
 
   return (
     <OnboardingStyle>
-     
-        {(currentStep === 2 || currentStep === 3) && (
-          <header className="header">
-            <span onClick={handlPrev}>
-              <BackIcon />
-            </span>
-            <p onClick={handleRoute}>Skip</p>
-          </header>
-        )}
+      {currentStep === 1 && (
+        <header className="header">
+          {/* <span onClick={handlPrev}>
+            <BackIcon />
+          </span>
+          <p onClick={handleRoute}>Skip</p> */}
+        </header>
+      )}
+      {(currentStep === 2 || currentStep === 3) && (
+        <header className="header">
+          <span onClick={handlPrev}>
+            <BackIcon />
+          </span>
+          <p onClick={handleRoute}>Skip</p>
+        </header>
+      )}
 
-        <div className="step-two">
-          {currentStep === 1 && (
-            <>
-              <div className="icon">
-                <Image
-                  src={"/images/one.svg"}
-                  width={355}
-                  height={404}
-                  alt="bike"
-                  objectFit="contain"
-                />
-              </div>
-              <div className="text">
-                <h1>Lorem ipsum dolor sit amet</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              </div>
-            </>
-          )}
-        </div>
-
-        <div className="step-two">
-          {currentStep === 2 && (
-            <>
-              <div className="icon">
-                <Image
-                  src={"/images/person.svg"}
-                  width={355}
-                  height={404}
-                  alt="bike"
-                  objectFit="contain"
-                />
-              </div>
-              <div className="text">
-                <h1>Lorem ipsum dolor sit amet</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              </div>
-            </>
-          )}
-        </div>
-
-        {currentStep === 3 && (
-          <div className="step-two">
-            <div className="icon">
-              <Image
-                src={"/images/person.svg"}
-                width={355}
-                height={404}
-                alt="bike"
-                objectFit="contain"
-              />
-            </div>
-            <div className="text">
-              <h1>Lorem ipsum dolor sit amet</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
+      <div className="bottom">
+        <div className="body">
+          <div className="step-one">
+            {currentStep === 1 && (
+              <>
+                <div className="icon"></div>
+                <div className="text">
+                  <h1>Lorem ipsum dolor sit amet</h1>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                </div>
+              </>
+            )}
           </div>
-        )}
-
-        <div className="bottom">
+          <div className="step-two">
+            {currentStep === 2 && (
+              <>
+                <div className="icon"></div>
+                <div className="text">
+                  <h1>Lorem ipsum dolor sit amet</h1>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                </div>
+              </>
+            )}
+          </div>
+          <div className="step-three">
+            {currentStep === 3 && (
+              <>
+                <div className="icon"></div>
+                <div className="text">
+                  <h1>Lorem ipsum dolor sit amet</h1>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+        <div className="indicator">
           <div className="page-indicator">
             {[...Array(totalSteps)].map((_, index) => (
               <span
@@ -112,6 +103,7 @@ const Onboarding = () => {
             )}
           </div>
         </div>
+      </div>
     </OnboardingStyle>
   );
 };
