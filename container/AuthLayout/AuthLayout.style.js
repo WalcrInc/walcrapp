@@ -32,7 +32,7 @@ export const AuthStyle = styled.div`
     color:#FB2047 ;
     font-size:12px ;
     display:flex ;
-    gap:10px;
+    gap:5px;
     margin-top:10px ;
   }
   .options {
