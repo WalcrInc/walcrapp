@@ -1,14 +1,17 @@
 import styled from "styled-components";
 
 export const OnboardingStyle = styled.div`
-  display: grid;
-  /* grid-template-rows: auto 1fr auto; */
-  /* height: 100dvh; */
+  display: flex;
+  flex-direction:column ;
+  height: 100dvh;
+  position:relative ;
+  object-fit: contain;
+  width:100% ;
   
 
   .text h1 {
     font-size: 35px;
-    font-weight: 500;
+    font-weight: 800;
     line-height: 50px;
   }
   .text p {
@@ -18,13 +21,18 @@ export const OnboardingStyle = styled.div`
   }
 
   .step-two .text {
-    padding: 6%;
+    padding:0 6%;
+    display:flex ;
+    flex-direction:column;
+    gap:20px;
   }
   .step-two {
-    
-    display: grid;
-    /* grid-template-rows: auto 1fr auto; */
-    row-gap:60px;
+    display:flex ;
+    flex-direction:column ;
+    position:absolute ;
+    top:150px ;
+    margin:40%  auto;
+
   }
 
   .header {
@@ -32,7 +40,13 @@ export const OnboardingStyle = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position:absolute ;
+    top:0 ;
+    width:100% ;
+    
   }
+
+
 
   .icon {
     margin: auto;
@@ -42,7 +56,10 @@ export const OnboardingStyle = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 5%;
+    padding:  5%;
+    position:absolute ;
+    bottom:0% ;
+    width:100% ;
   }
 
   .bottom .text {
@@ -78,10 +95,8 @@ export const OnboardingStyle = styled.div`
 
   @media screen and (max-width: 500px){
     .step-two {
-    
-    display: grid;
-    /* grid-template-rows: auto 1fr auto; */
-    row-gap:10px;
+    top:10px ;
+    margin:25% auto ;
   }
   }
 `;

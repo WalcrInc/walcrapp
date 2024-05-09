@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 
 const Onboarding = () => {
   const [currentStep, setCurrentStep] = useState(1);
-  const totalSteps = 2;
+  const totalSteps = 3;
   const router = useRouter();
 
   const handleNext = () => {
@@ -22,16 +22,18 @@ const Onboarding = () => {
 
   return (
     <OnboardingStyle>
-      <div className="step-two">
-      {currentStep === 1 && (
-          <>
-            <header className="header">
-              {/* <span onClick={handlPrev}>
-                <BackIcon />
-              </span> */}
+      {(currentStep === 2 || currentStep === 3) && (
+        <header className="header">
+          <span onClick={handlPrev}>
+            <BackIcon />
+          </span>
+          <p onClick={handleRoute}>Skip</p>
+        </header>
+      )}
 
-              <p style={{color:"white"}} onClick={handleRoute}>Skip</p>
-            </header>
+      <div className="step-two">
+        {currentStep === 1 && (
+          <>
             <div className="icon">
               <Image
                 src={"/images/one.svg"}
@@ -52,13 +54,27 @@ const Onboarding = () => {
       <div className="step-two">
         {currentStep === 2 && (
           <>
-            <header className="header">
-              <span onClick={handlPrev}>
-                <BackIcon />
-              </span>
+            <div className="icon">
+              <Image
+                src={"/images/person.svg"}
+                width={355}
+                height={404}
+                alt="bike"
+                objectFit="contain"
+              />
+            </div>
+            <div className="text">
+              <h1>Lorem ipsum dolor sit amet</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+          </>
+        )}
+      </div>
 
-              <p onClick={handleRoute}>Skip</p>
-            </header>
+      <div className="step-two">
+        {currentStep === 3 && (
+          <>
+          
             <div className="icon">
               <Image
                 src={"/images/person.svg"}
