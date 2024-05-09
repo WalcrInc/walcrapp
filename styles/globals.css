@@ -114,10 +114,12 @@ a {
 body {
   display: none;
   font-family: "Mulish", sans-serif;
+  touch-action: manipulation;
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
   body {
+    touch-action: pan-y;
     display: block;
     transition: all 1s linear;
     background-repeat: no-repeat;
@@ -134,6 +136,7 @@ body {
 }
 @media screen and (max-width: 769px) {
   body {
+    touch-action: pan-y;
     display: block;
     width: 100%;
     transition: all 1s linear;
