@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const OnboardingStyle = styled.div`
   display: flex;
   flex-direction:column ;
+  width:100% ;
+  height:100% ;
   
 
   .text h1 {
@@ -25,9 +27,10 @@ export const OnboardingStyle = styled.div`
   .step-two {
     display:flex ;
     flex-direction:column ;
-    position:absolute ;
-    top:100px ;
-    margin:50%  auto;
+    gap:10px;
+   position:absolute ;
+  margin:auto ;
+  top:20% ;
 
   }
 
@@ -89,10 +92,5 @@ export const OnboardingStyle = styled.div`
   }
 
 
-  /* @media screen and (max-width: 500px){
-    .step-two {
-    top:-150px ;
-    padding:5% auto ;
-  }
-  } */
+  
 `;
