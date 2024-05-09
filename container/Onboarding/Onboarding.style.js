@@ -26,8 +26,8 @@ export const OnboardingStyle = styled.div`
     display:flex ;
     flex-direction:column ;
     position:absolute ;
-    top:150px ;
-    padding:60%  0;
+    top:100px ;
+    margin:50%  auto;
 
   }
 
@@ -89,10 +89,10 @@ export const OnboardingStyle = styled.div`
   }
 
 
-  @media screen and (max-width: 500px){
+  /* @media screen and (max-width: 500px){
     .step-two {
     top:-150px ;
     padding:5% auto ;
   }
-  }
+  } */
 `;
