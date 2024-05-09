@@ -96,7 +96,7 @@ export const OnboardingStyle = styled.div`
   @media screen and (max-width: 500px){
     .step-two {
     top:10px ;
-    margin:15% auto ;
+    margin:5% auto ;
   }
   }
 `;
