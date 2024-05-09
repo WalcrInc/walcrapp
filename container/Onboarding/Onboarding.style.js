@@ -8,12 +8,11 @@ export const OnboardingStyle = styled.div`
   
 
   .text h1 {
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 800;
-    line-height: 50px;
   }
   .text p {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
     color: #5b6178;
   }
@@ -22,13 +21,13 @@ export const OnboardingStyle = styled.div`
     padding:0 6%;
     display:flex ;
     flex-direction:column;
-    gap:20px;
+    gap:10px;
   }
   .step-two {
     display:flex ;
     flex-direction:column ;
     gap:10px;
-   position:absolute ;
+   position:fixed ;
   margin:auto ;
   top:20% ;
 
@@ -82,7 +81,6 @@ export const OnboardingStyle = styled.div`
     border-radius: 50%;
     margin-right: 8px;
     background-color: #8c92ab;
-    transition: 0.5s ease-in-out;
   }
 
   .page-indicator span.active {
