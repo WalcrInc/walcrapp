@@ -6,9 +6,18 @@ import { FormWithPhone } from "./Form/FormWithPhone";
 import { Box } from "@chakra-ui/react";
 import useLogin from "@/hooks/useLoginHook/useLoginHook";
 import { CustomButton } from "@/components/Button/Button";
+import { Spinner } from "@/components/Spinner/Spinner";
 
 const Login = () => {
-  const { handleSelected, handlePhone, selectedOption, formik } = useLogin();
+  const {
+    handleSelected,
+    handlePhone,
+    selectedOption,
+    formik,
+    setKeepSignedIn,
+    keepSignedIn,
+    isLoading
+  } = useLogin();
 
   return (
     <>
@@ -51,9 +60,14 @@ const Login = () => {
         )}
 
         <Box display={"flex"} justifyContent={"space-between"}>
-          <div className="checkbox">
-            <input type="checkbox" /> Keep me signed in
-          </div>
+          <label className="checkbox">
+            <input
+              checked={keepSignedIn}
+              onChange={(e) => setKeepSignedIn(e.target.checked)}
+              type="checkbox"
+            />{" "}
+            Keep me signed in
+          </label>
           <span className="span">
             <Link href={"/forgot-password"}>Forgot password</Link>
           </span>
@@ -64,7 +78,8 @@ const Login = () => {
           variant={"default"}
           onClick={formik.handleSubmit}
         >
-          Continue
+          {isLoading ? <Spinner/> :"Continue"}
+          
         </CustomButton>
       </form>
 

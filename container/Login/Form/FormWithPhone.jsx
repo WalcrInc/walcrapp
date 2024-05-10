@@ -2,7 +2,7 @@ import { Box, Button, FormControl, FormLabel, Input } from "@chakra-ui/react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import Link from "next/link";
-import { AlertIcon, Show, USA } from "@/assets";
+import { AlertIcon, DontShow, PasswordIcon, Show, USA } from "@/assets";
 import ShowPassword from "@/hooks/useLoginHook/useLoginHook";
 
 const FormWithPhone = ({ handlePhone, formik }) => {
@@ -42,7 +42,6 @@ const FormWithPhone = ({ handlePhone, formik }) => {
             {...formik.getFieldProps("phoneNumber")}
           />
         </Box>
-       
       </FormControl>
       <FormControl>
         <FormLabel fontSize={"16px"} color={"#1A1A1A"} fontWeight={"700"}>
@@ -64,7 +63,7 @@ const FormWithPhone = ({ handlePhone, formik }) => {
             width={"100%"}
             placeholder="*****"
             _placeholder={{
-             fontSize:"16px"
+              fontSize: "16px",
             }}
             border={"none"}
             type={show ? "text" : "password"}
@@ -72,10 +71,8 @@ const FormWithPhone = ({ handlePhone, formik }) => {
             {...formik.getFieldProps("phonePassword")}
           />
           <span onClick={handleShow}>
-            <Show />
-          </span>
+          {show ? <PasswordIcon /> :<DontShow/>}</span>
         </Box>
-        
       </FormControl>
     </>
   );

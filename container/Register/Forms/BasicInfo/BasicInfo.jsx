@@ -1,4 +1,11 @@
-import { AlertIcon, AppleIcon, GoogleIcon, Show } from "@/assets";
+import {
+  AlertIcon,
+  AppleIcon,
+  DontShow,
+  GoogleIcon,
+  PasswordIcon,
+  Show,
+} from "@/assets";
 import { CustomButton } from "@/components/Button/Button";
 import useRegister from "@/hooks/useRegisterHook/useRegister";
 import { Box, FormControl, FormLabel, Input } from "@chakra-ui/react";
@@ -7,7 +14,8 @@ import React from "react";
 import { BasicInfoStyle } from "./BasicInfo.style";
 
 const BasicInfo = ({ handleNext }) => {
-  const { formik, step, show, handleShow } = useRegister();
+  const { formik, show, handleShow, keepSignedIn, setKeepSignedIn } =
+    useRegister();
 
   return (
     <BasicInfoStyle>
@@ -37,6 +45,7 @@ const BasicInfo = ({ handleNext }) => {
             box-shadow={"0px 0px 0px 1px #CDD1DC"}
             padding={"25px 14px"}
             type="text"
+            placeholder="First Name"
             border={
               formik.touched.firstname && formik.errors.firstname
                 ? "1px solid #FB2047"
@@ -53,6 +62,7 @@ const BasicInfo = ({ handleNext }) => {
             box-shadow={"0px 0px 0px 1px #CDD1DC"}
             padding={"25px 14px"}
             type="text"
+            placeholder="Last Name"
             border={
               formik.touched.lastname && formik.errors.lastname
                 ? "1px solid #FB2047"
@@ -69,9 +79,12 @@ const BasicInfo = ({ handleNext }) => {
             box-shadow={"0px 0px 0px 1px #CDD1DC"}
             padding={"25px 14px"}
             type="email"
+            placeholder="Email Address"
             {...formik.getFieldProps("email")}
             border={
-              formik.touched.email &&  formik.errors.email ? "1px solid #FB2047" : "1px solid  #CDD1DC"
+              formik.touched.email && formik.errors.email
+                ? "1px solid #FB2047"
+                : "1px solid  #CDD1DC"
             }
           />
         </FormControl>
@@ -86,7 +99,7 @@ const BasicInfo = ({ handleNext }) => {
             padding={"5px 15px"}
             focusBorderColor="0.5px solid #CDD1DC"
             border={
-              formik.touched.password &&  formik.errors.password
+              formik.touched.password && formik.errors.password
                 ? "1px solid #FB2047"
                 : "1px solid  #CDD1DC"
             }
@@ -96,18 +109,24 @@ const BasicInfo = ({ handleNext }) => {
               border={"none"}
               type={show ? "text" : "password"}
               padding={"0"}
+              placeholder="*************"
               {...formik.getFieldProps("password")}
             />
             <span onClick={handleShow}>
-              <Show />
+              {show ? <PasswordIcon /> : <DontShow />}
             </span>
           </Box>
         </FormControl>
         <Box display={"flex"} justifyContent={"space-between"}>
-          <div className="checkbox">
-            <input type="checkbox" /> I agree to the{" "}
-            <span>Terms of Service </span> and <span>Policy</span>
-          </div>
+          <label className="checkbox">
+            <input
+              checked={keepSignedIn}
+              onChange={(e) => setKeepSignedIn(e.target.checked)}
+              type="checkbox"
+            />{" "}
+            I agree to the <span>Terms of Service </span> and{" "}
+            <span>Policy</span>
+          </label>
         </Box>
 
         <CustomButton
@@ -123,7 +142,7 @@ const BasicInfo = ({ handleNext }) => {
         Already have an account?
         <span style={{ color: "#1A1A1A", fontWeight: "700" }}>
           {" "}
-          <Link href={"/login"}>Login</Link>{" "}
+          <Link href={"/login"}>Sign In</Link>{" "}
         </span>
       </Box>
     </BasicInfoStyle>

@@ -1,4 +1,4 @@
-import { AlertIcon, Show } from "@/assets";
+import { AlertIcon, DontShow, PasswordIcon, Show } from "@/assets";
 import ShowPassword from "@/hooks/useLoginHook/useLoginHook";
 import { Button, FormControl, FormLabel, Input, Box } from "@chakra-ui/react";
 import Link from "next/link";
@@ -48,8 +48,8 @@ const FormWithEmail = ({ formik }) => {
             {...formik.getFieldProps("emailPassword")}
           />
           <span onClick={handleShow}>
-            {" "}
-            <Show />
+           {show ? <PasswordIcon /> :<DontShow/>}
+           
           </span>
         </Box>
       </FormControl>

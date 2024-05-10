@@ -1,24 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { useFormik } from "formik";
-import * as Yup from "yup";
-import "yup-phone-lite";
 import { useDispatch, useSelector } from "react-redux";
-import { login, register } from "@/features/Redux/authSlice";
-import {
-  Alert,
-  AlertIcon,
-  AlertTitle,
-  AlertDescription,
-} from "@chakra-ui/react";
+import { login,  } from "@/features/Redux/authSlice";
+import { useRouter } from "next/router";
 
 const useLogin = () => {
-  const { isSuccess, isError, user, message } = useSelector(
+  const { isSuccess, isError, user, message, isLoading } = useSelector(
     (state) => state.auth
   );
+  const router  = useRouter()
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
   const [selectedOption, setSelectedOption] = useState("email");
-
+  const [keepSignedIn, setKeepSignedIn] = useState(false);
   const handleShow = () => {
     setShow(!show);
   };
@@ -78,22 +72,15 @@ const useLogin = () => {
     },
   });
 
-  // useEffect(() => {
-  //   if (isSuccess && user) {
-  //     <Alert status="success">
-  //       <AlertIcon />
-  //       {message}
-  //     </Alert>;
-  //     router.push("/dahboard");
-  //   }
+  useEffect(() => {
+    if (isSuccess && user) {
+      router.push("/dashboard");
+    }
 
-  //   if (isError) {
-  //     <Alert status="error">
-  //       <AlertIcon />
-  //       {message}
-  //     </Alert>;
-  //   }
-  // }, [isError, message, isSuccess, user]);
+    if (isError) {
+      console.log(message)
+    }
+  }, [isError, message, isSuccess, user]);
 
   return {
     show,
@@ -101,6 +88,9 @@ const useLogin = () => {
     handleShow,
     handleSelected,
     formik,
+    keepSignedIn,
+    setKeepSignedIn,
+    isLoading
   };
 };
 

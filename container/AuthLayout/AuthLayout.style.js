@@ -42,9 +42,28 @@ export const AuthStyle = styled.div`
     align-items:center ;
     margin-top:10px ;
   }
-  .options {
+ .options {
     display: flex;
     gap: 20px;
+  }
+
+  .option {
+    color: #5b6178;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .active::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #f18341;
+    transition: width 0.5s ease-in-out;
   }
 
   form {
@@ -53,6 +72,9 @@ export const AuthStyle = styled.div`
     gap: 15px;
   }
   .checkbox {
+    display:flex ;
+    align-items:center ;
+    gap:5px;
     color: #1a1a1a;
     font-size: 16px;
     font-weight: 400;
@@ -62,7 +84,7 @@ export const AuthStyle = styled.div`
   }
   .span a {
     color: #1a1a1a;
-    font-size: 12px;
+    font-size: 16px;
     text-decoration: underline;
   }
 

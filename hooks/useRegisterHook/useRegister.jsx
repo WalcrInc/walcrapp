@@ -6,6 +6,7 @@ import { register } from "@/features/Redux/authSlice";
 const useRegister = () => {
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
+  const [keepSignedIn, setKeepSignedIn] = useState(false);
 
   const handleShow = () => {
     setShow(!show);
@@ -60,7 +61,7 @@ const useRegister = () => {
       dispatch(register(values));
     },
   });
-  return { formik, show, handleShow };
+  return { formik, show, handleShow, keepSignedIn, setKeepSignedIn };
 };
 
 export default useRegister;
