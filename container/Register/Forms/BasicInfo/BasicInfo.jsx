@@ -17,6 +17,16 @@ const BasicInfo = ({ handleNext }) => {
   const { formik, show, handleShow, keepSignedIn, setKeepSignedIn } =
     useRegister();
 
+    
+const handleSubmit = () => {
+  if (formik.isValid) {
+    const serializedData = JSON.stringify(formik.values);
+    localStorage.setItem("formDataStep1", serializedData);
+    handleNext(formik.values);
+  }
+};
+
+
   return (
     <BasicInfoStyle>
       <div className="header">
@@ -36,7 +46,7 @@ const BasicInfo = ({ handleNext }) => {
 
       <div className="or">or</div>
 
-      <form>
+      <form onSubmit={handleSubmit}>
         <FormControl>
           <FormLabel fontSize={"16px"} color={"#1A1A1A"} fontWeight={"700"}>
             First Name
@@ -132,7 +142,7 @@ const BasicInfo = ({ handleNext }) => {
         <CustomButton
           disabled={!formik.isValid}
           variant={"default"}
-          onClick={handleNext}
+          
         >
           Continue
         </CustomButton>

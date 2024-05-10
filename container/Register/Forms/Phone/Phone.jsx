@@ -5,11 +5,32 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { ForgotStyle } from "./Phone.style";
 import { useRouter } from "next/router";
-import useRoutes from "@/hooks/Routes/Routes";
-import Link from "next/link";
+import { useFormik } from "formik";
 
 const Phone = ({ handleNext, handlePrev }) => {
   const router = useRouter();
+  const formik = useFormik({
+    initialValues: {
+      phone_number: "+1",
+    },
+    validate: (values) => {
+      const errors = {};
+
+      if (!values.phone_number === "") {
+        errors.phone_number = "Required";
+      } else if (!/^\+1\d{10}$/.test(values.phone_number)) {
+        errors.phone_number = "Invalid US number";
+      }
+    },
+  });
+
+  const handleSubmit = () => {
+    if (formik.isValid) {
+      const serializedData = JSON.stringify(formik.values);
+      localStorage.setItem("formDataStep2", serializedData);
+      handleNext(formik.values);
+    }
+  };
 
   return (
     <ForgotStyle>
@@ -23,7 +44,7 @@ const Phone = ({ handleNext, handlePrev }) => {
         <p>We’ll send a code for verification</p>
       </div>
 
-      <form>
+      <form onSubmit={handleSubmit}>
         <FormControl>
           <FormLabel fontSize={"16px"} color={"#1A1A1A"} fontWeight={"700"}>
             Phone number
@@ -36,12 +57,11 @@ const Phone = ({ handleNext, handlePrev }) => {
               padding={" 12px"}
               alignItems={"center"}
               borderRadius={"4px"}
-              border={"1px solid  #CDD1DC"}
-              // border={
-              //   formik.errors.phoneNumber
-              //     ? "1px solid #FB2047"
-              //     : "1px solid  #CDD1DC"
-              // }
+              border={
+                formik.errors.phone_number
+                  ? "1px solid #FB2047"
+                  : "1px solid  #CDD1DC"
+              }
             >
               <USA />
             </Box>
@@ -49,23 +69,23 @@ const Phone = ({ handleNext, handlePrev }) => {
               padding={"25px 14px"}
               type="tel"
               placeholder="Enter phone number"
-              // border={
-              //   formik.errors.phoneNumber
-              //     ? "1px solid #FB2047"
-              //     : "1px solid  #CDD1DC"
-              // }
-              // {...formik.getFieldProps("phoneNumber")}
+              border={
+                formik.errors.phone_number
+                  ? "1px solid #FB2047"
+                  : "1px solid  #CDD1DC"
+              }
+              {...formik.getFieldProps("phone_number")}
             />
           </Box>
         </FormControl>
         <Button
-          onClick={handleNext}
           border={"none"}
           outline={"none"}
           color={"#fff"}
           background={"#1A1A1A"}
           padding={"25px 14px"}
           borderRadius={"16px"}
+          type="submit"
         >
           Continue
         </Button>

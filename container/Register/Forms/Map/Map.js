@@ -24,7 +24,7 @@ const Map = ({ coordinates, onMapClick }) => {
     markerRef.current = new mapboxgl.Marker(markerElement);
 
     // Set marker on initial coordinates
-    markerRef.current?.setLngLat(coordinates).addTo(map);
+    markerRef.current.setLngLat(coordinates).addTo(map);
 
     // Add click event listener to the map
     map.on('click', (e) => {

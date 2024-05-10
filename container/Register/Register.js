@@ -9,6 +9,43 @@ const Register = () => {
   const [step, setStep] = useState(1);
   const { formik } = useRegister();
 
+//   // In the Register component
+// const [userData, setUserData] = useState({
+//   firstname: "",
+//   lastname: "",
+//   email: "",
+//   phone_number: "",
+//   address: "",
+//   password: ""
+// });
+
+// // Function to merge form data from local storage
+// const mergeFormData = () => {
+//   // Retrieve serialized form data from local storage
+//   const formDataStep1 = localStorage.getItem("formDataStep1");
+//   const formDataStep2 = localStorage.getItem("formDataStep2");
+//   const formDataStep3 = localStorage.getItem("formDataStep3");
+//   const formDataStep4 = localStorage.getItem("formDataStep4");
+
+//   // Deserialize form data
+//   const parsedFormDataStep1 = JSON.parse(formDataStep1);
+//   const parsedFormDataStep2 = JSON.parse(formDataStep2);
+//   const parsedFormDataStep3 = JSON.parse(formDataStep3);
+//   const parsedFormDataStep4 = JSON.parse(formDataStep4);
+
+//   // Merge form data into one object
+//   const mergedData = {
+//     ...parsedFormDataStep1,
+//     ...parsedFormDataStep2,
+//     ...parsedFormDataStep3,
+//     ...parsedFormDataStep4
+//   };
+
+//   // Update state with merged data
+//   setUserData(mergedData);
+// };
+
+
   console.log(formik.values.firstname);
   let data;
   const handleNext = () => {

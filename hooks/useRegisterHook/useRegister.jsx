@@ -16,9 +16,7 @@ const useRegister = () => {
       firstname: "",
       lastname: "",
       email: "",
-      // phone_number: "+1",
       password: "",
-      // address: "",
     },
     validate: (values) => {
       const errors = {};

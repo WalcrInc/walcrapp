@@ -1,9 +1,9 @@
 // AddressInput.js
+
 import { Button, Input } from "@chakra-ui/react";
-import React from "react";
 import { InputStyle } from "./Input.style";
 
-const AddressInput = ({ value, onChange }) => {
+const AddressInput = ({ value, onChange, onSubmit }) => {
   const handleChange = (e) => {
     const value = e.target.value;
     onChange(value);
@@ -15,7 +15,7 @@ const AddressInput = ({ value, onChange }) => {
         <h1> Address</h1>
         <p>Add a delivery address</p>
       </div>
-      <form>
+      <form onSubmit={onSubmit}> {/* Add onSubmit handler */}
         <Input
           boxShadow={"0px 0px 0px 1px #CDD1DC"}
           type="text"
@@ -25,6 +25,7 @@ const AddressInput = ({ value, onChange }) => {
           size={"lg"}
         />
         <Button
+          type="submit" 
           size={"lg"}
           background={"#1A1A1A"}
           color={"#fff"}
@@ -37,4 +38,4 @@ const AddressInput = ({ value, onChange }) => {
   );
 };
 
-export default AddressInput;
+export default AddressInput
