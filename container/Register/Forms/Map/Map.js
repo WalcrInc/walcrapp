@@ -24,7 +24,7 @@ const Map = ({ coordinates, onMapClick }) => {
     markerRef.current = new mapboxgl.Marker(markerElement);
 
     // Set marker on initial coordinates
-    markerRef.current.setLngLat(coordinates).addTo(map);
+    markerRef.current?.setLngLat(coordinates).addTo(map);
 
     // Add click event listener to the map
     map.on('click', (e) => {
@@ -38,7 +38,7 @@ const Map = ({ coordinates, onMapClick }) => {
     return () => map.remove(); // Clean up the map instance
   }, [coordinates, onMapClick]);
 
-  return <div ref={mapContainerRef} style={{ width: '100%', height: '400px' }} />;
+  return <div ref={mapContainerRef} style={{ width: '100%', height: '55dvh', position:"relative" }} />;
 };
 
 export default Map;

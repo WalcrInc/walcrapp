@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const AuthStyle = styled.div`
+export const BasicInfoStyle = styled.div`
   display: flex;
   flex-direction: column;
   gap: 30px;

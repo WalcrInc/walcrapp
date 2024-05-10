@@ -3,8 +3,9 @@ import styled from "styled-components";
 export const InputStyle = styled.div`
   background: #fff;
   box-shadow: 0px 10px 30px 3px #05103726;
-  position: absolute;
-  /* top:-50px ; */
+  position: relative;
+  top:-30px ;
+  left:0 ;
   bottom: 0;
   width: 100%;
   padding: 5%;

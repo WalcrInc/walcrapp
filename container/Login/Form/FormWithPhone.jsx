@@ -42,12 +42,7 @@ const FormWithPhone = ({ handlePhone, formik }) => {
             {...formik.getFieldProps("phoneNumber")}
           />
         </Box>
-        {formik.errors.phoneNumber && formik.touched.phoneNumber ? (
-          <span className="error">
-            <AlertIcon />
-            {formik.errors.phoneNumber}
-          </span>
-        ) : null}
+       
       </FormControl>
       <FormControl>
         <FormLabel fontSize={"16px"} color={"#1A1A1A"} fontWeight={"700"}>
@@ -80,12 +75,7 @@ const FormWithPhone = ({ handlePhone, formik }) => {
             <Show />
           </span>
         </Box>
-        {formik.errors.phonePassword && formik.touched.phonePassword ? (
-          <span className="error">
-            <AlertIcon />
-            {formik.errors.phonePassword}
-          </span>
-        ) : null}
+        
       </FormControl>
     </>
   );

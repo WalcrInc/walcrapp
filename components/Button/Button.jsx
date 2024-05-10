@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "@chakra-ui/react";
 
-const CustomButton = ({ children, onClick, type, variant, ...rest }) => {
+const CustomButton = ({ children, onClick, type, variant,disabled, ...rest }) => {
   return variant === "default" ? (
     <Button
       border={"none"}
@@ -12,7 +12,11 @@ const CustomButton = ({ children, onClick, type, variant, ...rest }) => {
       borderRadius={"16px"}
       {...rest}
       onClick={onClick}
-      type="submit"
+      type={"submit"}
+      isDisabled={disabled}
+      _disabled={{
+        background: "grey"
+      }}
     >
       {children}
     </Button>

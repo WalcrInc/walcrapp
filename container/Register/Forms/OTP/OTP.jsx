@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { OTPStyle } from "./OTP.style";
 import Link from "next/link";
 
-const OTP = () => {
+const OTP = ({handlePrev, handleNext}) => {
   const [otpValues, setOtpValues] = useState(["", "", "", ""]);
 
   const handleOtpChange = (index, value) => {
@@ -46,9 +46,9 @@ const OTP = () => {
 
   return (
     <OTPStyle>
-      <Link href={"/forgot-password"}>
+      <span onClick={handlePrev}>
         <BackIcon />
-      </Link>
+      </span>
 
       <div className="header">
         <h1> OTP Verification</h1>
@@ -90,6 +90,7 @@ const OTP = () => {
           background={"#1A1A1A"}
           padding={"25px 14px"}
           borderRadius={"16px"}
+          onClick={handleNext}
         >
           Continue
         </Button>

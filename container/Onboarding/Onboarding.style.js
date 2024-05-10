@@ -20,14 +20,14 @@ export const OnboardingStyle = styled.div`
   .step-three {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
     height: fit-content;
     margin: auto;
   }
 
   .icon {
     background: url("/images/person.svg");
-    height: 300px;
+    height: 280px;
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -73,7 +73,7 @@ export const OnboardingStyle = styled.div`
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 0 6%;
+    padding: 3% 6%;
   }
 
   .page-indicator span {
