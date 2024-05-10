@@ -38,7 +38,7 @@ const BasicInfo = ({ handleNext }) => {
             padding={"25px 14px"}
             type="text"
             border={
-              formik.errors.firstname
+              formik.touched.firstname && formik.errors.firstname
                 ? "1px solid #FB2047"
                 : "1px solid  #CDD1DC"
             }
@@ -54,7 +54,7 @@ const BasicInfo = ({ handleNext }) => {
             padding={"25px 14px"}
             type="text"
             border={
-              formik.errors.lastname
+              formik.touched.lastname && formik.errors.lastname
                 ? "1px solid #FB2047"
                 : "1px solid  #CDD1DC"
             }
@@ -71,7 +71,7 @@ const BasicInfo = ({ handleNext }) => {
             type="email"
             {...formik.getFieldProps("email")}
             border={
-              formik.errors.email ? "1px solid #FB2047" : "1px solid  #CDD1DC"
+              formik.touched.email &&  formik.errors.email ? "1px solid #FB2047" : "1px solid  #CDD1DC"
             }
           />
         </FormControl>
@@ -86,7 +86,7 @@ const BasicInfo = ({ handleNext }) => {
             padding={"5px 15px"}
             focusBorderColor="0.5px solid #CDD1DC"
             border={
-              formik.errors.password
+              formik.touched.password &&  formik.errors.password
                 ? "1px solid #FB2047"
                 : "1px solid  #CDD1DC"
             }
