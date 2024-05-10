@@ -44,7 +44,7 @@ export const OnboardingStyle = styled.div`
   }
 
   .text h1 {
-    font-size: 40px;
+    font-size: 50px;
     font-weight: 800;
     line-height: 50px;
   }
