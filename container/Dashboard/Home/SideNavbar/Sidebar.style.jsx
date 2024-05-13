@@ -12,7 +12,7 @@ export const SideNavContainer = styled.div`
   width: 80%;
   /* overflow:hidden ; */
   z-index: 100000;
-  gap: 60px;
+  gap: 20px;
   padding: 6%;
   font-size: 16px;
 
