@@ -12,21 +12,33 @@ export const SideNavContainer = styled.div`
   width: 80%;
   /* overflow:hidden ; */
   z-index: 100000;
-  gap: 30px;
+  gap: 60px;
   padding: 6%;
-  font-size:16px ;
+  font-size: 16px;
 
-  .info, .links, .support, .task-work{
-    display:flex ;
-    flex-direction:column ;
-    gap:35px;
-    background-color:red ;
+  .info,
+  .links,
+  .support,
+  .task-work {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* background-color:red ; */
     /* height:25dvh ; */
   }
-  p{
-    display:flex ;
-    gap:5px;
-    align-items:center ;
+  p {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
+  .links a {
+    text-decoration: none;
+  }
+  .links a:hover {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 3%;
+    border-radius: 4px;
   }
   /* .task-work {
     position: absolute;

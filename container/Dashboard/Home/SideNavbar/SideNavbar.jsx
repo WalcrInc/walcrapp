@@ -1,23 +1,51 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import { SideNavContainer } from "./Sidebar.style";
 import {
   AboutIcon,
+  AddressIcon,
+  CardIcon,
+  EmailIcon,
+  LocationIcon,
   Logo,
   LogoutIcon,
+  MessageIcon,
   PrivacyIcon,
   SupportIcon,
 } from "@/assets";
+import Link from "next/link";
+import useFetchData from "@/hooks/useFetchDataHook/useFetchData";
+import { useSelector } from "react-redux";
 
-const SideNavbar = () => {
+const SideNavbar = ({ showNav, setShowNav, info }) => {
   return (
-    <SideNavContainer>
+    <SideNavContainer onClick={() => setShowNav(!showNav)}>
       <div className="info">
-        <p> Brandon Joe</p>
+        <div>
+          <p>{info?.name}</p>
+          <span>{info?.address}</span>
+        </div>
       </div>
       <div className="links">
-        <p>Saved Cards</p>
-        <p>Address</p>
-        <p>Messages</p>
+        <Link href={"/"}>
+          {" "}
+          <p>
+            <CardIcon />
+            Saved Cards
+          </p>
+        </Link>
+
+        <Link href={"/"}>
+          <p>
+            <AddressIcon /> Address
+          </p>
+        </Link>
+
+        <Link href={"/"}>
+          {" "}
+          <p>
+            <MessageIcon /> Messages
+          </p>
+        </Link>
       </div>
       <div className="support">
         <p>

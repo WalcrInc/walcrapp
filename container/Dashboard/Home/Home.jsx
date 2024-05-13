@@ -35,7 +35,7 @@ const Home = () => {
   };
 
   return (
-    <HomeStyle onClick={()=>setShowNav(!showNav)}>
+    <HomeStyle>
       <div className="header">
         <div className="icon">
           <span onClick={handleShowNav}>
@@ -89,9 +89,8 @@ const Home = () => {
         </div>
       </div>
 
-
-{/* //SideNavbar */}
-      {showNav && <SideNavbar />}
+      {/* //SideNavbar */}
+      {showNav && <SideNavbar info={info} showNav={showNav} setShowNav={setShowNav} />}
     </HomeStyle>
   );
 };
