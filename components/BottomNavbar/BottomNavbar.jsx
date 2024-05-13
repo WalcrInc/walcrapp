@@ -36,11 +36,11 @@ const BottomNavbar = () => {
       </Link>
       <Link
         href={"/dashboard/services"}
-        className={
-          router.pathname === "/dashboard/services"
-            ? `${styled.active}`
-            : `${styled.link}`
-        }
+        // className={
+        //   router.pathname === "/dashboard/services"
+        //     ? `${styled.active}`
+        //     : `${styled.link}`
+        // }
       >
         <BigPlusIcon/>
       </Link>
