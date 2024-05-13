@@ -24,7 +24,7 @@ export const SideNavContainer = styled.div`
     flex-direction: column;
     gap: 20px;
     background-color:red ;
-    height:20dvh ;
+    height:15dvh ;
   }
   p {
     display: flex;
@@ -42,6 +42,6 @@ export const SideNavContainer = styled.div`
   }
   .task-work {
     display:flex ;
-    justify-content:flex-end ;
+    /* justify-content:flex-end ; */
   }
 `;
