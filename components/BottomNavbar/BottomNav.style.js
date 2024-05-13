@@ -8,7 +8,7 @@ padding:5% ;
 
 position:fixed ;
 bottom: 0;
-width:95% ;
+width:100% ;
 margin:0 auto ;
 left:0 ;
 background: #FFFFFF;

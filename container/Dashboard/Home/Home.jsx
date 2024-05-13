@@ -8,15 +8,16 @@ import {
   NotificationIcon,
 } from "@/assets";
 import useFetchData from "@/hooks/useFetchDataHook/useFetchData";
-import { Box, Text } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { HomeStyle } from "./Home.style";
+import { SideNavbar } from "./SideNavbar";
 const Home = () => {
   const { user } = useSelector((state) => state.auth);
   const accessToken = user ? user.data : "";
 
   const [info, setInfo] = useState([]);
+  const [showNav, setShowNav] = useState(false);
 
   const { data } = useFetchData({
     url: "https://walcr-backend.onrender.com/auth/user",
@@ -29,11 +30,18 @@ const Home = () => {
     }
   }, [data]);
 
+  const handleShowNav = () => {
+    setShowNav(!showNav);
+  };
+
   return (
-    <HomeStyle>
+    <HomeStyle onClick={()=>setShowNav(!showNav)}>
       <div className="header">
         <div className="icon">
-          <Hamburger />
+          <span onClick={handleShowNav}>
+            <Hamburger />
+          </span>
+
           <NotificationIcon />
         </div>
         <div className="text">
@@ -82,7 +90,8 @@ const Home = () => {
       </div>
 
 
-
+{/* //SideNavbar */}
+      {showNav && <SideNavbar />}
     </HomeStyle>
   );
 };
