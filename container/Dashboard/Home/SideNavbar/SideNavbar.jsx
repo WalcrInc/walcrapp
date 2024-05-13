@@ -28,7 +28,7 @@ const SideNavbar = ({ showNav, setShowNav, info }) => {
       </div>
 
       <div className="links">
-        <Link href={"/"}>
+        <Link href={"/card"}>
           {" "}
           <p>
             <CardIcon />
@@ -36,13 +36,13 @@ const SideNavbar = ({ showNav, setShowNav, info }) => {
           </p>
         </Link>
 
-        <Link href={"/"}>
+        <Link href={"/address"}>
           <p>
             <AddressIcon /> Address
           </p>
         </Link>
 
-        <Link href={"/"}>
+        <Link href={"/message"}>
           {" "}
           <p>
             <MessageIcon /> Messages
@@ -70,7 +70,7 @@ const SideNavbar = ({ showNav, setShowNav, info }) => {
           Become a Taskwalker
         </p>
       </div>
-      
+
     </SideNavContainer>
   );
 };

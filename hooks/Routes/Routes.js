@@ -16,12 +16,16 @@ const useRoutes = () => {
   const handleOtpRoute = () => {
     return router.push("/forgot-password/otp");
   };
+  const handleDashboardRoute = () => {
+    return router.push("/dashboard");
+  };
 
   return {
     handleLoginRoute,
     handleOtpRoute,
     handleRegisterRoute,
     handleForgotPasswordRoute,
+    handleDashboardRoute
   };
 };
 
