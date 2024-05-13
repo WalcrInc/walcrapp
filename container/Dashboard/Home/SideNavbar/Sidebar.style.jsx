@@ -21,7 +21,7 @@ export const SideNavContainer = styled.div`
     flex-direction:column ;
     gap:35px;
     /* background-color:red ; */
-    height:25dvh ;
+    /* height:25dvh ; */
   }
   p{
     display:flex ;
