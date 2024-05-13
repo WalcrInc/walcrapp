@@ -12,7 +12,7 @@ export const SideNavContainer = styled.div`
   width: 80%;
   /* overflow:hidden ; */
   z-index: 100000;
-  gap: 20px;
+  gap: 50px;
   padding: 6%;
   font-size: 16px;
 
@@ -23,8 +23,8 @@ export const SideNavContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap: 20px;
-    background-color:red ;
-    height:15dvh ;
+    /* background-color:red ; */
+    height: 15dvh;
   }
   p {
     display: flex;
@@ -41,7 +41,16 @@ export const SideNavContainer = styled.div`
     border-radius: 4px;
   }
   .task-work {
-    display:flex ;
-    /* justify-content:flex-end ; */
+    position: absolute;
+    border: 0;
+  }
+
+  @media screen and (max-height:400px) {
+    height: 15dvh;
+  }
+  .task-work {
+    display: flex;
+    justify-content: flex-end;
+    position:relative ;
   }
 `;

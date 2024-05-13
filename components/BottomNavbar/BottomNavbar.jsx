@@ -3,10 +3,14 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import styled from "./BottomNav.module.css";
 import { Container } from "./BottomNav.style";
-import { ActivityIcon, HomeIcon, ProfileIcon, ServiceIcon } from "@/assets";
+import { ActivityIcon, ActivityIconInactive, HomeIconActive, HomeIconInActive, ProfileIcon, ServiceIcon, ServiceIconInactive } from "@/assets";
 
 const BottomNavbar = () => {
   const router = useRouter();
+
+  const getIcon  = (href, activeIcon,  inactiveIcon)=>{
+return router.pathname === "href" ? activeIcon : inactiveIcon
+  }
   return (
     <Container>
       <Link
@@ -17,7 +21,8 @@ const BottomNavbar = () => {
             : `${styled.link}`
         }
       >
-        <HomeIcon/>
+        {router.pathname === "/dashboard" ? <HomeIconActive /> : <HomeIconInActive /> }
+       {/* {getIcon("/dashboard",, )} */}
         Home
       </Link>
       <Link
@@ -28,7 +33,7 @@ const BottomNavbar = () => {
             : `${styled.link}`
         }
       >
-        <ServiceIcon/>
+         {router.pathname === "/dashboard/services" ? <ServiceIcon /> : <ServiceIconInactive /> }
         Services
       </Link>
       <Link
@@ -39,7 +44,8 @@ const BottomNavbar = () => {
             : `${styled.link}`
         }
       >
-        <ActivityIcon/>
+       {router.pathname === "/dashboard/activities" ? <ActivityIcon /> : <ActivityIconInactive /> }
+        
         Activity
       </Link>
       <Link
