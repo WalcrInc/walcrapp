@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const Container = styled.div`
 display:flex ;
 justify-content:space-between ;
-align-items:center ;
+align-items:end ;
 padding:5% ;
 position:fixed ;
 bottom: 0;
