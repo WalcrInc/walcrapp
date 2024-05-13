@@ -603,8 +603,8 @@ export const ForwardIcon = () => (
 
 export const ActivityIcon = () => (
   <svg
-    width="25"
-    height="24"
+    width="18"
+    height="18"
     viewBox="0 0 25 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

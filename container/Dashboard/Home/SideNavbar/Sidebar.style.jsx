@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const SideNavContainer = styled.div`
-  display: flex;
-  flex-direction: column;
+display:grid ;
   position: fixed;
   top: 0dvh;
   bottom: 0;
@@ -17,7 +16,8 @@ export const SideNavContainer = styled.div`
 
   .info,
   .links,
-  .support{
+  .support,
+  .task-work {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -38,10 +38,10 @@ export const SideNavContainer = styled.div`
     padding: 3%;
     border-radius: 4px;
   }
-  .task-work {
+  /* .task-work {
     position: absolute;
     bottom: 20px;
-  }
+  } */
 
  
 `;
