@@ -12,15 +12,15 @@ export const SideNavContainer = styled.div`
   width: 80%;
   /* overflow:hidden ; */
   z-index: 100000;
-  gap: 20px;
+  gap: 30px;
   padding: 6%;
   font-size:16px ;
 
-  .info, .links, .support{
+  .info, .links, .support, .task-work{
     display:flex ;
     flex-direction:column ;
     gap:35px;
-    /* background-color:red ; */
+    background-color:red ;
     /* height:25dvh ; */
   }
   p{
@@ -28,8 +28,8 @@ export const SideNavContainer = styled.div`
     gap:5px;
     align-items:center ;
   }
-  .task-work {
+  /* .task-work {
     position: absolute;
     bottom: 20px;
-  }
+  } */
 `;
