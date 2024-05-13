@@ -8,9 +8,7 @@ import { ActivityIcon, ActivityIconInactive, HomeIconActive, HomeIconInActive, P
 const BottomNavbar = () => {
   const router = useRouter();
 
-  const getIcon  = (href, activeIcon,  inactiveIcon)=>{
-return router.pathname === "href" ? activeIcon : inactiveIcon
-  }
+ 
   return (
     <Container>
       <Link

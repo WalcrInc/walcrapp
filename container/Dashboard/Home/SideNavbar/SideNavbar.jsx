@@ -19,12 +19,14 @@ import { useSelector } from "react-redux";
 const SideNavbar = ({ showNav, setShowNav, info }) => {
   return (
     <SideNavContainer onClick={() => setShowNav(!showNav)}>
+
       <div className="info">
         <div>
           <p>{info?.name}</p>
           <span>{info?.address}</span>
         </div>
       </div>
+
       <div className="links">
         <Link href={"/"}>
           {" "}
@@ -47,6 +49,7 @@ const SideNavbar = ({ showNav, setShowNav, info }) => {
           </p>
         </Link>
       </div>
+
       <div className="support">
         <p>
           <SupportIcon /> Help and Support{" "}
@@ -67,6 +70,7 @@ const SideNavbar = ({ showNav, setShowNav, info }) => {
           Become a Taskwalker
         </p>
       </div>
+      
     </SideNavContainer>
   );
 };
