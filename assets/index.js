@@ -347,20 +347,11 @@ export const DontShow = () => (
 );
 
 export const BackIcon = () => (
-  <svg
-    width="32"
-    height="32"
-    viewBox="0 0 32 32"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      fill-rule="evenodd"
-      clip-rule="evenodd"
-      d="M19.943 24.276C19.4223 24.7967 18.5781 24.7967 18.0574 24.276L10.724 16.9426C10.2033 16.4219 10.2033 15.5777 10.724 15.057L18.0574 7.7237C18.5781 7.203 19.4223 7.203 19.943 7.7237C20.4637 8.24439 20.4637 9.08862 19.943 9.60931L13.5524 15.9998L19.943 22.3904C20.4637 22.9111 20.4637 23.7553 19.943 24.276Z"
-      fill="#1E202C"
-    />
-  </svg>
+  <svg   width="24"
+  height="24" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+</svg>
+
 );
 
 export const AlertIcon = () => (
@@ -1150,3 +1141,14 @@ export const DateIcon = () => (
     />
   </svg>
 );
+
+export const Orange_Card = ()=>(
+  
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 12C2 8.46252 2 6.69377 3.0528 5.5129C3.22119 5.32403 3.40678 5.14935 3.60746 4.99087C4.86213 4 6.74142 4 10.5 4H13.5C17.2586 4 19.1379 4 20.3925 4.99087C20.5932 5.14935 20.7788 5.32403 20.9472 5.5129C22 6.69377 22 8.46252 22 12C22 15.5375 22 17.3062 20.9472 18.4871C20.7788 18.676 20.5932 18.8506 20.3925 19.0091C19.1379 20 17.2586 20 13.5 20H10.5C6.74142 20 4.86213 20 3.60746 19.0091C3.40678 18.8506 3.22119 18.676 3.0528 18.4871C2 17.3062 2 15.5375 2 12Z" stroke="#F18341" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M10 16H11.5" stroke="#F18341" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14.5 16H18" stroke="#F18341" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M2 9H22" stroke="#F18341" stroke-width="2" stroke-linejoin="round"/>
+</svg>
+
+)

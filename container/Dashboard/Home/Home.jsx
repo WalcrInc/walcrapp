@@ -12,12 +12,14 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { HomeStyle } from "./Home.style";
 import { SideNavbar } from "./SideNavbar";
+import { Notification } from "./Notification";
 const Home = () => {
   const { user } = useSelector((state) => state.auth);
   const accessToken = user ? user.data : "";
 
   const [info, setInfo] = useState([]);
   const [showNav, setShowNav] = useState(false);
+  const [showNotification, setShowNotification] = useState(false);
 
   const { data } = useFetchData({
     url: "https://walcr-backend.onrender.com/auth/user",
@@ -33,6 +35,9 @@ const Home = () => {
   const handleShowNav = () => {
     setShowNav(!showNav);
   };
+  const handleShowNotification = () => {
+    setShowNotification(!showNotification);
+  };
 
   return (
     <HomeStyle>
@@ -41,8 +46,9 @@ const Home = () => {
           <span onClick={handleShowNav}>
             <Hamburger />
           </span>
-
-          <NotificationIcon />
+          <span onClick={handleShowNotification}>
+            <NotificationIcon />
+          </span>
         </div>
         <div className="text">
           <h1>
@@ -90,7 +96,15 @@ const Home = () => {
       </div>
 
       {/* //SideNavbar */}
-      {showNav && <SideNavbar info={info} showNav={showNav} setShowNav={setShowNav} />}
+      {showNav && (
+        <SideNavbar info={info} showNav={showNav} setShowNav={setShowNav} />
+      )}
+      {/*Notification*/}
+      {showNotification && (
+        <Notification
+          handleShowNotification={handleShowNotification}
+        />
+      )}
     </HomeStyle>
   );
 };
