@@ -13,6 +13,7 @@ import { useSelector } from "react-redux";
 import { HomeStyle } from "./Home.style";
 import { SideNavbar } from "./SideNavbar";
 import { Notification } from "./Notification";
+import useRoutes from "@/hooks/Routes/Routes";
 const Home = () => {
   const { user } = useSelector((state) => state.auth);
   const accessToken = user ? user.data : "";
@@ -20,6 +21,8 @@ const Home = () => {
   const [info, setInfo] = useState([]);
   const [showNav, setShowNav] = useState(false);
   const [showNotification, setShowNotification] = useState(false);
+
+  const {handleAddCashRoute} = useRoutes()
 
   const { data } = useFetchData({
     url: "https://walcr-backend.onrender.com/auth/user",
@@ -67,7 +70,7 @@ const Home = () => {
           <h1> $20.00</h1>
         </div>
 
-        <div>
+        <div onClick={handleAddCashRoute}>
           <AddIcon />
         </div>
       </div>

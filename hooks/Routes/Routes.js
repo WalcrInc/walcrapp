@@ -19,13 +19,17 @@ const useRoutes = () => {
   const handleDashboardRoute = () => {
     return router.push("/dashboard");
   };
+  const handleAddCashRoute = () => {
+    return router.push("/add-cash");
+  };
 
   return {
     handleLoginRoute,
     handleOtpRoute,
     handleRegisterRoute,
     handleForgotPasswordRoute,
-    handleDashboardRoute
+    handleDashboardRoute,
+    handleAddCashRoute
   };
 };
 
