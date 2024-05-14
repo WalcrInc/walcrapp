@@ -46,8 +46,8 @@ const Card = () => {
       </header>
 
       <div className="body">
-        {step === 1 && <StepOne />}
-        {step === 2 && <StepTwo />}
+        {step === 1 && <StepOne handleNext={handleNext} />}
+        {step === 2 && <StepTwo handleNext={handleNext} />}
         {step === 3 && <StepThree />}
       </div>
     </CardStyle>
