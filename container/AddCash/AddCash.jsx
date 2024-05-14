@@ -4,20 +4,31 @@ import { AddCashStyle } from "./AddCash.style";
 import { Button } from "@chakra-ui/react";
 
 const AddCash = () => {
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState(""); // State for the displayed input including the dollar sign
+  const [value, setValue] = useState(""); // State for the numerical value without the dollar sign
 
   // Function to handle number input
   const handleNumberInput = (number) => {
     // Check if the input already contains a dot
-    if (number === "." && input.includes(".")) {
+    if (number === "." && value.includes(".")) {
       return; // Do nothing if a dot is already present
     }
-    setInput((prevInput) => prevInput + number);
+    setInput((prevInput) => prevInput + number); // Update displayed input with dollar sign
+    setValue((prevValue) => prevValue + number); // Update numerical value
   };
 
   // Function to handle backspace
   const handleBackspace = () => {
-    setInput((prevInput) => prevInput.slice(0, -1));
+    setInput((prevInput) => prevInput.slice(0, -1)); // Remove last character from displayed input
+    setValue((prevValue) => prevValue.slice(0, -1)); // Remove last character from numerical value
+  };
+
+  // Function to handle form submission
+  const handleSubmit = () => {
+    console.log("Submitted value:", value); // Submit numerical value without dollar sign
+    // Add your logic for submitting the value to backend here
+    setInput(""); // Reset displayed input
+    setValue(""); // Reset numerical value
   };
 
   return (
@@ -32,7 +43,12 @@ const AddCash = () => {
       {/* Display input */}
       <div className="input">
         <p>Amount</p>
-        <input type="text" value={"$" + input} placeholder="$0.00" readOnly />
+        <input
+          type="text"
+          value={"$" + input} // Prepend the dollar sign to the displayed input
+          placeholder="$0.00"
+          readOnly
+        />
       </div>
 
       <Button
@@ -42,6 +58,7 @@ const AddCash = () => {
         margin={"auto"}
         background={"#1a1a1a"}
         width={"90%"}
+        onClick={handleSubmit}
       >
         Add $ {input}
       </Button>
