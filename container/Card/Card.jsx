@@ -8,7 +8,7 @@ import useRoutes from "@/hooks/Routes/Routes";
 
 const Card = () => {
   const { handleDashboardRoute } = useRoutes();
-  const [step, setStep] = useState(2);
+  const [step, setStep] = useState(1);
   const handleNext = () => {
     setStep((prev) => prev + 1);
   };
