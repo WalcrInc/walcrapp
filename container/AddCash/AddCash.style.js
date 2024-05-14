@@ -2,22 +2,21 @@ import styled from "styled-components";
 
 export const AddCashStyle = styled.div`
   display: grid;
- 
-  text-align:center ;
-  gap:100px;
+
+  text-align: center;
+  gap: 100px;
   /* justify-content:center ; */
-  align-items:center ;
-  height:100dvh ;
+  align-items: center;
+  height: 100dvh;
   header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 18px;
-    font-weight: 800px;
-     padding: 6%;
+    font-weight: 800;
+    padding:2% 6%;
   }
   header h1 {
-   
   }
   .input {
     text-align: center;
@@ -25,18 +24,23 @@ export const AddCashStyle = styled.div`
   .input input {
     font-size: 40px;
     font-weight: 700;
-    text-align:center ;
-    border:none ;
-    margin:auto ;
-
+    text-align: center;
+    border: none;
+    margin: auto;
   }
-  input:focus{
-    border:none ;
+  button,input:focus {
+    /* border: 1px solid red; */
+    outline: none;
   }
-  .button-submit:focus{
-    background-color:#1a1a1a ;
-    margin:auto ;
-    width:90% ;
+  .number-body {
+    display: flex;
+    flex-direction: column;
+    gap:20px
+  }
+  .button-submit:focus {
+    background-color: #1a1a1a;
+    margin: auto;
+    width: 90%;
   }
   .numbers {
     display: grid;
