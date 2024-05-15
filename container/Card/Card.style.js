@@ -15,6 +15,10 @@ export const CardStyle = styled.div`
     padding-top: 6%;
   }
 
+  button:focus{
+    background-color:#1a1a1a ;
+    color:#fff ;
+  }
   // sstep 1
   .step-1 {
     display: flex;
@@ -48,5 +52,13 @@ export const CardStyle = styled.div`
   }
   button:hover {
     background-color: #1a1a1a;
+  }
+
+  .input{
+    border:1px solid #CDD1DC ;
+    padding:15px ;
+    border-radius:6px ;
+    color:#1a1a1a ;
+    width:100% ;
   }
 `;

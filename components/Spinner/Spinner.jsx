@@ -6,7 +6,7 @@ const Spinner = () => {
     <div>
       <InfinitySpin
         visible={true}
-        width="150"
+        width="100"
         color="whitesmoke"
         ariaLabel="infinity-spin-loading"
       />

@@ -59,7 +59,7 @@ const Home = () => {
         </div>
         <div className="text">
           <h1>
-            Welcome, <span>{info?.name}</span>{" "}
+            Welcome, <span>{info?.firstname}</span>{" "}
           </h1>
 
           <p>
