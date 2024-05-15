@@ -4,8 +4,6 @@ import {
   AboutIcon,
   AddressIcon,
   CardIcon,
-  EmailIcon,
-  LocationIcon,
   Logo,
   LogoutIcon,
   MessageIcon,
@@ -13,13 +11,23 @@ import {
   SupportIcon,
 } from "@/assets";
 import Link from "next/link";
-import useFetchData from "@/hooks/useFetchDataHook/useFetchData";
-import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import useRoutes from "@/hooks/Routes/Routes";
+import { toast } from "react-toastify";
+import { reset } from "@/features/Redux/authSlice";
 
 const SideNavbar = ({ showNav, setShowNav, info }) => {
+  const { handleLoginRoute } = useRoutes();
+  const dispatch = useDispatch();
+  const handleLogout = () => {
+    dispatch(reset());
+    toast.success("You have been successfully logged out", {
+      theme:"dark"
+    });
+    handleLoginRoute();
+  };
   return (
     <SideNavContainer onClick={() => setShowNav(!showNav)}>
-
       <div className="info">
         <div>
           <p>{info?.name}</p>
@@ -60,7 +68,7 @@ const SideNavbar = ({ showNav, setShowNav, info }) => {
         <p>
           <AboutIcon /> About us{" "}
         </p>
-        <p>
+        <p onClick={handleLogout}>
           <LogoutIcon /> Logout{" "}
         </p>
       </div>
@@ -70,7 +78,6 @@ const SideNavbar = ({ showNav, setShowNav, info }) => {
           Become a Taskwalker
         </p>
       </div>
-
     </SideNavContainer>
   );
 };

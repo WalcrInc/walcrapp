@@ -7,11 +7,14 @@ import { PersistGate } from "redux-persist/integration/react";
 import { Provider } from "react-redux";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const queryClient = new QueryClient();
 export default function App({ Component, pageProps }) {
   return (
     <ThemeProvider theme={theme}>
+      <ToastContainer/>
       <ChakraProvider>
         <Provider store={store}>
           <PersistGate loading={null} persistor={persistor}>

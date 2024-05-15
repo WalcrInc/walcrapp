@@ -3,6 +3,7 @@ import { useFormik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
 import { login,  } from "@/features/Redux/authSlice";
 import { useRouter } from "next/router";
+import { toast } from "react-toastify";
 
 const useLogin = () => {
   const { isSuccess, isError, user, message, isLoading } = useSelector(
@@ -74,10 +75,14 @@ const useLogin = () => {
 
   useEffect(() => {
     if (isSuccess && user) {
+    
       router.push("/dashboard");
     }
 
     if (isError) {
+      toast.error(message,{
+        theme:"dark"
+      })
       console.log(message)
     }
   }, [isError, message, isSuccess, user]);

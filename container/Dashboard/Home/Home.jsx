@@ -9,12 +9,14 @@ import {
 } from "@/assets";
 import useFetchData from "@/hooks/useFetchDataHook/useFetchData";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { HomeStyle } from "./Home.style";
 import { SideNavbar } from "./SideNavbar";
 import { Notification } from "./Notification";
 import useRoutes from "@/hooks/Routes/Routes";
+import { toast } from "react-toastify";
 const Home = () => {
+  const dispatch = useDispatch()
   const { user } = useSelector((state) => state.auth);
   const accessToken = user ? user.data : "";
 
@@ -22,7 +24,7 @@ const Home = () => {
   const [showNav, setShowNav] = useState(false);
   const [showNotification, setShowNotification] = useState(false);
 
-  const {handleAddCashRoute} = useRoutes()
+  const {handleAddCashRoute, handleLoginRoute} = useRoutes()
 
   const { data } = useFetchData({
     url: "https://walcr-backend.onrender.com/auth/user",
@@ -41,6 +43,8 @@ const Home = () => {
   const handleShowNotification = () => {
     setShowNotification(!showNotification);
   };
+
+ 
 
   return (
     <HomeStyle>
