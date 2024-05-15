@@ -1,5 +1,5 @@
 import { DeleteIcon } from "@/assets";
-import { Button } from "@chakra-ui/react";
+import { Button, Input } from "@chakra-ui/react";
 import React from "react";
 
 const StepOne = ({
@@ -10,12 +10,22 @@ const StepOne = ({
 }) => {
   return (
     <>
+
+    
       {/* Display input */}
+     
+      <div className="number-body">
       <div className="input">
         <p>Amount</p>
-        <input type="text" value={input} placeholder="$0.00" readOnly />
+        <Input
+          fontSize={"40px"}
+          textAlign={"center"}
+          border={"none"}
+          readOnly
+          value={input} placeholder="$0.00" 
+        />
+        {/* <input type="text" value={input} placeholder="$0.00" readOnly /> */}
       </div>
-      <div className="number-body">
         <Button
           className="button-submit"
           color={"#fff"}

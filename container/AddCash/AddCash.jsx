@@ -41,20 +41,23 @@ const AddCash = () => {
   return (
     <AddCashStyle>
       <header>
-        {step === 1 ? (
-          <span onClick={handleDashboardRoute}>
-            <BackIcon />
-          </span>
-        ) : (
-          <span onClick={handlePrev}>
-            <BackIcon />
-          </span>
-        )}
+        <div className="header">
+          {step === 1 ? (
+            <span onClick={handleDashboardRoute}>
+              <BackIcon />
+            </span>
+          ) : (
+            <span onClick={handlePrev}>
+              <BackIcon />
+            </span>
+          )}
 
-        <h1>Add cash</h1>
-        <span style={{ color: "white" }}>.</span>
+         
+          <h1>Add cash</h1>
+          <span style={{ color: "white" }}>.</span>
+        </div>
+      
       </header>
-     
 
       {step === 1 && (
         <StepOne
