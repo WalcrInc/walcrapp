@@ -56,9 +56,10 @@ export const CardStyle = styled.div`
 
   .input{
     border:1px solid #CDD1DC ;
-    padding:15px ;
+    padding:18px 10px;
     border-radius:6px ;
     color:#1a1a1a ;
-    width:100% ;
+    width:103% ;
+    font-size:18px ;
   }
 `;

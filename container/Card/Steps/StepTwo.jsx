@@ -79,7 +79,7 @@ const StepTwo = ({ handleNext }) => {
   const generateToken = async () => {
     const { cardHolderName } = cardData;
     if (!stripe || !elements) return;
-    const cardNumberElement = elements.getElement(cardNumberElement);
+    const cardNumberElement = elements.getElement(CardNumberElement);
     const { token, error } = await stripe.createToken(cardNumberElement, {
       card_holder_name: cardHolderName,
     });
@@ -97,8 +97,8 @@ const StepTwo = ({ handleNext }) => {
       const token = await generateToken();
       toast.success(token?.id);
     } catch (error) {
-      toast.error(error.message);
-      console.log(error?.messsage);
+      toast.error(error);
+      console.log(error);
     }
   };
 
