@@ -80,9 +80,9 @@ const useLogin = () => {
     }
 
     if (isError) {
-      toast.error(message,{
-        theme:"dark"
-      })
+      // toast.error(message,{
+      //   theme:"dark"
+      // })
       console.log(message)
     }
   }, [isError, message, isSuccess, user]);

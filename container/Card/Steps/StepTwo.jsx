@@ -95,7 +95,42 @@ const StepTwo = ({ handleNext }) => {
 
     try {
       const token = await generateToken();
-      toast.success(token?.id);
+
+      if (token) {
+        axios.post(
+          "https://walcr-backend-5aj6.onrender.com/v1/wallet/add-card",
+          {
+            card: {
+              details: [
+                {
+                  card_holder_name: cardData.cardHolderName,
+                  card_number: token.card.last4,
+                  brand: token.card.brand,
+                  exp_month: token.card.exp_month,
+                  exp_year: token.card.exp_year,
+                },
+              ],
+            },
+            paymentMethodId: token.id,
+          },
+
+          {
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${accessToken}`,
+            },
+          }
+        ).then((response)=>{
+          toast.success(response.data?.message, {
+            theme:"dark"
+          })
+          handleNext();
+        }).catch((error)=>{
+          toast.error(error)
+        })
+        
+      }
+      // toast.success(token?.id);
     } catch (error) {
       toast.error(error);
       console.log(error);
@@ -103,24 +138,6 @@ const StepTwo = ({ handleNext }) => {
   };
 
   // const Elements = dynamic(() => import('@stripe/react-stripe-js').then(mod => mod.Elements), { ssr: false });
-  // axios.post(
-  //   "https://walcr-backend.onrender.com/wallet/add-card",
-  //   {
-  //     card_holder_name: "me",
-  //     card_number: token.card.last4,
-  //     // brand:token.card.brand,
-  //     exp_month: token.card.exp_month,
-  //     exp_year: token.card.exp_year,
-  //     paymentMethodId: token.id,
-  //   },
-  //   {
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       Authorization: `Bearer ${accessToken}`,
-  //     },
-  //   }
-  // );
-  // handleNext();
 
   return (
     // <Elements stripe={stripPromise}>

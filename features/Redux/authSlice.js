@@ -104,7 +104,7 @@ const authSlice = createSlice({
         state.user = null;
         state.isError = true;
         state.isSuccess = false;
-        state.message = action.payload;
+        state.message = action.payload.message;
         toast.error(state.message,{
           theme:"dark"
         })
