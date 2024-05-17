@@ -1,13 +1,4 @@
-
-
-
-
-import Document, {
-  Html,
-  Head,
-  Main,
-  NextScript,
-} from "next/document";
+import Document, { Html, Head, Main, NextScript } from "next/document";
 import { ServerStyleSheet } from "styled-components";
 
 export default class MyDocument extends Document {
@@ -15,31 +6,20 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link
-            rel="preconnect"
-            href="https://fonts.gstatic.com"
-            crossOrigin="anonymous"
-          />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200&display=swap"
-            rel="stylesheet"
-          ></link>
-
-          <link href="manifest" rel="/manifest.json"></link>
-          <meta name="theme-color" content="#000" />
+          <link rel="manifest" href="/manifest.json" />
+          <meta name="theme-color" content="#1a1a1a" />
         </Head>
         <NextScript />
-          {/* Disable pinch zooming */}
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
+        {/* Disable pinch zooming */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
                 document.addEventListener('gesturestart', function (e) {
                   e.preventDefault();
                 });
               `,
-            }}
-          />
+          }}
+        />
         <body>
           {/* <ColorModeScript initialColorMode={chTheme.config.initialColorMode} /> */}
           <Main />
@@ -75,4 +55,3 @@ export default class MyDocument extends Document {
     }
   }
 }
-
