@@ -8,12 +8,31 @@
   "scope": "/",
   "start_url": "/",
   "icons": [
-    { "src": "images/logo-144.png", "type": "image/png", "sizes": "144x144" },
-    { "src": "images/logo-192.png", "type": "image/png", "sizes": "192x192" },
-    { "src": "images/logo-256.png", "type": "image/png", "sizes": "256x256" },
-    { "src": "images/logo-512.png", "type": "image/png", "sizes": "512x512" },
-    { "src": "images/logo-square.png", "type": "image/png", "sizes": "512x512" }
-
+    {
+      "src": "images/walcr-l-144.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "images/walcr-l-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "images/walcr-l-256.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "images/walcr-l-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "images/walcr-l-square.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
   ],
   "screenshot": [
     {
@@ -30,4 +49,3 @@
     }
   ]
 }
-

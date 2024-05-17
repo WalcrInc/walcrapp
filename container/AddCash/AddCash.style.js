@@ -6,15 +6,15 @@ export const AddCashStyle = styled.div`
   /* gap: 80px; */
   align-items: center;
   height: 100dvh;
-  border:1px solid red ;
-  padding:0 ;
-  margin:0 ;
-  header{
+  /* border: 1px solid red; */
+  padding: 0;
+  margin: 0;
+  header {
     /* height:10px ; */
-    border:1px solid red ;
-    display:flex ;
-    flex-direction:column ;
-    justify-content:flex-start ;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
   }
   .header {
     display: flex;
@@ -26,6 +26,27 @@ export const AddCashStyle = styled.div`
   .header h1 {
     font-size: 18px;
     font-weight: 800;
+  }
+
+  .card-details {
+    box-shadow: 0px 0px 0px 1px #cdd1dc;
+    padding: 8px 16px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin:auto 5% ;
+  }
+  .cardnumber{
+    display:flex ;
+    gap:10px;
+    align-items:center ;
+  }
+
+  .cardnumber p{
+    font-size:18px ;
+    font-weight:700 ;
+    color:#5B6178 ;
   }
   .input {
     text-align: center;

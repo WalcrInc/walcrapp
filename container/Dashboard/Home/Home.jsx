@@ -21,21 +21,27 @@ const Home = () => {
   const accessToken = user ? user.data : "";
 
   const [info, setInfo] = useState([]);
+  const [balance,setBalance] = useState("")
   const [showNav, setShowNav] = useState(false);
   const [showNotification, setShowNotification] = useState(false);
 
   const {handleAddCashRoute, handleLoginRoute} = useRoutes()
 
   const { data } = useFetchData({
-    url: "https://walcr-backend.onrender.com/auth/user",
+    url: "https://walcr-backend-5aj6.onrender.com/v1/auth/user",
+    token: accessToken,
+  });
+  const { data:walletBalance } = useFetchData({
+    url: "https://walcr-backend-5aj6.onrender.com/v1/wallet/balance",
     token: accessToken,
   });
 
   useEffect(() => {
-    if (data) {
+    if (data && walletBalance) {
       setInfo(data.data);
+      setBalance(walletBalance?.data)
     }
-  }, [data]);
+  }, [data,walletBalance]);
 
   const handleShowNav = () => {
     setShowNav(!showNav);
@@ -44,7 +50,7 @@ const Home = () => {
     setShowNotification(!showNotification);
   };
 
- 
+ console.log("balance",balance)
 
   return (
     <HomeStyle>
@@ -71,7 +77,7 @@ const Home = () => {
       <div className="wallet-balance" background={"#1A1A1A"}>
         <div className="text">
           <p>Wallet balance</p>
-          <h1> $20.00</h1>
+          <h1> ${balance}</h1>
         </div>
 
         <div onClick={handleAddCashRoute}>

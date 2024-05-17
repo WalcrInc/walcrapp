@@ -1,12 +1,11 @@
 import { useState } from "react";
 import Link from "next/link";
-import { AppleIcon, GoogleIcon } from "@/assets";
+import { AppleIcon, GoogleIcon, Spinner } from "@/assets";
 import { FormWithEmail } from "./Form/FormWithEmail";
 import { FormWithPhone } from "./Form/FormWithPhone";
 import { Box } from "@chakra-ui/react";
 import useLogin from "@/hooks/useLoginHook/useLoginHook";
 import { CustomButton } from "@/components/Button/Button";
-import { Spinner } from "@/components/Spinner/Spinner";
 
 const Login = () => {
   const {
@@ -16,14 +15,14 @@ const Login = () => {
     formik,
     setKeepSignedIn,
     keepSignedIn,
-    isLoading
+    isLoading,
   } = useLogin();
 
   return (
     <>
       <div className="header">
         <h1>Sign In</h1>
-        <p>Welcome back! Log in to Walcr</p>
+        <p>Welcome back. Log in to Walcr</p>
       </div>
 
       <Box display={"flex"} flexDirection={"column"} gap={"10px"}>
@@ -59,7 +58,11 @@ const Login = () => {
           <FormWithPhone formik={formik} handlePhone={handlePhone} />
         )}
 
-        <Box display={"flex"} justifyContent={"space-between"}>
+        <Box
+          marginBottom={"20px"}
+          display={"flex"}
+          justifyContent={"space-between"}
+        >
           <label className="checkbox">
             <input
               checked={keepSignedIn}
@@ -69,7 +72,7 @@ const Login = () => {
             Keep me signed in
           </label>
           <span className="span">
-            <Link href={"/forgot-password"}>Forgot password</Link>
+            <Link href={"/forgot-password"}>Forgot password?</Link>
           </span>
         </Box>
         {/* <button type="submit">heyy</button> */}
@@ -78,12 +81,34 @@ const Login = () => {
           variant={"default"}
           onClick={formik.handleSubmit}
         >
-          {isLoading ? <Spinner/> :"Continue"}
-          
+          {isLoading ? (
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                // border:"1px solid red" ,
+                // margin:"auto"
+              }}
+            >
+            {/* "heyy" */}
+              <Spinner />
+            </div>
+          ) : (
+            "Continue"
+          )}
         </CustomButton>
       </form>
 
-      <Box textAlign={"center"} color={"#8C92AB"}>
+      <Box
+        color={"#8C92AB"}
+        position={"fixed"}
+        margin={"0 auto"}
+        left={"0%"}
+        width={"100%"}
+        textAlign={"center"}
+        bottom={"20px"}
+      >
         Don’t have an account?
         <span style={{ color: "#1A1A1A", fontWeight: "700" }}>
           {" "}

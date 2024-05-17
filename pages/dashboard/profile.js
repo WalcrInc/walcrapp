@@ -3,6 +3,7 @@ import { Profile } from '@/container/Dashboard/Profile'
 import React from 'react'
 
 const profile = () => {
+  
   return (
     <div>
       <Profile/>

@@ -5,6 +5,7 @@ const CustomButton = ({ children, onClick, type, variant,disabled, ...rest }) =>
   return variant === "default" ? (
     <Button
       border={"none"}
+      textAlign={"center"}
       outline={"none"}
       color={"#fff"}
       background={"#1A1A1A"}

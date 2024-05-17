@@ -47,7 +47,7 @@ export const AuthStyle = styled.div`
     gap: 20px;
   }
 
-  .option {
+  /* .option {
     color: #5b6178;
     font-size: 16px;
     font-weight: 400;
@@ -63,8 +63,8 @@ export const AuthStyle = styled.div`
     width: 100%;
     height: 2px;
     background-color: #f18341;
-    transition: width 0.5s ease-in-out;
-  }
+    
+  } */
 
   form {
     display: flex;

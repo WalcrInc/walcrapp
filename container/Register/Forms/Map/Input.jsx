@@ -13,7 +13,7 @@ const AddressInput = ({ value, onChange, onSubmit }) => {
     <InputStyle>
       <div className="text">
         <h1> Address</h1>
-        <p>Add a delivery address</p>
+        <p>Add a primary address</p>
       </div>
       <form onSubmit={onSubmit}> {/* Add onSubmit handler */}
         <Input

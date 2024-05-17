@@ -31,7 +31,8 @@ export const OnboardingStyle = styled.div`
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: center center;
+    margin:10px ;
   }
 
   .step-one .text,
@@ -40,7 +41,7 @@ export const OnboardingStyle = styled.div`
     display: flex;
     flex-direction: column;
     gap: 5px;
-    padding: 3% 6%;
+    padding: 20px 9%;
   }
 
   .text h1 {
@@ -73,7 +74,7 @@ export const OnboardingStyle = styled.div`
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 3% 6%;
+    padding: 20px 9%;
   }
 
   .page-indicator span {

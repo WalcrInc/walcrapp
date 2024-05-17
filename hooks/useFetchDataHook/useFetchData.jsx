@@ -4,7 +4,7 @@ import axios from 'axios'
 
 const useFetchData = ({url, token}) => {
   return useQuery({
-    queryKey:["data"],
+    queryKey:[url],
     queryFn:async()=>{
         try {
            const response  = await axios.get(url,{
