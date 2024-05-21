@@ -21,4 +21,8 @@ export const ForgotStyle = styled.div`
     flex-direction: column;
     gap: 40px;
   }
+  button:focus{
+   background: black;
+  }
+
 `;

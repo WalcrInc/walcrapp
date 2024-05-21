@@ -1,13 +1,17 @@
-import { BackIcon, USA } from "@/assets";
+import { BackIcon, Spinner, USA } from "@/assets";
 import { Box, Button, FormControl, FormLabel, Input } from "@chakra-ui/react";
-import React from "react";
-import PhoneInput from "react-phone-input-2";
-import "react-phone-input-2/lib/style.css";
+import { useEffect } from "react";
 import { ForgotStyle } from "./Phone.style";
 import { useRouter } from "next/router";
 import { useFormik } from "formik";
+import { useDispatch, useSelector } from "react-redux";
+import { register } from "@/features/Redux/authSlice";
 
-const Phone = ({ handleNext, handlePrev }) => {
+const Phone = ({ handlePrev }) => {
+  const dispatch = useDispatch();
+  const { user, isSuccess, isError, isLoading } = useSelector(
+    (state) => state.auth
+  );
   const router = useRouter();
   const formik = useFormik({
     initialValues: {
@@ -24,13 +28,31 @@ const Phone = ({ handleNext, handlePrev }) => {
     },
   });
 
-  const handleSubmit = () => {
+  const formDataStep1 = JSON.parse(
+    typeof window !== "undefined" && localStorage.getItem("formDataStep1")
+  );
+  const address =
+    typeof window !== "undefined" && localStorage.getItem("address");
+
+  const mergedData = {
+    ...formDataStep1,
+    address,
+    ...formik.values,
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     if (formik.isValid) {
-      const serializedData = JSON.stringify(formik.values);
-      localStorage.setItem("formDataStep2", serializedData);
-      handleNext(formik.values);
+      console.log(mergedData);
+     await dispatch(register(mergedData))
     }
   };
+
+  useEffect(() => {
+    if (isSuccess && user) {
+      router.push("/dashboard");
+    }
+  }, [isError, isSuccess, user]);
 
   return (
     <ForgotStyle>
@@ -87,7 +109,7 @@ const Phone = ({ handleNext, handlePrev }) => {
           borderRadius={"16px"}
           type="submit"
         >
-          Continue
+          {isLoading ? <Spinner /> : "Continue"}
         </Button>
       </form>
     </ForgotStyle>

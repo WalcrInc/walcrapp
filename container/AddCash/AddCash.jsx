@@ -34,7 +34,7 @@ const AddCash = () => {
   };
 
   const { data, isLoading } = useFetchData({
-    url: "https://walcr-backend-5aj6.onrender.com/v1/wallet/card",
+    url: "https://reluctant-jean-cliqpod-e187c94a.koyeb.app/v1/wallet/card",
     token: accessToken,
   });
 
@@ -52,7 +52,7 @@ const AddCash = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "https://walcr-backend-5aj6.onrender.com/v1/wallet/deposit",
+        "https://reluctant-jean-cliqpod-e187c94a.koyeb.app/v1/wallet/deposit",
         { amount: parseFloat(input) },
         {
           headers: {

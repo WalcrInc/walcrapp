@@ -16,18 +16,8 @@ export const register = createAsyncThunk(
     try {
       return await authServices.register(user);
     } catch (error) {
-      const message =
-        (error.response && error.response.data && error.response.data.error) ||
-        error.message ||
-        error.toString();
+      const message = error.response.data;
 
-      if (
-        error.response &&
-        error.response.data &&
-        error.response.data.message === "User with this email already exists"
-      ) {
-        return thunkAPI.rejectWithValue("User with this email already exists");
-      }
       return thunkAPI.rejectWithValue(message);
     }
   }
@@ -37,18 +27,7 @@ export const login = createAsyncThunk("auth/login", async (user, thunkAPI) => {
   try {
     return await authServices.login(user);
   } catch (error) {
-    const message =
-      (error.response && error.response.data && error.response.data.error) ||
-      error.message ||
-      error.toString();
-
-    if (
-      error.response &&
-      error.response.data &&
-      error.response.data.message === "User with this email already exists"
-    ) {
-      return thunkAPI.rejectWithValue("User with this email already exists");
-    }
+    const message = error.response.data;
     return thunkAPI.rejectWithValue(message);
   }
 });
@@ -75,15 +54,21 @@ const authSlice = createSlice({
         state.user = action.payload;
         state.isError = false;
         state.isSuccess = true;
-        state.message = action.payload;
-        
+        state.message = action.payload.message;
+        toast.success(state.message, {
+          theme: "dark",
+        });
       })
       .addCase(register.rejected, (state, action) => {
         state.isLoading = false;
         state.user = null;
         state.isError = true;
         state.isSuccess = false;
-        state.message = action.payload;
+        state.message = action.payload.message;
+        console.log(state.message);
+        toast.error(state.message, {
+          theme: "dark",
+        });
       })
 
       .addCase(login.pending, (state) => {
@@ -95,9 +80,9 @@ const authSlice = createSlice({
         state.isError = false;
         state.isSuccess = true;
         state.message = action.payload.message;
-        toast.success(state.message,{
-          theme:"dark"
-        })
+        toast.success(state.message, {
+          theme: "dark",
+        });
       })
       .addCase(login.rejected, (state, action) => {
         state.isLoading = false;
@@ -105,12 +90,12 @@ const authSlice = createSlice({
         state.isError = true;
         state.isSuccess = false;
         state.message = action.payload.message;
-        toast.error(state.message,{
-          theme:"dark"
-        })
+        toast.error(state.message, {
+          theme: "dark",
+        });
       });
   },
 });
 
-export const {reset} = authSlice.actions
-export default authSlice.reducer
+export const { reset } = authSlice.actions;
+export default authSlice.reducer;

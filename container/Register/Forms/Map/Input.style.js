@@ -30,4 +30,8 @@ export const InputStyle = styled.div`
   flex-direction:column ;
   gap:60px;
   }
+  button:focus{
+   background: black;
+  }
+
 `;

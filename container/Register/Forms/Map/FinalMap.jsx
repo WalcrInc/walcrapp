@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
 import Map from "./Map";
 import AddressInput from "./Input";
+import { BackIcon } from "@/assets";
 
-const FinalMap = () => {
+const FinalMap = ({ handleNext, handlePrev }) => {
   const [address, setAddress] = useState("");
   const [coordinates, setCoordinates] = useState([-74.006, 40.7128]);
   const [isLoading, setIsLoading] = useState(true);
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // Prevent default form submission behavior
+    e.preventDefault(); 
     if (address) {
-      const serializedData = JSON.stringify(address);
-      localStorage.setItem("formDataStep3", serializedData);
-      // Handle any other actions after saving data, such as navigating to the next step
-      // handleNext(); // Assuming handleNext is defined in your component
+      typeof window !== "undefined" &&
+        localStorage.setItem("address", address);
+      handleNext();
     }
   };
 
@@ -47,7 +47,7 @@ const FinalMap = () => {
 
   const handleInputChange = (value) => {
     setAddress(value);
-   
+
     fetch(
       `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(
         value
@@ -83,8 +83,22 @@ const FinalMap = () => {
         <div>Loading...</div>
       ) : (
         <>
-         <Map coordinates={coordinates} onMapClick={handleMapClick} />
-          <AddressInput value={address} onChange={handleInputChange} onSubmit={handleSubmit} /> 
+          <div
+            style={{
+              position: "absolute",
+              zIndex: "1",
+              padding: "5%",
+            }}
+            onClick={handlePrev}
+          >
+            <BackIcon />
+          </div>
+          <Map coordinates={coordinates} onMapClick={handleMapClick} />
+          <AddressInput
+            value={address}
+            onChange={handleInputChange}
+            onSubmit={handleSubmit}
+          />
         </>
       )}
     </div>

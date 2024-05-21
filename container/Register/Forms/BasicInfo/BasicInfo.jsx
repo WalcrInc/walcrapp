@@ -12,25 +12,55 @@ import { Box, FormControl, FormLabel, Input } from "@chakra-ui/react";
 import Link from "next/link";
 import React from "react";
 import { BasicInfoStyle } from "./BasicInfo.style";
+import { useFormik } from "formik";
 
 const BasicInfo = ({ handleNext }) => {
-  const { formik, show, handleShow, keepSignedIn, setKeepSignedIn } = useRegister();
+  const {  show, handleShow, keepSignedIn, setKeepSignedIn } = useRegister();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    formik.validateForm().then(() => {
-      if (formik.isValid) {
-        const serializedData = JSON.stringify(formik.values);
-        localStorage.setItem("formDataStep1", serializedData);
-        handleNext(formik.values);
-      } else {
-        // Additional check to ensure that required fields are filled
-        if (!formik.values.firstname || !formik.values.lastname || !formik.values.email || !formik.values.password) {
-          alert("Please fill in all required fields");
-        }
+  const formik = useFormik({
+    initialValues: {
+      firstname: "",
+      lastname: "",
+      email: "",
+      password: "",
+    },
+    validate: (values) => {
+      const errors = {};
+
+      if (!values.firstname) {
+        errors.firstname = "Required";
       }
-    });
-  };
+      if (!values.lastname) {
+        errors.lastname = "Required";
+      }
+      if (!values.email) {
+        errors.email = "Required";
+      } else if (
+        !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
+      ) {
+        errors.email = "Invalid email address";
+      }
+
+      
+      if (!values.password) {
+        errors.password = "Required";
+      } else if (values.password.length < 8) {
+        errors.password = "Password must be at least 8 characters";
+      }
+      console.log(errors)
+      return errors;
+      
+    },
+    onSubmit: async (values) => {
+      console.log(values);
+      // dispatch(register(values));
+      const serializedData = JSON.stringify(values);
+      localStorage.setItem("formDataStep1", serializedData);
+      handleNext();
+    },
+  });
+
+ 
 
   return (
     <BasicInfoStyle>
@@ -51,7 +81,7 @@ const BasicInfo = ({ handleNext }) => {
 
       <div className="or">or</div>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={formik.handleSubmit}>
         <FormControl>
           <FormLabel fontSize={"16px"} color={"#1A1A1A"} fontWeight={"700"}>
             First Name
@@ -145,7 +175,7 @@ const BasicInfo = ({ handleNext }) => {
         </Box>
 
         <CustomButton
-          disabled={!formik.isValid}
+          // disabled={!formik.isValid}
           variant={"default"}
         >
           Continue
