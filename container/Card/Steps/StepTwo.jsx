@@ -98,7 +98,7 @@ const StepTwo = ({ handleNext }) => {
 
       if (token) {
         axios.post(
-          "https://walcr-backend-5aj6.onrender.com/v1/wallet/add-card",
+          "https://reluctant-jean-cliqpod-e187c94a.koyeb.app/v1/wallet/add-card",
           {
             card: {
               details: [

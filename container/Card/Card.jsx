@@ -8,8 +8,8 @@ import useRoutes from "@/hooks/Routes/Routes";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 
-const stripPromise = loadStripe("pk_test_51PDT6J2M2qi3czW9NkYJBY1Rpjlmh1K9JaUCl0eCAbSVTvDuESpBorKqhUehs1l5dIu27f4mErks2eaaCdxd6Q8n00nX6lhmhK");
-console.log(process.env.STRIPE_PUBLIC_KEY)
+const stripPromise = loadStripe(process.env.STRIPE_PUBLIC_KEY);
+// console.log(process.env.STRIPE_PUBLIC_KEY)
 
 const Card = () => {
   const { handleDashboardRoute } = useRoutes();
@@ -52,14 +52,13 @@ const Card = () => {
 
       <div className="body">
         {step === 1 && <StepOne handleNext={handleNext} />}
-        {step === 2 && 
-        
-        <>
-         <Elements stripe={stripPromise}>
-         <StepTwo handleNext={handleNext} />
-         </Elements>
-        </>
-        }
+        {step === 2 && (
+          <>
+            <Elements stripe={stripPromise}>
+              <StepTwo handleNext={handleNext} />
+            </Elements>
+          </>
+        )}
         {step === 3 && <StepThree />}
       </div>
     </CardStyle>

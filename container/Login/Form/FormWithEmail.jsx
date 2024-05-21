@@ -17,7 +17,7 @@ const FormWithEmail = ({ formik }) => {
           type="email"
           placeholder="name@example.com"
           border={
-            formik.errors.email ? "1px solid #FB2047" : "1px solid  #CDD1DC"
+           formik.touched.email && formik.errors.email ? "1px solid #FB2047" : "1px solid  #CDD1DC"
           }
           focusBorderColor="0.5px solid #CDD1DC"
           {...formik.getFieldProps("email")}
@@ -34,7 +34,7 @@ const FormWithEmail = ({ formik }) => {
           padding={"5px 15px"}
           focusBorderColor="0.5px solid #CDD1DC"
           border={
-            formik.errors.emailPassword
+            formik.touched.emailPassword &&  formik.errors.emailPassword
               ? "1px solid #FB2047"
               : "1px solid  #CDD1DC"
           }

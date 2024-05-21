@@ -14,18 +14,23 @@ import React from "react";
 import { BasicInfoStyle } from "./BasicInfo.style";
 
 const BasicInfo = ({ handleNext }) => {
-  const { formik, show, handleShow, keepSignedIn, setKeepSignedIn } =
-    useRegister();
+  const { formik, show, handleShow, keepSignedIn, setKeepSignedIn } = useRegister();
 
-    
-const handleSubmit = () => {
-  if (formik.isValid) {
-    const serializedData = JSON.stringify(formik.values);
-    localStorage.setItem("formDataStep1", serializedData);
-    handleNext(formik.values);
-  }
-};
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    formik.validateForm().then(() => {
+      if (formik.isValid) {
+        const serializedData = JSON.stringify(formik.values);
+        localStorage.setItem("formDataStep1", serializedData);
+        handleNext(formik.values);
+      } else {
+        // Additional check to ensure that required fields are filled
+        if (!formik.values.firstname || !formik.values.lastname || !formik.values.email || !formik.values.password) {
+          alert("Please fill in all required fields");
+        }
+      }
+    });
+  };
 
   return (
     <BasicInfoStyle>
@@ -142,7 +147,6 @@ const handleSubmit = () => {
         <CustomButton
           disabled={!formik.isValid}
           variant={"default"}
-          
         >
           Continue
         </CustomButton>

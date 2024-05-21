@@ -11,7 +11,7 @@ const register = async (data) => {
 };
 const login = async (data) => {
   const response = await axios.post(
-    "https://walcr-backend-5aj6.onrender.com/v1/auth/login",
+    "https://reluctant-jean-cliqpod-e187c94a.koyeb.app/v1/auth/login",
     data
   );
   return response.data;

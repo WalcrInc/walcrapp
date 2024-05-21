@@ -23,7 +23,7 @@ const FormWithPhone = ({ handlePhone, formik }) => {
             alignItems={"center"}
             borderRadius={"4px"}
             border={
-              formik.errors.phoneNumber
+              formik.touched.phoneNumber && formik.errors.phoneNumber
                 ? "1px solid #FB2047"
                 : "1px solid  #CDD1DC"
             }
@@ -54,7 +54,7 @@ const FormWithPhone = ({ handlePhone, formik }) => {
           padding={"5px 15px"}
           focusBorderColor="0.5px solid #CDD1DC"
           border={
-            formik.errors.phonePassword
+            formik.touched.phonePassword && formik.errors.phonePassword
               ? "1px solid #FB2047"
               : "1px solid  #CDD1DC"
           }
@@ -71,7 +71,8 @@ const FormWithPhone = ({ handlePhone, formik }) => {
             {...formik.getFieldProps("phonePassword")}
           />
           <span onClick={handleShow}>
-          {show ? <PasswordIcon /> :<DontShow/>}</span>
+            {show ? <PasswordIcon /> : <DontShow />}
+          </span>
         </Box>
       </FormControl>
     </>

@@ -28,11 +28,11 @@ const Home = () => {
   const {handleAddCashRoute, handleLoginRoute} = useRoutes()
 
   const { data } = useFetchData({
-    url: "https://walcr-backend-5aj6.onrender.com/v1/auth/user",
+    url: "https://reluctant-jean-cliqpod-e187c94a.koyeb.app/v1/auth/user",
     token: accessToken,
   });
   const { data:walletBalance } = useFetchData({
-    url: "https://walcr-backend-5aj6.onrender.com/v1/wallet/balance",
+    url: "https://reluctant-jean-cliqpod-e187c94a.koyeb.app/v1/wallet/balance",
     token: accessToken,
   });
 

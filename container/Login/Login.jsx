@@ -102,12 +102,12 @@ const Login = () => {
 
       <Box
         color={"#8C92AB"}
-        position={"fixed"}
+        position={"absolute"}
         margin={"0 auto"}
         left={"0%"}
         width={"100%"}
         textAlign={"center"}
-        bottom={"20px"}
+        bottom={"30px"}
       >
         Don’t have an account?
         <span style={{ color: "#1A1A1A", fontWeight: "700" }}>
