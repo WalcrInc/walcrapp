@@ -54,7 +54,7 @@ const authSlice = createSlice({
         state.user = action.payload;
         state.isError = false;
         state.isSuccess = true;
-        state.message = action.payload.message;
+        state.message = action.payload?.message;
         toast.success(state.message, {
           theme: "dark",
         });
@@ -64,7 +64,7 @@ const authSlice = createSlice({
         state.user = null;
         state.isError = true;
         state.isSuccess = false;
-        state.message = action.payload.message;
+        state.message = action.payload?.message;
         console.log(state.message);
         toast.error(state.message, {
           theme: "dark",
@@ -79,7 +79,7 @@ const authSlice = createSlice({
         state.user = action.payload;
         state.isError = false;
         state.isSuccess = true;
-        state.message = action.payload.message;
+        state.message = action.payload?.message;
         toast.success(state.message, {
           theme: "dark",
         });
@@ -89,7 +89,7 @@ const authSlice = createSlice({
         state.user = null;
         state.isError = true;
         state.isSuccess = false;
-        state.message = action.payload.message;
+        state.message = action.payload?.message;
         toast.error(state.message, {
           theme: "dark",
         });

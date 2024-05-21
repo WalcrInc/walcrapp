@@ -108,10 +108,11 @@ const StepTwo = ({ handleNext }) => {
                   brand: token.card.brand,
                   exp_month: token.card.exp_month,
                   exp_year: token.card.exp_year,
+                  paymentMethodId: token.id,
                 },
               ],
             },
-            paymentMethodId: token.id,
+
           },
 
           {

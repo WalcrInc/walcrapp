@@ -14,6 +14,7 @@ const AddCash = () => {
   const { handleDashboardRoute } = useRoutes();
   const [input, setInput] = useState("");
   const [cardInfo, setCardInfo] = useState(null);
+  const [selectedCardIndex, setSelectedCardIndex] = useState(0);
   const [loading, setLoading] = useState(false);
   const [step, setStep] = useState(1);
 
@@ -44,16 +45,28 @@ const AddCash = () => {
     }
   }, [data]);
 
+  useEffect(() => {
+    if (cardInfo) {
+      setSelectedCardIndex(0); 
+    }
+  }, [cardInfo]);
+
+  const handleCardChange = () => {
+    if (cardInfo && cardInfo.length > 0) {
+      setSelectedCardIndex((prevIndex) => (prevIndex + 1) % cardInfo.length);
+    }
+  };
+
   const handleSubmit = async () => {
     if (!input || input === "$" || isNaN(parseFloat(input))) {
-      console.error("Invalid input"); // You can replace this with better error handling
+      console.error("Invalid input");
       return;
     }
     setLoading(true);
     try {
       const response = await axios.post(
         "https://reluctant-jean-cliqpod-e187c94a.koyeb.app/v1/wallet/deposit",
-        { amount: parseFloat(input) },
+        { amount: parseFloat(input), paymentMethodId: cardInfo[selectedCardIndex]?.paymentMethodId },
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,
@@ -68,6 +81,8 @@ const AddCash = () => {
       setLoading(false);
     }
   };
+
+  // console.log( cardInfo[selectedCardIndex]?.paymentMethodId )
 
   const brandLogos = {
     Visa: "/images/Visa.svg",
@@ -97,28 +112,29 @@ const AddCash = () => {
         </div>
       </header>
 
-      {cardInfo &&
-        cardInfo?.map((card) => (
-          <div className="card-details" key={card?.card_number}>
-            <div className="brand-logo">
-              <img
-                src={brandLogos[card?.brand]}
-                alt={`${card?.brand} logo`}
-                style={{ width: "100px", height: "auto" }}
-              />
-            </div>
-            <div className="cardnumber">
-              <p> **** {card?.card_number}</p>
-              <Button
-                background={"#1a1a1a"}
-                color={"#fff"}
-                width={"fit-content"}
-              >
-                Change
-              </Button>
-            </div>
+      {cardInfo && cardInfo.length > 0 && (
+        <div className="card-details" key={cardInfo[selectedCardIndex]?.card_number}>
+          <div className="brand-logo">
+            <img
+              src={brandLogos[cardInfo[selectedCardIndex]?.brand]}
+              alt={`${cardInfo[selectedCardIndex]?.brand} logo`}
+              style={{ width: "100px", height: "auto" }}
+            />
           </div>
-        ))}
+          <div className="cardnumber">
+            <p> **** {cardInfo[selectedCardIndex]?.card_number}</p>
+            {/* <p> ****  {cardInfo[selectedCardIndex]?.paymentMethodId}</p> */}
+            <Button
+              background={"#1a1a1a"}
+              color={"#fff"}
+              width={"fit-content"}
+              onClick={handleCardChange}
+            >
+              Change
+            </Button>
+          </div>
+        </div>
+      )}
 
       <div className="number-body">
         <div className="input">
