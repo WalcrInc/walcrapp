@@ -1,26 +1,55 @@
 import styled from "styled-components";
 
 export const SideNavContainer = styled.div`
-display:grid ;
   position: fixed;
   top: 0dvh;
   bottom: 0;
-  background-color: #ffffff;
+  width: 100%;
   color: #1a1a1a;
-  height: 100vh;
-  width: 80%;
+  display: flex;
   z-index: 100000;
-  gap: 40px;
-  padding: 6%;
-  font-size: 16px;
 
-  .info,
+  font-size: 16px;
+  .right {
+    width: 80%;
+    background-color: #ffffff;
+    padding: 6%;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: repeat(4, 2fr);
+    gap: 50px;
+  }
+  .left {
+    width: 20%;
+    background-color: #dcdcdc;
+    opacity: 0.3;
+  }
+  .name-address p {
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .name-address span {
+    color: #5b6178;
+    font-size: 14px;
+  }
+  .info{
+    margin-top:30px ;
+    display:flex;
+    gap:10px;
+  }
+
+  .image-container{
+    background-color:pink ;
+    border-radius:50px ;
+  }
+
   .links,
   .support,
   .task-work {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
+    /* color:red ; */
     /* background-color:red ; */
     /* height: 15dvh; */
   }
@@ -42,6 +71,4 @@ display:grid ;
     position: absolute;
     bottom: 20px;
   } */
-
- 
 `;

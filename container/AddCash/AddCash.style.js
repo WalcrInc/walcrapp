@@ -79,11 +79,33 @@ export const AddCashStyle = styled.div`
     grid-template-columns: repeat(3, 1fr);
     width: 100%;
   }
+.numbers button{
+  background-color:none ;
+}
+  .numbers button:focus{
+    background-color: none;
+  }
+  .numbers button:hover{
+    background-color: none;
+  }
+  .numbers button:active{
+    background-color: none;
+  }
 
   .number-button {
     padding: 10px;
     /* margin: 5px; */
     font-size: 32px;
     font-weight: 900;
+  }
+
+  .text h1 {
+    font-size:22px ;
+    font-weight:700 ;
+  }
+  .text p {
+    font-size:14px ;
+    font-weight:400 ;
+    color:#8C92AB ;
   }
 `;

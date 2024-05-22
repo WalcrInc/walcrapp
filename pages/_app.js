@@ -1,5 +1,5 @@
 import "@/styles/globals.css";
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { GlobalStyles, theme } from "@/theme";
 import { ThemeProvider } from "styled-components";
 import { persistor, store } from "@/features/Redux/store";
@@ -11,11 +11,26 @@ import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
 const queryClient = new QueryClient();
+const modaltheme = extendTheme({
+  components: {
+    Modal: {
+      variants: {
+        wide: {
+          content: {
+            maxWidth: ["95%", "95%", "95%"],
+            minWidth: "95%",
+            bg: "#00ff00"
+          }
+        }
+      }
+    }
+  }
+});
 export default function App({ Component, pageProps }) {
   return (
     <ThemeProvider theme={theme}>
       <ToastContainer/>
-      <ChakraProvider>
+      <ChakraProvider theme={modaltheme}>
         <Provider store={store}>
           <PersistGate loading={null} persistor={persistor}>
             <QueryClientProvider client={queryClient}>

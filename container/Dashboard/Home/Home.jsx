@@ -15,23 +15,24 @@ import { SideNavbar } from "./SideNavbar";
 import { Notification } from "./Notification";
 import useRoutes from "@/hooks/Routes/Routes";
 import { toast } from "react-toastify";
+import { Spinner } from "@chakra-ui/react";
 const Home = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
   const accessToken = user ? user.data : "";
 
   const [info, setInfo] = useState([]);
-  const [balance,setBalance] = useState("")
+  const [balance, setBalance] = useState("");
   const [showNav, setShowNav] = useState(false);
   const [showNotification, setShowNotification] = useState(false);
 
-  const {handleAddCashRoute, handleLoginRoute} = useRoutes()
+  const { handleAddCashRoute, handleLoginRoute } = useRoutes();
 
-  const { data } = useFetchData({
+  const { data, isLoading } = useFetchData({
     url: "https://reluctant-jean-cliqpod-e187c94a.koyeb.app/v1/auth/user",
     token: accessToken,
   });
-  const { data:walletBalance } = useFetchData({
+  const { data: walletBalance, isLoading: loading } = useFetchData({
     url: "https://reluctant-jean-cliqpod-e187c94a.koyeb.app/v1/wallet/balance",
     token: accessToken,
   });
@@ -39,9 +40,9 @@ const Home = () => {
   useEffect(() => {
     if (data && walletBalance) {
       setInfo(data.data);
-      setBalance(walletBalance?.data)
+      setBalance(walletBalance?.data);
     }
-  }, [data,walletBalance]);
+  }, [data, walletBalance]);
 
   const handleShowNav = () => {
     setShowNav(!showNav);
@@ -50,7 +51,20 @@ const Home = () => {
     setShowNotification(!showNotification);
   };
 
- console.log("balance",balance)
+  if (isLoading && loading)
+    return (
+      <div
+        style={{
+          display: "flex",
+          height: "100dvh",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        {" "}
+        <Spinner />
+      </div>
+    );
 
   return (
     <HomeStyle>
@@ -114,9 +128,7 @@ const Home = () => {
       )}
       {/*Notification*/}
       {showNotification && (
-        <Notification
-          handleShowNotification={handleShowNotification}
-        />
+        <Notification handleShowNotification={handleShowNotification} />
       )}
     </HomeStyle>
   );

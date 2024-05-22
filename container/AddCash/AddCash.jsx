@@ -1,22 +1,40 @@
 import React, { useEffect, useState } from "react";
 import { AddCashStyle } from "./AddCash.style";
-import { Button, Input, Spinner } from "@chakra-ui/react";
-import { BackIcon, DeleteIcon } from "@/assets";
+import {
+  Box,
+  Button,
+  Input,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  Spinner,
+  Text,
+  useDisclosure,
+  extendTheme
+} from "@chakra-ui/react";
+import { BackIcon, ConfirmIcon, DeleteIcon } from "@/assets";
 import useRoutes from "@/hooks/Routes/Routes";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import useFetchData from "@/hooks/useFetchDataHook/useFetchData";
+import { toast } from "react-toastify";
 
 const AddCash = () => {
   const { user } = useSelector((state) => state.auth);
   const accessToken = user ? user.data : "";
 
   const { handleDashboardRoute } = useRoutes();
+  const { isOpen, onClose, onOpen } = useDisclosure();
   const [input, setInput] = useState("");
   const [cardInfo, setCardInfo] = useState(null);
   const [selectedCardIndex, setSelectedCardIndex] = useState(0);
   const [loading, setLoading] = useState(false);
   const [step, setStep] = useState(1);
+  const [message, setMessage] = useState("");
 
   const handleNumberInput = (number) => {
     setInput((prevInput) => {
@@ -47,7 +65,7 @@ const AddCash = () => {
 
   useEffect(() => {
     if (cardInfo) {
-      setSelectedCardIndex(0); 
+      setSelectedCardIndex(0);
     }
   }, [cardInfo]);
 
@@ -57,16 +75,37 @@ const AddCash = () => {
     }
   };
 
+  const theme = extendTheme({
+    components: {
+      Modal: {
+        variants: {
+          wide: {
+            content: {
+              maxWidth: ["95%", "95%", "95%"],
+              minWidth: "95%",
+              bg: "#00ff00"
+            }
+          }
+        }
+      }
+    }
+  });
+
   const handleSubmit = async () => {
     if (!input || input === "$" || isNaN(parseFloat(input))) {
-      console.error("Invalid input");
+      toast.error("Invalid input", {
+        theme: "dark",
+      });
       return;
     }
     setLoading(true);
     try {
       const response = await axios.post(
         "https://reluctant-jean-cliqpod-e187c94a.koyeb.app/v1/wallet/deposit",
-        { amount: parseFloat(input), paymentMethodId: cardInfo[selectedCardIndex]?.paymentMethodId },
+        {
+          amount: parseFloat(input),
+          paymentMethodId: cardInfo[selectedCardIndex]?.paymentMethodId,
+        },
         {
           headers: {
             Authorization: `Bearer ${accessToken}`,
@@ -75,6 +114,8 @@ const AddCash = () => {
       );
 
       console.log(response.data);
+      setMessage(response?.data?.message);
+      onOpen();
     } catch (error) {
       console.error(error);
     } finally {
@@ -91,7 +132,20 @@ const AddCash = () => {
     applePay: "/images/Apple.svg",
   };
 
-  if (isLoading) return <Spinner />;
+  if (isLoading)
+    return (
+      <div
+        style={{
+          display: "flex",
+          height: "100dvh",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        {" "}
+        <Spinner />
+      </div>
+    );
 
   return (
     <AddCashStyle>
@@ -113,7 +167,10 @@ const AddCash = () => {
       </header>
 
       {cardInfo && cardInfo.length > 0 && (
-        <div className="card-details" key={cardInfo[selectedCardIndex]?.card_number}>
+        <div
+          className="card-details"
+          key={cardInfo[selectedCardIndex]?.card_number}
+        >
           <div className="brand-logo">
             <img
               src={brandLogos[cardInfo[selectedCardIndex]?.brand]}
@@ -181,6 +238,62 @@ const AddCash = () => {
           </button>
         </div>
       </div>
+      {/* <Button onClick={onOpen}>Open Modal</Button> */}
+
+ 
+        <Modal   isOpen={isOpen}>
+          <ModalOverlay />
+          <ModalContent
+            display={"flex"}
+            flexDirection={"column"}
+            textAlign={"center"}
+            width={"90%"}
+            p={10}
+            gap={"50px"}
+            borderRadius={"32px"}
+            position={"absolute"}
+            bottom={"0"}
+
+          >
+            <ModalBody
+              display={"flex"}
+              flexDirection={"column"}
+              alignItems={"center"}
+              justifyContent={"center"}
+              textAlign={"center"}
+              gap={"50px"}
+            
+            >
+              {/* <Lorem count={2} />
+               */}
+
+              <ConfirmIcon />
+              <div className="text" style={{
+                display:"flex",
+                flexDirection:"column",
+                gap:"20px"
+              }}>
+                <Text fontSize={"22px"} fontWeight={"700"}>
+                  Congratulations
+                </Text>
+                <Text color={"#8C92AB"} fontSize={"14px"} fontWeight={"400"}>
+                  {" "}
+                  ${message}
+                </Text>
+              </div>
+            </ModalBody>
+
+            <Button
+              size={"lg"}
+              background={"#1a1a1a"}
+              color={"#fff"}
+              onClick={handleDashboardRoute}
+            >
+              Continue
+            </Button>
+          </ModalContent>
+        </Modal>
+    
     </AddCashStyle>
   );
 };

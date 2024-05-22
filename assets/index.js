@@ -1245,3 +1245,13 @@ export const Spinner = () => (
   </path>
 </svg>
 );
+
+export const ConfirmIcon = ()=>(
+  
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="60" height="60" rx="16" fill="#1A1A1A"/>
+<path d="M34.0002 17.333H30.0002C24.029 17.333 21.0435 17.333 19.1885 19.188C17.3335 21.043 17.3335 24.0286 17.3335 29.9997C17.3335 35.9707 17.3335 38.9563 19.1885 40.8114C21.0435 42.6663 24.029 42.6663 30.0002 42.6663C35.9712 42.6663 38.9568 42.6663 40.8119 40.8114C42.6668 38.9563 42.6668 35.9707 42.6668 29.9997V27.333" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M25.3335 27.3337L30.0002 32.0003L42.0004 18.667" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+)
