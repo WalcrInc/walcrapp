@@ -22,6 +22,9 @@ const useRoutes = () => {
   const handleAddCashRoute = () => {
     return router.push("/add-cash");
   };
+  const handleTaskWorkerRoute = () => {
+    return router.push("/find_taskworker");
+  };
 
   return {
     handleLoginRoute,
@@ -29,7 +32,8 @@ const useRoutes = () => {
     handleRegisterRoute,
     handleForgotPasswordRoute,
     handleDashboardRoute,
-    handleAddCashRoute
+    handleAddCashRoute,
+    handleTaskWorkerRoute
   };
 };
 

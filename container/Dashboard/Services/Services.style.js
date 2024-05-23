@@ -36,6 +36,11 @@ export const ServicesStyle = styled.div`
  
   }
 
+  .bottom h1{
+    font-size: 22px;
+    font-weight: 700;
+  }
+
   .bottom .box{
     padding:6% ;
     background-color:#F0F2F6 ;
