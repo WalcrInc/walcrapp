@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
 export const TaskWorkerStyle = styled.div`
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   height: 100dvh;
   overflow: hidden;
-  position: relative;
   .top {
-    height: 40dvh;
+    /* height: 40dvh; */
     /* border:1px solid red ; */
+    /* z-index:10 ; */
   }
   .box h2 {
     font-size: 18px;
@@ -25,6 +25,7 @@ export const TaskWorkerStyle = styled.div`
     box-shadow: 0px 10px 30px 3px #05103726;
     border-radius: 40px 40px 0 0;
     position: absolute;
+    background-color:#fff ;
     bottom: 0px;
     width: 100%;
     padding: 10% 6%;
@@ -48,6 +49,7 @@ export const TaskWorkerStyle = styled.div`
     position: absolute;
     top: 10px;
     padding: 6%;
+    z-index:1 ;
   }
   .bottom .icon-input {
     display: flex;
@@ -65,10 +67,10 @@ export const TaskWorkerStyle = styled.div`
 
   .top .icon-input {
     display: flex;
-    gap: 20px;
+    gap: 10px;
     align-items: center;
     box-shadow: 0px 11px 20px 0px #0510371a;
-    padding: 3%;
+    padding: 2%;
     /* margin: 6% ; */
     border-radius: 16px;
 
@@ -81,7 +83,7 @@ export const TaskWorkerStyle = styled.div`
   .top .input {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
     width: 100%;
   }
   .bottom h1 {

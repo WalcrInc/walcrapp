@@ -3,6 +3,7 @@ import { Button, FormLabel, Input, Select } from "@chakra-ui/react";
 import React from "react";
 
 const StepTwo = ({ handleNext, handlePrev }) => {
+    const getAddress = JSON.parse(typeof window !=="undefined" && localStorage.getItem("address")) 
   return (
     <>
       <div className="top">
@@ -20,6 +21,8 @@ const StepTwo = ({ handleNext, handlePrev }) => {
               boxShadow={"0px 0px 0px 1px #CDD1DC"}
               background={"#F0F2F6"}
               borderRadius={"6px"}
+              readOnly
+              value={getAddress?.address1}
             />
             <Input
               size={"lg"}
@@ -28,6 +31,8 @@ const StepTwo = ({ handleNext, handlePrev }) => {
               background={"#F0F2F6"}
               placeholder="Destination address"
               borderRadius={"6px"}
+              readOnly
+              value={getAddress?.address2}
             />
           </div>
         </div>
