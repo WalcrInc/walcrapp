@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button, Input } from "@chakra-ui/react";
+import { Button, Input, Spinner } from "@chakra-ui/react";
 import { AddressIconSmall, BackIcon, RadioIcon } from "@/assets";
 import Map from "./Map";
 
@@ -88,13 +88,27 @@ const StepOne = ({ handleNext, handlePrev }) => {
       );
   };
 
-  const mergedData = {address1, address2};
+  const mergedData = { address1, address2 };
 
   const handleSubmit = () => {
     typeof window !== "undefined" &&
       localStorage.setItem("address", JSON.stringify(mergedData));
-      handleNext()
+    handleNext();
   };
+
+  if (isLoading)
+    return (
+      <div
+        style={{
+          display: "flex",
+          height: "100dvh",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Spinner />
+      </div>
+    );
 
   return (
     <>
@@ -103,13 +117,26 @@ const StepOne = ({ handleNext, handlePrev }) => {
           <BackIcon />
         </span>
 
-        <Map
-          coordinates={coordinates}
-          onMapClick={handleMapClick}
-          startCoordinates={startCoordinates}
-          endCoordinates={endCoordinates}
-          customIcon="images/icon.png" // Replace with the path to your custom icon
-        />
+        {isLoading ? (
+          <div
+            style={{
+              display: "flex",
+              height: "100dvh",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Spinner />
+          </div>
+        ) : (
+          <Map
+            coordinates={coordinates}
+            onMapClick={handleMapClick}
+            startCoordinates={startCoordinates}
+            endCoordinates={endCoordinates}
+            customIcon="images/icon.png" // Replace with the path to your custom icon
+          />
+        )}
       </div>
       <div className="bottom">
         <div className="icon-input">

@@ -24,14 +24,14 @@ const BottomNavbar = () => {
         Home
       </Link>
       <Link
-        href={"/dashboard/services"}
+        href={"/services"}
         className={
-          router.pathname === "/dashboard/services"
+          router.pathname === "/services"
             ? `${styled.active}`
             : `${styled.link}`
         }
       >
-         {router.pathname === "/dashboard/services" ? <ServiceIcon /> : <ServiceIconInactive /> }
+         {router.pathname === "/services" ? <ServiceIcon /> : <ServiceIconInactive /> }
         Services
       </Link>
       <Link
