@@ -23,10 +23,11 @@ const CustomButton = ({ children, onClick, type, variant,disabled, ...rest }) =>
     </Button>
   ) : variant === "transparent" ? (
     <Button
-      border={"1px solid #1A1A1A"}
+      border={"none"}
       outline={"none"}
+      
       color={"#000"}
-      background={"transparent"}
+      background={"#F7F7F7"}
       padding={"25px 14px"}
       borderRadius={"16px"}
       display={"flex"}

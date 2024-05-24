@@ -4,6 +4,9 @@ import { useRouter } from "next/router";
 const useRoutes = () => {
   const router = useRouter();
 
+  const handleOnboardingRoute = () => {
+    return router.push("/onboarding");
+  };
   const handleRegisterRoute = () => {
     return router.push("/register");
   };
@@ -27,6 +30,7 @@ const useRoutes = () => {
   };
 
   return {
+    handleOnboardingRoute,
     handleLoginRoute,
     handleOtpRoute,
     handleRegisterRoute,

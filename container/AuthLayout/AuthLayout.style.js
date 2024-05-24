@@ -10,7 +10,7 @@ export const AuthStyle = styled.div`
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
   }
   button:focus{
-   background: black;
+   background: grey;
   }
 
   .header{
