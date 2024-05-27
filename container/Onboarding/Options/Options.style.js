@@ -1,14 +1,15 @@
 import styled from "styled-components";
 
-export const PageContainer = styled.div`
+export const OptionContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100vh; /* Full height of the viewport */
+  height: 100vh;
+  overflow-y: hidden;
 
   header {
     background: url("/images/home.svg") no-repeat center center;
     background-size: cover;
-    flex: 2; /* Take up two-thirds of the container height */
+    flex: 2;
     display: flex;
     height: 100%;
     width: 100%;
@@ -18,26 +19,19 @@ export const PageContainer = styled.div`
       position: absolute;
       top: 0;
       left: 0;
-      margin: 20px; /* Adjust as needed for spacing */
-    }
-
-    .overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 112px;
-      background: url("/images/overlay.svg") no-repeat center center;
+      margin: 20px;
     }
   }
 
   .text {
-    flex: 1; /* Take up the other third of the container height */
+    position: relative;
+    background-color: #fff;
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center vertically */
-    align-items: center; /* Center horizontally */
-    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
     text-align: center;
     padding: 3%;
   }
