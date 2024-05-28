@@ -26,7 +26,7 @@ export const OptionContainer = styled.div`
       text-align: center;
       font-size:50px ;
       font-weight:800 ;
-    }2
+    }
   }
 
   .text {
