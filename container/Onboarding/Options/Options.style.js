@@ -10,7 +10,7 @@ export const OptionContainer = styled.div`
     background: url("/images/home.svg") no-repeat center center;
     background-size: cover;
     display: flex;
-    height: 75%;
+    height:70%;
     width: 100%;
     position: relative;
 
@@ -23,7 +23,8 @@ export const OptionContainer = styled.div`
       color: white;
       position: absolute;
       bottom: 50px;
-      text-align: center;
+      left: 20px;
+      text-align: left;
       font-size:50px ;
       font-weight:800 ;
     }
@@ -61,6 +62,7 @@ export const OptionContainer = styled.div`
     display: flex;
     justify-content: space-between;
     width: 100%;
+    /* margin-top:50px ; */
   }
 
   .text .skip {
