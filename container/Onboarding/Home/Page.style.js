@@ -40,6 +40,7 @@ export const PageContainer = styled.div`
     gap: 20px;
     text-align: center;
     padding: 3%;
+
   }
 
   .text h1 {

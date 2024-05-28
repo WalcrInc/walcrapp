@@ -31,9 +31,10 @@ const Onboarding = () => {
 
   return (
     <>
+     
+      <OnboardingStyle>
       {currentStep === 1 && <Page handleNext={handleNext} />}
       {currentStep === 5 && <Options handleNext={handleNext} />}
-      <OnboardingStyle>
         {currentStep === 2 && (
           <header className="header">
             {/* <span onClick={handlePrev}>
