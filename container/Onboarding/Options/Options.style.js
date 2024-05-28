@@ -40,7 +40,7 @@ export const OptionContainer = styled.div`
     text-align: center;
     padding: 3% 8%;
     position: absolute;
-    bottom: 0;
+    bottom: 10px;
     border-radius: 20px 20px 0 0;
     width: 100%;
     height: 30%;

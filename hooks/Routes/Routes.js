@@ -4,8 +4,17 @@ import { useRouter } from "next/router";
 const useRoutes = () => {
   const router = useRouter();
 
+  const handleHomeRoute = () => {
+    return router.push("/");
+  };
   const handleOnboardingRoute = () => {
     return router.push("/onboarding");
+  };
+  const handleTaskWalcrRouteX = () => {
+    return router.push("/become_taskwalcr");
+  };
+  const handleFindServicesRoute = () => {
+    return router.push("/find_service");
   };
   const handleRegisterRoute = () => {
     return router.push("/register");
@@ -30,6 +39,8 @@ const useRoutes = () => {
   };
 
   return {
+    handleHomeRoute,
+    handleTaskWalcrRouteX,
     handleOnboardingRoute,
     handleLoginRoute,
     handleOtpRoute,
@@ -37,7 +48,8 @@ const useRoutes = () => {
     handleForgotPasswordRoute,
     handleDashboardRoute,
     handleAddCashRoute,
-    handleTaskWorkerRoute
+    handleTaskWorkerRoute,
+    handleFindServicesRoute,
   };
 };
 

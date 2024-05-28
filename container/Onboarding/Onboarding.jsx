@@ -35,20 +35,13 @@ const Onboarding = () => {
       <OnboardingStyle>
       {currentStep === 1 && <Page handleNext={handleNext} />}
       {currentStep === 5 && <Options handleNext={handleNext} />}
-        {currentStep === 2 && (
-          <header className="header">
-            {/* <span onClick={handlePrev}>
-            <BackIcon />
-          </span>
-          <p onClick={handleRoute}>Skip</p> */}
-          </header>
-        )}
-        {(currentStep === 3 || currentStep === 4) && (
+       
+        {(currentStep === 2 || currentStep === 3 || currentStep === 4) && (
           <header className="header">
             <span onClick={handlePrev}>
               <BackIcon />
             </span>
-            <p onClick={handleRoute}>Skip</p>
+            <p onClick={()=>setCurrentStep(5)}>Skip</p>
           </header>
         )}
 
