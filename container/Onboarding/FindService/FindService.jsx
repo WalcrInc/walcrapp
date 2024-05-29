@@ -12,7 +12,7 @@ const FindService = () => {
     setOthers(!others);
   };
 
-  const { handleHomeRoute } = useRoutes();
+  const { handleHomeRoute, handleLoginRoute } = useRoutes();
   return (
     <FindServicesStyle>
       <header>
@@ -60,6 +60,7 @@ const FindService = () => {
         width={"100%"}
         // margin={"0 5%"}
         // left={"0"}
+        onClick={handleLoginRoute}
       >
         Continue
       </Button>

@@ -31,7 +31,7 @@ const Options = ({ handleNext }) => {
               height={"119px"}
               size={"lg"}
               borderRadius={"18px"}
-              onClick={handleTaskWalcrRouteX}
+              onClick={ handleFindServicesRoute}
               display={"flex"}
               flexDirection={"column"}
               gap="20px"
@@ -46,7 +46,7 @@ const Options = ({ handleNext }) => {
               height={"119px"}
               size={"lg"}
               borderRadius={"18px"}
-              onClick={handleFindServicesRoute}
+              onClick={handleTaskWalcrRouteX}
               display={"flex"}
               flexDirection={"column"}
               gap="20px"
