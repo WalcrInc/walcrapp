@@ -2002,3 +2002,14 @@ export const LocationIconX = () => (
     />
   </svg>
 );
+
+export const DeliveryIcon = () => (
+
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.6665 17.9051V10.667H29.3332V17.9051C29.3332 23.2926 29.3332 25.9863 27.5976 27.6599C25.8618 29.3337 23.0684 29.3337 17.4813 29.3337H14.5184C8.93134 29.3337 6.13784 29.3337 4.40217 27.6599C2.6665 25.9863 2.6665 23.2926 2.6665 17.9051Z" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M2.6665 10.667L3.94856 7.59007C4.94285 5.20375 5.44001 4.01059 6.4477 3.33879C7.4554 2.66699 8.748 2.66699 11.3332 2.66699H20.6665C23.2517 2.66699 24.5442 2.66699 25.552 3.33879C26.5597 4.01059 27.0568 5.20375 28.0512 7.59007L29.3332 10.667" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+<path d="M16 10.667V2.66699" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+<path d="M13.3335 16H18.6668" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+</svg>
+
+);
