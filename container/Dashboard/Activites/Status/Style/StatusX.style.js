@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-export const StatusContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+export const StatusXContainer = styled.div`
+  display: grid;
+  grid-template-rows:repeat(4, 1fr) ;
+  /* gap: 30px; */
   position:relative ;
-  height:auto ;
+  height:100dvh ;
   header {
     display: flex;
     justify-content: space-between;

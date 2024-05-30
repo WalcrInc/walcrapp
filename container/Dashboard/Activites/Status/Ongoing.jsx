@@ -1,6 +1,6 @@
 import { BackIcon, ProgressIcon, StarIcon } from "@/assets";
 import React from "react";
-import { StatusContainer } from "./Status.style";
+import { StatusContainer } from "./Style/Status.style";
 import Image from "next/image";
 import { Button } from "@chakra-ui/react";
 

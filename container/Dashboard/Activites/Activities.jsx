@@ -5,6 +5,8 @@ import { ActivityData } from "./data";
 import Image from "next/image";
 import { BackIcon } from "@/assets";
 import { Ongoing } from "./Status/Ongoing";
+import { Completed } from "./Status/Completed";
+import { Report } from "./Status/Report";
 
 const Activities = () => {
   const [step, setStep] = useState(1);
@@ -12,18 +14,21 @@ const Activities = () => {
 
   const handleSelected = (activity) => {
     setSelectedActivity(activity);
-    setStep(2); // Move to the next step when an activity is selected
+    setStep(prev=>prev+1); 
   };
 
+  const handleNext = () => {
+    setStep(prev=>prev+1); 
+  };
   const handlePrev = () => {
-    setStep(1); // Move back to step 1
+    setStep(prev=> prev-1); // Move back to step 1
   };
 
   const renderActivity = (activity) => {
     if (!activity) return null;
     switch (activity.status) {
       case "Completed":
-        return <div>Completed Activity Details</div>;
+        return <Completed handlePrev={handlePrev} handleNext={handleNext}/>;
       case "In Transit":
         return <div>In Transit Activity Details</div>;
       case "Delivered":
@@ -92,6 +97,12 @@ const Activities = () => {
           <div className="activity-detail">
             {renderActivity(selectedActivity)}
           </div>
+        </>
+      )}
+      {step === 3 && (
+        <>
+         
+         <Report setStep={setStep}/>
         </>
       )}
     </ActivitiesStyle>
