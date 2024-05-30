@@ -53,7 +53,7 @@ const Options = ({ handleNext }) => {
               padding={"2%"}
             >
               <User />
-              Become <br /> a taskworker
+              Become <br /> a taskwalcr
             </Button>
           </Box>
           <div className="buttons">

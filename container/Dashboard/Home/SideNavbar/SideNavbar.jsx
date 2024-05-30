@@ -72,17 +72,15 @@ const SideNavbar = ({ showNav, setShowNav, info }) => {
 
         <div className="support">
           <p>
-            <SupportIcon /> Help and Support{" "}
+            <SupportIcon /> Help Center
           </p>
           <p>
-            <PrivacyIcon /> Privacy policy{" "}
+            <PrivacyIcon />Settings and Privacy {" "}
           </p>
-          <p>
-            <AboutIcon /> About us{" "}
-          </p>
-          <p onClick={handleLogout}>
+         
+          {/* <p onClick={handleLogout}>
             <LogoutIcon /> Logout{" "}
-          </p>
+          </p> */}
         </div>
 
         <div className="task-work">

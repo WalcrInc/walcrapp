@@ -50,7 +50,7 @@ const Service = () => {
               <div key={id} className="box" onClick={() => handleClick(name)}>
                 <span>{icon}</span>
                 <h1>{name}</h1>
-                <p>{details}</p>
+                {/* <p>{details}</p> */}
               </div>
             ))}
           </div>

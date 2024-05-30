@@ -21,7 +21,7 @@ export const ServiceStyle = styled.div`
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
     border-radius: 10px;
   }
 
@@ -31,8 +31,8 @@ export const ServiceStyle = styled.div`
     border-radius: 16px;
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Added gap between boxes */
-    margin-bottom: 40px;
+    gap: 30px; /* Added gap between boxes */
+    /* margin-bottom: 40px; */
   }
   .box h1 {
     font-size: 18px;
