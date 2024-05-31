@@ -8,7 +8,9 @@ import {
   LogoutIcon,
   MessageIcon,
   PrivacyIcon,
+  SettingsIcon,
   SupportIcon,
+  W_Logo,
 } from "@/assets";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
@@ -16,6 +18,14 @@ import useRoutes from "@/hooks/Routes/Routes";
 import { toast } from "react-toastify";
 import { reset } from "@/features/Redux/authSlice";
 import Image from "next/image";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon,
+  Box,
+} from "@chakra-ui/react";
 
 const SideNavbar = ({ showNav, setShowNav, info }) => {
   const { handleLoginRoute } = useRoutes();
@@ -69,26 +79,56 @@ const SideNavbar = ({ showNav, setShowNav, info }) => {
             </p>
           </Link>
         </div>
+        <Accordion allowMultiple>
+          <AccordionItem
+            background={"transparent"}
+            border={"none"}
+            outline={"none"}
+          >
+            <h2>
+              <AccordionButton
+                _focus={{
+                  background: "transparent",
+                  border: "none",
+                  outline: "none",
+                }}
+                padding={"0"}
+              >
+                <Box as="span" flex="1" textAlign="left">
+                  Settings and Support
+                </Box>
+                <AccordionIcon fontSize={"30px"} color={"#F18341"} />
+              </AccordionButton>
+            </h2>
+            <AccordionPanel padding={"10px 0"}>
+              <div className="support">
+                <p>
+                  <SettingsIcon />
+                  Settings and Privacy{" "}
+                </p>
+                <p>
+                  <SupportIcon /> Help Center
+                </p>
 
-        <div className="support">
-          <p>
-            <SupportIcon /> Help Center
-          </p>
-          <p>
-            <PrivacyIcon />Settings and Privacy {" "}
-          </p>
-         
-          {/* <p onClick={handleLogout}>
-            <LogoutIcon /> Logout{" "}
-          </p> */}
-        </div>
+                <p onClick={handleLogout}>
+                  <LogoutIcon /> Logout{" "}
+                </p>
 
-        <div className="task-work">
-          <p>
-            <Logo />
-            Become a Taskwalker
-          </p>
-        </div>
+                <div className="task-work">
+                  <p className="logo">
+                    <W_Logo />
+                    Walcr
+                  </p>
+
+                  <p className="orange">
+                    {" "}
+                    <p className="dot"></p> TaskWalcr{" "}
+                  </p>
+                </div>
+              </div>
+            </AccordionPanel>
+          </AccordionItem>
+        </Accordion>
       </div>
       <div className="left" onClick={() => setShowNav(!showNav)}></div>
     </SideNavContainer>

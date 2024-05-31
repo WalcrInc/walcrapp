@@ -15,8 +15,8 @@ export const SideNavContainer = styled.div`
     background-color: #ffffff;
     padding: 6%;
     height: 100vh;
-    display: grid;
-    grid-template-rows: repeat(4, 2fr);
+    display:grid ;
+    grid-template-rows:repaet(4,2fr) ;
     gap: 50px;
   }
   .left {
@@ -40,18 +40,50 @@ export const SideNavContainer = styled.div`
 
   .image-container{
     background-color:pink ;
-    border-radius:50px ;
+    border-radius:100% ;
+    display:flex ;
+    align-items:center ;
+    justify-content:center ;
+    width:100px ;
+    height:100px ;
   }
 
   .links,
-  .support,
-  .task-work {
+  .support {
     display: flex;
     flex-direction: column;
     gap: 30px;
     /* color:red ; */
     /* background-color:red ; */
     /* height: 15dvh; */
+  }
+  .task-work {
+    display: flex;
+    gap: 20px;
+    align-items:center ;
+    border: 1px solid #F0F2F6;
+    padding:3% ;
+    border-radius:16px ;
+    /* color:red ; */
+    /* background-color:red ; */
+    /* height: 15dvh; */
+  }
+  .task-work .logo{
+    font-size:14px ;
+    font-weight:700 ;
+  }
+  
+  .task-work .dot{
+    width:8px ;
+    height:8px ;
+    border-radius:100% ;
+    background:#F18341 ;
+  }
+  .task-work .orange{
+    font-size:14px ;
+    font-weight:700 ;
+    color:#F18341 ;
+    display: flex;
   }
   p {
     display: flex;
