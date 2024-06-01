@@ -1,57 +1,58 @@
-@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
 
+
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
 * {
   font-family: "Mulish", sans-serif;
+  /* height: 100dvh; */
 }
-
 body {
   display: none;
   font-family: "Mulish", sans-serif;
   touch-action: manipulation;
 }
-
-.full-screen {
+.full-screen{
   margin: 0;
   height: 100dvh;
   width: 100vw;
-  overflow: hidden;
-  display: block; /* Ensure body is displayed */
+  /* overflow: hidden; */
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
   body {
     touch-action: pan-y;
+    display: block;
     transition: all 1s linear;
     background-repeat: no-repeat;
+    /* height: 100dvh; */
     font-family: "Mulish", sans-serif !important;
-    display: block; /* Ensure body is displayed */
   }
-
-  input:focus {
+  /* input{
+   
+  } */
+  input:focus{
     outline: none !important;
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
   }
-
-  .full-screen {
+  .full-screen{
     margin: 0;
     height: 100dvh;
     width: 100vw;
-    overflow: hidden;
+    /* overflow: hidden; */
   }
+ 
 }
-
 @media screen and (max-width: 769px) {
   body {
     touch-action: pan-y;
+    display: block;
     width: 100%;
     transition: all 1s linear;
-    display: block; /* Ensure body is displayed */
+    /* height: 100dvh; */
   }
-
-  .full-screen {
+  .full-screen{
     margin: 0;
     height: 100dvh;
     width: 100vw;
-    overflow: hidden;
+    /* overflow: hidden; */
   }
 }
