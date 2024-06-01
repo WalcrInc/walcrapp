@@ -8,7 +8,8 @@ import { Provider } from "react-redux";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
+import { useEffect } from "react";
 
 const queryClient = new QueryClient();
 const modaltheme = extendTheme({
@@ -19,17 +20,34 @@ const modaltheme = extendTheme({
           content: {
             maxWidth: ["95%", "95%", "95%"],
             minWidth: "95%",
-            bg: "#00ff00"
-          }
-        }
-      }
-    }
-  }
+            bg: "#00ff00",
+          },
+        },
+      },
+    },
+  },
 });
+
 export default function App({ Component, pageProps }) {
+  useEffect(() => {
+    const handleFullScreen = () => {
+      if ("standalone" in navigator && navigator.standalone) {
+        document.body.classList.add("full-screen");
+      } else {
+        document.body.classList.remove("full-screen");
+      }
+    };
+
+    handleFullScreen();
+    window.addEventListener("load", handleFullScreen);
+    return () => {
+      window.removeEventListener("load", handleFullScreen);
+    };
+  }, []);
+
   return (
     <ThemeProvider theme={theme}>
-      <ToastContainer/>
+      <ToastContainer />
       <ChakraProvider theme={modaltheme}>
         <Provider store={store}>
           <PersistGate loading={null} persistor={persistor}>
@@ -41,7 +59,5 @@ export default function App({ Component, pageProps }) {
         </Provider>
       </ChakraProvider>
     </ThemeProvider>
-
-    // </ChakraProvider>
   );
 }
