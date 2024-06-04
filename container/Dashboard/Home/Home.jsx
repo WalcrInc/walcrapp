@@ -7,7 +7,7 @@ import {
   LocationIcon,
   NotificationIcon,
 } from "@/assets";
-import useFetchData from "@/hooks/useFetchDataHook/useFetchData";
+import useFetchData, { BASE_URL } from "@/hooks/useFetchDataHook/useFetchData";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { HomeStyle } from "./Home.style";
@@ -29,12 +29,10 @@ const Home = () => {
   const { handleAddCashRoute, handleLoginRoute } = useRoutes();
 
   const { data, isLoading } = useFetchData({
-    url: "https://reluctant-jean-cliqpod-e187c94a.koyeb.app/v1/auth/user",
-    token: accessToken,
+    url: `${BASE_URL}/auth/user`,
   });
   const { data: walletBalance, isLoading: loading } = useFetchData({
-    url: "https://reluctant-jean-cliqpod-e187c94a.koyeb.app/v1/wallet/balance",
-    token: accessToken,
+    url: `${BASE_URL}/wallet/balance`,
   });
 
   useEffect(() => {

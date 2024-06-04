@@ -34,7 +34,7 @@ const BottomNavbar = () => {
          {router.pathname === "/services" ? <ServiceIcon /> : <ServiceIconInactive /> }
         Services
       </Link>
-      <Link
+      {/* <Link
         href={"/dashboard/services"}
         // className={
         //   router.pathname === "/dashboard/services"
@@ -43,7 +43,7 @@ const BottomNavbar = () => {
         // }
       >
         <BigPlusIcon/>
-      </Link>
+      </Link> */}
       <Link
         href={"/dashboard/activities"}
         className={
