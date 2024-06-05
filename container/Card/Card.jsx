@@ -1,19 +1,39 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CardStyle } from "./Card.style";
-import { BackIcon } from "@/assets";
+import { BackIcon, DeleteIconX } from "@/assets";
 import { StepOne } from "./Steps/StepOne";
 import { StepThree } from "./Steps/StepThree";
 import { StepTwo } from "./Steps/StepTwo";
 import useRoutes from "@/hooks/Routes/Routes";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
+import useFetchData, { BASE_URL } from "@/hooks/useFetchDataHook/useFetchData";
 
-const stripPromise = loadStripe("pk_test_51PDT6J2M2qi3czW9NkYJBY1Rpjlmh1K9JaUCl0eCAbSVTvDuESpBorKqhUehs1l5dIu27f4mErks2eaaCdxd6Q8n00nX6lhmhK");
+const stripPromise = loadStripe(
+  "pk_test_51PDT6J2M2qi3czW9NkYJBY1Rpjlmh1K9JaUCl0eCAbSVTvDuESpBorKqhUehs1l5dIu27f4mErks2eaaCdxd6Q8n00nX6lhmhK"
+);
 // console.log(process.env.STRIPE_PUBLIC_KEY)
 
 const Card = () => {
   const { handleDashboardRoute } = useRoutes();
   const [step, setStep] = useState(1);
+  const [cards, setCards] = useState(null);
+  const { data, isLoading } = useFetchData({
+    url: `${BASE_URL}/wallet/card`,
+  });
+
+  useEffect(() => {
+    if (data) {
+      setCards(data?.data?.card?.details);
+    }
+  }, [data, cards]);
+
+  useEffect(() => {
+    if (cards?.length > 0) {
+      setStep(3);
+    }
+  }, [cards]);
+
   const handleNext = () => {
     setStep((prev) => prev + 1);
   };
@@ -47,7 +67,12 @@ const Card = () => {
         )}
         <h1>{headerText()}</h1>
 
-        <span style={{ color: "white" }}>.</span>
+        {step === 1 && <span style={{ color: "white" }}>.</span>}
+        {step === 3 && (
+          <span>
+            <DeleteIconX />
+          </span>
+        )}
       </header>
 
       <div className="body">
@@ -59,7 +84,7 @@ const Card = () => {
             </Elements>
           </>
         )}
-        {step === 3 && <StepThree />}
+        {step === 3 && <StepThree cards={cards} />}
       </div>
     </CardStyle>
   );

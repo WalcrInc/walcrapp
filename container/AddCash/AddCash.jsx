@@ -20,7 +20,7 @@ import { BackIcon, ConfirmIcon, DeleteIcon } from "@/assets";
 import useRoutes from "@/hooks/Routes/Routes";
 import axios from "axios";
 import { useSelector } from "react-redux";
-import useFetchData from "@/hooks/useFetchDataHook/useFetchData";
+import useFetchData, { BASE_URL } from "@/hooks/useFetchDataHook/useFetchData";
 import { toast } from "react-toastify";
 
 const AddCash = () => {
@@ -53,8 +53,8 @@ const AddCash = () => {
   };
 
   const { data, isLoading } = useFetchData({
-    url: "https://reluctant-jean-cliqpod-e187c94a.koyeb.app/v1/wallet/card",
-    token: accessToken,
+    url: `${BASE_URL}/wallet/card`,
+
   });
 
   useEffect(() => {
