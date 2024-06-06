@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const CardStyle = styled.div`
   padding: 6%;
+  height:100dvh ;
   header {
     display: flex;
     justify-content: space-between;
@@ -19,7 +20,7 @@ export const CardStyle = styled.div`
     background-color: #1a1a1a;
     color: #fff;
   }
-
+//step 1
   .step-1 {
     display: flex;
     flex-direction: column;
@@ -40,6 +41,13 @@ export const CardStyle = styled.div`
     color: #5b6178;
   }
 
+  //step 2
+  .container{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    border:1px solid red ;
+  }
   form {
     display: flex;
     flex-direction: column;
@@ -62,6 +70,36 @@ export const CardStyle = styled.div`
     font-size: 18px;
   }
 
+  .card{
+    width:100% ;
+    text-align:center;
+  }
+  .card p{
+    color:#5B6178;
+    margin-bottom:10px ;
+    text-align:left;
+  }
+  .card span{
+    font-size:14px ;
+    
+  }
+  .card-details {
+    box-shadow: 0px 0px 0px 1px #cdd1dc;
+    padding: 8px 16px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom:30px ;
+  }
+
+  .cardnumber{
+    display:flex ;
+    gap:10px;
+    align-items:center ;
+  }
+
+  //step 3
   .cards {
     position: relative;
     width:100% ;
@@ -94,27 +132,22 @@ export const CardStyle = styled.div`
   .card-1 {
     z-index: 5;
     top: 200px;
-    background: linear-gradient(135deg, #ff7f50, #ff6347); /* Shades of orange */
   }
   .card-2 {
     z-index: 4;
     top: 150px;
-    background: linear-gradient(135deg, #9400d3, #9932cc); /* Shades of violet */
   }
   .card-3 {
     z-index: 3;
     top: 100px;
-    background: linear-gradient(135deg, #3cb371, #2e8b57); /* Shades of green */
   }
   .card-4 {
     z-index: 2;
     top: 50px;
-    background: linear-gradient(135deg, #4682b4, #4169e1); /* Shades of blue */
   }
   .card-5 {
     z-index: 1;
     top: 0px;
-    background: linear-gradient(-125deg, #5dd2ef, #2e9ebe 55%);
   }
 
   .card-1:hover,
@@ -124,5 +157,16 @@ export const CardStyle = styled.div`
   .card-5:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+
+.add-new{
+    position:absolute ;
+    bottom:50px ;
+    width:100% ;
+    left:0 ;
+    display:flex ;
+    justify-content:center ;
+    gap:10px;
+    align-items:center ;
   }
 `;

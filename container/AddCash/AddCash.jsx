@@ -26,7 +26,6 @@ import { toast } from "react-toastify";
 const AddCash = () => {
   const { user } = useSelector((state) => state.auth);
   const accessToken = user ? user.data : "";
-
   const { handleDashboardRoute } = useRoutes();
   const { isOpen, onClose, onOpen } = useDisclosure();
   const [input, setInput] = useState("");
@@ -75,21 +74,7 @@ const AddCash = () => {
     }
   };
 
-  const theme = extendTheme({
-    components: {
-      Modal: {
-        variants: {
-          wide: {
-            content: {
-              maxWidth: ["95%", "95%", "95%"],
-              minWidth: "95%",
-              bg: "#00ff00"
-            }
-          }
-        }
-      }
-    }
-  });
+
 
   const handleSubmit = async () => {
     if (!input || input === "$" || isNaN(parseFloat(input))) {
@@ -180,7 +165,6 @@ const AddCash = () => {
           </div>
           <div className="cardnumber">
             <p> **** {cardInfo[selectedCardIndex]?.card_number}</p>
-            {/* <p> ****  {cardInfo[selectedCardIndex]?.paymentMethodId}</p> */}
             <Button
               background={"#1a1a1a"}
               color={"#fff"}

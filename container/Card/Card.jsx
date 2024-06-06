@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { CardStyle } from "./Card.style";
-import { BackIcon, DeleteIconX } from "@/assets";
+import { BackIcon, CardIconX, DeleteIconX } from "@/assets";
 import { StepOne } from "./Steps/StepOne";
 import { StepThree } from "./Steps/StepThree";
 import { StepTwo } from "./Steps/StepTwo";
@@ -8,38 +8,41 @@ import useRoutes from "@/hooks/Routes/Routes";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import useFetchData, { BASE_URL } from "@/hooks/useFetchDataHook/useFetchData";
+import { useRouter } from "next/router";
 
-const stripPromise = loadStripe(
+const stripePromise = loadStripe(
   "pk_test_51PDT6J2M2qi3czW9NkYJBY1Rpjlmh1K9JaUCl0eCAbSVTvDuESpBorKqhUehs1l5dIu27f4mErks2eaaCdxd6Q8n00nX6lhmhK"
 );
-// console.log(process.env.STRIPE_PUBLIC_KEY)
 
 const Card = () => {
   const { handleDashboardRoute } = useRoutes();
   const [step, setStep] = useState(1);
   const [cards, setCards] = useState(null);
+  const router = useRouter();
   const { data, isLoading } = useFetchData({
     url: `${BASE_URL}/wallet/card`,
   });
 
   useEffect(() => {
     if (data) {
-      setCards(data?.data?.card?.details);
+      const cardDetails = data?.data?.card?.details;
+      setCards(cardDetails);
+      if (cardDetails?.length > 0) {
+        setStep(3);
+      }
     }
-  }, [data, cards]);
-
-  useEffect(() => {
-    if (cards?.length > 0) {
-      setStep(3);
-    }
-  }, [cards]);
+  }, [data]);
 
   const handleNext = () => {
     setStep((prev) => prev + 1);
   };
   const handlePrev = () => {
+    if (cards?.length > 0 && step === 2) {
+      return router.push("/dashboard");
+    }
     setStep((prev) => prev - 1);
   };
+
   const headerText = () => {
     switch (step) {
       case 1:
@@ -52,6 +55,7 @@ const Card = () => {
         return "";
     }
   };
+
   return (
     <CardStyle>
       <header>
@@ -68,6 +72,14 @@ const Card = () => {
         <h1>{headerText()}</h1>
 
         {step === 1 && <span style={{ color: "white" }}>.</span>}
+        {step === 2 && (
+          <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+            <p>{cards?.length}/5</p>
+            <span>
+              <CardIconX />
+            </span>
+          </div>
+        )}
         {step === 3 && (
           <span>
             <DeleteIconX />
@@ -76,15 +88,22 @@ const Card = () => {
       </header>
 
       <div className="body">
-        {step === 1 && <StepOne handleNext={handleNext} />}
+        {cards?.length > 0
+          ? step === 3 && <StepThree cards={cards} setStep={setStep} />
+          : step === 1 && (
+              <StepOne
+                handleNext={handleNext}
+                cards={cards}
+                setStep={setStep}
+              />
+            )}
+
         {step === 2 && (
-          <>
-            <Elements stripe={stripPromise}>
-              <StepTwo handleNext={handleNext} />
-            </Elements>
-          </>
+          <Elements stripe={stripePromise}>
+            <StepTwo handleNext={handleNext} cards={cards} />
+          </Elements>
         )}
-        {step === 3 && <StepThree cards={cards} />}
+        {step === 3 && <StepThree cards={cards} setStep={setStep} />}
       </div>
     </CardStyle>
   );

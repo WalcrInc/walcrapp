@@ -4,6 +4,7 @@ import Image from "next/image";
 
 const StepOne = ({ handleNext }) => {
   return (
+
     <div className="step-1">
       <Image
         width={300}
