@@ -8,16 +8,18 @@ export const SideNavContainer = styled.div`
   color: #1a1a1a;
   display: flex;
   z-index: 100000;
-
+ 
   font-size: 16px;
   .right {
     width: 80%;
     background-color: #ffffff;
     padding: 6%;
     height: 100vh;
-    display:grid ;
-    grid-template-rows:repaet(4,2fr) ;
+    overflow-y:scroll ;
+    display:flex ;
+    flex-direction:column ;
     gap: 50px;
+    border-radius:0 29px 29px 0 ;
   }
   .left {
     width: 20%;
@@ -31,6 +33,11 @@ export const SideNavContainer = styled.div`
   .name-address span {
     color: #5b6178;
     font-size: 14px;
+  }
+  .info-link{
+    display:flex ;
+    flex-direction:column ;
+    gap: 50px;
   }
   .info{
     margin-top:30px ;
@@ -48,7 +55,15 @@ export const SideNavContainer = styled.div`
     height:100px ;
   }
 
-  .links,
+  .links{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    
+    /* color:red ; */
+    /* background-color:red ; */
+    /* height: 15dvh; */
+  }
   .support {
     display: flex;
     flex-direction: column;
@@ -59,11 +74,14 @@ export const SideNavContainer = styled.div`
   }
   .task-work {
     display: flex;
-    gap: 20px;
+    justify-content:space-between ;
+    align-items:center ;
     align-items:center ;
     border: 1px solid #F0F2F6;
     padding:3% ;
     border-radius:16px ;
+    font-size:12px ;
+    
     /* color:red ; */
     /* background-color:red ; */
     /* height: 15dvh; */
@@ -92,6 +110,9 @@ export const SideNavContainer = styled.div`
   }
   .links a {
     text-decoration: none;
+    font-size:16px ;
+    font-weight:700 ;
+    color:#1a1a1a ;
   }
   .links a:hover {
     background-color: #1a1a1a;

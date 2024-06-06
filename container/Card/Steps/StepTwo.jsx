@@ -241,7 +241,7 @@ const StepTwo = ({ handleNext, cards }) => {
             size={"lg"}
             onClick={onClose}
           >
-            Close
+            Edit cards
           </Button>
         </ModalContent>
       </Modal>

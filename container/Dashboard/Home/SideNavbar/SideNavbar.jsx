@@ -3,13 +3,19 @@ import { SideNavContainer } from "./Sidebar.style";
 import {
   AboutIcon,
   AddressIcon,
+  CalendarIcon,
   CardIcon,
+  LockIcon,
   Logo,
   LogoutIcon,
   MessageIcon,
+  NextIcon,
   PrivacyIcon,
   SettingsIcon,
+  SharedIcon,
+  SpannerIcon,
   SupportIcon,
+  TaskIcon,
   W_Logo,
 } from "@/assets";
 import Link from "next/link";
@@ -40,45 +46,82 @@ const SideNavbar = ({ showNav, setShowNav, info }) => {
   return (
     <SideNavContainer>
       <div className="right">
-        <div className="info">
-          <div className="image-container">
-            <Image
-              src={"/images/profile.svg"}
-              height={82}
-              width={82}
-              alt="profile-picture"
-            />
+        <div className="info-link">
+          <div className="info">
+            <div className="image-container">
+              <Image
+                src={"/images/profile.svg"}
+                height={82}
+                width={82}
+                alt="profile-picture"
+              />
+            </div>
+            <div className="name-address">
+              <p>
+                {info?.firstname} {info?.lastname}
+              </p>
+              <span>{info?.address}</span>
+            </div>
           </div>
-          <div className="name-address">
-            <p>
-              {info?.firstname} {info?.lastname}
-            </p>
-            <span>{info?.address}</span>
+          <div className="links">
+            <Link href={"/dashboard"}>
+              {" "}
+              <p>
+                <TaskIcon />
+                My Tasks
+              </p>
+            </Link>
+            <Link href={"/dashboard"}>
+              {" "}
+              <p>
+                <SpannerIcon />
+                Task Request
+              </p>
+            </Link>
+            <Link href={"/dashboard"}>
+              {" "}
+              <p>
+                <SharedIcon />
+                Saved Taskwalkers
+              </p>
+            </Link>
+            <Link href={"/card"}>
+              {" "}
+              <p>
+                <CardIcon />
+                Wallets & Payment
+              </p>
+            </Link>
+            <Link href={"/dashboard"}>
+              {" "}
+              <p>
+                <CalendarIcon />
+                Schedule Prefrences
+              </p>
+            </Link>
+            <Link href={"/dashboard"}>
+              {" "}
+              <p>
+                <LockIcon />
+                Privacy & Data Settings
+              </p>
+            </Link>
+
+            <Link href={"/address"}>
+              <p>
+                <AddressIcon /> Location Settings
+              </p>
+            </Link>
+
+            <Link href={"/message"}>
+              {" "}
+              <p>
+                <MessageIcon /> Messages
+              </p>
+            </Link>
           </div>
         </div>
 
-        <div className="links">
-          <Link href={"/card"}>
-            {" "}
-            <p>
-              <CardIcon />
-              Saved Cards
-            </p>
-          </Link>
-
-          <Link href={"/address"}>
-            <p>
-              <AddressIcon /> Address
-            </p>
-          </Link>
-
-          <Link href={"/message"}>
-            {" "}
-            <p>
-              <MessageIcon /> Messages
-            </p>
-          </Link>
-        </div>
         <Accordion allowMultiple>
           <AccordionItem
             background={"transparent"}
@@ -115,7 +158,7 @@ const SideNavbar = ({ showNav, setShowNav, info }) => {
                 </p>
 
                 <div className="task-work">
-                  <p className="logo">
+                  {/* <p className="logo">
                     <W_Logo />
                     Walcr
                   </p>
@@ -123,7 +166,9 @@ const SideNavbar = ({ showNav, setShowNav, info }) => {
                   <p className="orange">
                     {" "}
                     <p className="dot"></p> TaskWalcr{" "}
-                  </p>
+                  </p> */}
+                  <p>Get Started with Walcr Taskwalker</p>
+                  <NextIcon/>
                 </div>
               </div>
             </AccordionPanel>
