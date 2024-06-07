@@ -149,9 +149,11 @@ const SideNavbar = ({ showNav, setShowNav, info }) => {
                   <SettingsIcon />
                   Settings and Privacy{" "}
                 </p>
+                <Link href={"/help"}>
                 <p>
                   <SupportIcon /> Help Center
                 </p>
+                </Link>
 
                 <p onClick={handleLogout}>
                   <LogoutIcon /> Logout{" "}
