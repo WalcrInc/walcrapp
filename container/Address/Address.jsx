@@ -8,7 +8,7 @@ import { StepThree } from "./Steps/StepThree";
 
 const Address = () => {
   const [step, setStep] = useState(1);
- 
+
   const handleNext = () => {
     setStep((prev) => prev + 1);
   };
@@ -20,8 +20,10 @@ const Address = () => {
       <AddressStyle>
         <div className="body">
           {step === 1 && <StepOne step={step} handleNext={handleNext} />}
-          {step === 2 && <StepTwo handleNext={handleNext} handlePrev={handlePrev} />}
-          {step === 3 && <StepThree />}
+          {step === 2 && (
+            <StepTwo handleNext={handleNext} handlePrev={handlePrev} />
+          )}
+          {step === 3 && <StepThree handlePrev={handlePrev} />}
         </div>
       </AddressStyle>
     </>

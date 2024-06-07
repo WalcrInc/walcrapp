@@ -1,8 +1,11 @@
+import { Message } from '@/container/Message'
 import React from 'react'
 
 const message = () => {
   return (
-    <div>message</div>
+    <div>
+      <Message/>
+    </div>
   )
 }
 

@@ -12,9 +12,6 @@ export const AddressStyle = styled.div`
     font-size: 18px;
     font-weight: 700;
   }
-  .body {
-    /* padding-top: 6%; */
-  }
 
   button:focus {
     background-color: #1a1a1a;
@@ -118,5 +115,35 @@ export const AddressStyle = styled.div`
   }
 
   //step 3
+  .step-3{
+    display:flex ;
+    flex-direction:column ;
+    gap:30px;
+    margin:6% auto ;
+    width:100% ;
+    /* border:1px solid red ; */
+  }
 
+  .info{
+    display:flex ;
+    justify-content:space-between ;
+    align-items:center ;
+  }
+
+  .info .text{
+    display:flex ;
+    flex-direction:column ;
+    gap:10px;
+  }
+
+  .text h1 {
+    font-size: 16px;
+    font-weight: 700;
+    /* color: #5b6178; */
+  }
+  .text p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #5b6178;
+  }
 `;
