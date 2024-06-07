@@ -8,8 +8,8 @@ const Message = () => {
   const [selectedMessage, setSelectedMessage] = useState(null);
 
   const handleSelected = (message) => {
-    setSelectedMessage(message); // Store selected message in state
-    setStep(2); // Move to step 2
+    setSelectedMessage(message);
+    setStep(2);
   };
 
   const handleNext = () => {
@@ -20,9 +20,15 @@ const Message = () => {
   };
 
   const renderMessage = (message) => {
-    switch (message?.message) { // Ensure message is defined
+    switch (message?.message) {
       case "Yes":
-        return <StepTwo handleNext={handleNext} handlePrev={handlePrev} message={message} />; // Pass message as prop
+        return (
+          <StepTwo
+            handleNext={handleNext}
+            handlePrev={handlePrev}
+            message={message}
+          />
+        );
       default:
         return <div>No message selected</div>;
     }

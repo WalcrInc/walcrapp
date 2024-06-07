@@ -174,6 +174,10 @@ export const MessageStyle = styled.div`
     align-items: center;
     gap: 10px;
     position: absolute;
+    left:0;
+    margin:0 5%;
+    /* padding:0 6%; */
+    width:95%;
     bottom: 25px;
   }
   .step-two .input span {
