@@ -10,9 +10,9 @@ const Page = ({ handleNext }) => {
   return (
     <PageContainer>
       <header>
-        <div className="logo">
+        {/* <div className="logo">
           <LogoWhiteX />
-        </div>
+        </div> */}
         <div className="overlay" />
       </header>
 
@@ -24,7 +24,8 @@ const Page = ({ handleNext }) => {
           color={"#fff"}
           background={"#1a1a1a"}
           size={"lg"}
-          width={"100%"}
+          width={"90%"}
+          margin={"0 10%"}
         >
           Get Started
         </Button>

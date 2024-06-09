@@ -8,6 +8,7 @@ import {
   LockIcon,
   Logo,
   LogoutIcon,
+  LogoutIconX,
   MessageIcon,
   NextIcon,
   PrivacyIcon,
@@ -31,9 +32,20 @@ import {
   AccordionPanel,
   AccordionIcon,
   Box,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
+  Button,
+  Text,
 } from "@chakra-ui/react";
 
 const SideNavbar = ({ showNav, setShowNav, info }) => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
   const { handleLoginRoute } = useRoutes();
   const dispatch = useDispatch();
   const handleLogout = () => {
@@ -150,12 +162,12 @@ const SideNavbar = ({ showNav, setShowNav, info }) => {
                   Settings and Privacy{" "}
                 </p>
                 <Link href={"/help"}>
-                <p>
-                  <SupportIcon /> Help Center
-                </p>
+                  <p>
+                    <SupportIcon /> Help Center
+                  </p>
                 </Link>
 
-                <p onClick={handleLogout}>
+                <p onClick={onOpen}>
                   <LogoutIcon /> Logout{" "}
                 </p>
 
@@ -170,7 +182,7 @@ const SideNavbar = ({ showNav, setShowNav, info }) => {
                     <p className="dot"></p> TaskWalcr{" "}
                   </p> */}
                   <p>Get Started with Walcr Taskwalker</p>
-                  <NextIcon/>
+                  <NextIcon />
                 </div>
               </div>
             </AccordionPanel>
@@ -178,6 +190,80 @@ const SideNavbar = ({ showNav, setShowNav, info }) => {
         </Accordion>
       </div>
       <div className="left" onClick={() => setShowNav(!showNav)}></div>
+
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent
+          display={"flex"}
+          flexDirection={"column"}
+          textAlign={"center"}
+          width={"90%"}
+          p={10}
+          gap={"50px"}
+          borderRadius={"32px"}
+          zIndex={"30"}
+          margin={"50% auto"}
+        >
+          <ModalBody
+            display={"flex"}
+            flexDirection={"column"}
+            alignItems={"center"}
+            justifyContent={"center"}
+            textAlign={"center"}
+            gap={"30px"}
+          >
+            <LogoutIconX />
+            <div
+              className="text"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "20px",
+              }}
+            >
+              <Text fontSize={"22px"} fontWeight={"700"}>
+                Logout
+              </Text>
+              <Text color={"#8C92AB"} fontSize={"14px"} fontWeight={"400"}>
+                {" "}
+                Are you sure you want to logout ?
+              </Text>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "5px",
+              }}
+            >
+              <Button
+                border={"1px solid #1a1a1a"}
+                background={"transparent"}
+                color={"#1a1a1a"}
+                width={"120px"}
+                size={"lg"}
+                mr={3}
+                onClick={onClose}
+                fontSize={"14px"}
+                fontWeight={"700"}
+              >
+                Cancel
+              </Button>
+              <Button
+                width={"120px"}
+                size={"lg"}
+                background={"#FB2047"}
+                color={"#fff"}
+                onClick={handleLogout}
+                fontSize={"14px"}
+                fontWeight={"700"}
+              >
+                Log out
+              </Button>
+            </div>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
     </SideNavContainer>
   );
 };

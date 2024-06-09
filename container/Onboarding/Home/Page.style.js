@@ -6,7 +6,7 @@ export const PageContainer = styled.div`
   height: 100vh; /* Full height of the viewport */
 
   header {
-    background: url("/images/home.svg") no-repeat center center;
+    background: url("/images/home1.svg") no-repeat center center;
     background-size: cover;
     flex: 2; /* Take up two-thirds of the container height */
     display: flex;
@@ -44,8 +44,8 @@ export const PageContainer = styled.div`
   }
 
   .text h1 {
-    font-size: 3.4rem;
-    font-weight: 800;
+    font-size: 55px;
+    font-weight: 700;
     line-height: 50px;
   }
 

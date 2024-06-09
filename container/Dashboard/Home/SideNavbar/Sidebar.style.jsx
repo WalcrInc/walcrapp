@@ -7,7 +7,7 @@ export const SideNavContainer = styled.div`
   width: 100%;
   color: #1a1a1a;
   display: flex;
-  z-index: 100000;
+  z-index: 2;
  
   font-size: 16px;
   .right {
@@ -31,7 +31,7 @@ export const SideNavContainer = styled.div`
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
   }
-  
+
   .left {
     width: 20%;
     background-color: #dcdcdc;

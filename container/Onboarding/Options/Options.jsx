@@ -18,24 +18,30 @@ const Options = ({ handleNext }) => {
     <>
       <OptionContainer>
         <header>
-          <div className="logo">
-            <LogoWhiteX />
-          </div>
+         
           <p>Lorem ipsum dolor sit.</p>
         </header>
         <div className="text">
-          <Box display={"flex"} gap="20px" position={"relative"} top={"-40px"}>
+          <Box
+            display={"flex"}
+            gap="20px"
+            position={"relative"}
+            top={"-15%"}
+            justifyContent={"center"}
+          >
             <Button
               background={"#F7F7F7"}
               width={"171px"}
               height={"119px"}
               size={"lg"}
               borderRadius={"18px"}
-              onClick={ handleFindServicesRoute}
+              onClick={handleFindServicesRoute}
               display={"flex"}
               flexDirection={"column"}
               gap="20px"
               padding={"2%"}
+              justifyContent={"center"}
+              alignItems={"center"}
             >
               <BrushIcon />
               Find <br /> a service
@@ -51,9 +57,11 @@ const Options = ({ handleNext }) => {
               flexDirection={"column"}
               gap="20px"
               padding={"2%"}
+              justifyContent={"center"}
+              alignItems={"center"}
             >
               <User />
-              Become <br /> a taskwalcr
+              Become <br /> a Taskwalker
             </Button>
           </Box>
           <div className="buttons">

@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { OnboardingStyle } from "./Onboarding.style";
-import { BackIcon, Logo, Next_Icon, Truck } from "@/assets";
-import Image from "next/image";
+import { BackIcon, Next_Icon } from "@/assets";
 import { useRouter } from "next/router";
-import { StackDivider, VStack } from "@chakra-ui/react";
 import { Page } from "./Home";
 import { Options } from "./Options/Options";
 
@@ -31,17 +29,15 @@ const Onboarding = () => {
 
   return (
     <>
-     
       <OnboardingStyle>
-      {currentStep === 1 && <Page handleNext={handleNext} />}
-      {currentStep === 5 && <Options handleNext={handleNext} />}
+        {currentStep === 1 && <Page handleNext={handleNext} />}
+        {currentStep === 5 && <Options handleNext={handleNext} />}
        
         {(currentStep === 2 || currentStep === 3 || currentStep === 4) && (
           <header className="header">
             <span onClick={handlePrev}>
               <BackIcon />
             </span>
-            <p onClick={()=>setCurrentStep(5)}>Skip</p>
           </header>
         )}
 
