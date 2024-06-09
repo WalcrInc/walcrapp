@@ -24,8 +24,8 @@ const StepFive = ({ setStep }) => {
       </div>
 
       <div className="body">
-        <Accordion defaultIndex={[0]} allowMultiple>
-          <AccordionItem _expanded={{ bg: '#F0F2F6' }}>
+        <Accordion allowMultiple>
+          <AccordionItem _expanded={{ bg: "#F0F2F6" }}>
             <h2>
               <AccordionButton>
                 <Box

@@ -11,6 +11,11 @@ export const MessageStyle = styled.div`
     align-items: center;
   }
 
+  .step-one h1{
+    font-size:18px ;
+    font-weight:700 ;
+  }
+
   .body {
     padding-top: 6%;
     display: flex;
@@ -38,10 +43,9 @@ export const MessageStyle = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f18341;
-    width: 11px;
-    height: 11px;
-    color: #fff;
+    background-color: #1a1a1a;
+    width: 8px;
+    height: 8px;
     font-size: 7px;
     border-radius: 100%;
   }

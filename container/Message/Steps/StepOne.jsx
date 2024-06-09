@@ -1,6 +1,6 @@
 import { BackIcon, SearchIcon } from "@/assets";
 import useRoutes from "@/hooks/Routes/Routes";
-import { Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
+import { Input, InputGroup, InputRightElement } from "@chakra-ui/react";
 import React from "react";
 import { messageData } from "./data";
 import Image from "next/image";
@@ -20,18 +20,15 @@ const StepOne = ({ handleSelected }) => {
       </div>
       <div className="body">
         <InputGroup width={"100%"} size={"lg"} background={"#F0F2F6"}>
-          <InputLeftElement>
+          <Input placeholder="Search for chat" />
+          <InputRightElement>
             <SearchIcon />
-          </InputLeftElement>
-          <Input
-            placeholder="Search for chat"
-            _placeholder={{ textAlign: "center" }}
-          />
+          </InputRightElement>
         </InputGroup>
         <div className="option">
           <p>General</p>
           <p>
-            <span>5</span> Orders
+            <span></span> My TaskWalkers
           </p>
         </div>
         <div className="message-body">

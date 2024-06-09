@@ -44,6 +44,7 @@ export const HelpStyle = styled.div`
     display: grid;
     width: 100%;
     grid-template-columns: repeat(2, 1fr);
+    gap:10px;
   }
   .faq .body .box-1 {
     background: linear-gradient(
@@ -54,6 +55,7 @@ export const HelpStyle = styled.div`
     height: 226px;
     border-radius: 16px;
     padding: 6%;
+    
   }
   .faq .body .box-2 {
     background: linear-gradient(180deg, #9491e2 0%, #aff2d8 100%);

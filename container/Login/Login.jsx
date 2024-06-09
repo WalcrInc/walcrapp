@@ -102,8 +102,7 @@ const Login = () => {
 
       <Box
         color={"#8C92AB"}
-        position={"absolute"}
-        margin={"0 auto"}
+        margin={"20px auto"}
         left={"0%"}
         width={"100%"}
         textAlign={"center"}

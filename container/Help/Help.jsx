@@ -7,7 +7,7 @@ import { StepFive } from "./Steps/StepFive";
 import { StepThree } from "./Steps/StepThree";
 
 const Help = () => {
-  const [step, setStep] = useState(5);
+  const [step, setStep] = useState(1);
   const [selectedMessage, setSelectedMessage] = useState(null);
 
   const handleSelected = (message) => {

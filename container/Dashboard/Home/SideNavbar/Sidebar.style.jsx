@@ -21,10 +21,22 @@ export const SideNavContainer = styled.div`
     gap: 50px;
     border-radius:0 29px 29px 0 ;
   }
+
+   /* Hide scrollbar */
+   .right::-webkit-scrollbar {
+    display: none;
+  }
+
+  .right {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  
   .left {
     width: 20%;
     background-color: #dcdcdc;
     opacity: 0.3;
+
   }
   .name-address p {
     font-size: 18px;
