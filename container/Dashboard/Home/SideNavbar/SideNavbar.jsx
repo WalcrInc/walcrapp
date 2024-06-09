@@ -5,6 +5,7 @@ import {
   AddressIcon,
   CalendarIcon,
   CardIcon,
+  EditIcon,
   LockIcon,
   Logo,
   LogoutIcon,
@@ -63,8 +64,8 @@ const SideNavbar = ({ showNav, setShowNav, info }) => {
             <div className="image-container">
               <Image
                 src={"/images/profile.svg"}
-                height={82}
-                width={82}
+                height={40}
+                width={40}
                 alt="profile-picture"
               />
             </div>
@@ -74,6 +75,10 @@ const SideNavbar = ({ showNav, setShowNav, info }) => {
               </p>
               <span>{info?.address}</span>
             </div>
+            <span>
+            <EditIcon/>
+            </span>
+           
           </div>
           <div className="links">
             <Link href={"/dashboard"}>

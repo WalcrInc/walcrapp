@@ -54,7 +54,12 @@ export const SideNavContainer = styled.div`
   .info{
     margin-top:30px ;
     display:flex;
-    gap:10px;
+    justify-content:space-between ;
+    /* align-items: center; */
+    /* gap:10px; */
+  }
+  .info span{
+    margin-top:5px ;
   }
 
   .image-container{
@@ -63,8 +68,8 @@ export const SideNavContainer = styled.div`
     display:flex ;
     align-items:center ;
     justify-content:center ;
-    width:100px ;
-    height:100px ;
+    width:50px ;
+    height:50px ;
   }
 
   .links{
