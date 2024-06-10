@@ -12,43 +12,16 @@ import "react-toastify/dist/ReactToastify.css";
 import { useEffect } from "react";
 
 const queryClient = new QueryClient();
-const modaltheme = extendTheme({
-  components: {
-    Modal: {
-      variants: {
-        wide: {
-          content: {
-            maxWidth: ["95%", "95%", "95%"],
-            minWidth: "95%",
-            bg: "#00ff00",
-          },
-        },
-      },
-    },
-  },
-});
+
+
 
 export default function App({ Component, pageProps }) {
-  useEffect(() => {
-    const handleFullScreen = () => {
-      if ("standalone" in navigator && navigator.standalone) {
-        document.body.classList.add("full-screen");
-      } else {
-        document.body.classList.remove("full-screen");
-      }
-    };
-
-    handleFullScreen();
-    window.addEventListener("load", handleFullScreen);
-    return () => {
-      window.removeEventListener("load", handleFullScreen);
-    };
-  }, []);
+  
 
   return (
     <ThemeProvider theme={theme}>
       <ToastContainer />
-      <ChakraProvider theme={modaltheme}>
+      <ChakraProvider >
         <Provider store={store}>
           <PersistGate loading={null} persistor={persistor}>
             <QueryClientProvider client={queryClient}>
