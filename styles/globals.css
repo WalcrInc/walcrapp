@@ -59,22 +59,29 @@ body {
   box-sizing: border-box;
   font-family: "Mulish", sans-serif;
 }
-
-html, body {
-  height: 100%;
-  width: 100%;
+header, footer, section, article, aside, nav, div {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+
 body {
-  display: flex;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Mulish", sans-serif;
+  height: 100%;
+  width: 100%;
   touch-action: manipulation;
-  background-color: #fff;
+  background-color: #000;
   -webkit-overflow-scrolling: touch;
   padding-top: env(safe-area-inset-top);
   padding-bottom: env(safe-area-inset-bottom);
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-right);
 }
+
 
 @media (min-width: 768px) and (max-width: 1024px) {
   body {
@@ -91,3 +98,4 @@ body {
     -webkit-overflow-scrolling: touch;
   }
 }
+
