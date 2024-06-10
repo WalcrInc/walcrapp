@@ -14,9 +14,7 @@ html, body {
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+ 
   touch-action: manipulation;
   background-color: #fff;
   -webkit-overflow-scrolling: touch;
