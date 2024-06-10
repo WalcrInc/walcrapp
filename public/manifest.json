@@ -1,12 +1,11 @@
 {
   "name": "Walcr",
   "short_name": "Walcr",
-  "theme_color": "#1a1a1a",
   "background_color": "#ffffff",
   "display": "standalone",
   "orientation": "any",
   "scope": "/",
-  "start_url": "/",
+  "start_url": "/?standalone=true",
   "icons": [
     {
       "src": "images/walcr-l-144.png",
