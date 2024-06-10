@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { OnboardingStyle } from "./Onboarding.style";
-import { BackIcon, BackIconX, Next_Icon, NextIcon } from "@/assets";
+import { BackIcon, BackIconX, Next_Icon } from "@/assets";
 import { useRouter } from "next/router";
 import { Page } from "./Home";
 import { Options } from "./Options/Options";
@@ -95,7 +95,7 @@ const Onboarding = () => {
               </div>
               <div className="next">
                 <span onClick={handleNext}>
-                  <NextIcon />
+                  <Next_Icon />
                 </span>
               </div>
             </div>
