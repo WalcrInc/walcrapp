@@ -31,31 +31,21 @@ export default class MyDocument extends Document {
           <script
             dangerouslySetInnerHTML={{
               __html: `
-                function isIOS() {
-                  return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+              function isIOS() {
+                return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+              }
+              
+              function hideStatusBar() {
+                if (isIOS()) {
+                  window.webkit.messageHandlers.StatusBarManager.postMessage({
+                    command: 'setHidden',
+                    value: true
+                  });
                 }
-
-                function setStatusBarStyle() {
-                  if (isIOS()) {
-                    var statusBarStyle = 'default';
-
-                    if (navigator.userAgent.match(/OS (\\d+)_(\\d+)/)) {
-                      var majorVersion = parseInt(RegExp.$1, 10);
-                      if (majorVersion >= 13) {
-                        statusBarStyle = 'dark-content';
-                      } else {
-                        statusBarStyle = 'black-translucent';
-                      }
-                    }
-
-                    var metaTag = document.createElement('meta');
-                    metaTag.name = 'apple-mobile-web-app-status-bar-style';
-                    metaTag.content = statusBarStyle;
-                    document.getElementsByTagName('head')[0].appendChild(metaTag);
-                  }
-                }
-
-                window.onload = setStatusBarStyle;
+              }
+              
+              window.addEventListener('load', hideStatusBar);
+              window.addEventListener('orientationchange', hideStatusBar);
               `,
             }}
           />
