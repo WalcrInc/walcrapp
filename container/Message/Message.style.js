@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const MessageStyle = styled.div`
-  padding: 3% 6%;
-
+  padding: 3% ;
+height:100dvh ;
   //step 1
   .step-one .header,
   .step-two .header {
@@ -29,11 +29,11 @@ export const MessageStyle = styled.div`
   }
 
   .option p {
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 400px;
     background-color: #f4f4f4;
     border-radius: 9px;
-    padding: 5px 30px;
+    padding: 5px 20px;
     border: 1px solid #f0f2f6;
     display: flex;
     gap: 10px;

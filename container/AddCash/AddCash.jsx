@@ -14,7 +14,7 @@ import {
   Spinner,
   Text,
   useDisclosure,
-  extendTheme
+  extendTheme,
 } from "@chakra-ui/react";
 import { BackIcon, ConfirmIcon, DeleteIcon } from "@/assets";
 import useRoutes from "@/hooks/Routes/Routes";
@@ -53,7 +53,6 @@ const AddCash = () => {
 
   const { data, isLoading } = useFetchData({
     url: `${BASE_URL}/wallet/card`,
-
   });
 
   useEffect(() => {
@@ -73,8 +72,6 @@ const AddCash = () => {
       setSelectedCardIndex((prevIndex) => (prevIndex + 1) % cardInfo.length);
     }
   };
-
-
 
   const handleSubmit = async () => {
     if (!input || input === "$" || isNaN(parseFloat(input))) {
@@ -103,7 +100,7 @@ const AddCash = () => {
       onOpen();
     } catch (error) {
       toast.error(error?.response?.data?.message?.code, {
-        theme:"dark"
+        theme: "dark",
       });
     } finally {
       setLoading(false);
@@ -198,6 +195,7 @@ const AddCash = () => {
           margin={"auto"}
           background={"#1a1a1a"}
           width={"90%"}
+          borderReadius={"16px"}
           onClick={handleSubmit}
         >
           {loading ? <Spinner /> : `Add ${input ? `$${input}` : "$0.00"}`}
@@ -226,60 +224,59 @@ const AddCash = () => {
       </div>
       {/* <Button onClick={onOpen}>Open Modal</Button> */}
 
- 
-        <Modal   isOpen={isOpen}>
-          <ModalOverlay />
-          <ModalContent
+      <Modal isOpen={isOpen}>
+        <ModalOverlay />
+        <ModalContent
+          display={"flex"}
+          flexDirection={"column"}
+          textAlign={"center"}
+          width={"90%"}
+          p={10}
+          gap={"50px"}
+          borderRadius={"32px"}
+          position={"absolute"}
+          bottom={"0"}
+        >
+          <ModalBody
             display={"flex"}
             flexDirection={"column"}
+            alignItems={"center"}
+            justifyContent={"center"}
             textAlign={"center"}
-            width={"90%"}
-            p={10}
             gap={"50px"}
-            borderRadius={"32px"}
-            position={"absolute"}
-            bottom={"0"}
-
           >
-            <ModalBody
-              display={"flex"}
-              flexDirection={"column"}
-              alignItems={"center"}
-              justifyContent={"center"}
-              textAlign={"center"}
-              gap={"50px"}
-            
-            >
-              {/* <Lorem count={2} />
-               */}
+            {/* <Lorem count={2} />
+             */}
 
-              <ConfirmIcon />
-              <div className="text" style={{
-                display:"flex",
-                flexDirection:"column",
-                gap:"20px"
-              }}>
-                <Text fontSize={"22px"} fontWeight={"700"}>
-                  Congratulations
-                </Text>
-                <Text color={"#8C92AB"} fontSize={"14px"} fontWeight={"400"}>
-                  {" "}
-                  ${message}
-                </Text>
-              </div>
-            </ModalBody>
-
-            <Button
-              size={"lg"}
-              background={"#1a1a1a"}
-              color={"#fff"}
-              onClick={handleDashboardRoute}
+            <ConfirmIcon />
+            <div
+              className="text"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "20px",
+              }}
             >
-              Continue
-            </Button>
-          </ModalContent>
-        </Modal>
-    
+              <Text fontSize={"22px"} fontWeight={"700"}>
+                Congratulations
+              </Text>
+              <Text color={"#8C92AB"} fontSize={"14px"} fontWeight={"400"}>
+                {" "}
+                ${message}
+              </Text>
+            </div>
+          </ModalBody>
+
+          <Button
+            size={"lg"}
+            background={"#1a1a1a"}
+            color={"#fff"}
+            onClick={handleDashboardRoute}
+          >
+            Continue
+          </Button>
+        </ModalContent>
+      </Modal>
     </AddCashStyle>
   );
 };

@@ -19,7 +19,7 @@ const StepOne = ({ handleSelected }) => {
         </>
       </div>
       <div className="body">
-        <InputGroup width={"100%"} size={"lg"} background={"#F0F2F6"}>
+        <InputGroup width={"100%"} size={"lg"} background={"#f4f4f4"}>
           <Input placeholder="Search for chat" />
           <InputRightElement>
             <SearchIcon />

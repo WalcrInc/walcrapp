@@ -12,7 +12,6 @@ const brandBackgrounds = {
 };
 
 const StepThree = ({ cards, setStep }) => {
-  // Reverse the cards array to show the latest card on top
   const reversedCards = cards ? [...cards].reverse() : [];
 
   const getCardClass = (index) => `card-${index + 1}`;

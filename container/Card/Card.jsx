@@ -64,8 +64,13 @@ const Card = () => {
             <BackIcon />
           </span>
         )}
-        {step !== 1 && (
+        {step == 2 && (
           <span onClick={handlePrev}>
+            <BackIcon />
+          </span>
+        )}
+        {step == 3 && (
+          <span onClick={handleDashboardRoute}>
             <BackIcon />
           </span>
         )}

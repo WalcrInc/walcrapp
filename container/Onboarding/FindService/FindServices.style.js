@@ -31,11 +31,12 @@ export const FindServicesStyle = styled.div`
     box-shadow: 0px 4px 12px 2px #00000014;
     border-radius: 18px;
     text-align: center;
-    padding: 6%;
+    padding: 6% 10%;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 100%;
+    width: 170px;
+    height:171px ;
   }
 
   .sub-box span {

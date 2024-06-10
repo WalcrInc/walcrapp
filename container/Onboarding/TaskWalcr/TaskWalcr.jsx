@@ -12,9 +12,13 @@ const TaskWalcr = () => {
         <span onClick={handleHomeRoute}>
           <BackIcon />
         </span>
-
-        <h1>Work your way You bring the skill.</h1>
-        <p>We’ll make earning easy.</p>
+        <h1>Work your way</h1>
+        <p>
+          {" "}
+          Work your way You bring the skill.
+          <br />
+          We’ll make earning easy.
+        </p>
       </header>
       <div className="section-1">
         <div className="box">
@@ -81,6 +85,7 @@ const TaskWalcr = () => {
         background={"#1a1a1a"}
         color={"#fff"}
         width={"100%"}
+        borderReadius={"16px"}
         onClick={handleLoginRoute}
       >
         Continue

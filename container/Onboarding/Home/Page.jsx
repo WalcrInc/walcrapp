@@ -30,6 +30,7 @@ const Page = ({ handleNext }) => {
           display={"flex"}
           alignItems={"center"}
           gap={"10px"}
+          borderReadius={"16px"}
         >
           Get Started  <NextIconX />
         </Button>

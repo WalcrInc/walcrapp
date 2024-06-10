@@ -13,7 +13,7 @@ export const SideNavContainer = styled.div`
   .right {
     width: 80%;
     background-color: #ffffff;
-    padding: 6%;
+    padding: 6% 4%;
     height: 100vh;
     overflow-y:scroll ;
     display:flex ;
@@ -81,10 +81,17 @@ export const SideNavContainer = styled.div`
     /* background-color:red ; */
     /* height: 15dvh; */
   }
+
+  .task{
+    border:1px dotted #1a1a1a ;
+    border-radius:8px ;
+    padding:3% ;
+  }
   .support {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
+    font-size:14px ;
     /* color:red ; */
     /* background-color:red ; */
     /* height: 15dvh; */
@@ -95,9 +102,10 @@ export const SideNavContainer = styled.div`
     align-items:center ;
     align-items:center ;
     border: 1px solid #F0F2F6;
-    padding:3% ;
-    border-radius:16px ;
-    font-size:12px ;
+    /* border: 1px solid #1a1a1a; */
+    padding:4% 3% ;
+    border-radius:8px ;
+    font-size:15px ;
     
     /* color:red ; */
     /* background-color:red ; */

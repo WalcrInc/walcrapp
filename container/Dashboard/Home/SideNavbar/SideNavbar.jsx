@@ -81,20 +81,20 @@ const SideNavbar = ({ showNav, setShowNav, info }) => {
            
           </div>
           <div className="links">
-            <Link href={"/dashboard"}>
+            <Link className="task" href={"/dashboard"}>
               {" "}
               <p>
                 <TaskIcon />
                 My Tasks
               </p>
             </Link>
-            <Link href={"/dashboard"}>
+            {/* <Link href={"/dashboard"}>
               {" "}
               <p>
                 <SpannerIcon />
                 Task Request
               </p>
-            </Link>
+            </Link> */}
             <Link href={"/dashboard"}>
               {" "}
               <p>
@@ -168,7 +168,7 @@ const SideNavbar = ({ showNav, setShowNav, info }) => {
                 </p>
                 <Link href={"/help"}>
                   <p>
-                    <SupportIcon /> Help Center
+                    <SupportIcon /> Help and Support Center
                   </p>
                 </Link>
 

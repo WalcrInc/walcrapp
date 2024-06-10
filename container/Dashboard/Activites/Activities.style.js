@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ActivitiesStyle = styled.div`
-  padding: 6%;
+  padding: 3%;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -12,7 +12,7 @@ export const ActivitiesStyle = styled.div`
   .body .box {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 10px;
   }
 
   .box .sub-box {
@@ -26,8 +26,8 @@ export const ActivitiesStyle = styled.div`
   }
   .sub-box .icon {
     background-color: #f0f2f6;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 100%;
     display: flex;
     align-items: center;

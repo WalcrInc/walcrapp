@@ -44,7 +44,7 @@ const Options = ({ handleNext }) => {
               alignItems={"center"}
             >
               <BrushIcon />
-              Find <br /> a service
+              Find <br /> a Service
             </Button>
             <Button
               background={"#F7F7F7"}

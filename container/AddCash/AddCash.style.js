@@ -1,27 +1,30 @@
 import styled from "styled-components";
 
 export const AddCashStyle = styled.div`
-  display: grid;
+  display: flex;
+  flex-direction:column ;
   text-align: center;
   /* gap: 80px; */
   align-items: center;
   height: 100dvh;
   /* border: 1px solid red; */
-  padding: 0;
+
   margin: 0;
+  padding: 6%;
   header {
     /* height:10px ; */
     /* border: 1px solid red; */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    width:100% ;
   }
   .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    padding: 6%;
+    
   }
   .header h1 {
     font-size: 18px;
@@ -35,7 +38,9 @@ export const AddCashStyle = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin:auto 5% ;
+    margin:auto  ;
+    width:100% ;
+
   }
   .cardnumber{
     display:flex ;

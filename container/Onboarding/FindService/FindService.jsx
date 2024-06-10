@@ -59,6 +59,7 @@ const FindService = () => {
         // bottom={"20px"}
         width={"100%"}
         // margin={"0 5%"}
+        borderReadius={"16px"}
         // left={"0"}
         onClick={handleLoginRoute}
       >
