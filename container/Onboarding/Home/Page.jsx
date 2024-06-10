@@ -3,6 +3,7 @@ import React from "react";
 import { PageContainer } from "./Page.style";
 import useRoutes from "@/hooks/Routes/Routes";
 import { LogoWhiteX } from "@/components/Logo/Logo";
+import { Next_Icon, NextIconX } from "@/assets";
 
 const Page = ({ handleNext }) => {
   const { handleOnboardingRoute } = useRoutes();
@@ -26,8 +27,11 @@ const Page = ({ handleNext }) => {
           size={"lg"}
           width={"90%"}
           margin={"0 10%"}
+          display={"flex"}
+          alignItems={"center"}
+          gap={"10px"}
         >
-          Get Started
+          Get Started  <NextIconX />
         </Button>
       </div>
     </PageContainer>

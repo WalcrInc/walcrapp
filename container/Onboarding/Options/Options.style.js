@@ -4,13 +4,13 @@ export const OptionContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
-  overflow: hidden; /* Ensures no overflow on y-axis */
+  overflow: hidden; 
 
   header {
-    background: url("/images/home5.svg") no-repeat center center;
+    background: url("/images/home5.png") no-repeat center center;
     background-size: cover;
     display: flex;
-    height: 80%; /* Adjusted height to allow space for the text section */
+    height: 80%; 
     width: 100%;
     position: relative;
 
@@ -40,8 +40,8 @@ export const OptionContainer = styled.div`
     gap: 15px;
     text-align: center;
     padding: 3% 8%;
-    position: relative; /* Changed to relative */
-    margin-top: -15%; /* Adjusted to overlap the header */
+    position: relative;
+    margin-top: -15%;
     width: 100%;
     height: fit-content;
     background-color: white;

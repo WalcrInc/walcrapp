@@ -3,12 +3,12 @@ import styled from "styled-components";
 export const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100vh; /* Full height of the viewport */
+  height: 100vh;
 
   header {
-    background: url("/images/home1.svg") no-repeat center center;
+    background: url("/images/home1.png") no-repeat center center;
     background-size: cover;
-    flex: 2; /* Take up two-thirds of the container height */
+    flex: 2; 
     display: flex;
     height: 100%;
     width: 100%;
@@ -18,7 +18,7 @@ export const PageContainer = styled.div`
       position: absolute;
       top: 0;
       left: 0;
-      margin: 20px; /* Adjust as needed for spacing */
+      margin: 20px; 
     }
 
     .overlay {
@@ -32,11 +32,11 @@ export const PageContainer = styled.div`
   }
 
   .text {
-    flex: 1; /* Take up the other third of the container height */
+    flex: 1; 
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center vertically */
-    align-items: center; /* Center horizontally */
+    justify-content: center; 
+    align-items: center; 
     gap: 20px;
     text-align: center;
     padding: 3%;

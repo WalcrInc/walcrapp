@@ -14,7 +14,7 @@ body {
   margin: 0;
   height: 100dvh;
   width: 100vw;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -23,8 +23,7 @@ body {
     display: block;
     transition: all 1s linear;
     background-repeat: no-repeat;
-    height: 100dvh;
-    overflow: scroll;
+    /* height: 100dvh; */
     font-family: "Mulish", sans-serif !important;
   }
   /* input{
@@ -34,7 +33,12 @@ body {
     outline: none !important;
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
   }
- 
+  .full-screen{
+    margin: 0;
+    height: 100dvh;
+    width: 100vw;
+    overflow: hidden;
+  }
  
 }
 @media screen and (max-width: 769px) {
@@ -43,8 +47,12 @@ body {
     display: block;
     width: 100%;
     transition: all 1s linear;
-    overflow: scroll;
-    height: 100dvh;
+    /* height: 100dvh; */
   }
- 
+  .full-screen{
+    margin: 0;
+    height: 100dvh;
+    width: 100vw;
+    overflow: hidden;
+  }
 }
