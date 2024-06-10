@@ -102,7 +102,9 @@ const AddCash = () => {
       setMessage(response?.data?.message);
       onOpen();
     } catch (error) {
-      console.error(error);
+      toast.error(error?.response?.data?.message?.code, {
+        theme:"dark"
+      });
     } finally {
       setLoading(false);
     }
@@ -185,7 +187,7 @@ const AddCash = () => {
             textAlign={"center"}
             border={"none"}
             readOnly
-            value={input ? `$${input}` : ""}
+            value={input ? `$${input?.toLocaleString()}` : ""}
             placeholder="$0.00"
           />
         </div>

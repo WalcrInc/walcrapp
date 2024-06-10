@@ -16,6 +16,7 @@ import { Notification } from "./Notification";
 import useRoutes from "@/hooks/Routes/Routes";
 import { toast } from "react-toastify";
 import { Spinner } from "@chakra-ui/react";
+
 const Home = () => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
@@ -59,7 +60,6 @@ const Home = () => {
           justifyContent: "center",
         }}
       >
-        {" "}
         <Spinner />
       </div>
     );
@@ -77,9 +77,8 @@ const Home = () => {
         </div>
         <div className="text">
           <h1>
-            Welcome, <span>{info?.firstname}</span>{" "}
+            Welcome, <span>{info?.firstname}</span>
           </h1>
-
           <p>
             <LocationIcon /> {info?.address}
           </p>
@@ -89,7 +88,7 @@ const Home = () => {
       <div className="wallet-balance" background={"#1A1A1A"}>
         <div className="text">
           <p>Wallet balance</p>
-          <h1> ${balance}</h1>
+          <h1> ${balance ? balance.toLocaleString() : "Loading..."}</h1>
         </div>
 
         <div onClick={handleAddCashRoute}>
@@ -120,11 +119,11 @@ const Home = () => {
         </div>
       </div>
 
-      {/* //SideNavbar */}
+      {/* SideNavbar */}
       {showNav && (
         <SideNavbar info={info} showNav={showNav} setShowNav={setShowNav} />
       )}
-      {/*Notification*/}
+      {/* Notification */}
       {showNotification && (
         <Notification handleShowNotification={handleShowNotification} />
       )}
