@@ -1,0 +1,101 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
+* {
+  font-family: "Mulish", sans-serif;
+}
+body {
+  display: none;
+  font-family: "Mulish", sans-serif;
+  touch-action: manipulation;
+  left: 0;
+    right:  0;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  body {
+    touch-action: pan-y;
+    position: absolute;
+    left: 0;
+    right:  0;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+    display: block;
+    transition: all 1s linear;
+    background-repeat: no-repeat;
+    height: 100dvh;
+    font-family: "Mulish", sans-serif !important;
+  }
+ 
+  input:focus{
+    outline: none !important;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
+  }
+ 
+}
+@media screen and (max-width: 769px) {
+  body {
+    position: absolute;
+    left: 0;
+    right:  0;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+    display: block;
+    width: 100%;
+    transition: all 1s linear;
+    -webkit-overflow-scrolling: touch;
+    
+  }
+}
+
+
+/* @import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Mulish", sans-serif;
+}
+header, footer, section, article, aside, nav, div {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Mulish", sans-serif;
+  height: 100%;
+  width: 100%;
+  touch-action: manipulation;
+  background-color: #000;
+  -webkit-overflow-scrolling: touch;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  body {
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
+    transition: all 1s linear;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  body {
+    touch-action: pan-y;
+    transition: all 1s linear;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+ */
