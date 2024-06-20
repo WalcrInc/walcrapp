@@ -1,4 +1,5 @@
 import { DateIcon, DeleteIcon_Red, WarningIcon } from "@/Assets";
+import Image from "next/image";
 import {
   Box,
   Button,
@@ -174,7 +175,7 @@ const StepTwo = ({ handleNext, cards }) => {
         {cards && cards.length > 0 && (
           <div className="card-details" key={cards[cardIndex]?.card_number}>
             <div className="brand-logo">
-              <img
+              <Image
                 src={brandLogos[cards[cardIndex]?.brand]}
                 alt={`${cards[cardIndex]?.brand} logo`}
                 style={{ width: "100px", height: "auto" }}

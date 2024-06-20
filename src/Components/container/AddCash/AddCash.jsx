@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { AddCashStyle } from "./AddCash.style";
+import Image from "next/image";
 import {
   Box,
   Button,
@@ -156,7 +157,7 @@ const AddCash = () => {
           key={cardInfo[selectedCardIndex]?.card_number}
         >
           <div className="brand-logo">
-            <img
+            <Image
               src={brandLogos[cardInfo[selectedCardIndex]?.brand]}
               alt={`${cardInfo[selectedCardIndex]?.brand} logo`}
               style={{ width: "100px", height: "auto" }}

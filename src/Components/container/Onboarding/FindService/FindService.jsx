@@ -25,8 +25,8 @@ const FindService = () => {
       </header>
       <div className="body">
         <div className="box">
-          {ServicesTypes.map((service) => (
-            <div className="sub-box">
+          {ServicesTypes.map((service, index) => (
+            <div className="sub-box" key={index}>
               <span>{service.icon}</span>
               <h1>{service.name}</h1>
               <p>{service.details}</p>
