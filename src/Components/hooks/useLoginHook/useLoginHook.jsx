@@ -85,7 +85,7 @@ const useLogin = () => {
       // })
       console.log(message)
     }
-  }, [isError, message, isSuccess, user]);
+  }, [isError, message, isSuccess, user, router]);
 
   return {
     show,

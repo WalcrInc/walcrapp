@@ -52,7 +52,7 @@ const Phone = ({ handlePrev }) => {
     if (isSuccess && user) {
       router.push("/dashboard");
     }
-  }, [isError, isSuccess, user]);
+  }, [isError, isSuccess, user, router]);
 
   return (
     <ForgotStyle>
