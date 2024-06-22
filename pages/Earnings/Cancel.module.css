@@ -1,0 +1,8 @@
+.Header{
+    width: 100%;
+    display: grid;
+    place-items: center;
+    height: 70px;
+    font-size: 23px;
+    font-weight: 700;
+}

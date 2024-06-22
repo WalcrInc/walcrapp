@@ -40,6 +40,15 @@ const useRoutes = () => {
   const handleEarningsRoute = () => {
     return router.push("/earnings");
   };
+  const handleCancelRoute = () => {
+    return router.push("/cancel");
+  };
+  const handleHoursRoute = () => {
+    return router.push("/hours");
+  };
+  const handleTasksRoute = () => {
+    return router.push("/tasts");
+  };
 
   return {
     handleHomeRoute,
@@ -54,6 +63,9 @@ const useRoutes = () => {
     handleTaskWorkerRoute,
     handleFindServicesRoute,
     handleEarningsRoute,
+    handleCancelRoute,
+    handleHoursRoute,
+    handleTasksRoute,
   };
 };
 
