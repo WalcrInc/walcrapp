@@ -202,7 +202,7 @@ const CancelChart = () => {
           label: function (tooltipItem) {
             const label = tooltipItem.label || '';
             const value = tooltipItem.raw || '';
-            return `${label}: ${value} ${label}`;
+            return `${label} ${value}`;
           },
         },
       },
