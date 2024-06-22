@@ -37,6 +37,9 @@ const useRoutes = () => {
   const handleTaskWorkerRoute = () => {
     return router.push("/find_taskworker");
   };
+  const handleEarningsRoute = () => {
+    return router.push("/earnings");
+  };
 
   return {
     handleHomeRoute,
@@ -50,6 +53,7 @@ const useRoutes = () => {
     handleAddCashRoute,
     handleTaskWorkerRoute,
     handleFindServicesRoute,
+    handleEarningsRoute,
   };
 };
 

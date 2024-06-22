@@ -56,6 +56,7 @@ const BottomNavbar = () => {
         
         Activity
       </Link>
+
       <Link
         href={"/dashboard/profile"}
         className={
@@ -71,4 +72,60 @@ const BottomNavbar = () => {
   );
 };
 
-export { BottomNavbar };
+const BottomNavBarTwo = () =>{
+  const router = useRouter();
+
+ 
+  return (
+    <Container>
+      <Link
+        href={"/dashboard"}
+        className={
+          router.pathname === "/dashboard"
+            ? `${styled.active}`
+            : `${styled.link}`
+        }
+      >
+        {router.pathname === "/dashboard" ? <HomeIconActive /> : <HomeIconInActive /> }
+        Home
+      </Link>
+      <Link
+        href={"#"}
+        className={
+          router.pathname === "#"
+            ? `${styled.active}`
+            : `${styled.link}`
+        }
+      >
+         {router.pathname === "#" ? <ServiceIcon /> : <ServiceIconInactive /> }
+        Earnings
+      </Link>
+      <Link
+        href={"#"}
+        className={
+          router.pathname === "#"
+            ? `${styled.active}`
+            : `${styled.link}`
+        }
+      >
+       {router.pathname === "#" ? <ActivityIcon /> : <ActivityIconInactive /> }
+        
+        Tasks
+      </Link>
+
+      <Link
+        href={"/dashboard/profile"}
+        className={
+          router.pathname === "/dashbaord/profile"
+            ? `${styled.active}`
+            : `${styled.link}`
+        }
+      >
+        <ProfileIcon/>
+        Profile
+      </Link>
+    </Container>
+  );
+}
+
+export { BottomNavbar, BottomNavBarTwo };
