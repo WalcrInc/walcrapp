@@ -52,7 +52,7 @@ const BarChart = () => {
         scales: {
             x: {
                 ticks: {
-                    display: false, // Hide x-axis labels
+                    // display: false, // Hide x-axis labels
                 },
             },
             y: {
