@@ -10,9 +10,16 @@ const Cancel = () => {
         </div>
       <CancelChart />
 
-      <div>
-        <p>You Cancelled</p>
-        <p>Client Cancelled</p>
+      <div className={styles.Container}>
+        <div className={styles.cancelled}>
+        <p className={styles.user}>You Cancelled</p>
+        <p>70</p>
+        </div>
+
+        <div className={styles.cancelled}>
+        <p className={styles.client}>Client Cancelled</p>
+        <p>30</p>
+        </div>
       </div>
     </div>
   )

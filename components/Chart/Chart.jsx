@@ -132,11 +132,11 @@ const CancelChart = () => {
         label: '# of earnings',
         data: [70, 30], // Initial data values
         backgroundColor: [
-          'rgba(75, 192, 192, 1)',
+          'rgb(255, 77, 77, 1)',
           'rgba(255, 159, 64, 1)',
         ],
         borderColor: [
-          'rgba(75, 192, 192, 1)',
+          'rgb(255, 77, 77, 1)',
           'rgba(255, 159, 64, 1)',
         ],
         borderWidth: 2,
