@@ -1,10 +1,11 @@
-// import { BottomNavbar } from '@/components/BottomNavbar'
 import { BottomNavBarTwo } from '@/components/BottomNavbar/BottomNavbar'
 import React from 'react'
 import useRoutes from '@/hooks/Routes/Routes'
-import PieChart from '@/components/Chart/Chart'
+import PieChart from '@/components/Chart/PieChart'
 import BarChart from '@/components/Chart/BarChart'
 import styles from './Earnings.module.css'
+import { CancelChart } from '@/components/Chart/Chart'
+import Link from 'next/link'
 
 
 const Earnings = () => {
@@ -16,7 +17,7 @@ const Earnings = () => {
             Earnings
           </h1>
 
-            <PieChart />
+            <CancelChart />
 
             <div className={styles.Cont}>
               <h2>Today's Activity</h2>
@@ -47,7 +48,7 @@ const Earnings = () => {
             </div>
 
             <div className={styles.chartCont}>
-              <p>Weekly task Chart {'>'}</p>
+              <Link href={'/hours'}>Weekly task Chart {'>'}</Link>
               <BarChart />
             </div>
         </div>

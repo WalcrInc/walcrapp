@@ -1,12 +1,23 @@
 import React from 'react'
 import styles from './Cancel.module.css'
 import { CancelChart } from '@/components/Chart/Chart'
+import Nav from './BottomNav/Nav'
+import { useRouter } from 'next/router';
+import BackArrow from '@/components/Icon/BackArrow'
 
 const Cancel = () => {
+  const router = useRouter();
+
+  const handleBack = () => {
+    router.back();
+  };
   return (
     <div>
         <div className={styles.Header}>
+          <BackArrow handleBack={handleBack}/>
+          <p>
             Cancellation
+          </p>
         </div>
       <CancelChart />
 
@@ -21,6 +32,8 @@ const Cancel = () => {
         <p>30</p>
         </div>
       </div>
+
+      <Nav />
     </div>
   )
 }

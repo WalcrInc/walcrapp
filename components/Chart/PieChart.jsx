@@ -3,30 +3,32 @@ import { Text } from '@chakra-ui/react'
 import { Box } from '@chakra-ui/react'
 import { Doughnut } from 'react-chartjs-2'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend  } from 'chart.js'
-import Style from './Chart.module.css'
+import Style from './PieChart.module.css'
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-export const CancelChart = () => {
+export const PieChart = () => {
   const [chartData, setChartData] = useState({
     datasets: [
       {
         label: '# of earnings',
-        data: [70, 30], // Initial data values
+        data: [3000, 1500, 500], // Initial data values
         backgroundColor: [
-          'rgb(255, 77, 77, 1)',
+          'rgba(75, 192, 192, 1)',
           'rgba(255, 159, 64, 1)',
+          'rgba(128, 128, 128, 1)',
         ],
         borderColor: [
-          'rgb(255, 77, 77, 1)',
+          'rgba(75, 192, 192, 1)',
           'rgba(255, 159, 64, 1)',
+          'rgba(128, 128, 128, 1)',
         ],
         borderWidth: 2,
         hoverOffset: 4,
         // className: Style.Chart,
       },
     ],
-    labels: ['You Cancelled', 'Client Cancelled'],
+    labels: ['In app', 'Cash', 'Other'],
   });
 
   useEffect(() => {
@@ -42,10 +44,12 @@ export const CancelChart = () => {
           backgroundColor: [
             'rgba(128, 128, 128, 1)',
             'rgba(255, 159, 64, 0.7)',
+            'rgba(75, 192, 192, 0.7)',
           ],
           borderColor: [
             'rgba(128, 128, 128, 1)',
             'rgba(255, 159, 64, 1)',
+            'rgba(75, 192, 192, 1)',
           ],
         })),
       }));
@@ -54,14 +58,15 @@ export const CancelChart = () => {
 
   const options = {
     responsive: true,
-    cutout: '70%', // Adjust the inner circle size here (percentage of radius)
+    cutout: '65%', // Adjust the inner circle size here (percentage of radius)
     plugins: {
       legend: {
         position: 'bottom',
-        display: false,
         labels: {
           usePointStyle: true, // Use point style for labels
           pointStyle: 'circle', // Set point style to circle
+          boxWidth: 15, // Width of the colored box
+          padding: 20, // Padding around the text and box
           borderRadius: 50, 
           generateLabels: (chart) => {
             const data = chart.data;
@@ -83,7 +88,7 @@ export const CancelChart = () => {
           label: function (tooltipItem) {
             const label = tooltipItem.label || '';
             const value = tooltipItem.raw || '';
-            return `${label} ${value}`;
+            return `${label}: ${value} ${label}`;
           },
         },
       },
@@ -103,15 +108,18 @@ export const CancelChart = () => {
       }
     });
   }, []);
-
   return (
     <div className={Style.chartContainer}>
-      <Box w="250px" h="250px" className={Style.bg}>
+      <Box w="300px" h="300px" className={Style.bg}>
         <Doughnut data={chartData} options={options} />
-        <Text position="absolute" top="50%" left="50%" transform="translate(-50%, -50%)" className={Style.Amount}>
-          100
+        <Text position="absolute" top="37%" left="50%" transform="translate(-50%, -50%)" className={Style.Amount}>
+          <p className={Style.text}>Total Earnings</p>
+          $5000
         </Text>
       </Box>
+      <p>
+        show breakdown {'>'}
+      </p>
     </div>
   );
-}
+};
