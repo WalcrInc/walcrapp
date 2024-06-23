@@ -4,7 +4,7 @@
   "start_url": "/",
   "background_color": "#ffffff",
   "display": "standalone",
-  "orientation":"portrait",
+  "orientation": "portrait",
   "theme_color": "#1a1a1a",
   "scope": "/",
   "icons": [
@@ -25,10 +25,9 @@
     },
     {
       "src": "images/walcr-l-512.png",
-      "type": "image/png",                                       
+      "type": "image/png",
       "sizes": "512x512"
     }
-   
   ],
   "screenshot": [
     {
@@ -43,5 +42,9 @@
       "sizes": "any",
       "form_factor": "wide"
     }
+  ],
+  "display_override": [
+    "fullscreen",
+    "window-controls-overlay"
   ]
 }
