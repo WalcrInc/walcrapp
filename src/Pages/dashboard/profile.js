@@ -1,6 +1,6 @@
 import React from 'react'
 import { BottomNavbar } from '@/Components/BottomNavbar'
-import { Profile } from '@/Components/container/Dashboard/Profile'
+import { Profile } from '@/App/Dashboard/Profile'
 
 const profile = () => {
   

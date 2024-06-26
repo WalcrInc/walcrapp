@@ -1,5 +1,5 @@
 import { BottomNavbar } from '@/components/BottomNavbar'
-import { Services } from '@/container/Dashboard/Services'
+import { Services } from '@/App/Dashboard/Services'
 import React from 'react'
 
 const services = () => {

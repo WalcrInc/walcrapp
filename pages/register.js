@@ -1,4 +1,4 @@
-import { Register } from "@/container/Register";
+import { Register } from "@/App/Register";
 import React from "react";
 
 const register = () => {

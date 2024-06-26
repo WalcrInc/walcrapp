@@ -1,6 +1,6 @@
 import React from 'react'
 import { BottomNavbar } from '@/Components/BottomNavbar'
-import { Activities } from '@/Components/container/Dashboard/Activites'
+import { Activities } from '@/App/Dashboard/Activites'
 
 const activities = () => {
   return (

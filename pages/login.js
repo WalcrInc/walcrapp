@@ -1,5 +1,5 @@
-import AuthLayout from '@/container/AuthLayout/AuthLayout'
-import { Login } from '@/container/Login'
+import AuthLayout from '@/App/AuthLayout/AuthLayout'
+import { Login } from '@/App/Login'
 import React from 'react'
 
 const login = () => {

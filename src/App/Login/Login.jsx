@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Link from "next/link";
-import { AppleIcon, GoogleIcon, Spinner } from "@/Assets";
+import { AppleIcon, GoogleIcon, Spinner } from "../../../assets";
 import { FormWithEmail } from "./Form/FormWithEmail";
 import { FormWithPhone } from "./Form/FormWithPhone";
 import { Box } from "@chakra-ui/react";

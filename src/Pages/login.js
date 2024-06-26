@@ -1,6 +1,6 @@
 import React from 'react'
-import AuthLayout from '@/Components/container/AuthLayout/AuthLayout'
-import { Login } from '@/Components/container/Login'
+import AuthLayout from '@/App/AuthLayout/AuthLayout'
+import { Login } from '@/App/Login'
 
 const login = () => {
   return (

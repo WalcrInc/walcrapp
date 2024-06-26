@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
-import { Onboarding } from '@/Components/container/Onboarding'
-import { Page } from '@/Components/container/Onboarding/Home'
+import { Onboarding } from '@/App/Onboarding'
+import { Page } from '@/App/Onboarding/Home'
 
 const inter = Inter({ subsets: ['latin'] })
 

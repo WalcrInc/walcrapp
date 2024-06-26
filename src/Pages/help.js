@@ -1,4 +1,4 @@
-import { Help } from "@/container/Help";
+import { Help } from "@/App/Help";
 import React from "react";
 
 const help = () => {

@@ -1,5 +1,5 @@
-import AuthLayout from "@/container/AuthLayout/AuthLayout";
-import { OTP } from "@/container/Register/Forms/OTP";
+import AuthLayout from "@/App/AuthLayout/AuthLayout";
+import { OTP } from "@/App/Register/Forms/OTP";
 import React from "react";
 
 const otp = () => {

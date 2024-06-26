@@ -1,4 +1,4 @@
-import { Card } from '@/container/Card'
+import { Card } from '@/App/Card'
 import React from 'react'
 
 const card = () => {
