@@ -3,7 +3,7 @@ import { StepOne } from "./Steps/StepOne";
 import { StepTwo } from "./Steps/StepTwo";
 import { StepThree } from "./Steps/StepThree";
 import { TaskWorkerStyle } from "./FindTaskworker.style";
-import useRoutes from "@/hooks/Routes/Routes";
+import useRoutes from "Src/Components/hooks/Routes/Routes";
 
 const FindTaskworker = () => {
   const [step, setStep] = useState(1);

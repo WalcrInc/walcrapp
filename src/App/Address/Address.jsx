@@ -1,4 +1,4 @@
-import { BackIcon } from "@/Assets";
+import { BackIcon } from "Src/Assets/index";
 import useRoutes from "@/hooks/Routes/Routes";
 import React, { useState } from "react";
 import { AddressStyle } from "./Address.style";

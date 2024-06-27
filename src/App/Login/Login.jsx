@@ -4,8 +4,8 @@ import { AppleIcon, GoogleIcon, Spinner } from "../../../assets";
 import { FormWithEmail } from "./Form/FormWithEmail";
 import { FormWithPhone } from "./Form/FormWithPhone";
 import { Box } from "@chakra-ui/react";
-import useLogin from "@/Components/hooks/useLoginHook/useLoginHook";
-import { CustomButton } from "@/Components/Button/Button";
+import useLogin from "Src/Components/hooks/useLoginHook/useLoginHook";
+import { CustomButton } from "Src/Components/Button/Button";
 
 const Login = () => {
   const {

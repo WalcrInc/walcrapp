@@ -1,9 +1,9 @@
-import { BackIcon } from "@/Assets";
+import { BackIcon } from "Src/Assets/index";
 import React, { useEffect, useState } from "react";
 import { ServicesTypes } from "./data";
 import { ServiceStyle } from "./Style.style";
 import { Button } from "@chakra-ui/react";
-import useFetchData, { BASE_URL } from "@/Components/hooks/useFetchDataHook/useFetchData";
+import useFetchData, { BASE_URL } from "Src/Components/hooks/useFetchDataHook/useFetchData";
 import { useRouter } from "next/router";
 
 const Service = () => {

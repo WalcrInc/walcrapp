@@ -2,7 +2,7 @@ import { Button } from "@chakra-ui/react";
 import React from "react";
 import Image from "next/image";
 import useRoutes from "@/hooks/Routes/Routes";
-import { BackIcon } from "@/Assets";
+import { BackIcon } from "Src/Assets/index";
 
 const StepOne = ({ handleNext, step }) => {
     const { handleDashboardRoute } = useRoutes();
@@ -25,7 +25,7 @@ const StepOne = ({ handleNext, step }) => {
         <Image
           width={300}
           height={300}
-          src={"/images/address.svg"}
+          src={"@/Assets/images/address.svg"}
           alt="wallet"
           objectFit="contain"
           className="image"

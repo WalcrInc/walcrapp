@@ -7,7 +7,7 @@ export const OptionContainer = styled.div`
   overflow: hidden; 
 
   header {
-    background: url("/images/home5.png") no-repeat center center;
+    background: url("@/Assets/images/home5.png") no-repeat center center;
     background-size: cover;
     display: flex;
     height: 80%; 

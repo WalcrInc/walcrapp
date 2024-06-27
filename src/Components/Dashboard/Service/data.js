@@ -5,7 +5,7 @@ import {
   HeavyIcon,
   MovingIcon,
   PaintingIcon,
-} from "@/assets";
+} from "Src/Assets/index";
 
 export const ServicesTypes = [
   {

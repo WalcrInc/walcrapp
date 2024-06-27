@@ -1,4 +1,4 @@
-import { DeliveryIcon } from "@/Assets";
+import { DeliveryIcon } from "Src/Assets/index";
 
 export const ActivityData = [
   {

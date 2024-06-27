@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import styled from "./BottomNav.module.css";
 import { Container } from "./BottomNav.style";
-import { ActivityIcon, ActivityIconInactive, BigPlusIcon, HomeIconActive, HomeIconInActive, ProfileIcon, ServiceIcon, ServiceIconInactive } from "@/Assets";
+import { ActivityIcon, ActivityIconInactive, BigPlusIcon, HomeIconActive, HomeIconInActive, ProfileIcon, ServiceIcon, ServiceIconInactive } from "Src/Assets/index";
 
 const BottomNavbar = () => {
   const router = useRouter();

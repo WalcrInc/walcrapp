@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { CardStyle } from "./Card.style";
-import { BackIcon, CardIconX, DeleteIconX } from "@/assets";
+import { BackIcon, CardIconX, DeleteIconX } from "Src/Assets/index";
 import { StepOne } from "./Steps/StepOne";
 import { StepThree } from "./Steps/StepThree";
 import { StepTwo } from "./Steps/StepTwo";
-import useRoutes from "@/hooks/Routes/Routes";
+import useRoutes from "Src/Components/hooks/Routes/Routes";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-import useFetchData, { BASE_URL } from "@/hooks/useFetchDataHook/useFetchData";
+import useFetchData, { BASE_URL } from "Src/Components/hooks/useFetchDataHook/useFetchData";
 import { useRouter } from "next/router";
 
 const stripePromise = loadStripe(

@@ -8,7 +8,7 @@ import {
   ForwardIconX,
   Location_Grey,
   MicrophoneIcon,
-} from "@/Assets";
+} from "Src/Assets/index";
 import {
   Button,
   Input,
@@ -37,7 +37,7 @@ const StepTwo = ({ handlePrev, handleNext, setStep }) => {
         <Image
           width={261}
           height={261}
-          src={"/images/help.svg"}
+          src={"@/Assets/images/help.svg"}
           alt="wallet"
           objectFit="contain"
           className="image"

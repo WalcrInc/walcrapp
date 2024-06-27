@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { OptionContainer } from "./Options.style.js";
-import { LogoWhiteX } from "@/Components/Logo/Logo";
+import { LogoWhiteX } from "Src/Components/Logo/Logo.jsx";
 import { Box, Button } from "@chakra-ui/react";
-import { AppleIcon, BrushIcon, GoogleIcon, User } from "@/Assets";
-import useRoutes from "@/Components/hooks/Routes/Routes.js";
+import { AppleIcon, BrushIcon, GoogleIcon, User } from "Src/Assets/index";
+import useRoutes from "Src/Components/hooks/Routes/Routes.js";
 
 const Options = ({ handleNext }) => {
   const [currentView, setCurrentView] = useState("");

@@ -4,7 +4,7 @@ import {
   ShareIcon,
   StarIcon,
   WalletIcon,
-} from "@/Assets";
+} from "Src/Assets/index";
 import React from "react";
 import { StatusContainer } from "./Style/Status.style";
 import { Button } from "@chakra-ui/react";
@@ -26,7 +26,7 @@ const Completed = ({ handlePrev, handleNext }) => {
             <div className="icon-text">
               <div className="icon">
                 <Image
-                  src={"/images/profile.svg"}
+                  src={"@/Assets/images/profile.svg"}
                   height={55}
                   width={55}
                   alt="profile-picture"

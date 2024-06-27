@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Button, Input, Spinner } from "@chakra-ui/react";
-import { AddressIconSmall, BackIcon, RadioIcon } from "@/Assets";
+import { AddressIconSmall, BackIcon, RadioIcon } from "Src/Assets/index";
 import Map from "../Map/Map";
 
 const StepTwo = ({ handleNext, handlePrev }) => {

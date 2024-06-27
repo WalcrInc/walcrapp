@@ -1,5 +1,6 @@
 import { Button } from "@chakra-ui/react";
 import React from "react";
+import Wallet from "@/Assets/images/Wallet.svg";
 import Image from "next/image";
 
 const StepOne = ({ handleNext }) => {
@@ -9,7 +10,7 @@ const StepOne = ({ handleNext }) => {
       <Image
         width={300}
         height={300}
-        src={"/images/Wallet.svg"}
+        src={Wallet}
         alt="wallet"
         objectFit="contain"
         className="image"

@@ -1,4 +1,4 @@
-import { DeleteIcon } from "@/assets";
+import { DeleteIcon } from "Src/Assets/index";
 import { Button, Input } from "@chakra-ui/react";
 import { useState } from "react";
 

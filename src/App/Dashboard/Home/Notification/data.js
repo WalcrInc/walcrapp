@@ -1,4 +1,4 @@
-import { Orange_Card } from "@/Assets";
+import { Orange_Card } from "Src/Assets/index";
 
 export const notification = [
   {

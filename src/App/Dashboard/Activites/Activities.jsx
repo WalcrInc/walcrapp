@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { ActivitiesStyle } from "./Activities.style";
-import { BottomNavbar } from "@/Components/BottomNavbar";
+import { BottomNavbar } from "Src/Components/BottomNavbar";
 import { ActivityData } from "./data";
 import Image from "next/image";
-import { BackIcon } from "@/Assets";
+import { BackIcon } from "Src/Assets/index";
 import { Ongoing } from "./Status/Ongoing";
 import { Completed } from "./Status/Completed";
 import { Report } from "./Status/Report";
@@ -76,7 +76,7 @@ const Activities = () => {
                     </div>
                     <div className="icon">
                       <Image
-                        src={"/images/profile.svg"}
+                        src={"@/Assets/images/profile.svg"}
                         height={30}
                         width={30}
                         alt="profile-picture"

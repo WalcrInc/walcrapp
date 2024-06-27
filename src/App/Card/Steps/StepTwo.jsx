@@ -1,4 +1,4 @@
-import { DateIcon, DeleteIcon_Red, WarningIcon } from "@/Assets/index";
+import { DateIcon, DeleteIcon_Red, WarningIcon } from "Src/Assets/index";
 import Image from "next/image";
 import {
   Box,

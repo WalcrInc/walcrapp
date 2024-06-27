@@ -1,4 +1,4 @@
-import { BackIcon, RadioIcon } from "@/Assets";
+import { BackIcon, RadioIcon } from "Src/Assets/index";
 import { Button, FormLabel, Input, Select } from "@chakra-ui/react";
 import React from "react";
 

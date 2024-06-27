@@ -1,4 +1,4 @@
-import { BackIcon, Spinner, USA } from "@/Assets";
+import { BackIcon, Spinner, USA } from "Src/Assets/index";
 import { Box, Button, FormControl, FormLabel, Input } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { ForgotStyle } from "./Phone.style";

@@ -17,11 +17,11 @@ import {
   useDisclosure,
   extendTheme,
 } from "@chakra-ui/react";
-import { BackIcon, ConfirmIcon, DeleteIcon } from "@/Assets";
-import useRoutes from "@/Components/hooks/Routes/Routes";
+import { BackIcon, ConfirmIcon, DeleteIcon } from "Src/Assets/index";
+import useRoutes from "Src/Components/hooks/Routes/Routes";
 import axios from "axios";
 import { useSelector } from "react-redux";
-import useFetchData, { BASE_URL } from "@/Components/hooks/useFetchDataHook/useFetchData";
+import useFetchData, { BASE_URL } from "Src/Components/hooks/useFetchDataHook/useFetchData";
 import { toast } from "react-toastify";
 
 const AddCash = () => {
@@ -111,10 +111,10 @@ const AddCash = () => {
   // console.log( cardInfo[selectedCardIndex]?.paymentMethodId )
 
   const brandLogos = {
-    Visa: "/images/Visa.svg",
-    MasterCard: "/images/Mastercard.svg",
-    venmo: "/images/Venmo.svg",
-    applePay: "/images/Apple.svg",
+    Visa: "@/Assets/images/Visa.svg",
+    MasterCard: "@/Assets/images/Mastercard.svg",
+    venmo: "@/Assets/images/Venmo.svg",
+    applePay: "@/Assets/images/Apple.svg",
   };
 
   if (isLoading)

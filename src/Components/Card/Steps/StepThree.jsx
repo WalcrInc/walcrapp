@@ -1,4 +1,4 @@
-import { AddIcon_Square } from "@/assets";
+import { AddIcon_Square } from "Src/Assets/index";
 import React from "react";
 import styled from "styled-components";
 

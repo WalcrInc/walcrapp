@@ -9,7 +9,7 @@ const StepOne = ({ handleNext }) => {
       <Image
         width={300}
         height={300}
-        src={"/images/Wallet.svg"}
+        src={"@/Assets/images/Wallet.svg"}
         alt="wallet"
         objectFit="contain"
         className="image"

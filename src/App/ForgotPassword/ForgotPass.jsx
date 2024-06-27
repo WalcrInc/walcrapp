@@ -1,4 +1,4 @@
-import { BackIcon } from "@/Assets";
+import { BackIcon } from "Src/Assets/index";
 import { Button, FormControl, FormLabel } from "@chakra-ui/react";
 import React from "react";
 import PhoneInput from "react-phone-input-2";

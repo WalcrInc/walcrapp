@@ -19,12 +19,12 @@ import {
   SupportIcon,
   TaskIcon,
   W_Logo,
-} from "@/Assets";
+} from "Src/Assets/index";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
-import useRoutes from "@/Components/hooks/Routes/Routes";
+import useRoutes from "Src/Components/hooks/Routes/Routes";
 import { toast } from "react-toastify";
-import { reset } from "@/Features/Auth/authSlice";
+import { reset } from "Src/Features/Auth/authSlice";
 import Image from "next/image";
 import {
   Accordion,
@@ -63,7 +63,7 @@ const SideNavbar = ({ showNav, setShowNav, info }) => {
           <div className="info">
             <div className="image-container">
               <Image
-                src={"/images/profile.svg"}
+                src={"@/Assets/images/profile.svg"}
                 height={40}
                 width={40}
                 alt="profile-picture"

@@ -2,7 +2,7 @@ import {
   BackIcon,
   CameraIcon,
   MicrophoneIcon,
-} from "@/Assets";
+} from "Src/Assets/index";
 import {
   Input,
   InputGroup,
@@ -30,7 +30,7 @@ const StepFour = ({ setStep }) => {
       <Image
           width={200}
           height={200}
-          src={"/images/chat.svg"}
+          src={"@/Assets/images/chat.svg"}
           alt="wallet"
           objectFit="contain"
           className="image"

@@ -19,12 +19,12 @@ import {
   SupportIcon,
   TaskIcon,
   W_Logo,
-} from "@/assets";
+} from "Src/Assets/index";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
-import useRoutes from "@/hooks/Routes/Routes";
+import useRoutes from "Src/Components/hooks/Routes/Routes";
 import { toast } from "react-toastify";
-import { reset } from "@/features/Redux/authSlice";
+import { reset } from "Src/Features/Auth/authSlice";
 import Image from "next/image";
 import {
   Accordion,
@@ -44,6 +44,7 @@ import {
   Button,
   Text,
 } from "@chakra-ui/react";
+import Profile from "@/Assets/images/profile.svg"
 
 const SideNavbar = ({ showNav, setShowNav, info }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -63,7 +64,7 @@ const SideNavbar = ({ showNav, setShowNav, info }) => {
           <div className="info">
             <div className="image-container">
               <Image
-                src={"/images/profile.svg"}
+                src={Profile}
                 height={40}
                 width={40}
                 alt="profile-picture"
@@ -88,13 +89,7 @@ const SideNavbar = ({ showNav, setShowNav, info }) => {
                 My Tasks
               </p>
             </Link>
-            {/* <Link href={"/dashboard"}>
-              {" "}
-              <p>
-                <SpannerIcon />
-                Task Request
-              </p>
-            </Link> */}
+
             <Link href={"/dashboard"}>
               {" "}
               <p>

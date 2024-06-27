@@ -8,8 +8,8 @@ import {
   FormControl,
   Button,
 } from "@chakra-ui/react";
-import { EmailIcon, PasswordIcon, PhoneIcon, UserIcon } from "@/Assets";
-import useFetchData from "@/Components/hooks/useFetchDataHook/useFetchData";
+import { EmailIcon, PasswordIcon, PhoneIcon, UserIcon } from "Src/Assets/index";
+import useFetchData from "Src/Components/hooks/useFetchDataHook/useFetchData";
 import { useSelector } from "react-redux";
 
 const Profile = () => {

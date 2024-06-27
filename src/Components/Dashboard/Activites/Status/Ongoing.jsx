@@ -1,4 +1,4 @@
-import { BackIcon, ProgressIcon, StarIcon } from "@/assets";
+import { BackIcon, ProgressIcon, StarIcon } from "Src/Assets/index";
 import React from "react";
 import { StatusContainer } from "./Style/Status.style";
 import Image from "next/image";
@@ -19,7 +19,7 @@ const Ongoing = ({ handlePrev }) => {
           <div className="icon-text">
             <div className="icon">
               <Image
-                src={"/images/profile.svg"}
+                src={"@/Assets/images/profile.svg"}
                 height={55}
                 width={55}
                 alt="profile-picture"

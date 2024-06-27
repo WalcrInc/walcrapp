@@ -1,6 +1,6 @@
 import React from "react";
 import { NotificationContainer } from "./Notification.style";
-import { BackIcon } from "@/Assets";
+import { BackIcon } from "Src/Assets/index";
 import { notification } from "./data";
 
 const Notification = ({ handleShowNotification }) => {

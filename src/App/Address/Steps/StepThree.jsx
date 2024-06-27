@@ -1,4 +1,4 @@
-import { BackIcon } from "@/Assets";
+import { BackIcon } from "Src/Assets/index";
 import Image from "next/image";
 import React from "react";
 import { mapData } from "./data";
@@ -23,7 +23,7 @@ const StepThree = ({handlePrev}) => {
             <Image
               width={87}
               height={64}
-              src={"/images/map.svg"}
+              src={"@/Assets/images/map.svg"}
               alt="wallet"
               objectFit="contain"
             />

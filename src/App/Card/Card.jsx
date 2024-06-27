@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { CardStyle } from "./Card.style";
-import { BackIcon, CardIconX, DeleteIconX } from "@/Assets";
+import { BackIcon, CardIconX, DeleteIconX } from "Src/Assets/index";
 import { StepOne } from "./Steps/StepOne";
 import { StepThree } from "./Steps/StepThree";
 import { StepTwo } from "./Steps/StepTwo";

@@ -1,4 +1,4 @@
-import { DateIcon, DeleteIcon_Red, WarningIcon } from "@/assets";
+import { DateIcon, DeleteIcon_Red, WarningIcon } from "Src/Assets/index";
 import {
   Box,
   Button,
@@ -29,6 +29,7 @@ import {
   ModalCloseButton,
   Text,
 } from "@chakra-ui/react";
+import Image from "next/image";
 
 const StepTwo = ({ handleNext, cards }) => {
   const { user } = useSelector((state) => state.auth);
@@ -47,10 +48,10 @@ const StepTwo = ({ handleNext, cards }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const brandLogos = {
-    Visa: "/images/Visa.svg",
-    MasterCard: "/images/Mastercard.svg",
-    venmo: "/images/Venmo.svg",
-    applePay: "/images/Apple.svg",
+    Visa: "@/Assets/images/Visa.svg",
+    MasterCard: "@/Assets/images/Mastercard.svg",
+    venmo: "@/Assets/images/Venmo.svg",
+    applePay: "@/Assets/images/Apple.svg",
     // Add more brand logos as needed
   };
 
@@ -174,7 +175,7 @@ const StepTwo = ({ handleNext, cards }) => {
         {cards && cards.length > 0 && (
           <div className="card-details" key={cards[cardIndex]?.card_number}>
             <div className="brand-logo">
-              <img
+              <Image
                 src={brandLogos[cards[cardIndex]?.brand]}
                 alt={`${cards[cardIndex]?.brand} logo`}
                 style={{ width: "100px", height: "auto" }}

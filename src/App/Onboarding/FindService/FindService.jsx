@@ -1,4 +1,4 @@
-import { AddIcon_Big, BackIcon } from "@/Assets";
+import { AddIcon_Big, BackIcon } from "Src/Assets/index";
 import React, { useState } from "react";
 import { FindServicesStyle } from "./FindServices.style";
 import { ServicesTypes } from "./data";

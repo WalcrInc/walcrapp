@@ -6,7 +6,7 @@ export const PageContainer = styled.div`
   height: 100vh;
 
   header {
-    background: url("/images/home1.png") no-repeat center center;
+    background: url("@/Assets/images/home1.png") no-repeat center center;
     background-size: cover;
     flex: 2; 
     display: flex;
@@ -27,7 +27,7 @@ export const PageContainer = styled.div`
       left: 0;
       width: 100%;
       height: 112px;
-      background: url("/images/overlay.svg") no-repeat center center;
+      background: url("@/Assets/images/overlay.svg") no-repeat center center;
     }
   }
 

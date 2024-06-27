@@ -25,7 +25,7 @@ export const OnboardingStyle = styled.div`
   }
 
   .icon {
-    background: url("/images/person.svg");
+    background: url("@/Assets/images/person.svg");
     height: 280px;
     width: 100%;
     background-repeat: no-repeat;

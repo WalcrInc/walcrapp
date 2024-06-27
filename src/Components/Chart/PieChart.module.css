@@ -1,0 +1,25 @@
+.chartContainer{
+    display: grid;
+    place-items: center;
+}
+
+/* .customItem > span{ */
+    /* display: inline-block; */
+    /* margin-right: 10px; */
+    /* width: 2px; Adjust this width as needed */
+  /* } */
+  .Chart{
+    background-color: darkgray;
+  }
+  .Amount{
+    font-size: 25px;
+    font-weight: 700;
+  }
+
+  .text {
+    font-size: 12px;
+    font-weight: 300;
+  }
+  .bg{
+    position: relative;
+  }

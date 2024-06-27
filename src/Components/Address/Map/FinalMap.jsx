@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Map from "./Map";
 import AddressInput from "./Input";
-import { BackIcon } from "@/assets";
+import { BackIcon } from "Src/Assets/index";
 
 const FinalMap = ({ handleNext, handlePrev }) => {
   const [address, setAddress] = useState("");

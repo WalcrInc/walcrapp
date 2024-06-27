@@ -1,8 +1,8 @@
 import React from "react";
 import { ServicesStyle } from "./Services.style.js";
 import { ServicesTypes } from "../Service/data.js";
-import services from "@/Pages/dashboard/services";
-import { RecieveIcon, SendIcon } from "@/Assets";
+import services from "Src/Pages/dashboard/services.js";
+import { RecieveIcon, SendIcon } from "Src/Assets/index";
 import useRoutes from "@/hooks/Routes/Routes";
 
 const Services = () => {
