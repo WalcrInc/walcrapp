@@ -1,4 +1,4 @@
-import { Delete_Red } from "@/assets";
+import { Delete_Red } from "Src/Assets/index";
 
 export const messageData = [
   {

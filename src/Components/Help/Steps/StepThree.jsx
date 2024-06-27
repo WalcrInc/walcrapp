@@ -1,4 +1,4 @@
-import { BackIcon } from "@/assets";
+import { BackIcon } from "Src/Assets/index";
 import Image from "next/image";
 import React from "react";
 
@@ -20,7 +20,7 @@ const StepThree = ({ setStep }) => {
           <Image
             width={200}
             height={200}
-            src={"/images/call.svg"}
+            src={"@/Assets/images/call.svg"}
             alt="wallet"
             objectFit="contain"
             className="image"

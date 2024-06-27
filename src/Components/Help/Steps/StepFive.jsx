@@ -1,4 +1,4 @@
-import { BackIcon, CameraIcon, MicrophoneIcon } from "@/assets";
+import { BackIcon, CameraIcon, MicrophoneIcon } from "Src/Assets/index";
 import {
   Accordion,
   AccordionItem,

@@ -1,5 +1,5 @@
-import { AlertIcon, DontShow, PasswordIcon, Show } from "@/assets";
-import ShowPassword from "@/hooks/useLoginHook/useLoginHook";
+import { AlertIcon, DontShow, PasswordIcon, Show } from "Src/Assets/index";
+import ShowPassword from "Src/Components/hooks/useLoginHook/useLoginHook";
 import { Button, FormControl, FormLabel, Input, Box } from "@chakra-ui/react";
 import Link from "next/link";
 

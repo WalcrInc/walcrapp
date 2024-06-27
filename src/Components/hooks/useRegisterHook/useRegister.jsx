@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useFormik } from "formik";
 import { useDispatch } from "react-redux";
-import { register } from "@/features/Redux/authSlice";
+import { register } from "Src/Features/Auth/authSlice";
 
 const useRegister = () => {
   const dispatch = useDispatch();

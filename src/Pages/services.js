@@ -1,5 +1,5 @@
+import { Service } from 'Src/Components/Dashboard/Service'
 import React from 'react'
-import { Service } from '@/App/Dashboard/Service'
 
 const services = () => {
   return (

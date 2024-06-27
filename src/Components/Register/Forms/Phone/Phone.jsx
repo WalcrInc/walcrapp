@@ -1,11 +1,11 @@
-import { BackIcon, Spinner, USA } from "@/assets";
+import { BackIcon, Spinner, USA } from "Src/Assets/index";
 import { Box, Button, FormControl, FormLabel, Input } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { ForgotStyle } from "./Phone.style";
 import { useRouter } from "next/router";
 import { useFormik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
-import { register } from "@/features/Redux/authSlice";
+import { register } from "Src/Features/Auth/authSlice";
 
 const Phone = ({ handlePrev }) => {
   const dispatch = useDispatch();
@@ -52,7 +52,7 @@ const Phone = ({ handlePrev }) => {
     if (isSuccess && user) {
       router.push("/dashboard");
     }
-  }, [isError, isSuccess, user]);
+  }, [isError, isSuccess, user, router]);
 
   return (
     <ForgotStyle>

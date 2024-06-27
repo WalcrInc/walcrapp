@@ -1,9 +1,9 @@
-import { AddIcon_Big, BackIcon } from "@/assets";
+import { AddIcon_Big, BackIcon } from "Src/Assets/index";
 import React, { useState } from "react";
 import { FindServicesStyle } from "./FindServices.style";
 import { ServicesTypes } from "./data";
 import { Button, Select } from "@chakra-ui/react";
-import useRoutes from "@/hooks/Routes/Routes";
+import useRoutes from "Src/Components/hooks/Routes/Routes";
 
 const FindService = () => {
   const [others, setOthers] = useState(false);
@@ -25,8 +25,8 @@ const FindService = () => {
       </header>
       <div className="body">
         <div className="box">
-          {ServicesTypes.map((service) => (
-            <div className="sub-box">
+          {ServicesTypes.map((service, index) => (
+            <div className="sub-box" key={index}>
               <span>{service.icon}</span>
               <h1>{service.name}</h1>
               <p>{service.details}</p>

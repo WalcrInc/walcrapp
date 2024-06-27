@@ -1,4 +1,4 @@
-import { AddCash } from '@/App/AddCash'
+import { AddCash } from 'Src/Components/AddCash'
 import React from 'react'
 
 const add_cash = () => {

@@ -1,4 +1,4 @@
-import { BackIcon } from "@/assets";
+import { BackIcon } from "Src/Assets/index";
 import { Button, Input, PinInput, PinInputField } from "@chakra-ui/react";
 import React, { useEffect, useRef, useState } from "react";
 import { OTPStyle } from "./OTP.style";

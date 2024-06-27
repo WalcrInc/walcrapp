@@ -1,4 +1,4 @@
-import { LogoWhite } from "@/Assets";
+import { LogoWhite } from "Src/Assets/index";
 import { Box } from "@chakra-ui/react";
 import React from "react";
 

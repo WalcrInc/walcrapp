@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { OnboardingStyle } from "./Onboarding.style";
-import { BackIcon, BackIconX, Next_Icon } from "@/assets";
+import { BackIcon, BackIconX, Next_Icon } from "Src/Assets/index";
 import { useRouter } from "next/router";
 import { Page } from "./Home";
 import { Options } from "./Options/Options";

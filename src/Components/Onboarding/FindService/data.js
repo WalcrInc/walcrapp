@@ -11,7 +11,7 @@ import {
   MovingIcon_Coloured,
   PaintingIcon,
   PaintingIcon_Coloured,
-} from "@/assets";
+} from "Src/Assets/index";
 
 export const ServicesTypes = [
   {

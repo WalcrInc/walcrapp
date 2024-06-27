@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useFormik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
-import { login,  } from "@/features/Redux/authSlice";
+import { login,  } from "Src/Features/Auth/authSlice";
 import { useRouter } from "next/router";
 import { toast } from "react-toastify";
 
@@ -85,7 +85,7 @@ const useLogin = () => {
       // })
       console.log(message)
     }
-  }, [isError, message, isSuccess, user]);
+  }, [isError, message, isSuccess, user, router]);
 
   return {
     show,

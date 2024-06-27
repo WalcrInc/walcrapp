@@ -5,9 +5,9 @@ import {
   GoogleIcon,
   PasswordIcon,
   Show,
-} from "@/assets";
-import { CustomButton } from "@/components/Button/Button";
-import useRegister from "@/hooks/useRegisterHook/useRegister";
+} from "Src/Assets/index";
+import { CustomButton } from "Src/Components/Button/Button";
+import useRegister from "Src/Components/hooks/useRegisterHook/useRegister";
 import { Box, FormControl, FormLabel, Input } from "@chakra-ui/react";
 import Link from "next/link";
 import React from "react";

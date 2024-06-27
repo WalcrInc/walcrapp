@@ -1,11 +1,11 @@
-import { BackIcon } from "@/assets";
+import { BackIcon } from "Src/Assets/index";
 import { Button, FormControl, FormLabel } from "@chakra-ui/react";
 import React from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { ForgotStyle } from "./ForgotPass.style";
 import { useRouter } from "next/router";
-import useRoutes from "@/hooks/Routes/Routes";
+import useRoutes from "Src/Components/hooks/Routes/Routes";
 import Link from "next/link";
 
 const ForgotPass = () => {

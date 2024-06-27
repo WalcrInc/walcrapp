@@ -4,7 +4,7 @@ import {
   CameraIcon,
   Location_Grey,
   MicrophoneIcon,
-} from "@/assets";
+} from "Src/Assets/index";
 import {
   Input,
   InputGroup,
@@ -25,7 +25,7 @@ const StepTwo = ({ handlePrev, message }) => {
           <div className="icon-text">
             <div className="icon">
               <Image
-                src={"/images/profile.svg"}
+                src={"@/Assets/images/profile.svg"}
                 height={40}
                 width={40}
                 alt="profile-picture"
@@ -48,7 +48,7 @@ const StepTwo = ({ handlePrev, message }) => {
         <div className="info">
           <div className="info-icon">
             <Image
-              src={"/images/profile.svg"}
+              src={"@/Assets/images/profile.svg"}
               height={100}
               width={100}
               alt="profile-picture"

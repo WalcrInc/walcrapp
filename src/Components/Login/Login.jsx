@@ -1,11 +1,11 @@
 import { useState } from "react";
 import Link from "next/link";
-import { AppleIcon, GoogleIcon, Spinner } from "@/assets";
+import { AppleIcon, GoogleIcon, Spinner } from "Src/Assets/index";
 import { FormWithEmail } from "./Form/FormWithEmail";
 import { FormWithPhone } from "./Form/FormWithPhone";
 import { Box } from "@chakra-ui/react";
-import useLogin from "@/hooks/useLoginHook/useLoginHook";
-import { CustomButton } from "@/components/Button/Button";
+import useLogin from "Src/Components/hooks/useLoginHook/useLoginHook";
+import { CustomButton } from "Src/Components/Button/Button";
 
 const Login = () => {
   const {
