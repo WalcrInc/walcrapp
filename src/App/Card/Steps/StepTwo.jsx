@@ -1,4 +1,4 @@
-import { DateIcon, DeleteIcon_Red, WarningIcon } from "@/Assets";
+import { DateIcon, DeleteIcon_Red, WarningIcon } from "@/Assets/index";
 import Image from "next/image";
 import {
   Box,
@@ -48,10 +48,10 @@ const StepTwo = ({ handleNext, cards }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const brandLogos = {
-    Visa: "/images/Visa.svg",
-    MasterCard: "/images/Mastercard.svg",
-    venmo: "/images/Venmo.svg",
-    applePay: "/images/Apple.svg",
+    Visa: "@/Assets/images/Visa.svg",
+    MasterCard: "@/Assets/images/Mastercard.svg",
+    venmo: "@/Assets/images/Venmo.svg",
+    applePay: "@/Assets/images/Apple.svg",
     // Add more brand logos as needed
   };
 
