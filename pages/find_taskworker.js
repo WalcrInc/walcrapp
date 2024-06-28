@@ -1,5 +1,5 @@
-// import { FindTaskWorker } from '@/container/Dashboard/Services/FindTaskworker'
-import { FindTaskworker } from '@/container/Dashboard/Services/FindTaskworker/FindTaskworker'
+// import { FindTaskWorker } from '@/Components/Dashboard/Services/FindTaskworker'
+import { FindTaskworker } from '@/Components/Dashboard/Services/FindTaskworker/FindTaskworker'
 import React from 'react'
 
 const findtaskworker = () => {

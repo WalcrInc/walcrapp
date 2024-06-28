@@ -1,4 +1,4 @@
-import { Message } from '@/container/Message'
+import { Message } from '@/Components/Message'
 import React from 'react'
 
 const message = () => {

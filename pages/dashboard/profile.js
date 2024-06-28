@@ -1,5 +1,5 @@
 import { BottomNavbar } from '@/components/BottomNavbar'
-import { Profile } from '@/container/Dashboard/Profile'
+import { Profile } from '@/Components/Dashboard/Profile'
 import React from 'react'
 
 const profile = () => {
