@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { AddCashStyle } from "./AddCash.style";
-import Image from "next/image";
 import {
   Box,
   Button,
@@ -23,6 +22,7 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 import useFetchData, { BASE_URL } from "Src/Components/hooks/useFetchDataHook/useFetchData";
 import { toast } from "react-toastify";
+import Image from "next/image";
 
 const AddCash = () => {
   const { user } = useSelector((state) => state.auth);

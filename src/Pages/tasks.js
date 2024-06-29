@@ -1,5 +1,5 @@
 import React from 'react'
-import Tasks from '../Components/Earnings/Tasks'
+import Tasks from '../App/Earnings/Tasks'
 
 const tasks = () => {
   return (

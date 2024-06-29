@@ -1,6 +1,7 @@
 import { BackIcon, SearchIcon } from "Src/Assets/index";
-import useRoutes from "@/hooks/Routes/Routes";
+import useRoutes from "@/Features/Hooks/Routes/Routes";
 import { Input, InputGroup, InputRightElement } from "@chakra-ui/react";
+import Profile from "@/Assets/images/profile.svg"
 import React from "react";
 import { messageData } from "./data";
 import Image from "next/image";
@@ -41,7 +42,7 @@ const StepOne = ({ handleSelected }) => {
               <div className="icon-text">
                 <div className="icon">
                   <Image
-                    src={"@/Assets/images/profile.svg"}
+                    src={Profile}
                     height={55}
                     width={55}
                     alt="profile-picture"

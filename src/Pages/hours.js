@@ -1,5 +1,5 @@
 import React from 'react'
-import Hours from '../Components/Earnings/Hours'
+import Hours from '../App/Earnings/Hours'
 
 const hours = () => {
   return (

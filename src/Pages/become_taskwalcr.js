@@ -1,4 +1,4 @@
-import { TaskWalcr } from "Src/Components/Onboarding/TaskWalcr/TaskWalcr";
+import { TaskWalcr } from "@/App/Onboarding/TaskWalcr/TaskWalcr";
 import React from "react";
 
 const becomeTaskwalcr = () => {

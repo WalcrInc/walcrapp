@@ -1,9 +1,9 @@
-import { AddCash } from 'Src/Components/AddCash'
 import React from 'react'
+import AddCashContainer  from 'Src/App/AddCash/AddCash'
 
 const add_cash = () => {
   return (
-    <div><AddCash/></div>
+    <AddCashContainer/>
   )
 }
 

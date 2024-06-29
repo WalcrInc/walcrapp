@@ -1,4 +1,4 @@
-import { Service } from 'Src/Components/Dashboard/Service'
+import { Service } from '@/App/Dashboard/Service'
 import React from 'react'
 
 const services = () => {

@@ -6,8 +6,8 @@ import {
   FrontIcon,
   SearchIcon,
   TopicIcon,
-} from "../../../../assets";
-import useRoutes from "../../../Features/Hooks/Routes/Routes";
+} from "Src/Assets/index";
+import useRoutes from "@/Features/Hooks/Routes/Routes";
 import { Input, InputGroup, InputRightElement } from "@chakra-ui/react";
 import React from "react";
 import { messageData } from "./data";

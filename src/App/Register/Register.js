@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import useRegister from "@/hooks/useRegisterHook/useRegister";
+import useRegister from "@/Features/Hooks/useRegisterHook/useRegister";
 import { BasicInfo } from "./Forms/BasicInfo/BasicInfo";
 import { OTP } from "./Forms/OTP";
 import { Phone } from "./Forms/Phone";

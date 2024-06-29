@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { FindServicesStyle } from "./FindServices.style";
 import { ServicesTypes } from "./data";
 import { Button, Select } from "@chakra-ui/react";
-import useRoutes from "@/hooks/Routes/Routes";
+import useRoutes from "Src/Components/hooks/Routes/Routes";
 
 const FindService = () => {
   const [others, setOthers] = useState(false);

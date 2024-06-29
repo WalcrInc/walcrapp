@@ -20,7 +20,6 @@ const BottomNavbar = () => {
         }
       >
         {router.pathname === "/dashboard" ? <HomeIconActive /> : <HomeIconInActive /> }
-       {/* {getIcon("/dashboard",, )} */}
         Home
       </Link>
       <Link
@@ -34,16 +33,7 @@ const BottomNavbar = () => {
          {router.pathname === "/services" ? <ServiceIcon /> : <ServiceIconInactive /> }
         Services
       </Link>
-      {/* <Link
-        href={"/dashboard/services"}
-        // className={
-        //   router.pathname === "/dashboard/services"
-        //     ? `${styled.active}`
-        //     : `${styled.link}`
-        // }
-      >
-        <BigPlusIcon/>
-      </Link> */}
+
       <Link
         href={"/dashboard/activities"}
         className={

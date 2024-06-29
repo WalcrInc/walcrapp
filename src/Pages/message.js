@@ -1,5 +1,5 @@
-import { Message } from 'Src/Components/Message/Message'
 import React from 'react'
+import { Message } from '@/App/Message/Message'
 
 const message = () => {
   return (

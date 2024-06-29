@@ -7,13 +7,13 @@ import {
   LocationIcon,
   NotificationIcon,
 } from "Src/Assets/index";
-import useFetchData, { BASE_URL } from "Src/Components/hooks/useFetchDataHook/useFetchData";
+import useFetchData, { BASE_URL } from "@/Features/Hooks/useFetchDataHook/useFetchData";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { HomeStyle } from "./Home.style";
 import { SideNavbar } from "./SideNavbar";
 import { Notification } from "./Notification";
-import useRoutes from "Src/Components/hooks/Routes/Routes";
+import useRoutes from "@/Features/Hooks/Routes/Routes";
 import { toast } from "react-toastify";
 import { Spinner } from "@chakra-ui/react";
 

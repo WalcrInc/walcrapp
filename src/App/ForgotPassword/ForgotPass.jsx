@@ -5,7 +5,7 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { ForgotStyle } from "./ForgotPass.style";
 import { useRouter } from "next/router";
-import useRoutes from "@/hooks/Routes/Routes";
+import useRoutes from "Src/Components/hooks/Routes/Routes";
 import Link from "next/link";
 
 const ForgotPass = () => {

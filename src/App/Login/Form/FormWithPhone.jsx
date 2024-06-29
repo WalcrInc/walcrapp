@@ -3,7 +3,7 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import Link from "next/link";
 import { AlertIcon, DontShow, PasswordIcon, Show, USA } from "Src/Assets/index";
-import ShowPassword from "Src/Components/hooks/useLoginHook/useLoginHook";
+import ShowPassword from "@/Features/Hooks/useLoginHook/useLoginHook";
 
 const FormWithPhone = ({ handlePhone, formik }) => {
   const { handleShow, show } = ShowPassword();

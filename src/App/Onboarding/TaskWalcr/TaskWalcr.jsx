@@ -2,7 +2,7 @@ import React from "react";
 import { TaskwalkerStyle } from "./TaskWalcr.style";
 import { BackIcon, CreateIcon, LocationIconX, ShieldIcon } from "Src/Assets/index";
 import { Button } from "@chakra-ui/react";
-import useRoutes from "Src/Components/hooks/Routes/Routes";
+import useRoutes from "@/App/hooks/Routes/Routes";
 
 const TaskWalcr = () => {
   const { handleHomeRoute, handleLoginRoute } = useRoutes();

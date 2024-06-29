@@ -1,5 +1,5 @@
-import AuthLayout from 'Src/Components/AuthLayout/AuthLayout'
-import { Login } from 'Src/Components/Login'
+import AuthLayout from '@/App/AuthLayout/AuthLayout'
+import { Login } from '@/App/Login'
 import React from 'react'
 
 const login = () => {

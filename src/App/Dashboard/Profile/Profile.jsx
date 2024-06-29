@@ -9,8 +9,10 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { EmailIcon, PasswordIcon, PhoneIcon, UserIcon } from "Src/Assets/index";
-import useFetchData from "Src/Components/hooks/useFetchDataHook/useFetchData";
+import useFetchData from "@/App/hooks/useFetchDataHook/useFetchData";
 import { useSelector } from "react-redux";
+import Link from "next/link";
+import style from './Profile.module.css'
 
 const Profile = () => {
   const { user } = useSelector((state) => state.auth);
@@ -21,13 +23,6 @@ const Profile = () => {
     token: accessToken,
   });
 
-  //   const [userData, setUserData] = ({
-  //     name:data?.name,
-  //     email:data?.email,
-  //     phone_number:data?.phone_number,
-  //     password:""
-
-  //   })
   return (
     <ProfileStyle>
       <h1>Profile</h1>
@@ -45,7 +40,7 @@ const Profile = () => {
             <InputLeftElement>
               <UserIcon />
             </InputLeftElement>
-            <Input placeholder="Name" />
+            <Input placeholder="Brandon Joe" isDisabled/>
           </InputGroup>
         </FormControl>
 
@@ -59,33 +54,42 @@ const Profile = () => {
             <InputLeftElement>
               <EmailIcon />
             </InputLeftElement>
-            <Input placeholder="Email" />
+            <Input placeholder="brandonjoe@gmail.com" isDisabled/>
           </InputGroup>
         </FormControl>
 
         <FormControl>
           <FormLabel>Phone Number</FormLabel>
           <InputGroup
-            boxShadow={" 0px 0px 0px 1px #CDD1DC"}
+            disabled
+            boxShadow={"0px 0px 0px 1px #CDD1DC"}
             borderRadius={"8px"}
             size={"lg"}
           >
             <InputLeftElement>
               <PhoneIcon />
             </InputLeftElement>
-            <Input placeholder="Phone Number" />
+            <Input placeholder="+1602-376-4821" isDisabled/>
           </InputGroup>
         </FormControl>
 
-        <Button
-          size={"lg"}
-          background={"#1A1A1A"}
-          width={"100%"}
-          color={"#fff"}
-        >
-          Update
-        </Button>
       </form>
+
+      <div>
+        <p>More settings</p>
+        <div>
+          <div>
+          <Link href={"/earnings"}>
+          Saved Address</Link>
+
+          </div>
+
+          <div>
+          <Link href={"/"}>
+          Password and Security</Link>
+          </div>
+        </div>
+      </div>
     </ProfileStyle>
   );
 };

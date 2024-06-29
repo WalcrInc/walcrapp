@@ -1,4 +1,4 @@
-import { Onboarding } from 'Src/Components/Onboarding/Onboarding'
+import { Onboarding } from '@/App/Onboarding/Onboarding'
 import React from 'react'
 
 const onboarding = () => {

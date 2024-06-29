@@ -1,9 +1,9 @@
 import React from 'react'
 import styles from './Cancel.module.css'
-import { CancelChart } from 'Src/components/Chart/Chart'
+import { CancelChart } from 'Src/Components/Chart/Chart'
 import Nav from './BottomNav/Nav'
 import { useRouter } from 'next/router';
-import BackArrow from 'Src/components/Icon/BackArrow'
+import BackArrow from '@/Components/Icon/BackArrow'
 
 const Cancel = () => {
   const router = useRouter();

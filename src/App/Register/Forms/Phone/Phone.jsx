@@ -5,7 +5,7 @@ import { ForgotStyle } from "./Phone.style";
 import { useRouter } from "next/router";
 import { useFormik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
-import { register } from "@/features/Redux/authSlice";
+import { register } from "Src/Features/Auth/authSlice";
 
 const Phone = ({ handlePrev }) => {
   const dispatch = useDispatch();

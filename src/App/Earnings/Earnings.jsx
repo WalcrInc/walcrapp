@@ -1,11 +1,11 @@
-import { BottomNavBarTwo } from 'Src/Components/BottomNavbar/BottomNavbar'
 import React from 'react'
-import useRoutes from '../../../'
-import PieChart from 'Src/Components/Chart/PieChart'
-import BarChart from 'Src/Components/Chart/BarChart'
-import styles from './Earnings.module.css'
-import { CancelChart } from 'Src/Components/Chart/Chart'
+// import { BottomNavBar } from '@/Components/BottomNavbar/BottomNavbar'
+import useRoutes from '@/Features/Hooks/Routes/Routes'
 import Link from 'next/link'
+import styles from './Earnings.module.css'
+// import PieChart from 'Src/Components/Chart/PieChart'
+import BarChart from '@/Components/Chart/BarChart'
+import { CancelChart } from '@/Components/Chart/Chart'
 
 
 const Earnings = () => {
@@ -52,9 +52,9 @@ const Earnings = () => {
               <BarChart />
             </div>
         </div>
-      <BottomNavBarTwo/>
+      {/* <BottomNavBar/> */}
     </div>
   )
 }
 
-export default Earnings
+export {Earnings};

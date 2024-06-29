@@ -4,10 +4,10 @@ import { BackIcon, CardIconX, DeleteIconX } from "Src/Assets/index";
 import { StepOne } from "./Steps/StepOne";
 import { StepThree } from "./Steps/StepThree";
 import { StepTwo } from "./Steps/StepTwo";
-import useRoutes from "Src/Components/hooks/Routes/Routes";
+import useRoutes from "@/Features/Hooks/Routes/Routes";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-import useFetchData, { BASE_URL } from "Src/Components/hooks/useFetchDataHook/useFetchData";
+import useFetchData, { BASE_URL } from "@/Features/Hooks/useFetchDataHook/useFetchData";
 import { useRouter } from "next/router";
 
 const stripePromise = loadStripe(

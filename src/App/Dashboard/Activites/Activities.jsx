@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ActivitiesStyle } from "./Activities.style";
-import { BottomNavbar } from "Src/Components/BottomNavbar";
+import { BottomNavbar } from "Src/Components/BottomNavbar/BottomNavbar";
+import Profile from '@/Assets/images/profile.svg'
 import { ActivityData } from "./data";
 import Image from "next/image";
 import { BackIcon } from "Src/Assets/index";
@@ -76,7 +77,7 @@ const Activities = () => {
                     </div>
                     <div className="icon">
                       <Image
-                        src={"@/Assets/images/profile.svg"}
+                        src={Profile}
                         height={30}
                         width={30}
                         alt="profile-picture"

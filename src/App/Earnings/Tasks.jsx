@@ -3,7 +3,7 @@ import React from 'react'
 import styles from './Tasks.module.css'
 import Nav from './BottomNav/Nav'
 import { useRouter } from 'next/router';
-import BackArrow from 'Src/components/Icon/BackArrow'
+import BackArrow from '@/Components/Icon/BackArrow'
 
 const Tasks = () => {
   const router = useRouter();
