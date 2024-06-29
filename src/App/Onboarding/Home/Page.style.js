@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const PageContainer = styled.div`
+const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -54,3 +54,5 @@ export const PageContainer = styled.div`
     font-size: 18px;
   }
 `;
+
+export {PageContainer};

@@ -1,5 +1,5 @@
-import { Button } from "@chakra-ui/react";
 import React from "react";
+import { Button } from "@chakra-ui/react";
 import { PageContainer } from "./Page.style.js";
 import useRoutes from "Src/Components/hooks/Routes/Routes.js";
 import { LogoWhiteX } from "Src/Components/Logo/Logo.jsx";
@@ -39,4 +39,4 @@ const Page = ({ handleNext }) => {
   );
 };
 
-export { Page };
+export default Page;

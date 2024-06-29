@@ -30,4 +30,4 @@ const LogoWhiteX = () => {
   );
 };
 
-export { LogoWhiteX };
+export default LogoWhiteX;

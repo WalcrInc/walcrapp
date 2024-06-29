@@ -1,16 +1,17 @@
 import { Button } from "@chakra-ui/react";
 import React from "react";
-import { PageContainer } from "./PageContainer";
+// import { PageContainer } from "./index";
 import style from './Page.module.css'
 import useRoutes from "Src/Components/hooks/Routes/Routes";
-import { LogoWhiteX } from "Src/components/Logo/Logo";
+// import { LogoWhiteX } from "Src/components/Logo";
 import { Next_Icon, NextIconX } from "Src/Assets/index";
 
 const Page = ({ handleNext }) => {
   const { handleOnboardingRoute } = useRoutes();
 
   return (
-    <PageContainer>
+    // <PageContainer>
+    <>
       <header className={style.header}>
         <div className="overlay" />
       </header>
@@ -33,8 +34,9 @@ const Page = ({ handleNext }) => {
           Get Started  <NextIconX />
         </Button>
       </div>
-    </PageContainer>
+      </>
+    // </PageContainer>
   );
 };
 
-export { Page };
+export default Page;
