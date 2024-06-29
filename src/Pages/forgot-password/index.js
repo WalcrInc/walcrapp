@@ -1,5 +1,5 @@
 import AuthLayout from "Src/Components/AuthLayout/AuthLayout";
-import { ForgotPass } from "Src/Components/ForgotPassword";
+import { ForgotPass } from "@/App/ForgotPassword";
 import React from "react";
 
 const forgot = () => {
