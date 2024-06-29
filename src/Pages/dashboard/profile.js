@@ -1,10 +1,10 @@
-import ProfilePage from '@/App/Dashboard/Profile/Profile'
+import {Profile} from '@/App/Dashboard/Profile/Profile'
 import React from 'react'
 
 const profile = () => {
   
   return (
-      <ProfilePage />
+      <Profile />
   )
 }
 

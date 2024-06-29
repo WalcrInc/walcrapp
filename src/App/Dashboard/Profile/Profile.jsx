@@ -1,5 +1,6 @@
 import React from "react";
 import { ProfileStyle } from "./Profile.style";
+import { EmailIcon, PasswordIcon, PhoneIcon, UserIcon } from "src/Assets/index";
 import {
   InputGroup,
   Input,
@@ -8,8 +9,7 @@ import {
   FormControl,
   Button,
 } from "@chakra-ui/react";
-import { EmailIcon, PasswordIcon, PhoneIcon, UserIcon } from "Src/Assets/index";
-import useFetchData from "@/App/hooks/useFetchDataHook/useFetchData";
+import useFetchData from "@/Features/Hooks/useFetchDataHook/useFetchData";
 import { useSelector } from "react-redux";
 import Link from "next/link";
 import style from './Profile.module.css'
@@ -79,13 +79,13 @@ const Profile = () => {
         <p>More settings</p>
         <div>
           <div>
-          <Link href={"/earnings"}>
+          <Link href={"#"}>
           Saved Address</Link>
 
           </div>
 
           <div>
-          <Link href={"/"}>
+          <Link href={"#"}>
           Password and Security</Link>
           </div>
         </div>
