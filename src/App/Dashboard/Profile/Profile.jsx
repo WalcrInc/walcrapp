@@ -1,6 +1,6 @@
 import React from "react";
 import { ProfileStyle } from "./Profile.style";
-import { EmailIcon, PasswordIcon, PhoneIcon, UserIcon, LockIcon, AddressIcon, TrashIcon, NextIcon } from "src/Assets/index";
+import { EmailIcon, PasswordIcon, PhoneIcon, UserIcon, LockIcon, AddressIcon, TrashIcon, NextIcon } from "Src/Assets/index";
 import {
   InputGroup,
   Input,
