@@ -1,9 +1,9 @@
 import React from 'react'
-import AddCashContainer  from 'Src/App/AddCash/AddCash'
+import {AddCash} from '@/App/AddCash/AddCash'
 
 const add_cash = () => {
   return (
-    <AddCashContainer/>
+    <AddCash/>
   )
 }
 

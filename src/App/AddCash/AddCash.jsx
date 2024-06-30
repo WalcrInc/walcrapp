@@ -17,10 +17,10 @@ import {
   extendTheme,
 } from "@chakra-ui/react";
 import { BackIcon, ConfirmIcon, DeleteIcon } from "Src/Assets/index";
-import useRoutes from "Src/Components/hooks/Routes/Routes";
+import useRoutes from "Src/Features/Hooks/Routes/Routes";
 import axios from "axios";
 import { useSelector } from "react-redux";
-import useFetchData, { BASE_URL } from "Src/Components/hooks/useFetchDataHook/useFetchData";
+import useFetchData, { BASE_URL } from "@/Features/Hooks/useFetchDataHook/useFetchData";
 import { toast } from "react-toastify";
 import Image from "next/image";
 
