@@ -37,6 +37,10 @@ const useRoutes = () => {
   const handleTaskWorkerRoute = () => {
     return router.push("/find_taskworker");
   };
+  // taskwalcr page routing
+  const handleWalcrOnboardingRoute = () =>{
+    return router.push("/taskwalcr");
+  }
 
   return {
     handleHomeRoute,
@@ -50,6 +54,7 @@ const useRoutes = () => {
     handleAddCashRoute,
     handleTaskWorkerRoute,
     handleFindServicesRoute,
+    handleWalcrOnboardingRoute,
   };
 };
 

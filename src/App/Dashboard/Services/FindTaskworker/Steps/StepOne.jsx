@@ -134,7 +134,7 @@ const StepOne = ({ handleNext, handlePrev }) => {
             onMapClick={handleMapClick}
             startCoordinates={startCoordinates}
             endCoordinates={endCoordinates}
-            customIcon="images/icon.png" // Replace with the path to your custom icon
+            customIcon="Src/Assets/images/icon.png" // Replace with the path to your custom icon
           />
         )}
       </div>

@@ -1,5 +1,5 @@
 import { BottomNavbar } from 'Src/components/BottomNavbar'
-import { Home } from '@/App/Dashboard/Home'
+import { Home } from 'src/App/Dashboard/Home'
 import React from 'react'
 
 const dashboard = () => {

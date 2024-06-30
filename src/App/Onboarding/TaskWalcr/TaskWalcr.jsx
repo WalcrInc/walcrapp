@@ -2,10 +2,10 @@ import React from "react";
 import { TaskwalkerStyle } from "./TaskWalcr.style";
 import { BackIcon, CreateIcon, LocationIconX, ShieldIcon } from "Src/Assets/index";
 import { Button } from "@chakra-ui/react";
-import useRoutes from "@/App/hooks/Routes/Routes";
+import useRoutes from "@/Features/Hooks/Routes/Routes";
 
 const TaskWalcr = () => {
-  const { handleHomeRoute, handleLoginRoute } = useRoutes();
+  const { handleHomeRoute, handleLoginRoute, handleWalcrOnboardingRoute } = useRoutes();
   return (
     <TaskwalkerStyle>
       <header>
@@ -86,7 +86,7 @@ const TaskWalcr = () => {
         color={"#fff"}
         width={"100%"}
         borderReadius={"16px"}
-        onClick={handleLoginRoute}
+        onClick={handleWalcrOnboardingRoute}
       >
         Continue
       </Button>

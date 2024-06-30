@@ -2,7 +2,7 @@ import { Button } from "@chakra-ui/react";
 import React from "react";
 import Image from "next/image";
 import useRoutes from "@/Features/Hooks/Routes/Routes";
-import { BackIcon } from "@/Assets/index";
+import { BackIcon } from "Src/Assets/index";
 import Address from '@/Assets/images/address.svg'
 
 const StepOne = ({ handleNext, step }) => {
