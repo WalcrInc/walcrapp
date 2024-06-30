@@ -1,6 +1,6 @@
 import React from "react";
 import { ProfileStyle } from "./Profile.style";
-import { EmailIcon, PasswordIcon, PhoneIcon, UserIcon } from "src/Assets/index";
+import { EmailIcon, PasswordIcon, PhoneIcon, UserIcon, BackIcon, LockIcon, AddressIcon, TrashIcon } from "src/Assets/index";
 import {
   InputGroup,
   Input,
@@ -13,6 +13,8 @@ import useFetchData from "@/Features/Hooks/useFetchDataHook/useFetchData";
 import { useSelector } from "react-redux";
 import Link from "next/link";
 import style from './Profile.module.css'
+import Image from "next/image";
+import ProfileImage from "@/Assets/images/profile.svg";
 
 const Profile = () => {
   const { user } = useSelector((state) => state.auth);
@@ -25,10 +27,28 @@ const Profile = () => {
 
   return (
     <ProfileStyle>
-      <h1>Profile</h1>
-      <div className="info">
-        Brandon Joe 2693 Burnside Court, Phoenix, Arizona
+      <div className={style.Topbar}>
+        <span className={style.back}>
+          <Link href={"/dashboard"}>
+            <BackIcon />
+          </Link>
+        </span>
+        <h3>Edit Profile</h3>
       </div>
+
+      <div className={style.User}>
+        <Image src={ProfileImage} className={style.Profile} />
+        <div className={style.UserInfo}>
+          <h2>
+            Brandon Joe
+          </h2>
+          <p>
+            Brandon Joe 2693 Burnside Court, Phoenix, Arizona
+          </p>
+        </div>
+      </div>
+
+
       <form>
         <FormControl>
           <FormLabel>Name</FormLabel>
@@ -40,7 +60,7 @@ const Profile = () => {
             <InputLeftElement>
               <UserIcon />
             </InputLeftElement>
-            <Input placeholder="Brandon Joe" isDisabled/>
+            <Input placeholder="Brandon Joe" isDisabled />
           </InputGroup>
         </FormControl>
 
@@ -54,7 +74,7 @@ const Profile = () => {
             <InputLeftElement>
               <EmailIcon />
             </InputLeftElement>
-            <Input placeholder="brandonjoe@gmail.com" isDisabled/>
+            <Input placeholder="brandonjoe@gmail.com" isDisabled />
           </InputGroup>
         </FormControl>
 
@@ -69,25 +89,38 @@ const Profile = () => {
             <InputLeftElement>
               <PhoneIcon />
             </InputLeftElement>
-            <Input placeholder="+1602-376-4821" isDisabled/>
+            <Input placeholder="+1602-376-4821" isDisabled />
           </InputGroup>
         </FormControl>
 
       </form>
 
-      <div>
+      <div className={style.More_settings}>
         <p>More settings</p>
-        <div>
-          <div>
-          <Link href={"#"}>
-          Saved Address</Link>
+        <div className={style.Sub_setting}>
 
-          </div>
-
-          <div>
           <Link href={"#"}>
-          Password and Security</Link>
-          </div>
+            <div className={style.Link_settings}>
+              <AddressIcon />
+              <div className={style.Link}>Saved Address</div>
+            </div>
+          </Link>
+
+          <Link href={"#"}>
+            <div className={style.Link_settings}>
+              <LockIcon />
+              <div className={style.Link}>Password and Security</div>
+            </div>
+
+          </Link>
+
+          <Link href={"#"}>
+            <div className={style.Link_settings}>
+              <TrashIcon />
+              <div className={style.Link}>Deactivate or Delete Account</div>
+            </div>
+
+          </Link>
         </div>
       </div>
     </ProfileStyle>

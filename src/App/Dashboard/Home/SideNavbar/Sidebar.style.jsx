@@ -75,11 +75,7 @@ export const SideNavContainer = styled.div`
   .links{
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    
-    /* color:red ; */
-    /* background-color:red ; */
-    /* height: 15dvh; */
+    gap: 15px;
   }
 
   .task{
@@ -92,9 +88,6 @@ export const SideNavContainer = styled.div`
     flex-direction: column;
     gap: 20px;
     font-size:14px ;
-    /* color:red ; */
-    /* background-color:red ; */
-    /* height: 15dvh; */
   }
   .task-work {
     display: flex;
@@ -102,15 +95,11 @@ export const SideNavContainer = styled.div`
     align-items:center ;
     align-items:center ;
     border: 1px solid #F0F2F6;
-    /* border: 1px solid #1a1a1a; */
     padding:4% 3% ;
     border-radius:8px ;
     font-size:15px ;
-    
-    /* color:red ; */
-    /* background-color:red ; */
-    /* height: 15dvh; */
   }
+
   .task-work .logo{
     font-size:14px ;
     font-weight:700 ;
@@ -128,6 +117,7 @@ export const SideNavContainer = styled.div`
     color:#F18341 ;
     display: flex;
   }
+
   p {
     display: flex;
     gap: 10px;
@@ -138,15 +128,12 @@ export const SideNavContainer = styled.div`
     font-size:16px ;
     font-weight:700 ;
     color:#1a1a1a ;
+    padding: 3%;
+    transition: .2s ease-out ;
   }
   .links a:hover {
     background-color: #1a1a1a;
     color: #fff;
-    padding: 3%;
     border-radius: 4px;
   }
-  /* .task-work {
-    position: absolute;
-    bottom: 20px;
-  } */
 `;

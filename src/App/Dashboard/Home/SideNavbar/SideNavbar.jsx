@@ -24,7 +24,7 @@ import Link from "next/link";
 import { useDispatch } from "react-redux";
 import useRoutes from "@/Features/Hooks/Routes/Routes";
 import { toast } from "react-toastify";
-import { reset } from "@/Features/Auth/authSlice";
+import { reset } from "src/Features/Auth/authSlice";
 import Image from "next/image";
 import {
   Accordion,

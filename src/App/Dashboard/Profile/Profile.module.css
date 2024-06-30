@@ -1,0 +1,66 @@
+.More_settings p{
+    font-size: 15px;
+}
+.More_settings .Link{
+    font-weight: 700;
+    font-size: 17px;
+    margin-left: 5px;
+}
+.Sub_setting{
+    margin-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+}
+
+.Topbar{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.Topbar .back{
+    position: absolute;
+    left: 0;
+}
+
+.Topbar h3{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.User{
+    display: grid;
+    place-items: center;
+}
+
+.Profile{
+    height: 170px;
+    width: 170px;
+    background-color: pink;
+    border-radius: 100%;
+}
+
+.UserInfo{
+    display: grid;
+    place-items: center;
+    margin-top: 20px;
+}
+
+.UserInfo h2{
+    font-size: 23px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.Link_settings{
+    display: flex;
+    /* margin-top: 20px; */
+    padding: 10px;
+    border-radius: 5px;
+}
+.Link_settings:hover{
+    background-color: #000;
+    color: #fff;
+}
