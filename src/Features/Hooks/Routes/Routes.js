@@ -1,46 +1,45 @@
-import React from "react";
-import { useRouter } from "next/router";
+// hooks/useRoutes.js
+import { useHistory } from "react-router-dom";
 
 const useRoutes = () => {
-  const router = useRouter();
+  // const history = useHistory();
 
   const handleHomeRoute = () => {
-    return router.push("/");
+    return history.push("/");
   };
   const handleOnboardingRoute = () => {
-    return router.push("/onboarding");
+    return history.push("/onboarding");
   };
   const handleTaskWalcrRouteX = () => {
-    return router.push("/become_taskwalcr");
+    return history.push("/become_taskwalcr");
   };
   const handleFindServicesRoute = () => {
-    return router.push("/find_service");
+    return history.push("/find_service");
   };
   const handleRegisterRoute = () => {
-    return router.push("/register");
+    return history.push("/register");
   };
   const handleLoginRoute = () => {
-    return router.push("/login");
+    return history.push("/login");
   };
   const handleForgotPasswordRoute = () => {
-    return router.push("/forgot-password");
+    return history.push("/forgot-password");
   };
   const handleOtpRoute = () => {
-    return router.push("/forgot-password/otp");
+    return history.push("/forgot-password/otp");
   };
   const handleDashboardRoute = () => {
-    return router.push("/dashboard");
+    return history.push("/dashboard");
   };
   const handleAddCashRoute = () => {
-    return router.push("/add-cash");
+    return history.push("/add-cash");
   };
   const handleTaskWorkerRoute = () => {
-    return router.push("/find_taskworker");
+    return history.push("/find_taskworker");
   };
-  // taskwalcr page routing
-  const handleWalcrOnboardingRoute = () =>{
-    return router.push("/taskwalcr");
-  }
+  const handleWalcrOnboardingRoute = () => {
+    return history.push("/taskwalcr");
+  };
 
   return {
     handleHomeRoute,

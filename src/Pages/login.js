@@ -1,6 +1,6 @@
-import AuthLayout from '@/App/AuthLayout/AuthLayout'
-import { Login } from '@/App/Login'
 import React from 'react'
+import { Login } from '@/App/Login/Login'
+import AuthLayout from '@/App/AuthLayout/AuthLayout'
 
 const login = () => {
   return (
