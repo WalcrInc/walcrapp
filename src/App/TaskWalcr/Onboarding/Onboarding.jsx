@@ -1,9 +1,9 @@
 import React from 'react'
-import useRouter from "@/Features/Hooks/Routes/Routes";
+// import useRouter from "@/Features/Hooks/Routes/Routes";
 
-const Onboarding = () => {
+export const Onboarding = () => {
 
-const {handleWalcrOnboardingRoute} = useRouter();
+// const {handleWalcrOnboardingRoute} = useRouter();
 
   return (
     <div>
@@ -11,5 +11,3 @@ const {handleWalcrOnboardingRoute} = useRouter();
     </div>
   )
 }
-
-export {Onboarding};

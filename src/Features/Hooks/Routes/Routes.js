@@ -1,44 +1,53 @@
-// hooks/useRoutes.js
-import { useHistory } from "react-router-dom";
+import React from "react";
+import { useRouter } from "next/router";
 
 const useRoutes = () => {
-  // const history = useHistory();
+  const router = useRouter();
 
   const handleHomeRoute = () => {
-    return history.push("/");
+    return router.push("/");
   };
   const handleOnboardingRoute = () => {
-    return history.push("/onboarding");
+    return router.push("/onboarding");
   };
   const handleTaskWalcrRouteX = () => {
-    return history.push("/become_taskwalcr");
+    return router.push("/become_taskwalcr");
   };
   const handleFindServicesRoute = () => {
-    return history.push("/find_service");
+    return router.push("/find_service");
   };
   const handleRegisterRoute = () => {
-    return history.push("/register");
+    return router.push("/register");
   };
   const handleLoginRoute = () => {
-    return history.push("/login");
+    return router.push("/login");
   };
   const handleForgotPasswordRoute = () => {
-    return history.push("/forgot-password");
+    return router.push("/forgot-password");
   };
   const handleOtpRoute = () => {
-    return history.push("/forgot-password/otp");
+    return router.push("/forgot-password/otp");
   };
   const handleDashboardRoute = () => {
-    return history.push("/dashboard");
+    return router.push("/dashboard");
   };
   const handleAddCashRoute = () => {
-    return history.push("/add-cash");
+    return router.push("/add-cash");
   };
   const handleTaskWorkerRoute = () => {
-    return history.push("/find_taskworker");
+    return router.push("/find_taskworker");
   };
-  const handleWalcrOnboardingRoute = () => {
-    return history.push("/taskwalcr");
+  const handleEarningsRoute = () => {
+    return router.push("/earnings");
+  };
+  const handleCancelRoute = () => {
+    return router.push("/cancel");
+  };
+  const handleHoursRoute = () => {
+    return router.push("/hours");
+  };
+  const handleTasksRoute = () => {
+    return router.push("/tasks");
   };
 
   return {
@@ -53,7 +62,10 @@ const useRoutes = () => {
     handleAddCashRoute,
     handleTaskWorkerRoute,
     handleFindServicesRoute,
-    handleWalcrOnboardingRoute,
+    handleEarningsRoute,
+    handleCancelRoute,
+    handleHoursRoute,
+    handleTasksRoute,
   };
 };
 
