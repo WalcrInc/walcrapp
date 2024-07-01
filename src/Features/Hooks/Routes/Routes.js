@@ -49,6 +49,9 @@ const useRoutes = () => {
   const handleTasksRoute = () => {
     return router.push("/tasks");
   };
+  const handleWalcrOnboardingRoute = () => {
+    return router.push("/taskwalcr")
+  }
 
   return {
     handleHomeRoute,
@@ -66,6 +69,7 @@ const useRoutes = () => {
     handleCancelRoute,
     handleHoursRoute,
     handleTasksRoute,
+    handleWalcrOnboardingRoute,
   };
 };
 

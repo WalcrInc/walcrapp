@@ -15,7 +15,7 @@ import Link from "next/link";
 import style from './Profile.module.css'
 import Image from "next/image";
 import ProfileImage from "@/Assets/images/profile.svg";
-import TopBar from "../../../Components/TopBar/TopBar";
+import { TopBar } from "@/Components/TopBar/TopBar";
 
 const Profile = () => {
   const { user } = useSelector((state) => state.auth);
@@ -29,6 +29,7 @@ const Profile = () => {
   return (
     <ProfileStyle>
       <TopBar href={"/dashboard"} text={"Edit profile"} />
+
       <div className={style.User}>
         <Image src={ProfileImage} className={style.Profile} />
         <div className={style.UserInfo}>

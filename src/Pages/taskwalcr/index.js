@@ -1,8 +1,8 @@
 import React from 'react';
-import { Onboarding } from 'src/App/TaskWalcr/Onboarding/Onboarding';
+import { Agreement } from 'src/App/TaskWalcr/Agreement/Agreement';
 const TaskWalcr = () => {
   return (
-    <Onboarding />
+    <Agreement />
   );
 };
 

@@ -18,4 +18,18 @@ const TopBar = ({text, href}) => {
     )
 }
 
-export default TopBar
+const WalcrBar = ({href}) =>{
+    return(
+        <div>
+        <div className={style.Topbar}>
+            <span className={style.back}>
+                <Link href={href}>
+                    <BackIcon />
+                </Link>
+            </span>
+        </div>
+    </div>
+    );
+}
+
+export {TopBar, WalcrBar}
