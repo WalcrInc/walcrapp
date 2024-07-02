@@ -7,7 +7,8 @@ import useRoutes from "@/hooks/Routes/Routes";
 
 const Services = () => {
 
-  const {handleTaskWorkerRoute} =   useRoutes()
+  const { handleTaskWorkerRoute } = useRoutes()
+  
   return (
     <ServicesStyle>
       <div className="top"></div>

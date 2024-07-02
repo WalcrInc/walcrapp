@@ -43,6 +43,7 @@
       "form_factor": "wide"
     }
   ],
+  "lang": "en",
   "display_override": [
     "fullscreen",
     "window-controls-overlay"

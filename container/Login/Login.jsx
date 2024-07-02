@@ -44,7 +44,7 @@ const Login = () => {
         >
           Email
         </p>
-        <p
+        <p  
           className={selectedOption === "phone" ? "active" : ""}
           onClick={() => handleSelected("phone")}
         >
