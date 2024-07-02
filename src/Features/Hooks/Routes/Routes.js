@@ -67,6 +67,9 @@ const useRoutes = () => {
   const handleVerificationRoute = () => {
     return router.push("/taskwalcr/verification")
   }
+  const handlePreviewRoute = () => {
+    return router.push("/taskwalcr/preview")
+  }
 
   return {
     handleHomeRoute,
