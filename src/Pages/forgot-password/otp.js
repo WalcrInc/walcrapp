@@ -1,4 +1,4 @@
-import AuthLayout from "Src/Components/AuthLayout/AuthLayout";
+import AuthLayout from "@/App/AuthLayout/AuthLayout";
 import { OTP } from "@/App/Register/Forms/OTP";
 import React from "react";
 

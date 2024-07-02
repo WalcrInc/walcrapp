@@ -2,8 +2,10 @@ import React from 'react'
 import { WalcrBar } from '@/Components/TopBar/TopBar'
 import style from './Agreement.module.css'
 import { Button } from '@chakra-ui/react'
+import useRoutes from '@/Features/Hooks/Routes/Routes'
 
 export const Agreement = () => {
+  const {handleVerificationRoute} = useRoutes()
 
   return (
     <div>
@@ -13,7 +15,7 @@ export const Agreement = () => {
         Requirements to become a TaskWalker
         </h1>
         <p>
-        To be a TaskWalker in the US, you'll need to meet these requirements:
+        To be a TaskWalker in the US, you{`'`}ll need to meet these requirements:
         </p>
 
         <ul>
@@ -38,7 +40,8 @@ export const Agreement = () => {
         background={"#1a1a1a"}
         borderRadius={"6px"}
         size={"lg"}
-        className={style.button}>
+        className={style.button}
+        onClick={handleVerificationRoute}>
           Continue
         </Button>
     </div>

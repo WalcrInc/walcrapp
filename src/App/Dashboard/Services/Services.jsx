@@ -3,7 +3,7 @@ import { ServicesStyle } from "./Services.style";
 import { ServicesTypes } from "../Service/data";
 import services from "Src/Pages/dashboard/services";
 import { RecieveIcon, SendIcon } from "Src/Assets/index";
-import useRoutes from "Src/Components/hooks/Routes/Routes";
+import useRoutes from "Src/Features/Hooks/Routes/Routes";
 
 const Services = () => {
 

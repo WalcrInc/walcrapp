@@ -51,6 +51,21 @@ const useRoutes = () => {
   };
   const handleWalcrOnboardingRoute = () => {
     return router.push("/taskwalcr")
+  };
+  const handleSelfieRoute = () => {
+    return router.push("/taskwalcr/selfie")
+  };
+  const handleIdentityRoute = () => {
+    return router.push("/taskwalcr/identity")
+  }
+  const handleLiscenseRoute = () => {
+    return router.push("/taskwalcr/liscense")
+  }
+  const handleCerificateRoute = () => {
+    return router.push("/taskwalcr/cerificate")
+  }
+  const handleVerificationRoute = () => {
+    return router.push("/taskwalcr/verification")
   }
 
   return {
@@ -70,6 +85,11 @@ const useRoutes = () => {
     handleHoursRoute,
     handleTasksRoute,
     handleWalcrOnboardingRoute,
+    handleSelfieRoute,
+    handleIdentityRoute,
+    handleLiscenseRoute,
+    handleCerificateRoute,
+    handleVerificationRoute,
   };
 };
 

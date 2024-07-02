@@ -31,7 +31,7 @@ const Profile = () => {
       <TopBar href={"/dashboard"} text={"Edit profile"} />
 
       <div className={style.User}>
-        <Image src={ProfileImage} className={style.Profile} />
+        <Image src={ProfileImage} className={style.Profile} alt="image" />
         <div className={style.UserInfo}>
           <h2>
             Brandon Joe
