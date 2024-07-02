@@ -1,13 +1,13 @@
-import AuthLayout from '@/Components/AuthLayout/AuthLayout'
-import { Login } from '@/Components/Login'
-import React from 'react'
+import AuthLayout from "@/container/AuthLayout/AuthLayout";
+import { Login } from "@/container/Login";
+import React from "react";
 
 const login = () => {
   return (
     <AuthLayout>
-      <Login/>
+      <Login />
     </AuthLayout>
-  )
-}
+  );
+};
 
-export default login
+export default login;

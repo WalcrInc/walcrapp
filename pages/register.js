@@ -1,10 +1,8 @@
-import { Register } from "@/Components/Register";
+import { Register } from "@/container/Register";
 import React from "react";
 
 const register = () => {
-  return (
-      <Register />
-  );
+  return <Register />;
 };
 
 export default register;

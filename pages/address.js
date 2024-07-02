@@ -1,13 +1,11 @@
 // Address.js
-import { Address } from '@/Components/Address';
-import React, { useState, useEffect } from 'react';
+import { Address } from "@/container/Address";
+import React, { useState, useEffect } from "react";
 
 const address = () => {
-
-
   return (
     <>
-     <Address/>
+      <Address />
     </>
   );
 };

@@ -1,12 +1,12 @@
-import { Card } from '@/Components/Card'
-import React from 'react'
+import { Card } from "@/container/Card";
+import React from "react";
 
 const card = () => {
   return (
     <div>
-        <Card/>
+      <Card />
     </div>
-  )
-}
+  );
+};
 
-export default card
+export default card;

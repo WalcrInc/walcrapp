@@ -1,14 +1,14 @@
-import { BottomNavbar } from '@/components/BottomNavbar'
-import { Services } from '@/Components/Dashboard/Services'
-import React from 'react'
+import { BottomNavbar } from "@/components/BottomNavbar";
+import { Services } from "@/container/Dashboard/Services";
+import React from "react";
 
 const services = () => {
   return (
     <div>
-      <Services/>
+      <Services />
       {/* <BottomNavbar/> */}
     </div>
-  )
-}
+  );
+};
 
-export default services
+export default services;

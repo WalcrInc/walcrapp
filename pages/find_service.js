@@ -1,4 +1,4 @@
-import { FindService } from "@/Components/Onboarding/FindService/FindService";
+import { FindService } from "@/container/Onboarding/FindService/FindService";
 import React from "react";
 
 const findService = () => {

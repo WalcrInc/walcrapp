@@ -1,10 +1,12 @@
-import { Service } from '@/Components/Dashboard/Service'
-import React from 'react'
+import { Service } from "@/container/Dashboard/Service";
+import React from "react";
 
 const services = () => {
   return (
-    <div><Service/></div>
-  )
-}
+    <div>
+      <Service />
+    </div>
+  );
+};
 
-export default services
+export default services;
