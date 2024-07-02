@@ -20,7 +20,7 @@ const TopBar = ({text, href}) => {
 
 const WalcrBar = ({href}) =>{
     return(
-        <div>
+        <div className={style.WalcrBar}>
         <div className={style.Topbar}>
             <span className={style.back}>
                 <Link href={href}>
