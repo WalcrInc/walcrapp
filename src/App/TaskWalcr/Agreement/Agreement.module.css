@@ -1,0 +1,21 @@
+.Container{
+    padding: 10px;
+    
+}
+.Container h1{
+    font-size: 28px;
+    font-weight: 700;
+}
+.Container p{
+    margin: 10px 5px;
+    color: #5B6178;
+}
+.Container .list{
+    font-size: 17px;
+    margin-bottom: 15px;
+    margin-left: 25px;
+}
+.button{
+    width: 95%;
+    margin-left: 10px;
+}
