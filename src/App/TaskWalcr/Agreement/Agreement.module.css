@@ -15,6 +15,9 @@
     margin-bottom: 15px;
     margin-left: 25px;
 }
+.Container span{
+    font-size: 15px;
+}
 .button{
     width: 95%;
     margin-left: 10px;
