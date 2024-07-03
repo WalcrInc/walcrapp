@@ -8,17 +8,19 @@
 }
 
 html {
-  overscroll-behaviour: none;
+  overscroll-behaviour: contain;
 }
-body {
-  display: none;
-  font-family: "Mulish", sans-serif;
-  height: 100dvh;
-  touch-action: manipulation;
-  left: 0;
-    right:  0;
-    width: 100%;
-    -webkit-overflow-scrolling: touch;
+@media (display-mode: fullscreen) {
+  body {
+    display: none;
+    font-family: "Mulish", sans-serif;
+    height: 100dvh;
+    touch-action: manipulation;
+    left: 0;
+      right:  0;
+      width: 100%;
+      -webkit-overflow-scrolling: touch;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
