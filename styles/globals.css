@@ -7,12 +7,7 @@
   font-family: "Mulish", sans-serif;
 }
 
-html {
-  overscroll-behaviour: contain;
-  touch-action: manipulation;
-  -webkit-overflow-scrolling: auto; 
-   overflow-y: auto; 
-}
+
   body {
     display: none;
     font-family: "Mulish", sans-serif;
@@ -21,18 +16,18 @@ html {
     left: 0;
       right:  0;
       width: 100%;
-    -webkit-overflow-scrolling: touch; 
+    -webkit-overflow-scrolling: auto; 
     overflow-y: auto; 
   }
 
 @media (min-width: 768px) and (max-width: 1024px) {
   body {
-    touch-action: pan-y;
+    touch-action: none;
     position: absolute;
     left: 0;
     right:  0;
     width: 100%;
-    -webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: auto;
     display: block;
     transition: all 1s linear;
     background-repeat: no-repeat;
@@ -52,12 +47,12 @@ html {
     left: 0;
     right:  0;
     width: 100%;
-    -webkit-overflow-scrolling: touch;
-    touch-action: pan-y;
+    -webkit-overflow-scrolling: auto;
+    touch-action: none;
     display: block;
     width: 100%;
     transition: all 1s linear;
-    -webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: auto;
     
   }
 }
