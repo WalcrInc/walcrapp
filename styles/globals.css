@@ -6,6 +6,10 @@
 * {
   font-family: "Mulish", sans-serif;
 }
+
+html {
+  overscroll-behaviour: none;
+}
 body {
   display: none;
   font-family: "Mulish", sans-serif;
