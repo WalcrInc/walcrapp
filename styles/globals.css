@@ -12,6 +12,7 @@ html {
 }
 @media (display-mode: fullscreen) {
   body {
+    overscroll-behaviour: contain;
     display: none;
     font-family: "Mulish", sans-serif;
     height: 100dvh;
