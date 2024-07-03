@@ -16,7 +16,7 @@ export default function Home() {
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-          <style jsx>
+        <style jsx>
           {`
             body {
               min-height: calc(100% + env(safe-area-inset-top));
