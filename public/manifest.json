@@ -3,9 +3,9 @@
   "short_name": "Walcr",
   "start_url": "/",
   "background_color": "#ffffff",
-  "display": "fullscreen",
+  "display": "black-translucent",
   "orientation": "portrait",
-  "theme_color": "#f00000",
+  "theme_color": "#1a1a1a",
   "scope": "/",
   "categories": ["productivity", "business"],
   "icons": [
