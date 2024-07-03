@@ -11,8 +11,6 @@ html {
   overscroll-behaviour: contain;
 }
   body {
-    -webkit-overflow-scrolling: auto; 
-    overflow-y: auto; 
     display: none;
     font-family: "Mulish", sans-serif;
     height: 100dvh;
@@ -20,7 +18,8 @@ html {
     left: 0;
       right:  0;
       width: 100%;
-      -webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: auto; 
+    overflow-y: auto; 
   }
 
 @media (min-width: 768px) and (max-width: 1024px) {
