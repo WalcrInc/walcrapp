@@ -10,9 +10,9 @@
 html {
   overscroll-behaviour: contain;
 }
-@media (display-mode: fullscreen) {
   body {
-    overscroll-behaviour: contain;
+    -webkit-overflow-scrolling: auto; 
+    overflow-y: auto; 
     display: none;
     font-family: "Mulish", sans-serif;
     height: 100dvh;
@@ -22,7 +22,6 @@ html {
       width: 100%;
       -webkit-overflow-scrolling: touch;
   }
-}
 
 @media (min-width: 768px) and (max-width: 1024px) {
   body {
