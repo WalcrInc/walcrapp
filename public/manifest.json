@@ -7,6 +7,7 @@
   "orientation": "portrait",
   "theme_color": "#f00000",
   "scope": "/",
+  "categories": ["productivity", "business"],
   "icons": [
     {
       "src": "images/walcr-l-144.png",
