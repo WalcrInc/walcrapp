@@ -11,9 +11,9 @@ const Page = ({ handleNext }) => {
 
   return (
     <div className={style.Container}>
-      <header className={style.header}>
+      {/* <header className={style.header}>
         <div className={style.overlay} />
-      </header>
+      </header> */}
 
       <div className={style.text}>
         <h1>Lorem ipsum dolor amet</h1>
@@ -23,11 +23,9 @@ const Page = ({ handleNext }) => {
           color={"#fff"}
           background={"#1a1a1a"}
           size={"lg"}
-          width={"90%"}
-          margin={"0 10%"}
+          width={"100%"}
           display={"flex"}
           alignItems={"center"}
-          gap={"10px"}
           borderReadius={"16px"}
         >
           Get Started  <NextIconX />

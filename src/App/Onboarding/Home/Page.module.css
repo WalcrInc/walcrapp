@@ -7,13 +7,13 @@
 } */
 
 .Container{
-    display: flex;
-    flex-direction: column;
+    background: url('../../../Assets/images/home.png') no-repeat;
     height: 100vh;
+    background-size: 100% 100vh;
+    background-position: top;
+    width: 100%;
 }
 .header{
-    /* background: no-repeat center center; */
-    background-size: cover;
     flex: 2;
     display: flex;
     height: 100%;
@@ -21,12 +21,12 @@
     position: relative;
 }
 .text{
+    position: absolute;
+    background: #fff;
+    bottom: 0;
     flex: 1;
-    display: flex;
-    flex-direction: column;
+    display: grid;
     justify-content: center;
-    align-items: center;
-    gap: 20px;
     text-align: center;
     padding: 3%;
 }
@@ -34,16 +34,16 @@
     font-size: 55px;
     font-weight: 700;
     line-height: 50px;
+    z-index: 9;
 }
 .text p {
     color: #5b6178;
     font-size: 18px;
 }
-.overlay{
+/* .overlay{
     position: absolute;
         bottom: 0;
         left: 0;
         width: 100%;
         height: 112px;
-        /* background: url("Assets/images/overlay.svg") no-repeat center center; */
-}
+} */
