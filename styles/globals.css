@@ -9,6 +9,7 @@
 body {
   display: none;
   font-family: "Mulish", sans-serif;
+  height: 100dvh;
   touch-action: manipulation;
   left: 0;
     right:  0;
