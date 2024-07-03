@@ -9,6 +9,9 @@
 
 html {
   overscroll-behaviour: contain;
+  touch-action: manipulation;
+  -webkit-overflow-scrolling: auto; 
+   overflow-y: auto; 
 }
   body {
     display: none;
@@ -18,7 +21,7 @@ html {
     left: 0;
       right:  0;
       width: 100%;
-    -webkit-overflow-scrolling: auto; 
+    -webkit-overflow-scrolling: touch; 
     overflow-y: auto; 
   }
 
