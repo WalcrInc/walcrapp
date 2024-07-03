@@ -16,7 +16,6 @@ export default function Home() {
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-        <meta name="theme-color" content="#111111" />
         <link rel="stylesheet" href="https://unpkg.com/@material/toolbar@0.4.11/dist/mdc.toolbar.min.css" />
         <link rel="stylesheet" href="https://unpkg.com/@material/elevation@0.1.13/dist/mdc.elevation.min.css" />
       </Head>
