@@ -7,7 +7,7 @@ import useRoutes from '@/Features/Hooks/Routes/Routes';
 const Confirm = () => {
   const { imageSrc } = useImage();
   const router = useRouter();
-  const {handleSelfieRoute} = useRoutes();
+  const {handleReviewRoute} = useRoutes();
 
   if (!imageSrc) {
     return <div>No image captured.</div>;
@@ -63,7 +63,7 @@ const Confirm = () => {
         background={"#000"}
         color={"#fff"}
         style={buttonStyle2}
-        onClick={handleSelfieRoute}
+        onClick={handleReviewRoute}
         size={"lg"}
         >
           Submit

@@ -70,6 +70,9 @@ const useRoutes = () => {
   const handlePreviewRoute = () => {
     return router.push("/taskwalcr/preview")
   }
+  const handleReviewRoute = () => {
+    return router.push("/taskwalcr/review")
+  }
 
   return {
     handleHomeRoute,
@@ -93,6 +96,7 @@ const useRoutes = () => {
     handleLiscenseRoute,
     handleCerificateRoute,
     handleVerificationRoute,
+    handleReviewRoute,
   };
 };
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import Camera  from "@/Components/Capture/Camera"
+import Camera  from "Src/Components/Capture/Camera"
 
 const Certificate = () => {
   const videoConstraints = {
