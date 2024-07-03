@@ -32,7 +32,7 @@ const Onboarding = () => {
       <OnboardingStyle>
         {currentStep === 1 && <Page handleNext={handleNext} />}
         {currentStep === 5 && <Options handleNext={handleNext} />}
-       
+
         {(currentStep === 2 || currentStep === 3 || currentStep === 4) && (
           <header className="header">
             <span onClick={handlePrev}>
