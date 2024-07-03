@@ -3,7 +3,7 @@
   "short_name": "Walcr",
   "start_url": "/",
   "background_color": "#ffffff",
-  "display": "black-translucent",
+  "display": "fullscreen",
   "orientation": "portrait",
   "theme_color": "#1a1a1a",
   "scope": "/",
