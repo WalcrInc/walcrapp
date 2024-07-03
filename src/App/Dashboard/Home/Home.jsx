@@ -13,7 +13,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { HomeStyle } from "./Home.style";
 import { SideNavbar } from "./SideNavbar";
 import { Notification } from "./Notification";
-import useRoutes from "@/Features/Hooks/Routes/Routes";
+import useRoutes from "Src/Features/Hooks/Routes/Routes";
 import { toast } from "react-toastify";
 import { Spinner } from "@chakra-ui/react";
 
