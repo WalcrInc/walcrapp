@@ -20,20 +20,23 @@ const Page = ({ handleNext }) => {
       <div className="text">
         <h1>Lorem ipsum dolor amet</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <Button
+        <button
           onClick={handleNext}
-          color={"#fff"}
-          background={"#1a1a1a"}
-          size={"lg"}
-          width={"90%"}
-          margin={"0 10%"}
-          display={"flex"}
-          alignItems={"center"}
-          gap={"10px"}
-          borderReadius={"16px"}
+          style={{
+            backgroundColor: "#1a1a1a",
+            color: "#fff",
+            margin: "0 10%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "10px",
+            borderRadius: "1rem",
+            width: "100%",
+            padding: "1rem"
+          }}
         >
           Get Started  <NextIconX />
-        </Button>
+        </button>
       </div>
     </PageContainer>
   );

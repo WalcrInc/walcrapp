@@ -7,25 +7,24 @@
   font-family: "Mulish", sans-serif;
 }
 
-
-  body {
-    display: none;
-    font-family: "Mulish", sans-serif;
-    height: 100dvh;
-    touch-action: manipulation;
-    left: 0;
-      right:  0;
-      width: 100%;
-    -webkit-overflow-scrolling: auto; 
-    overflow-y: auto; 
-  }
+body {
+  display: none;
+  font-family: "Mulish", sans-serif;
+  height: 100dvh;
+  touch-action: manipulation;
+  left: 0;
+  right: 0;
+  width: 100%;
+  -webkit-overflow-scrolling: auto;
+  overflow-y: auto;
+}
 
 @media (min-width: 768px) and (max-width: 1024px) {
   body {
     touch-action: none;
     position: absolute;
     left: 0;
-    right:  0;
+    right: 0;
     width: 100%;
     -webkit-overflow-scrolling: auto;
     display: block;
@@ -34,18 +33,17 @@
     height: 100dvh;
     font-family: "Mulish", sans-serif !important;
   }
- 
-  input:focus{
+
+  input:focus {
     outline: none !important;
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
   }
- 
 }
 @media screen and (max-width: 769px) {
   body {
     position: absolute;
     left: 0;
-    right:  0;
+    right: 0;
     width: 100%;
     -webkit-overflow-scrolling: auto;
     touch-action: none;
@@ -53,10 +51,8 @@
     width: 100%;
     transition: all 1s linear;
     -webkit-overflow-scrolling: auto;
-    
   }
 }
-
 
 /* @import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
 
