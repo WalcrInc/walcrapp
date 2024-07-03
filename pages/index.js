@@ -16,11 +16,13 @@ export default function Home() {
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <style>
+          <style jsx>
+          {`
             body {
               min-height: calc(100% + env(safe-area-inset-top));
               padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
             }
+          `}
         </style>
       </Head>
       <Onboarding />
