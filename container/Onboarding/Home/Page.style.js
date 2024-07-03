@@ -4,11 +4,12 @@ export const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
+  padding-bottom: 1rem;
 
   header {
-    background: url("/images/home1.png") no-repeat center center;
+    background: url("/images/home1.png") no-repeat top center;
     background-size: cover;
-    flex: 2; 
+    flex: 2;
     display: flex;
     height: 100%;
     width: 100%;
@@ -18,12 +19,12 @@ export const PageContainer = styled.div`
       position: absolute;
       top: 0;
       left: 0;
-      margin: 20px; 
+      margin: 20px;
     }
 
     .overlay {
       position: absolute;
-      bottom: 0;
+      bottom: -1px;
       left: 0;
       width: 100%;
       height: 112px;
@@ -32,15 +33,14 @@ export const PageContainer = styled.div`
   }
 
   .text {
-    flex: 1; 
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center;
+    align-items: center;
     gap: 20px;
     text-align: center;
     padding: 3%;
-
   }
 
   .text h1 {
