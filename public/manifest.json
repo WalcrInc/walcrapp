@@ -1,7 +1,7 @@
 {
   "name": "Walcr",
   "short_name": "Walcr",
-  "start_url": "/?fullscreen=true",
+  "start_url": "/",
   "background_color": "#ffffff",
   "display": "fullscreen",
   "orientation": "portrait",
