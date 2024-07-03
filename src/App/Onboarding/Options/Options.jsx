@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { OptionContainer } from "./Options.style";
+import style from "./Options.module.css";
 import { LogoWhiteX } from "@/Assets/index"
 import { Box, Button } from "@chakra-ui/react";
 import { AppleIcon, BrushIcon, GoogleIcon, User } from "Src/Assets/index";
-import useRoutes from "@/Features/Hooks/Routes/Routes"
+import useRoutes from "Src/Features/Hooks/Routes/Routes"
 
 const Options = ({ handleNext }) => {
   const [currentView, setCurrentView] = useState("");
@@ -15,13 +15,10 @@ const Options = ({ handleNext }) => {
   const { handleTaskWalcrRouteX, handleFindServicesRoute } = useRoutes();
 
   return (
-    <>
-      <OptionContainer>
-        <header>
-         
+    <div className={style.Container}>
+        <div className={style.header}>
           <p>Lorem ipsum dolor sit.</p>
-        </header>
-        <div className="text">
+        <div className={style.text}>
           <Box
             display={"flex"}
             gap="20px"
@@ -42,6 +39,7 @@ const Options = ({ handleNext }) => {
               padding={"2%"}
               justifyContent={"center"}
               alignItems={"center"}
+              marginTop={"-30px"}
             >
               <BrushIcon />
               Find <br /> a Service
@@ -59,12 +57,13 @@ const Options = ({ handleNext }) => {
               padding={"2%"}
               justifyContent={"center"}
               alignItems={"center"}
+              marginTop={"-30px"}
             >
               <User />
               Become <br /> a Taskwalker
             </Button>
           </Box>
-          <div className="buttons">
+          <div className={style.buttons}>
             <Button
               background={"#1a1a1a"}
               width={"171px"}
@@ -83,12 +82,14 @@ const Options = ({ handleNext }) => {
               </Button>
             </Box>
           </div>
-          <p className="skip" onClick={() => handleNext("skip")}>
+          <div className={style.skip}>
+          <span onClick={() => handleNext("skip")}>
             Skip
-          </p>
+          </span>
+          </div>
         </div>
-      </OptionContainer>
-    </>
+        </div>
+    </div>
   );
 };
 
