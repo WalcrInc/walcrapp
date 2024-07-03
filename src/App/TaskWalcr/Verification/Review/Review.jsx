@@ -9,11 +9,11 @@ const Review = () => {
         <Image src={ReviewImg} style={{width:"100px", height:"100px", marginBottom:"10px"}} alt='under review'/>
 
 
-        <p style={{fontSize:"21px", fontWeight:"600", marginBottom:"8px"}}>
+        <p style={{fontSize:"21px", fontWeight:"700", marginBottom:"8px", textAlign:"center"}}>
         Your application is submitted and is under review
         </p>
         <span>
-        You’ll be notified with the application status
+        You'll be notified with the application status
         </span>
 
         <Button 
