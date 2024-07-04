@@ -15,23 +15,58 @@ export const OnboardingStyle = styled.div`
     padding-top: 3rem;
   }
 
+  .mainBody {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+  }
+
   .step-one,
   .step-two,
   .step-three {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    height: fit-content;
+    flex-grow: 1;
+    justify-content: end;
   }
 
   .icon {
-    background: url("/images/person.svg");
-    height: 280px;
-    width: 100%;
+    flex-grow: 1;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     background-position: center center;
     margin: 10px;
+  }
+
+  .step-one > .icon {
+    background: url("/images/around-the-world-animate.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+  }
+
+  .step-two > .icon {
+    background: url("/images/gutter-cleaning-animate.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+  }
+
+  .step-three > .icon {
+    background: url("/images/quality-time-in-nature-animate.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
   }
 
   .step-one .text,

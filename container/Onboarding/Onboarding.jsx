@@ -41,47 +41,41 @@ const Onboarding = () => {
           </header>
         )}
 
-        <div className="bottom">
+        <div className="mainBody">
           <div className="body">
-            <div className="step-one">
-              {currentStep === 2 && (
-                <>
-                  <div className="icon"></div>
-                  <div className="text">
-                    <h1>Lorem ipsum dolor sit amet</h1>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    </p>
-                  </div>
-                </>
-              )}
-            </div>
-            <div className="step-two">
-              {currentStep === 3 && (
-                <>
-                  <div className="icon"></div>
-                  <div className="text">
-                    <h1>Lorem ipsum dolor sit amet</h1>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    </p>
-                  </div>
-                </>
-              )}
-            </div>
-            <div className="step-three">
-              {currentStep === 4 && (
-                <>
-                  <div className="icon"></div>
-                  <div className="text">
-                    <h1>Lorem ipsum dolor sit amet</h1>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    </p>
-                  </div>
-                </>
-              )}
-            </div>
+            {currentStep === 2 && (
+              <div className="step-one">
+                <div className="icon"></div>
+                <div className="text">
+                  <h1>Lorem ipsum dolor sit amet</h1>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                </div>
+              </div>
+            )}
+            {currentStep === 3 && (
+              <div className="step-two">
+                <div className="icon"></div>
+                <div className="text">
+                  <h1>Lorem ipsum dolor sit amet</h1>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                </div>
+              </div>
+            )}
+            {currentStep === 4 && (
+              <div className="step-three">
+                <div className="icon"></div>
+                <div className="text">
+                  <h1>Lorem ipsum dolor sit amet</h1>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                </div>
+              </div>
+            )}
           </div>
           {(currentStep === 2 || currentStep === 3 || currentStep === 4) && (
             <div className="indicator">

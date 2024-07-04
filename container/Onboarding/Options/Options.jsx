@@ -18,20 +18,21 @@ const Options = ({ handleNext }) => {
     <>
       <OptionContainer>
         <header>
-         
+
           <p>Lorem ipsum dolor sit.</p>
         </header>
         <div className="text">
           <Box
             display={"flex"}
             gap="20px"
+            width="100%"
             position={"relative"}
             top={"-15%"}
             justifyContent={"center"}
           >
             <Button
               background={"#F7F7F7"}
-              width={"171px"}
+              width={"100%"}
               height={"119px"}
               size={"lg"}
               borderRadius={"18px"}
@@ -48,7 +49,7 @@ const Options = ({ handleNext }) => {
             </Button>
             <Button
               background={"#F7F7F7"}
-              width={"171px"}
+              width={"100%"}
               height={"119px"}
               size={"lg"}
               borderRadius={"18px"}
@@ -69,16 +70,17 @@ const Options = ({ handleNext }) => {
               background={"#1a1a1a"}
               width={"171px"}
               color={"#fff"}
+              borderRadius={"1rem"}
               size={"lg"}
               onClick={() => handleNext("signIn")}
             >
               Sign In
             </Button>
-            <Box display={"flex"} gap="30px">
-              <Button background={"#F7F7F7"} size={"lg"}>
+            <Box display={"flex"} gap="20px">
+              <Button background={"#F7F7F7"} size={"lg"} borderRadius={"1rem"}>
                 <AppleIcon />
               </Button>
-              <Button background={"#F7F7F7"} size={"lg"}>
+              <Button background={"#F7F7F7"} size={"lg"} borderRadius={"1rem"}>
                 <GoogleIcon />
               </Button>
             </Box>
