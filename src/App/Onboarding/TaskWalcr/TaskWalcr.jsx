@@ -17,7 +17,7 @@ const TaskWalcr = () => {
           {" "}
           Work your way You bring the skill.
           <br />
-          We’ll make earning easy.
+          We'll make earning easy.
         </p>
       </header>
       <div className="section-1">

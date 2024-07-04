@@ -1,19 +1,21 @@
 import { Button } from "@chakra-ui/react";
+import Image from "next/image";
 import React from "react";
 // import { PageContainer } from "./index";
 import style from './Page.module.css'
 import useRoutes from "Src/Features/Hooks/Routes/Routes";
 // import { LogoWhiteX } from "Src/components/Logo";
 import { Next_Icon, NextIconX } from "Src/Assets/index";
+import HomeImage from "@/Assets/images/home.png"
 
 const Page = ({ handleNext }) => {
   const { handleOnboardingRoute } = useRoutes();
 
   return (
     <div className={style.Container}>
-      {/* <header className={style.header}>
-        <div className={style.overlay} />
-      </header> */}
+      <div>
+        <Image src={HomeImage} className={style.Image} />
+      </div>
 
       <div className={style.text}>
         <h1>Lorem ipsum dolor amet</h1>
@@ -28,7 +30,11 @@ const Page = ({ handleNext }) => {
           alignItems={"center"}
           borderReadius={"16px"}
         >
-          Get Started  <NextIconX />
+          <p style={{marginRight:"10px", color:"#fff"}}>
+          Get Started  
+          </p>
+          
+          <NextIconX/>
         </Button>
       </div>
       </div>

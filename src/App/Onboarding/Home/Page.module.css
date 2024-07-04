@@ -7,7 +7,7 @@
 } */
 
 .Container{
-    background: url('../../../Assets/images/home.png') no-repeat;
+    /* background: url('../../../Assets/images/home.png') no-repeat; */
     height: 100vh;
     background-size: 100% 100vh;
     background-position: top;
@@ -28,7 +28,7 @@
     display: grid;
     justify-content: center;
     text-align: center;
-    padding: 3%;
+    padding:6% 3%;
 }
 .text h1 {
     font-size: 55px;
