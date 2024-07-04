@@ -6,6 +6,7 @@ import styles from './Earnings.module.css'
 // import PieChart from 'Src/Components/Chart/PieChart'
 import BarChart from '@/Components/Chart/BarChart'
 import { CancelChart } from '@/Components/Chart/Chart'
+import { TaskNav } from '@/Components/BottomNavbar/TaskNav'
 
 
 const Earnings = () => {
@@ -52,7 +53,7 @@ const Earnings = () => {
               <BarChart />
             </div>
         </div>
-      {/* <BottomNavBar/> */}
+      <TaskNav/>
     </div>
   )
 }

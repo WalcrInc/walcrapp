@@ -1,3 +1,4 @@
+import { BackIcon } from '@/Assets';
 import React from 'react';
 
 
@@ -5,7 +6,7 @@ const BackArrow = ({handleBack}) => {
 
   return (
     <button onClick={handleBack} aria-label="Go back" style={styles.button}>
-     Back
+     <BackIcon/>
     </button>
   );
 };

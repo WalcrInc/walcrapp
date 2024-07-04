@@ -1,4 +1,4 @@
-import BarChart from 'Src/components/Chart/BarChart'
+import BarChart from 'Src/Components/Chart/BarChart'
 import React from 'react'
 import styles from './Hero.module.css'
 import Nav from './BottomNav/Nav'
