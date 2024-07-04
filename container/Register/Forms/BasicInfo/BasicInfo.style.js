@@ -4,18 +4,20 @@ export const BasicInfoStyle = styled.div`
   display: flex;
   flex-direction: column;
   gap: 30px;
-  padding: 6% 4% 3% 4%;
-  input:focus{
+  padding: 6% 4% 2% 4%;
+  input:focus {
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
   }
-  button:focus{
-   background: black;
+  button:focus {
+    background: black;
   }
+  height: 100%;
+  overflow: scroll;
 
-  .header{
-    display:flex ;
-    flex-direction:column ;
-    gap:5px;
+  .header {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
   }
   .header h1 {
     font-size: 30px;
@@ -26,21 +28,21 @@ export const BasicInfoStyle = styled.div`
     font-weight: 400;
     color: #5b6178;
   }
-.custom-phone-input{
-    box-shadow:0 0 0 1px #CDD1DC ;
-    border:none ;
-}
+  .custom-phone-input {
+    box-shadow: 0 0 0 1px #cdd1dc;
+    border: none;
+  }
   .active {
     border-bottom: 2px solid #f18341;
     transition: 0.5s ease-in-out;
   }
-  .error{
-    color:#FB2047 ;
-    font-size:12px ;
-    display:flex ;
-    gap:2px;
-    align-items:center ;
-    margin-top:10px ;
+  .error {
+    color: #fb2047;
+    font-size: 12px;
+    display: flex;
+    gap: 2px;
+    align-items: center;
+    margin-top: 10px;
   }
   .options {
     display: flex;

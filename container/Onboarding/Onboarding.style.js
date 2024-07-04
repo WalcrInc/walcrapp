@@ -12,6 +12,7 @@ export const OnboardingStyle = styled.div`
     justify-content: space-between;
     align-items: center;
     height: 10vh;
+    padding-top: 3rem;
   }
 
   .step-one,
@@ -69,7 +70,7 @@ export const OnboardingStyle = styled.div`
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 15px 3%;
+    padding: 1rem 3%;
   }
 
   .page-indicator {

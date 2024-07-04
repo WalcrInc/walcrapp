@@ -17,14 +17,20 @@ const Register = () => {
   };
 
   return (
-    <>
+    <div
+      style={{
+        height: "100dvh",
+        padding: "2rem 0",
+        overflow: "scroll",
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
       {step === 1 && <BasicInfo handleNext={handleNext} />}
-      {step === 2 && (
-        <FinalMap handlePrev={handlePrev} handleNext={handleNext} />
-      )}
+      {step === 2 && <FinalMap handlePrev={handlePrev} handleNext={handleNext} />}
       {step === 3 && <Phone handlePrev={handlePrev} handleNext={handleNext} />}
       {step === 4 && <OTP handlePrev={handlePrev} handleNext={handleNext} />}
-    </>
+    </div>
   );
 };
 
