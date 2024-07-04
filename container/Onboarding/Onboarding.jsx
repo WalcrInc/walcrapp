@@ -47,7 +47,7 @@ const Onboarding = () => {
               <div className="step-one">
                 <div className="icon"></div>
                 <div className="text">
-                  <h1>Lorem ipsum dolor sit amet</h1>
+                  <h1>Step One ipsum dolor sit amet</h1>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   </p>
