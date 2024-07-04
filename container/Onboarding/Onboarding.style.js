@@ -75,7 +75,7 @@ export const OnboardingStyle = styled.div`
     display: flex;
     flex-direction: column;
     gap: 5px;
-    padding: 2.375em 3%;
+    padding: 10px 3%;
   }
 
   .text h1 {
