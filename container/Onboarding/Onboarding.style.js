@@ -80,7 +80,7 @@ export const OnboardingStyle = styled.div`
 
   .text h1 {
     font-size: 3.125em;
-    font-weight: 600;
+    font-weight: 750;
     line-height: 1.2em;
   }
   .text p {
