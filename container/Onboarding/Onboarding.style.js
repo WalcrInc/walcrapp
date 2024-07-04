@@ -7,7 +7,7 @@ export const OnboardingStyle = styled.div`
   height: 100dvh;
 
   .header {
-    padding: 3%;
+    padding: 6%;
     display: flex;
     justify-content: space-between;
     align-items: center;
