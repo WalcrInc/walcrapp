@@ -38,6 +38,7 @@ export const OnboardingStyle = styled.div`
     gap: 20px;
     flex-grow: 1;
     justify-content: end;
+    padding: 0 1rem;
   }
 
   .icon {
@@ -105,7 +106,7 @@ export const OnboardingStyle = styled.div`
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 2rem 3%;
+    padding: 3rem 2rem;
   }
 
   .page-indicator {

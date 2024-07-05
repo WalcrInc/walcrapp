@@ -5,7 +5,7 @@ export const OptionContainer = styled.div`
   flex-direction: column;
   height: 100vh;
   overflow: hidden;
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
 
   header {
     background: url("/images/home5.png") no-repeat center center;
