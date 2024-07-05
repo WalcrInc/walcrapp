@@ -6,6 +6,7 @@ import Link from "next/link";
 const FormWithEmail = ({ formik }) => {
   const { handleShow, show } = ShowPassword();
 
+  console.log(formik.errors.email)
   return (
     <>
       <FormControl>
@@ -17,7 +18,7 @@ const FormWithEmail = ({ formik }) => {
           type="email"
           placeholder="name@example.com"
           border={
-           formik.touched.email && formik.errors.email ? "1px solid #FB2047" : "1px solid  #CDD1DC"
+            formik.touched.email && formik.errors.email ? "1px solid #FB2047" : "1px solid  #CDD1DC"
           }
           focusBorderColor="0.5px solid #CDD1DC"
           {...formik.getFieldProps("email")}
@@ -34,7 +35,7 @@ const FormWithEmail = ({ formik }) => {
           padding={"5px 15px"}
           focusBorderColor="0.5px solid #CDD1DC"
           border={
-            formik.touched.emailPassword &&  formik.errors.emailPassword
+            formik.touched.emailPassword && formik.errors.emailPassword
               ? "1px solid #FB2047"
               : "1px solid  #CDD1DC"
           }
@@ -48,8 +49,8 @@ const FormWithEmail = ({ formik }) => {
             {...formik.getFieldProps("emailPassword")}
           />
           <span onClick={handleShow}>
-           {show ? <PasswordIcon /> :<DontShow/>}
-           
+            {show ? <PasswordIcon /> : <DontShow />}
+
           </span>
         </Box>
       </FormControl>

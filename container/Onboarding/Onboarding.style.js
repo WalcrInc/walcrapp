@@ -105,7 +105,7 @@ export const OnboardingStyle = styled.div`
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 1rem 3%;
+    padding: 2rem 3%;
   }
 
   .page-indicator {

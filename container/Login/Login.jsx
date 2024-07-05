@@ -44,7 +44,7 @@ const Login = () => {
         >
           Email
         </p>
-        <p  
+        <p
           className={selectedOption === "phone" ? "active" : ""}
           onClick={() => handleSelected("phone")}
         >
@@ -91,7 +91,7 @@ const Login = () => {
                 // margin:"auto"
               }}
             >
-            {/* "heyy" */}
+              {/* "heyy" */}
               <Spinner />
             </div>
           ) : (
@@ -100,20 +100,15 @@ const Login = () => {
         </CustomButton>
       </form>
 
-      <Box
-        color={"#8C92AB"}
-        margin={"20px auto"}
-        left={"0%"}
-        width={"100%"}
-        textAlign={"center"}
-        bottom={"30px"}
+      <div
+        style={{ marginTop: "auto", textAlign: 'center' }}
       >
         Don’t have an account?
         <span style={{ color: "#1A1A1A", fontWeight: "700" }}>
           {" "}
           <Link href={"/register"}>Sign up</Link>{" "}
         </span>
-      </Box>
+      </div>
     </>
   );
 };
