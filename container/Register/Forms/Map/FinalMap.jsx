@@ -87,7 +87,7 @@ const FinalMap = ({ handleNext, handlePrev }) => {
             style={{
               position: "absolute",
               zIndex: "1",
-              padding: "5%",
+              padding: "2rem 4%",
             }}
             onClick={handlePrev}
           >
