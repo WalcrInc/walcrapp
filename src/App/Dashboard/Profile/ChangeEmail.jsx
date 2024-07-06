@@ -29,7 +29,19 @@ const changeEmail = () => {
                 <p className={Style.text}>Security verification unavailable?</p>
             </div>
 
-            
+            <Button
+                border={"none"}
+                textAlign={"center"}
+                outline={"none"}
+                color={"#fff"}
+                background={"#1A1A1A"}
+                width={"100%"}
+                paddingX={"40px"}
+                borderRadius={"8px"}
+                marginTop={"50px"}
+            >
+                Continue
+            </Button>
         </div>
     )
 }

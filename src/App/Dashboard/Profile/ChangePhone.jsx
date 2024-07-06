@@ -3,6 +3,7 @@ import { TopBar } from '@/Components/TopBar/TopBar'
 import { Number } from '@/Components/Input/Number'
 import GetCode from '@/Components/Input/GetCode'
 import Style from './Style.module.css'
+import { Button } from '@chakra-ui/react'
 
 const changePhone = () => {
     return (
@@ -10,10 +11,10 @@ const changePhone = () => {
             <TopBar href={"/dashboard/profile"} text={"Change Number"} />
             <h1>New Phone Number Verification</h1>
             <div className={Style.Input}>
-            <Number />
+                <Number />
             </div>
             <div className={Style.Input}>
-            <GetCode text={"New Phone"} />
+                <GetCode text={"New Phone"} />
             </div>
 
             <div className={Style.Security}>
@@ -29,7 +30,19 @@ const changePhone = () => {
                 <p className={Style.text}>Security verification unavailable?</p>
             </div>
 
-            
+            <Button
+                border={"none"}
+                textAlign={"center"}
+                outline={"none"}
+                color={"#fff"}
+                background={"#1A1A1A"}
+                width={"100%"}
+                paddingX={"40px"}
+                borderRadius={"8px"}
+                marginTop={"50px"}
+            >
+                Continue
+            </Button>
         </div>
     )
 }
