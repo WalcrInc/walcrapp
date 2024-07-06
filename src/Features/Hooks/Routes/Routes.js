@@ -67,13 +67,18 @@ const useRoutes = () => {
   const handleVerificationRoute = () => {
     return router.push("/taskwalcr/verification")
   }
-  const handlePreviewRoute = () => {
-    return router.push("/taskwalcr/preview")
-  }
+  // const handlePreviewRoute = () => {
+  //   return router.push("/taskwalcr/preview")
+  // }
   const handleReviewRoute = () => {
     return router.push("/taskwalcr/review")
   }
-
+  const handleEditEmailRoute = () => {
+    return router.push("/dashboard/change-email")
+  }
+  const handleEditPhoneRoute = () => {
+    return router.push("/dashboard/change-number")
+  }
   return {
     handleHomeRoute,
     handleTaskWalcrRouteX,
@@ -97,6 +102,8 @@ const useRoutes = () => {
     handleCerificateRoute,
     handleVerificationRoute,
     handleReviewRoute,
+    handleEditEmailRoute,
+    handleEditPhoneRoute,
   };
 };
 

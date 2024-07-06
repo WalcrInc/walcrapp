@@ -1,12 +1,13 @@
 import React from "react";
 import { ProfileStyle } from "./Profile.style";
-import { EmailIcon, PasswordIcon, PhoneIcon, UserIcon, LockIcon, AddressIcon, TrashIcon, NextIcon } from "Src/Assets/index";
+import { EmailIcon, PasswordIcon, PhoneIcon, UserIcon, LockIcon, AddressIcon, TrashIcon, NextIcon, EditIcon } from "Src/Assets/index";
 import {
   InputGroup,
   Input,
   InputLeftElement,
   FormLabel,
   FormControl,
+  InputRightElement,
   Button,
 } from "@chakra-ui/react";
 import useFetchData from "@/Features/Hooks/useFetchDataHook/useFetchData";
@@ -16,9 +17,11 @@ import style from './Profile.module.css'
 import Image from "next/image";
 import ProfileImage from "@/Assets/images/profile.svg";
 import { TopBar } from "@/Components/TopBar/TopBar";
+import useRoutes from "@/Features/Hooks/Routes/Routes";
 
 const Profile = () => {
   const { user } = useSelector((state) => state.auth);
+  const {handleEditEmailRoute, handleEditPhoneRoute} = useRoutes()
   const accessToken = user ? user.data : "";
 
   const { data } = useFetchData({
@@ -54,7 +57,7 @@ const Profile = () => {
             <InputLeftElement>
               <UserIcon />
             </InputLeftElement>
-            <Input placeholder="Brandon Joe" isDisabled />
+            <Input placeholder="Brandon Joe"/>
           </InputGroup>
         </FormControl>
 
@@ -68,7 +71,10 @@ const Profile = () => {
             <InputLeftElement>
               <EmailIcon />
             </InputLeftElement>
-            <Input placeholder="brandonjoe@gmail.com" isDisabled />
+            <Input placeholder="brandonjoe@gmail.com" />
+            <InputRightElement style={{cursor:"pointer"}} onClick={handleEditEmailRoute}>
+              <EditIcon />
+            </InputRightElement>
           </InputGroup>
         </FormControl>
 
@@ -83,7 +89,10 @@ const Profile = () => {
             <InputLeftElement>
               <PhoneIcon />
             </InputLeftElement>
-            <Input placeholder="+1602-376-4821" isDisabled />
+            <Input placeholder="+1602-376-4821" />
+            <InputRightElement style={{cursor:"pointer"}} onClick={handleEditPhoneRoute}>
+              <EditIcon />
+            </InputRightElement>
           </InputGroup>
         </FormControl>
 
