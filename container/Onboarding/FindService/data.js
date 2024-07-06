@@ -46,7 +46,7 @@ export const ServicesTypes = [
   },
   {
     id: 6,
-    name: "",
+    name: "Heavy-lifting",
     details: "I want to lift a heavy object",
     icon: <HeavyIcon_Coloured />,
   },

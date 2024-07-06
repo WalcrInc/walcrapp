@@ -1,10 +1,18 @@
 import styled from "styled-components";
 
 export const FindServicesStyle = styled.div`
-  padding: 6%;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+  padding: 3rem 6%;
+  height: 100dvh;
+  overflow: scroll;
+
+  main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    gap: 30px;
+    position: relative;
+  }
 
   header {
     display: flex;
@@ -35,12 +43,14 @@ export const FindServicesStyle = styled.div`
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 170px;
-    height:171px ;
   }
 
   .sub-box span {
     margin: auto;
+  }
+
+  .service-chosen {
+    border: 1px solid #1a1a1a;
   }
 
   .sub-box h1 {
@@ -52,15 +62,15 @@ export const FindServicesStyle = styled.div`
     font-weight: 400;
   }
 
-  .others{
+  .others {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    margin-bottom: 3rem;
   }
 
   .others h1 {
     font-size: 22px;
     font-weight: 700;
   }
-
 `;
