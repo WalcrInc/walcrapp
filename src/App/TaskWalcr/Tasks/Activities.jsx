@@ -75,7 +75,7 @@ const Activity = () => {
                       {activity.status}
                     </div>
                     
-                    <h3>{activity.price}</h3>
+                    <h4>{activity.price}</h4>
                   </div>
                 </div>
               ))}

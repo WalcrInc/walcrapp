@@ -92,4 +92,9 @@ export const ActivitiesStyle = styled.div`
     font-weight: 400;
     color: #5b6178;
   }
+  .b h4{
+  margin-top:-8px;
+  margin-bottom: 10px;
+  font-weight:600;
+  }
 `;
