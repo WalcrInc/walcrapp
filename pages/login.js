@@ -8,7 +8,7 @@ const login = () => {
       style={{
         height: "100dvh",
         padding: "0rem 0 3rem",
-        overflow: "scroll",
+        overflow: "hidden",
         display: "flex",
         flexDirection: "column",
       }}
