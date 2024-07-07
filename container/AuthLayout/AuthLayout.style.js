@@ -4,7 +4,9 @@ export const AuthStyle = styled.div`
   display: flex;
   flex-direction: column;
   gap: 30px;
-  padding: 6% 4% 2% 4%;
+  padding: 0% 4% 2% 4%;
+  height: 100%;
+  overflow: scroll;
 
   input:focus {
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
