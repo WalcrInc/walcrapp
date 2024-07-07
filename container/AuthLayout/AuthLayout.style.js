@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const AuthStyle = styled.div`
-  padding: 0rem 0 3rem;
+  padding: 6% 0 3rem;
   height: 100dvh;
   overflow: hidden;
 
@@ -11,7 +11,7 @@ export const AuthStyle = styled.div`
     gap: 30px;
     height: 100%;
     overflow: scroll;
-    padding: 0 4%;
+    padding: 0% 4% 2% 4%;
   }
   input:focus {
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
