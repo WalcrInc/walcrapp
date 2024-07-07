@@ -3,6 +3,7 @@ import { TopBar } from '@/Components/TopBar/TopBar'
 import GetCode from '@/Components/Input/GetCode'
 import Style from './Style.module.css'
 import IconInput from '@/Components/Input/IconInput'
+import { Button } from '@chakra-ui/react'
 
 
 const changeEmail = () => {

@@ -4,8 +4,7 @@ export const OnboardingStyle = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100vh;
-  overflow: hidden;
+  height: 100dvh;
 
   .header {
     padding: 6%;
@@ -13,6 +12,22 @@ export const OnboardingStyle = styled.div`
     justify-content: space-between;
     align-items: center;
     height: 10vh;
+    padding-top: 3rem;
+  }
+
+  .mainBody {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
   }
 
   .step-one,
@@ -21,17 +36,38 @@ export const OnboardingStyle = styled.div`
     display: flex;
     flex-direction: column;
     gap: 20px;
-    height: fit-content;
+    flex-grow: 1;
+    justify-content: end;
+    padding: 1rem;
   }
 
   .icon {
-    background: url("@/Assets/images/person.svg");
-    height: 280px;
-    width: 100%;
+    flex-grow: 1;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     background-position: center center;
     margin: 10px;
+  }
+
+  .step-one > .icon {
+    background: url("Src/Assets/images/around-the-world-animate.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+  }
+
+  .step-two > .icon {
+    background: url("Src/Assets/images/gutter-cleaning-animate.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+  }
+
+  .step-three > .icon {
+    background: url("Src/Assets/images/quality-time-in-nature-animate.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
   }
 
   .step-one .text,
@@ -44,12 +80,19 @@ export const OnboardingStyle = styled.div`
   }
 
   .text h1 {
-    font-size: 2.5em;
-    font-weight: 800;
+    font-size: 3.125rem;
+    font-weight: 750;
     line-height: 1.2em;
   }
+
+  @media (max-width: 380px) {
+    .text h1 {
+      font-size: 2.125rem;
+    }
+  }
+
   .text p {
-    font-size: 1em;
+    font-size: 1.125em;
     font-weight: 400;
     color: #5b6178;
   }
@@ -70,7 +113,7 @@ export const OnboardingStyle = styled.div`
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 15px 3%;
+    padding: 0rem 2rem 3rem;
   }
 
   .page-indicator {

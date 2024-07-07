@@ -1,5 +1,5 @@
-import Tasks from '@/App/TaskWalcr/Tasks/Tasks'
 import React from 'react'
+import Tasks from '@/App/TaskWalcr/Tasks/Tasks'
 
 const index = () => {
   return (
