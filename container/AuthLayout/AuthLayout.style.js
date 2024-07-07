@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const AuthStyle = styled.div`
-  padding: 3rem 0;
+  padding: 0rem 0 3rem;
   height: 100dvh;
   overflow: hidden;
 
