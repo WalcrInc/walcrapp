@@ -17,7 +17,7 @@ const TaskWalcr = () => {
           {" "}
           Work your way You bring the skill.
           <br />
-          We’ll make earning easy.
+          We&apos;ll make earning easy.
         </p>
       </header>
       <div className="section-1">
@@ -80,16 +80,18 @@ const TaskWalcr = () => {
           </div>
         </div>
       </div>
-      <Button
-        size={"lg"}
-        background={"#1a1a1a"}
-        color={"#fff"}
-        width={"100%"}
-        borderReadius={"16px"}
+      <button
+        style={{
+          background: "#1a1a1a",
+          padding: "1rem",
+          color: "#ffffff",
+          borderRadius: "1rem",
+          width: "100%"
+        }}
         onClick={handleLoginRoute}
       >
         Continue
-      </Button>
+      </button>
     </TaskwalkerStyle>
   );
 };

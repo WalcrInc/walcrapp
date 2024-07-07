@@ -68,7 +68,7 @@ export const OptionContainer = styled.div`
 
   .text .skip {
     cursor: pointer;
-    color: #5b6178;
+    color: #000;
     font-size: 16px;
     margin-top: 15px;
   }

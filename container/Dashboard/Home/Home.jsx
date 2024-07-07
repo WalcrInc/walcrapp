@@ -6,6 +6,7 @@ import {
   Hamburger,
   LocationIcon,
   NotificationIcon,
+  Wrench_Green
 } from "@/assets";
 import useFetchData, { BASE_URL } from "@/hooks/useFetchDataHook/useFetchData";
 import { useEffect, useState } from "react";
@@ -100,7 +101,19 @@ const Home = () => {
         <h1>Quick Actions</h1>
         <div className="options">
           <div className="option">
-            <Delivery_Box_Orange />
+            <i
+              style={{
+                backgroundColor: "rgba(241, 131, 65, 0.10)",
+                borderRadius: "8px",
+                width: "40px",
+                height: "40px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center"
+              }}
+            >
+              <Delivery_Box_Orange />
+            </i>
             <h1> Package delivery</h1>
             <p>Send and receive a package with our Walcr</p>
             <span>
@@ -109,8 +122,20 @@ const Home = () => {
           </div>
 
           <div className="option">
-            <Delivery_Box_Orange />
-            <h1>Heavy lifting</h1>
+            <i
+              style={{
+                backgroundColor: "rgba(200, 255, 199, 0.50)",
+                borderRadius: "8px",
+                width: "40px",
+                height: "40px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center"
+              }}
+            >
+              <Wrench_Green />
+            </i>
+            <h1>Book a service</h1>
             <p>Send and receive a package with our Walcr</p>
             <span>
               <ForwardIcon />

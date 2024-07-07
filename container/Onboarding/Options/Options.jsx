@@ -27,7 +27,7 @@ const Options = ({ handleNext }) => {
             gap="20px"
             width="100%"
             position={"relative"}
-            top={"-15%"}
+            top={"-2rem"}
             justifyContent={"center"}
           >
             <Button
@@ -39,10 +39,12 @@ const Options = ({ handleNext }) => {
               onClick={handleFindServicesRoute}
               display={"flex"}
               flexDirection={"column"}
-              gap="20px"
-              padding={"2%"}
+              gap="0.5rem"
+              padding={"12px"}
               justifyContent={"center"}
               alignItems={"center"}
+              fontSize={"14px"}
+              fontWeight={"700"}
             >
               <BrushIcon />
               Find <br /> a Service
@@ -56,10 +58,12 @@ const Options = ({ handleNext }) => {
               onClick={handleTaskWalcrRouteX}
               display={"flex"}
               flexDirection={"column"}
-              gap="20px"
-              padding={"2%"}
+              gap="0.5rem"
+              padding={"12px"}
               justifyContent={"center"}
               alignItems={"center"}
+              fontSize={"14px"}
+              fontWeight={"700"}
             >
               <User />
               Become <br /> a Taskwalker

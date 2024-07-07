@@ -1,12 +1,39 @@
-import { AlertIcon, DontShow, PasswordIcon, Show } from "@/assets";
+import { AlertIcon, DontShow, PasswordIcon, Show, DangerIconRed } from "@/assets";
 import ShowPassword from "@/hooks/useLoginHook/useLoginHook";
 import { Button, FormControl, FormLabel, Input, Box } from "@chakra-ui/react";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 
 const FormWithEmail = ({ formik }) => {
   const { handleShow, show } = ShowPassword();
 
-  console.log(formik.errors.email)
+  const [emailError, setEmailError] = useState("")
+  const [passwordError, setPasswordError] = useState("");
+
+  useEffect(() => {
+    if (formik.errors.email) {
+      if (formik.errors.email === "Required") {
+        setEmailError("Email is a required field")
+      } else {
+        setEmailError(`${formik.values.email} is not a valid email address`)
+      }
+    } else {
+      setEmailError("")
+    }
+  }, [formik.errors.email, formik.values.email])
+
+  useEffect(() => {
+    if (formik.errors.emailPassword) {
+      if (formik.errors.emailPassword === "Required") {
+        setPasswordError("Password is a required field")
+      } else {
+        setPasswordError(`Password must be atleast 8 characters`)
+      }
+    } else {
+      setPasswordError("")
+    }
+  }, [formik.errors.emailPassword, formik.values.emailPassword])
+
   return (
     <>
       <FormControl>
@@ -23,6 +50,20 @@ const FormWithEmail = ({ formik }) => {
           focusBorderColor="0.5px solid #CDD1DC"
           {...formik.getFieldProps("email")}
         />
+        {emailError !== '' &&
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "6px",
+              fontSize: "12px",
+              color: "#FB2047",
+              marginTop: "10px"
+            }}>
+            <DangerIconRed />
+            <p>{emailError}</p>
+          </div>
+        }
       </FormControl>
       <FormControl>
         <FormLabel fontSize={"16px"} color={"#1A1A1A"} fontWeight={"700"}>
@@ -45,7 +86,7 @@ const FormWithEmail = ({ formik }) => {
             border={"none"}
             type={show ? "text" : "password"}
             padding={"0"}
-            placeholder="**********"
+            placeholder="******"
             {...formik.getFieldProps("emailPassword")}
           />
           <span onClick={handleShow}>
@@ -53,6 +94,20 @@ const FormWithEmail = ({ formik }) => {
 
           </span>
         </Box>
+        {passwordError !== '' &&
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "6px",
+              fontSize: "12px",
+              color: "#FB2047",
+              marginTop: "10px"
+            }}>
+            <DangerIconRed />
+            <p>{passwordError}</p>
+          </div>
+        }
       </FormControl>
     </>
   );

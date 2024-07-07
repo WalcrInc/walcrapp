@@ -85,7 +85,7 @@ export const HomeStyle = styled.div`
     display: flex;
     flex-direction: column;
     gap: 15px;
-    padding: 5% 2%;
+    padding: 1rem;
     border: 1px solid #f0f2f6;
     width: 100%;
     border-radius: 16px;

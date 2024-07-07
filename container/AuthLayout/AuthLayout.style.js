@@ -7,6 +7,7 @@ export const AuthStyle = styled.div`
   padding: 6% 4% 3rem 4%;
   height: 100dvh;
   overflow: scroll;
+  overflow-behavior: none;
   input:focus {
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
   }
@@ -76,7 +77,7 @@ export const AuthStyle = styled.div`
   .checkbox {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 8px;
     color: #1a1a1a;
     font-size: 16px;
     font-weight: 400;

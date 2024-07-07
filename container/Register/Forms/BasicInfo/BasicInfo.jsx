@@ -5,17 +5,18 @@ import {
   GoogleIcon,
   PasswordIcon,
   Show,
+  DangerIconRed
 } from "@/assets";
 import { CustomButton } from "@/components/Button/Button";
 import useRegister from "@/hooks/useRegisterHook/useRegister";
 import { Box, FormControl, FormLabel, Input } from "@chakra-ui/react";
 import Link from "next/link";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BasicInfoStyle } from "./BasicInfo.style";
 import { useFormik } from "formik";
 
 const BasicInfo = ({ handleNext }) => {
-  const {  show, handleShow, keepSignedIn, setKeepSignedIn } = useRegister();
+  const { show, handleShow, keepSignedIn, setKeepSignedIn } = useRegister();
 
   const formik = useFormik({
     initialValues: {
@@ -41,18 +42,16 @@ const BasicInfo = ({ handleNext }) => {
         errors.email = "Invalid email address";
       }
 
-      
+
       if (!values.password) {
         errors.password = "Required";
       } else if (values.password.length < 8) {
         errors.password = "Password must be at least 8 characters";
       }
-      console.log(errors)
       return errors;
-      
+
     },
     onSubmit: async (values) => {
-      console.log(values);
       // dispatch(register(values));
       const serializedData = JSON.stringify(values);
       localStorage.setItem("formDataStep1", serializedData);
@@ -60,7 +59,33 @@ const BasicInfo = ({ handleNext }) => {
     },
   });
 
- 
+  const [emailError, setEmailError] = useState("")
+  const [passwordError, setPasswordError] = useState("");
+
+  useEffect(() => {
+    if (formik.errors.email) {
+      if (formik.errors.email === "Required") {
+        setEmailError("Email is a required field")
+      } else {
+        setEmailError(`${formik.values.email} is not a valid email address`)
+      }
+    } else {
+      setEmailError("")
+    }
+  }, [formik.errors.email, formik.values.email])
+
+  useEffect(() => {
+    if (formik.errors.password) {
+      if (formik.errors.password === "Required") {
+        setPasswordError("Password is a required field")
+      } else {
+        setPasswordError(`Password must be atleast 8 characters`)
+      }
+    } else {
+      setPasswordError("")
+    }
+  }, [formik.errors.password, formik.values.password])
+
 
   return (
     <BasicInfoStyle>
@@ -132,6 +157,20 @@ const BasicInfo = ({ handleNext }) => {
                 : "1px solid  #CDD1DC"
             }
           />
+          {emailError !== '' &&
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "6px",
+                fontSize: "12px",
+                color: "#FB2047",
+                marginTop: "10px"
+              }}>
+              <DangerIconRed />
+              <p>{emailError}</p>
+            </div>
+          }
         </FormControl>
         <FormControl>
           <FormLabel fontSize={"16px"} color={"#1A1A1A"} fontWeight={"700"}>
@@ -154,13 +193,27 @@ const BasicInfo = ({ handleNext }) => {
               border={"none"}
               type={show ? "text" : "password"}
               padding={"0"}
-              placeholder="*************"
+              placeholder="******"
               {...formik.getFieldProps("password")}
             />
             <span onClick={handleShow}>
               {show ? <PasswordIcon /> : <DontShow />}
             </span>
           </Box>
+          {passwordError !== '' &&
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "6px",
+                fontSize: "12px",
+                color: "#FB2047",
+                marginTop: "10px"
+              }}>
+              <DangerIconRed />
+              <p>{passwordError}</p>
+            </div>
+          }
         </FormControl>
         <Box display={"flex"} justifyContent={"space-between"}>
           <label className="checkbox">
@@ -180,6 +233,15 @@ const BasicInfo = ({ handleNext }) => {
         >
           Continue
         </CustomButton>
+        <Link
+          href={"/become_taskwalcr"}
+          style={{
+            textAlign: "center",
+            color: "#8C92AB",
+          }}
+        >
+          Not a regular user? Sign up as Taskwalker
+        </Link>
       </form>
 
       <Box textAlign={"center"} color={"#8C92AB"}>

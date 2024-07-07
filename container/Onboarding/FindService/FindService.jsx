@@ -55,11 +55,11 @@ const FindService = () => {
                 </div>
               )
             })}
-            <div className="sub-box" onClick={handleOthers}>
+            <div className="others-sub-box" onClick={handleOthers}>
               <span>
                 <AddIcon_Big />
               </span>
-              <h1>Others</h1>
+              <h1>Other</h1>
             </div>
           </div>
         </div>

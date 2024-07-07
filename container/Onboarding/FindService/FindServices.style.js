@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const FindServicesStyle = styled.div`
-  padding: 3rem 6%;
+  padding: 3rem 0rem;
   height: 100dvh;
   overflow: scroll;
 
@@ -12,6 +12,7 @@ export const FindServicesStyle = styled.div`
     overflow: scroll;
     gap: 30px;
     position: relative;
+    padding: 0 1rem;
   }
 
   header {
@@ -32,17 +33,29 @@ export const FindServicesStyle = styled.div`
   .body .box {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 1rem;
   }
 
   .box .sub-box {
     box-shadow: 0px 4px 12px 2px #00000014;
     border-radius: 18px;
     text-align: center;
-    padding: 6% 10%;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
+  }
+
+  .others-sub-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 18px;
+    border: 1px solid #d9d9d9;
+    background: var(--Gradient, #fff);
+    padding: 1.5rem;
+    height: 171px;
   }
 
   .sub-box span {
