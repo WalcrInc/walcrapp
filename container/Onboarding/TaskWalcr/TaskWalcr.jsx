@@ -45,8 +45,8 @@ const TaskWalcr = () => {
       </div>
 
       <div className="section-2">
-        <div className="box" style={{ postion: "relative" }}>
-          <Image
+        <div className="box">
+          {/* <Image
             src={"/images/dots.svg"}
             width={16}
             height={100}
@@ -55,11 +55,22 @@ const TaskWalcr = () => {
               position: "absolute",
               left: "5rem",
             }}
-          />
-          <div className="sub-box">
+          /> */}
+          <div className="sub-box" style={{ position: "relative" }}>
             <span>
               <CreateIcon />
             </span>
+            <Image
+              src={"/images/dots.svg"}
+              alt={"Dots"}
+              width={16}
+              height={100}
+              style={{
+                position: "absolute",
+                left: "3.65rem",
+                top: "8px"
+              }}
+            />
             <div className="text">
               <h1>Create a Task</h1>
               <p>Offer your services to a global audience and start earning.</p>
@@ -76,15 +87,14 @@ const TaskWalcr = () => {
               width={16}
               style={{
                 position: "absolute",
-                left: "3.485rem",
+                left: "3.65rem",
                 top: "8px"
               }}
             />
             <div className="text">
               <h1>Complete your task</h1>
               <p>
-                Use our built-in tools to communicate with your customers and
-                deliver their orders.
+                Use our tools to connect with customers and deliver orders.
               </p>
             </div>
           </div>
@@ -99,7 +109,7 @@ const TaskWalcr = () => {
               width={16}
               style={{
                 position: "absolute",
-                left: "3.485rem",
+                left: "3.65rem",
                 top: "8px"
               }}
             />
