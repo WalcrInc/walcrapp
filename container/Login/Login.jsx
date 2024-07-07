@@ -19,7 +19,7 @@ const Login = () => {
   } = useLogin();
 
   return (
-    <>
+    <main>
       <div className="header">
         <h1>Sign In</h1>
         <p>Welcome back. Log in to Walcr</p>
@@ -130,7 +130,7 @@ const Login = () => {
           <Link href={"/register"}>Sign up</Link>{" "}
         </span>
       </div>
-    </>
+    </main>
   );
 };
 

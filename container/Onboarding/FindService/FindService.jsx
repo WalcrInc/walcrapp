@@ -67,9 +67,11 @@ const FindService = () => {
           {others && (
             <>
               <h1>What service do you require?</h1>
-              <Select box-shadow="0px 0px 0px 1px #CDD1DC" size={"lg"}>
-                <option>heyy</option>
-              </Select>
+              <input
+                type="text"
+                placeholder="Find any service"
+                size={"lg"}
+              />
             </>
           )}
         </div>
@@ -81,8 +83,6 @@ const FindService = () => {
             width: "100%",
             borderRadius: "1rem",
             color: "#ffffff",
-            position: "sticky",
-            bottom: "0",
           }}
           onClick={handleLoginRoute}
         >

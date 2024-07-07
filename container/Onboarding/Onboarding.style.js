@@ -80,10 +80,17 @@ export const OnboardingStyle = styled.div`
   }
 
   .text h1 {
-    font-size: 3.125em;
+    font-size: 3.125rem;
     font-weight: 750;
     line-height: 1.2em;
   }
+
+  @media (max-width: 380px) {
+    .text h1 {
+      font-size: 2.125rem;
+    }
+  }
+
   .text p {
     font-size: 1.125em;
     font-weight: 400;
@@ -106,7 +113,7 @@ export const OnboardingStyle = styled.div`
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 3rem 2rem;
+    padding: 0rem 2rem 3rem;
   }
 
   .page-indicator {

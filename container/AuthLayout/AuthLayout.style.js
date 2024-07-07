@@ -1,13 +1,18 @@
 import styled from "styled-components";
 
 export const AuthStyle = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  padding: 6% 4% 3rem 4%;
+  padding: 3rem 0;
   height: 100dvh;
-  overflow: scroll;
-  overflow-behavior: none;
+  overflow: hidden;
+
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height: 100%;
+    overflow: scroll;
+    padding: 0% 4% 3rem 4%;
+  }
   input:focus {
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
   }

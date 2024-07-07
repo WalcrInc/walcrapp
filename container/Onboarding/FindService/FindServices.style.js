@@ -86,4 +86,21 @@ export const FindServicesStyle = styled.div`
     font-size: 22px;
     font-weight: 700;
   }
+
+  .others input {
+    display: flex;
+    width: 100%;
+    height: 48px;
+    padding: 8px 11px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 6px;
+    background: #fff;
+    box-shadow: 0px 0px 0px 1px #cdd1dc;
+    color: #000;
+  }
+
+  .others input:focus {
+    outline: 1px solid blue;
+  }
 `;
