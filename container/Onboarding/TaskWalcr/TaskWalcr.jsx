@@ -3,6 +3,7 @@ import { TaskwalkerStyle } from "./TaskWalcr.style";
 import { BackIcon, CreateIcon, LocationIconX, ShieldIcon } from "@/assets";
 import { Button } from "@chakra-ui/react";
 import useRoutes from "@/hooks/Routes/Routes";
+import Image from "next/image";
 
 const TaskWalcr = () => {
   const { handleHomeRoute, handleLoginRoute } = useRoutes();
@@ -44,7 +45,17 @@ const TaskWalcr = () => {
       </div>
 
       <div className="section-2">
-        <div className="box">
+        <div className="box" style={{ postion: "relative" }}>
+          <Image
+            src={"/images/dots.svg"}
+            width={16}
+            height={100}
+            alt="Dots"
+            style={{
+              position: "absolute",
+              left: "5rem",
+            }}
+          />
           <div className="sub-box">
             <span>
               <CreateIcon />
@@ -54,10 +65,21 @@ const TaskWalcr = () => {
               <p>Offer your services to a global audience and start earning.</p>
             </div>
           </div>
-          <div className="sub-box">
+          <div className="sub-box" style={{ position: "relative" }}>
             <span>
               <LocationIconX />
             </span>
+            <Image
+              src="/images/Radio.svg"
+              alt={"radio button"}
+              height={16}
+              width={16}
+              style={{
+                position: "absolute",
+                left: "3.485rem",
+                top: "8px"
+              }}
+            />
             <div className="text">
               <h1>Complete your task</h1>
               <p>
@@ -66,10 +88,21 @@ const TaskWalcr = () => {
               </p>
             </div>
           </div>
-          <div className="sub-box">
+          <div className="sub-box" style={{ position: "relative" }}>
             <span>
               <ShieldIcon />
             </span>
+            <Image
+              src="/images/Radio.svg"
+              alt={"radio button"}
+              height={16}
+              width={16}
+              style={{
+                position: "absolute",
+                left: "3.485rem",
+                top: "8px"
+              }}
+            />
             <div className="text">
               <h1>Get paid</h1>
               <p>

@@ -27,7 +27,7 @@ export const TaskwalkerStyle = styled.div`
   .box .sub-box {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 16px;
     text-align: center;
   }
 
@@ -44,16 +44,21 @@ export const TaskwalkerStyle = styled.div`
   .section-2 .box {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 42px;
     text-align: left;
   }
   .section-2 .box .sub-box {
     display: flex !important;
     flex-direction: row;
-    gap: 20px;
+    gap: 32px;
     /* border: 1px solid red; */
     text-align: left;
   }
+
+  .section-2 .box .sub-box {
+    margin-top:-8px;
+  }
+
   .section-2 .box .sub-box .text {
     display: flex !important;
     flex-direction: column;
