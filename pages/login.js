@@ -4,9 +4,19 @@ import React from "react";
 
 const login = () => {
   return (
-    <AuthLayout>
-      <Login />
-    </AuthLayout>
+    <div
+      style={{
+        height: "100dvh",
+        padding: "0rem 0 3rem",
+        overflow: "scroll",
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
+      <AuthLayout>
+        <Login />
+      </AuthLayout>
+    </div>
   );
 };
 
