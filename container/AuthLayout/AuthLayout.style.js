@@ -41,6 +41,7 @@ export const AuthStyle = styled.div`
   .active {
     border-bottom: 2px solid #f18341;
     transition: 0.5s ease-in-out;
+    color: #1a1a1a;
   }
   .error {
     color: #fb2047;
@@ -53,6 +54,7 @@ export const AuthStyle = styled.div`
   .options {
     display: flex;
     gap: 20px;
+    color: #8c92ab;
   }
 
   /* .option {
