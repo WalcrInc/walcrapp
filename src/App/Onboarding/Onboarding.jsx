@@ -1,9 +1,13 @@
 import { useState } from "react";
 import { OnboardingStyle } from "./Onboarding.style";
 import { BackIcon, BackIconX, Next_Icon } from "Src/Assets/index";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import { Page } from "./Home";
 import { Options } from "./Options/Options";
+import AroundTheWorld from "./images/around-the-world-animate.svg"
+import GutterCleaning from "./images/gutter-cleaning-animate.svg"
+import QualityTime from "./images/quality-time-in-nature-animate.svg"
 
 const Onboarding = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -45,7 +49,8 @@ const Onboarding = () => {
           <div className="body">
             {currentStep === 2 && (
               <div className="step-one">
-                <div className="icon"></div>
+                {/* <div className="icon"></div> */}
+                <Image src={AroundTheWorld} alt="around the world" style={{width:"350px", margin:"auto"}} />
                 <div className="text">
                   <h1>Lorem ipsum dolor sit amet</h1>
                   <p>
@@ -56,7 +61,8 @@ const Onboarding = () => {
             )}
             {currentStep === 3 && (
               <div className="step-two">
-                <div className="icon"></div>
+                {/* <div className="icon"></div> */}
+                <Image src={GutterCleaning} alt="image 2" style={{width:"350px", margin:"auto"}} />
                 <div className="text">
                   <h1>Lorem ipsum dolor sit amet</h1>
                   <p>
@@ -67,7 +73,8 @@ const Onboarding = () => {
             )}
             {currentStep === 4 && (
               <div className="step-three">
-                <div className="icon"></div>
+                {/* <div className="icon"></div> */}
+                <Image src={QualityTime} alt="image 3" style={{width:"350px", margin:"auto"}} />
                 <div className="text">
                   <h1>Lorem ipsum dolor sit amet</h1>
                   <p>

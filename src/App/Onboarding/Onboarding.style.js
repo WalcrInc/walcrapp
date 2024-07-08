@@ -50,21 +50,21 @@ export const OnboardingStyle = styled.div`
   }
 
   .step-one > .icon {
-    background: url("Src/Assets/images/around-the-world-animate.svg");
+    background: url("App/Onboarding/images/around-the-world-animate.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;
   }
 
   .step-two > .icon {
-    background: url("Src/Assets/images/gutter-cleaning-animate.svg");
+    background: url("/images/gutter-cleaning-animate.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;
   }
 
   .step-three > .icon {
-    background: url("Src/Assets/images/quality-time-in-nature-animate.svg");
+    background: url("/images/quality-time-in-nature-animate.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;
