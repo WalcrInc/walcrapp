@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
 export const TaskwalkerStyle = styled.div`
-  padding: 6%;
+  padding: 3rem 6%;
   display: flex;
   flex-direction: column;
   gap: 40px;
+
   header {
     display: flex;
     flex-direction: column;
