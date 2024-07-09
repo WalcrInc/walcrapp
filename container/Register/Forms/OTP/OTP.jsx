@@ -79,6 +79,7 @@ const OTP = ({ handlePrev, handleNext }) => {
                   outline: "none",
                   backgroundColor: "#ffffff"
                 }}
+                type="tel"
               />
             ))}
           </PinInput>
