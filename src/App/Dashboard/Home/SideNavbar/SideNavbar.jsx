@@ -172,15 +172,6 @@ const SideNavbar = ({ showNav, setShowNav, info }) => {
                 </p>
 
                 <div className="task-work">
-                  {/* <p className="logo">
-                    <W_Logo />
-                    Walcr
-                  </p>
-
-                  <p className="orange">
-                    {" "}
-                    <p className="dot"></p> TaskWalcr{" "}
-                  </p> */}
                   <p>Get Started with Walcr Taskwalker</p>
                   <NextIcon />
                 </div>
