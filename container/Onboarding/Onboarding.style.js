@@ -12,7 +12,7 @@ export const OnboardingStyle = styled.div`
     justify-content: space-between;
     align-items: center;
     height: 10vh;
-    padding-top: 3rem;
+    padding-top: 5rem;
   }
 
   .mainBody {

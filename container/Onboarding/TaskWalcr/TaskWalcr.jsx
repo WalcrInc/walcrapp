@@ -1,6 +1,6 @@
 import React from "react";
 import { TaskwalkerStyle } from "./TaskWalcr.style";
-import { BackIcon, CreateIcon, LocationIconX, ShieldIcon } from "@/assets";
+import { BackIconX, CreateIcon, LocationIconX, ShieldIcon } from "@/assets";
 import { Button } from "@chakra-ui/react";
 import useRoutes from "@/hooks/Routes/Routes";
 import Image from "next/image";
@@ -11,7 +11,7 @@ const TaskWalcr = () => {
     <TaskwalkerStyle>
       <header>
         <span onClick={handleHomeRoute}>
-          <BackIcon />
+          <BackIconX />
         </span>
         <h1>Work your way</h1>
         <p>

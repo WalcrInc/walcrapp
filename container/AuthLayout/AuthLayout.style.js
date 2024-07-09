@@ -34,7 +34,6 @@ export const AuthStyle = styled.div`
     border: none;
   }
   .active {
-    border-bottom: 2px solid #f18341;
     transition: 0.5s ease-in-out;
     color: #1a1a1a;
   }

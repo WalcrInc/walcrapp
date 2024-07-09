@@ -18,7 +18,7 @@ export const ServicesTypes = [
     id: 1,
     name: " Assembly",
     details: "I want to assemble a material",
-    icon: <FurnitureIcon_Coloured />,
+    icon: <FurnitureIcon />,
   },
   {
     id: 2,
@@ -36,7 +36,7 @@ export const ServicesTypes = [
     id: 4,
     name: "Handyman",
     details: "I want to do fitting",
-    icon: <HandymanIcon_Coloured />,
+    icon: <HandymanIcon />,
   },
   {
     id: 5,

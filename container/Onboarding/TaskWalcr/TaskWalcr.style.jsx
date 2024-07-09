@@ -9,6 +9,7 @@ export const TaskwalkerStyle = styled.div`
     display: flex;
     flex-direction: column;
     gap: 20px;
+    align-items: start;
   }
 
   header h1 {

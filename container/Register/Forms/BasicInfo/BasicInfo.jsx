@@ -63,8 +63,6 @@ const BasicInfo = ({ handleNext }) => {
   const [lastnameError, setlastnameError] = useState("");
   const [firstnameError, setfirstnameError] = useState("");
 
-  console.log(formik);
-
   useEffect(() => {
     if (formik.errors.email) {
       if (formik.errors.email === "Required") {
@@ -131,14 +129,14 @@ const BasicInfo = ({ handleNext }) => {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          if (step === 1 && !formik.errors.firstname && !formik.errors.lastname) {
+          if (step === 1 && !formik.errors.email && !formik.errors.password) {
             setStep(2);
           } else {
             formik.handleSubmit();
           }
         }}
       >
-        {step === 1 && (
+        {step === 2 && (
           <>
             <FormControl>
               <FormLabel fontSize={"16px"} color={"#1A1A1A"} fontWeight={"700"}>
@@ -206,7 +204,7 @@ const BasicInfo = ({ handleNext }) => {
             </FormControl>
           </>
         )}
-        {step === 2 && (
+        {step === 1 && (
           <>
             <FormControl>
               <FormLabel fontSize={"16px"} color={"#1A1A1A"} fontWeight={"700"}>

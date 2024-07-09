@@ -1,4 +1,4 @@
-import { AddIcon_Big, BackIcon } from "@/assets";
+import { AddIcon_Big, BackIconX } from "@/assets";
 import React, { useState } from "react";
 import { FindServicesStyle } from "./FindServices.style";
 import { ServicesTypes } from "./data";
@@ -31,7 +31,7 @@ const FindService = () => {
       <main>
         <header>
           <span onClick={handleHomeRoute}>
-            <BackIcon />
+            <BackIconX />
           </span>
 
           <h1>Choose the Taskwalker services you would require most often</h1>
