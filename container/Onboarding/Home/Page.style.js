@@ -28,7 +28,7 @@ export const PageContainer = styled.div`
       left: 0;
       width: 100%;
       height: 112px;
-      background: url("/images/overlay.svg") no-repeat center center;
+      background: url("/images/overlay.svg")
     }
   }
 
@@ -44,7 +44,7 @@ export const PageContainer = styled.div`
   }
 
   .text h1 {
-    font-size: 55px;
+    font-size: 3.45rem;
     font-weight: 700;
     line-height: 50px;
   }

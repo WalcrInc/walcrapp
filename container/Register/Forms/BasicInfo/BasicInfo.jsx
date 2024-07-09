@@ -5,7 +5,7 @@ import {
   GoogleIcon,
   PasswordIcon,
   Show,
-  DangerIconRed
+  DangerIconRed,
 } from "@/assets";
 import { CustomButton } from "@/components/Button/Button";
 import useRegister from "@/hooks/useRegisterHook/useRegister";
@@ -17,6 +17,7 @@ import { useFormik } from "formik";
 
 const BasicInfo = ({ handleNext }) => {
   const { show, handleShow, keepSignedIn, setKeepSignedIn } = useRegister();
+  const [step, setStep] = useState(1);
 
   const formik = useFormik({
     initialValues: {
@@ -42,14 +43,12 @@ const BasicInfo = ({ handleNext }) => {
         errors.email = "Invalid email address";
       }
 
-
       if (!values.password) {
         errors.password = "Required";
       } else if (values.password.length < 8) {
         errors.password = "Password must be at least 8 characters";
       }
       return errors;
-
     },
     onSubmit: async (values) => {
       // dispatch(register(values));
@@ -59,33 +58,56 @@ const BasicInfo = ({ handleNext }) => {
     },
   });
 
-  const [emailError, setEmailError] = useState("")
+  const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
+  const [lastnameError, setlastnameError] = useState("");
+  const [firstnameError, setfirstnameError] = useState("");
+
+  console.log(formik);
 
   useEffect(() => {
     if (formik.errors.email) {
       if (formik.errors.email === "Required") {
-        setEmailError("Email is a required field")
+        setEmailError("Email is a required field");
       } else {
-        setEmailError(`${formik.values.email} is not a valid email address`)
+        setEmailError(`${formik.values.email} is not a valid email address`);
       }
     } else {
-      setEmailError("")
+      setEmailError("");
     }
-  }, [formik.errors.email, formik.values.email])
+  }, [formik.errors.email, formik.values.email]);
 
   useEffect(() => {
     if (formik.errors.password) {
       if (formik.errors.password === "Required") {
-        setPasswordError("Password is a required field")
+        setPasswordError("Password is a required field");
       } else {
-        setPasswordError(`Password must be atleast 8 characters`)
+        setPasswordError(`Password must be atleast 8 characters`);
       }
     } else {
-      setPasswordError("")
+      setPasswordError("");
     }
-  }, [formik.errors.password, formik.values.password])
+  }, [formik.errors.password, formik.values.password]);
 
+  useEffect(() => {
+    if (formik.errors.firstname) {
+      if (formik.errors.firstname === "Required") {
+        setfirstnameError("Firstname is a required field");
+      }
+    } else {
+      setfirstnameError("");
+    }
+  }, [formik.errors.firstname, formik.values.firstname]);
+
+  useEffect(() => {
+    if (formik.errors.lastname) {
+      if (formik.errors.lastname === "Required") {
+        setlastnameError("Lastname is a required field");
+      }
+    } else {
+      setlastnameError("");
+    }
+  }, [formik.errors.lastname, formik.values.lastname]);
 
   return (
     <BasicInfoStyle>
@@ -106,115 +128,164 @@ const BasicInfo = ({ handleNext }) => {
 
       <div className="or">or</div>
 
-      <form onSubmit={formik.handleSubmit}>
-        <FormControl>
-          <FormLabel fontSize={"16px"} color={"#1A1A1A"} fontWeight={"700"}>
-            First Name
-          </FormLabel>
-          <Input
-            box-shadow={"0px 0px 0px 1px #CDD1DC"}
-            padding={"25px 14px"}
-            type="text"
-            placeholder="First Name"
-            border={
-              formik.touched.firstname && formik.errors.firstname
-                ? "1px solid #FB2047"
-                : "1px solid  #CDD1DC"
-            }
-            {...formik.getFieldProps("firstname")}
-          />
-        </FormControl>
-        <FormControl>
-          <FormLabel fontSize={"16px"} color={"#1A1A1A"} fontWeight={"700"}>
-            Last Name
-          </FormLabel>
-          <Input
-            box-shadow={"0px 0px 0px 1px #CDD1DC"}
-            padding={"25px 14px"}
-            type="text"
-            placeholder="Last Name"
-            border={
-              formik.touched.lastname && formik.errors.lastname
-                ? "1px solid #FB2047"
-                : "1px solid  #CDD1DC"
-            }
-            {...formik.getFieldProps("lastname")}
-          />
-        </FormControl>
-        <FormControl>
-          <FormLabel fontSize={"16px"} color={"#1A1A1A"} fontWeight={"700"}>
-            Email address
-          </FormLabel>
-          <Input
-            box-shadow={"0px 0px 0px 1px #CDD1DC"}
-            padding={"25px 14px"}
-            type="email"
-            placeholder="Email Address"
-            {...formik.getFieldProps("email")}
-            border={
-              formik.touched.email && formik.errors.email
-                ? "1px solid #FB2047"
-                : "1px solid  #CDD1DC"
-            }
-          />
-          {emailError !== '' &&
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "6px",
-                fontSize: "12px",
-                color: "#FB2047",
-                marginTop: "10px"
-              }}>
-              <DangerIconRed />
-              <p>{emailError}</p>
-            </div>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          if (step === 1 && !formik.errors.firstname && !formik.errors.lastname) {
+            setStep(2);
+          } else {
+            formik.handleSubmit();
           }
-        </FormControl>
-        <FormControl>
-          <FormLabel fontSize={"16px"} color={"#1A1A1A"} fontWeight={"700"}>
-            Password
-          </FormLabel>
-          <Box
-            display={"flex"}
-            alignItems={"center"}
-            borderRadius={"6px"}
-            padding={"5px 15px"}
-            focusBorderColor="0.5px solid #CDD1DC"
-            border={
-              formik.touched.password && formik.errors.password
-                ? "1px solid #FB2047"
-                : "1px solid  #CDD1DC"
-            }
-          >
-            <Input
-              width={"100%"}
-              border={"none"}
-              type={show ? "text" : "password"}
-              padding={"0"}
-              placeholder="******"
-              {...formik.getFieldProps("password")}
-            />
-            <span onClick={handleShow}>
-              {show ? <PasswordIcon /> : <DontShow />}
-            </span>
-          </Box>
-          {passwordError !== '' &&
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "6px",
-                fontSize: "12px",
-                color: "#FB2047",
-                marginTop: "10px"
-              }}>
-              <DangerIconRed />
-              <p>{passwordError}</p>
-            </div>
-          }
-        </FormControl>
+        }}
+      >
+        {step === 1 && (
+          <>
+            <FormControl>
+              <FormLabel fontSize={"16px"} color={"#1A1A1A"} fontWeight={"700"}>
+                First Name
+              </FormLabel>
+              <Input
+                box-shadow={"0px 0px 0px 1px #CDD1DC"}
+                padding={"25px 14px"}
+                type="text"
+                placeholder="First Name"
+                border={
+                  formik.touched.firstname && formik.errors.firstname
+                    ? "1px solid #FB2047"
+                    : "1px solid  #CDD1DC"
+                }
+                {...formik.getFieldProps("firstname")}
+              />
+              {formik.touched.firstname && firstnameError !== "" && (
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "6px",
+                    fontSize: "12px",
+                    color: "#FB2047",
+                    marginTop: "10px",
+                  }}
+                >
+                  <DangerIconRed />
+                  <p>{firstnameError}</p>
+                </div>
+              )}
+            </FormControl>
+            <FormControl>
+              <FormLabel fontSize={"16px"} color={"#1A1A1A"} fontWeight={"700"}>
+                Last Name
+              </FormLabel>
+              <Input
+                box-shadow={"0px 0px 0px 1px #CDD1DC"}
+                padding={"25px 14px"}
+                type="text"
+                placeholder="Last Name"
+                border={
+                  formik.touched.lastname && formik.errors.lastname
+                    ? "1px solid #FB2047"
+                    : "1px solid  #CDD1DC"
+                }
+                {...formik.getFieldProps("lastname")}
+              />
+              {formik.touched.lastname && lastnameError !== "" && (
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "6px",
+                    fontSize: "12px",
+                    color: "#FB2047",
+                    marginTop: "10px",
+                  }}
+                >
+                  <DangerIconRed />
+                  <p>{lastnameError}</p>
+                </div>
+              )}
+            </FormControl>
+          </>
+        )}
+        {step === 2 && (
+          <>
+            <FormControl>
+              <FormLabel fontSize={"16px"} color={"#1A1A1A"} fontWeight={"700"}>
+                Email address
+              </FormLabel>
+              <Input
+                box-shadow={"0px 0px 0px 1px #CDD1DC"}
+                padding={"25px 14px"}
+                type="email"
+                placeholder="Email Address"
+                {...formik.getFieldProps("email")}
+                border={
+                  formik.touched.email && formik.errors.email
+                    ? "1px solid #FB2047"
+                    : "1px solid  #CDD1DC"
+                }
+              />
+              {formik.touched.email && emailError !== "" && (
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "6px",
+                    fontSize: "12px",
+                    color: "#FB2047",
+                    marginTop: "10px",
+                  }}
+                >
+                  <DangerIconRed />
+                  <p>{emailError}</p>
+                </div>
+              )}
+            </FormControl>
+            <FormControl>
+              <FormLabel fontSize={"16px"} color={"#1A1A1A"} fontWeight={"700"}>
+                Password
+              </FormLabel>
+              <Box
+                display={"flex"}
+                alignItems={"center"}
+                borderRadius={"6px"}
+                padding={"5px 15px"}
+                focusBorderColor="0.5px solid #CDD1DC"
+                border={
+                  formik.touched.password && formik.errors.password
+                    ? "1px solid #FB2047"
+                    : "1px solid  #CDD1DC"
+                }
+              >
+                <Input
+                  width={"100%"}
+                  border={"none"}
+                  type={show ? "text" : "password"}
+                  padding={"0"}
+                  placeholder="******"
+                  {...formik.getFieldProps("password")}
+                />
+                <span onClick={handleShow}>
+                  {show ? <PasswordIcon /> : <DontShow />}
+                </span>
+              </Box>
+              {formik.touched.password && passwordError !== "" && (
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "6px",
+                    fontSize: "12px",
+                    color: "#FB2047",
+                    marginTop: "10px",
+                  }}
+                >
+                  <DangerIconRed />
+                  <p>{passwordError}</p>
+                </div>
+              )}
+            </FormControl>
+          </>
+        )}
         <Box display={"flex"} justifyContent={"space-between"}>
           <label className="checkbox">
             <input
@@ -244,7 +315,7 @@ const BasicInfo = ({ handleNext }) => {
         </Link>
       </form>
 
-      <Box textAlign={"center"} color={"#8C92AB"}>
+      <Box textAlign={"center"} color={"#8C92AB"} marginTop={"auto"}>
         Already have an account?
         <span style={{ color: "#1A1A1A", fontWeight: "700" }}>
           {" "}
