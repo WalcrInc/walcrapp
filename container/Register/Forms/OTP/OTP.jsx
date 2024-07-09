@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { OTPStyle } from "./OTP.style";
 import Link from "next/link";
 
-const OTP = ({handlePrev, handleNext}) => {
+const OTP = ({ handlePrev, handleNext }) => {
   const [otpValues, setOtpValues] = useState(["", "", "", ""]);
 
   const handleOtpChange = (index, value) => {
@@ -25,21 +25,21 @@ const OTP = ({handlePrev, handleNext}) => {
 
   useEffect(() => {
     const handlePaste = (e) => {
-      e.preventDefault(); 
+      e.preventDefault();
       const pastedData = e.clipboardData.getData("text/plain");
       const newValues = pastedData
         .split("")
-        .filter((char) => !isNaN(parseInt(char, 10))) 
-        .slice(0, 4); 
+        .filter((char) => !isNaN(parseInt(char, 10)))
+        .slice(0, 4);
       setOtpValues(newValues);
     };
 
-    
+
     const pinInput = document.getElementById("pin-input");
     pinInput?.addEventListener("paste", handlePaste);
 
     return () => {
-      
+
       pinInput?.removeEventListener("paste", handlePaste);
     };
   }, []);
@@ -77,6 +77,7 @@ const OTP = ({handlePrev, handleNext}) => {
                 _focus={{
                   border: "2px solid #1A1A1A",
                   outline: "none",
+                  backgroundColor: "#ffffff"
                 }}
               />
             ))}

@@ -1,6 +1,5 @@
 import {
   AddIcon,
-  Delivery_Box_Green,
   Delivery_Box_Orange,
   ForwardIcon,
   Hamburger,

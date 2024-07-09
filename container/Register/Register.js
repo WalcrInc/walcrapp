@@ -27,9 +27,9 @@ const Register = () => {
       }}
     >
       {step === 1 && <BasicInfo handleNext={handleNext} />}
-      {step === 2 && <FinalMap handlePrev={handlePrev} handleNext={handleNext} />}
-      {step === 4&& <Phone handlePrev={handlePrev} handleNext={handleNext} />}
-      {step === 3 && <OTP handlePrev={handlePrev} handleNext={handleNext} />}
+      {step === 4 && <FinalMap handlePrev={handlePrev} handleNext={handleNext} />}
+      {step === 3&& <Phone handlePrev={handlePrev} handleNext={handleNext} />}
+      {step === 2&& <OTP handlePrev={handlePrev} handleNext={handleNext} />}
     </div>
   );
 };
