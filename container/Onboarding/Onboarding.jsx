@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { OnboardingStyle } from "./Onboarding.style";
 import { BackIcon, BackIconX, Next_Icon } from "@/assets";
 import { useRouter } from "next/router";
@@ -9,6 +9,19 @@ const Onboarding = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const totalSteps = 5;
   const router = useRouter();
+
+  // Initialize step from local storage if available
+  useEffect(() => {
+    const savedStep = localStorage.getItem("currentStep");
+    if (savedStep) {
+      setCurrentStep(parseInt(savedStep, 10));
+    }
+  }, []);
+
+  // Save the current step to local storage
+  useEffect(() => {
+    localStorage.setItem("currentStep", currentStep.toString());
+  }, [currentStep]);
 
   const handleNext = () => {
     if (currentStep === totalSteps) {
@@ -26,6 +39,8 @@ const Onboarding = () => {
   const handleRoute = () => {
     return router.push("/login");
   };
+
+  console.log(currentStep);
 
   return (
     <>
