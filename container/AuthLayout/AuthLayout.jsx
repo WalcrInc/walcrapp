@@ -7,9 +7,10 @@ const AuthLayout = ({ children }) => {
       style={{
         height: "100dvh",
         padding: "0rem 0 3rem",
-        overflow: "hidden",
+        overflow: "scroll",
         display: "flex",
         flexDirection: "column",
+        overscrollBehavior: "none"
       }}
     >
       <AuthStyle>{children}</AuthStyle>
