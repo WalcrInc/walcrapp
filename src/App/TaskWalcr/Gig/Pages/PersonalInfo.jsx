@@ -8,8 +8,8 @@ import {
     FormControl,
 } from "@chakra-ui/react";
 import { CheckIcon, ProfileIcon, UserIcon } from '@/Assets';
-import { Select } from '@chakra-ui/react'
 import SelectInput from 'src/Components/Input/SelectInput';
+import style from '@/App/TaskWalcr/Gig/Pages/Style.module.css'
 
 const PersonalInfo = () => {
     const OptionLg = [
@@ -27,9 +27,9 @@ const PersonalInfo = () => {
     ]
 
     return (
-        <div style={{ marginBottom: "40px" }}>
+        <div style={{ marginBottom: "40px" }} className={style.Container}>
             <div>
-                <h1>
+                <h1 style={{fontSize:"25px", fontWeight:"700"}}>
                     Personal Info
                 </h1>
                 <p>
@@ -39,7 +39,7 @@ const PersonalInfo = () => {
 
             <div>
                 <FormControl>
-                    <FormLabel>Full name</FormLabel>
+                    <h1>Full name</h1>
                     <InputGroup
                         boxShadow={" 0px 0px 0px 1px #CDD1DC"}
                         borderRadius={"8px"}
@@ -54,7 +54,7 @@ const PersonalInfo = () => {
                         </InputRightElement>
                     </InputGroup>
 
-                    <FormLabel>Address</FormLabel>
+                    <h1>Address</h1>
                     <InputGroup
                         boxShadow={" 0px 0px 0px 1px #CDD1DC"}
                         borderRadius={"8px"}
@@ -69,7 +69,7 @@ const PersonalInfo = () => {
                         </InputRightElement>
                     </InputGroup>
 
-                    <FormLabel>DOB</FormLabel>
+                    <h1>DOB</h1>
                     <InputGroup
                         boxShadow={" 0px 0px 0px 1px #CDD1DC"}
                         borderRadius={"8px"}

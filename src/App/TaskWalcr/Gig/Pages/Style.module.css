@@ -1,0 +1,13 @@
+.Container span{
+    font-size: 14px;
+}
+.Container h1{
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 7px;
+}
+.Container p{
+    font-size: 16px;
+    margin-bottom: 7px;
+}

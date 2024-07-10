@@ -41,8 +41,14 @@ function Gig() {
 
     return (
         <div>
-            <div style={{display:"flex", alignItems:"center", padding:"10px"}}>
-                <BackIcon2 onClick={() => router.back()} />
+            <div style={{ display: "flex", alignItems: "center", padding: "10px" }}>
+                {activeStep > 0 &&
+                <div  onClick={() => setActiveStep(activeStep - 1)}>
+                    <BackIcon2 />
+                </div>
+
+                }
+
                 <Stepper
                     steps={steps}
                     activeStep={activeStep}
@@ -59,12 +65,12 @@ function Gig() {
                 />
 
             </div>
-            <div style={{ padding: '20px' }}>
+            <div style={{ padding: '20px', height: "85vh", overflowY: "scroll" }}>
                 {getSectionComponent()}
                 <div>
 
                     {activeStep < steps.length - 1 &&
-                        <Button variant="default" style={{ background: "#000", color: "#fff", width: "100%" }} onClick={() => setActiveStep(activeStep + 1)}>Save & Continue</Button>
+                        <Button variant="default" style={{ background: "#000", color: "#fff", width: "90%", bottom: "5px", position: "absolute", margin: "auto" }} onClick={() => setActiveStep(activeStep + 1)}>Save & Continue</Button>
                     }
 
                 </div>

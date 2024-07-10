@@ -4,7 +4,7 @@ import { FormLabel, Select } from "@chakra-ui/react";
 const SelectInput = ({ title, selectLg, selectSm, OptionSm, OptionLg, text }) => {
     return (
         <div>
-            <FormLabel>{title}</FormLabel>
+            <FormLabel style={{marginTop:"15px", fontSize:"18px", fontWeight:"600", marginBottom:"7px"}}>{title}</FormLabel>
             <p>{text}</p>
             <div style={{ display: "flex", alignItems: "center" }}>
                 <div style={{ width: "60%" }}>
