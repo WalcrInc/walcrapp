@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const OptionContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100dvh;
   overflow: hidden;
   padding-bottom: 2rem;
 

@@ -34,8 +34,10 @@ const FindService = () => {
             <BackIconX />
           </span>
 
-          <h1>Choose the Taskwalker services you would require most often</h1>
-          <p>Select at least one</p>
+          <div className="header_text">
+            <h1>Choose the Taskwalker services you would require most often</h1>
+            <p>Select at least one</p>
+          </div>
         </header>
         <div className="body">
           <div className="box">
