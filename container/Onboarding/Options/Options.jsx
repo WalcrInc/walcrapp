@@ -77,10 +77,11 @@ const Options = ({ handleNext }) => {
               borderRadius={"1rem"}
               size={"lg"}
               onClick={() => handleNext("signIn")}
+              flex={"1"}
             >
               Sign In
             </Button>
-            <Box display={"flex"} gap="20px">
+            <Box display={"flex"} gap="20px" flex={"1"}>
               <Button background={"#F7F7F7"} size={"lg"} borderRadius={"1rem"}>
                 <AppleIcon />
               </Button>
