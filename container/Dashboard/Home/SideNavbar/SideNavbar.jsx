@@ -114,6 +114,7 @@ const SideNavbar = ({ showNav, setShowNav, info }) => {
                 <CalendarIcon />
                 Schedule Prefrences
               </p>
+              <i className="badge">3</i>
             </Link>
             <Link href={"/dashboard"} className="inactive link_info">
               {" "}
@@ -143,12 +144,14 @@ const SideNavbar = ({ showNav, setShowNav, info }) => {
               <p>
                 <ActiveOrdersIcon /> Active Orders
               </p>
+              <i className="badge">8</i>
             </Link>
             <Link href={"/message"} className="inactive link_info">
               {" "}
               <p>
                 <NotificationIcon /> Notifications
               </p>
+              <i className="badge">5</i>              
             </Link>
             <Link href={"/message"} className="inactive link_info">
               {" "}

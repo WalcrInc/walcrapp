@@ -79,6 +79,18 @@ export const SideNavContainer = styled.div`
     gap:10px;
   }
 
+  .badge {
+    background-color: #FFBF9D;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    border-radius: 100%;
+    height:20px;
+    width: 20px;
+    color: #fff;
+    font-size:12px;
+    font-weight: 700;
+  }
   .info span{
     margin-top:5px ;
   }
@@ -101,6 +113,12 @@ export const SideNavContainer = styled.div`
 
     /* background-color:red ; */
     /* height: 15dvh; */
+  }
+
+  .link_info {
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
   }
 
   .link_info > p {
