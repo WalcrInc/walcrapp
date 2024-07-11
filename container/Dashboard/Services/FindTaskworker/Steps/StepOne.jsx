@@ -101,7 +101,7 @@ const StepOne = ({ handleNext, handlePrev }) => {
       <div
         style={{
           display: "flex",
-          height: "100dvh",
+          height: "100vh",
           alignItems: "center",
           justifyContent: "center",
         }}
@@ -121,7 +121,7 @@ const StepOne = ({ handleNext, handlePrev }) => {
           <div
             style={{
               display: "flex",
-              height: "100dvh",
+              height: "100vh",
               alignItems: "center",
               justifyContent: "center",
             }}

@@ -4,7 +4,7 @@ export const ServicesStyle = styled.div`
 
   display:flex ;
   flex-direction:column ;
-  height:100dvh ;
+  height:100vh ;
   overflow:hidden ;
   position:relative ;
   .top {

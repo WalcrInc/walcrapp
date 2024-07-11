@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const MessageStyle = styled.div`
   padding: 3% ;
-height:100dvh ;
+height:100vh ;
   //step 1
   .step-one .header,
   .step-two .header {

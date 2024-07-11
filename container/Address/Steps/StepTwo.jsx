@@ -101,7 +101,7 @@ const StepTwo = ({ handleNext, handlePrev }) => {
       <div
         style={{
           display: "flex",
-          height: "100dvh",
+          height: "100vh",
           alignItems: "center",
           justifyContent: "center",
         }}
@@ -125,7 +125,7 @@ const StepTwo = ({ handleNext, handlePrev }) => {
           <div
             style={{
               display: "flex",
-              height: "100dvh",
+              height: "100vh",
               alignItems: "center",
               justifyContent: "center",
             }}
@@ -192,7 +192,7 @@ const StepTwo = ({ handleNext, handlePrev }) => {
           size={"lg"}
           onClick={handleSubmit}
         >
-         Add address
+          Add address
         </Button>
       </div>
     </>

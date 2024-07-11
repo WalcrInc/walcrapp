@@ -10,7 +10,7 @@
 body {
   display: none;
   font-family: "Mulish", sans-serif;
-  height: 100dvh;
+  height: 100vh;
   touch-action: manipulation;
   left: 0;
   right: 0;
@@ -30,7 +30,7 @@ body {
     display: block;
     transition: all 1s linear;
     background-repeat: no-repeat;
-    height: 100dvh;
+    height: 100vh;
     font-family: "Mulish", sans-serif !important;
   }
 

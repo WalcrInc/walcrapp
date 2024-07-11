@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const FindServicesStyle = styled.div`
   padding: 1rem 0rem 3rem;
-  height: 100dvh;
+  height: 100vh;
   overflow: scroll;
 
   main {

@@ -9,7 +9,7 @@ const FinalMap = ({ handleNext, handlePrev }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   const handleSubmit = (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
     if (address) {
       typeof window !== "undefined" &&
         localStorage.setItem("address", address);
@@ -78,7 +78,7 @@ const FinalMap = ({ handleNext, handlePrev }) => {
       );
   };
   return (
-    <div style={{ height: "100dvh", overflow: "hidden" }}>
+    <div style={{ height: "100vh", overflow: "hidden" }}>
       {isLoading ? (
         <div>Loading...</div>
       ) : (

@@ -4,7 +4,7 @@ export const OnboardingStyle = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100dvh;
+  height: 100vh;
 
   .header {
     padding: 6%;

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const CardStyle = styled.div`
   padding: 6%;
-  height:100dvh ;
+  height:100vh ;
   header {
     display: flex;
     justify-content: space-between;
