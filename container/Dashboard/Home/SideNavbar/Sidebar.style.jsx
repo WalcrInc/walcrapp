@@ -7,19 +7,19 @@ export const SideNavContainer = styled.div`
   width: 100%;
   color: #1a1a1a;
   display: flex;
+  flex-direction: column;
   z-index: 2;
  
   font-size: 16px;
   .right {
-    width: 80%;
+    width: 100%;
     background-color: #ffffff;
-    padding: 6% 4%;
+    padding: 3rem 4%;
     height: 100vh;
     overflow-y:scroll ;
     display:flex ;
     flex-direction:column ;
     gap: 50px;
-    border-radius:0 29px 29px 0 ;
   }
 
    /* Hide scrollbar */
@@ -49,15 +49,36 @@ export const SideNavContainer = styled.div`
   .info-link{
     display:flex ;
     flex-direction:column ;
-    gap: 50px;
+    gap: 1rem;
+  }
+
+  .info-link > form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .info-link > form > input {
+    outline: none;
+    flex: 1;
   }
   .info{
-    margin-top:30px ;
+    margin-top:auto ;
     display:flex;
-    justify-content:space-between ;
-    /* align-items: center; */
-    /* gap:10px; */
+    align-items: center;
+    justify-content: space-between;
+    padding:1rem 1.25rem;
+    border-radius: 2.25rem;
+    border: 1px solid rgba(0, 0, 0, 0.21);
   }
+
+  .info_details {
+    display: flex;
+    align-items: center;
+    gap:10px;
+  }
+
   .info span{
     margin-top:5px ;
   }
@@ -68,19 +89,33 @@ export const SideNavContainer = styled.div`
     display:flex ;
     align-items:center ;
     justify-content:center ;
-    width:50px ;
-    height:50px ;
+    width:37px ;
+    height:37px ;
   }
 
   .links{
     display: flex;
     flex-direction: column;
     gap: 30px;
-    
-    /* color:red ; */
+    font-size: 14px;
+
     /* background-color:red ; */
     /* height: 15dvh; */
   }
+
+  .link_info > p {
+    display: flex;
+    align-items: center;
+  }
+  .active {
+    opacity; 1;
+    color: #1a1a1a;
+  }
+
+  .inactive {
+    opacity: 0.7;
+    color: #1a1a1a
+    }
 
   .task{
     border:1px dotted #1a1a1a ;

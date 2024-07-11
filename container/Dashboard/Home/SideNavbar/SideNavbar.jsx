@@ -3,6 +3,7 @@ import { SideNavContainer } from "./Sidebar.style";
 import {
   AboutIcon,
   AddressIcon,
+  BackIconX,
   CalendarIcon,
   CardIcon,
   EditIcon,
@@ -14,11 +15,17 @@ import {
   NextIcon,
   PrivacyIcon,
   SettingsIcon,
-  SharedIcon,
+  UserIcon,
   SpannerIcon,
   SupportIcon,
   TaskIcon,
   W_Logo,
+  MarketplaceIcon,
+  ActiveOrdersIcon,
+  NotificationIcon,
+  SettingsAndPrivacyIcon,
+  SearchIconSmall,
+  EllipsisIcon
 } from "@/assets";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
@@ -60,63 +67,55 @@ const SideNavbar = ({ showNav, setShowNav, info }) => {
     <SideNavContainer>
       <div className="right">
         <div className="info-link">
-          <div className="info">
-            <div className="image-container">
-              <Image
-                src={"/images/profile.svg"}
-                height={40}
-                width={40}
-                alt="profile-picture"
-              />
-            </div>
-            <div className="name-address">
-              <p>
-                {info?.firstname} {info?.lastname}
-              </p>
-              <span>{info?.address}</span>
-            </div>
-            <span>
-            <EditIcon/>
-            </span>
-           
-          </div>
+          <button onClick={() => setShowNav(false)} style={{ marginLeft: "-8px" }}><BackIconX /></button>
+          <form>
+            <input
+              type="text"
+              placeholder="Search Walcr Marketplace"
+            />
+            <button><SearchIconSmall /></button>
+          </form>
+
+          <hr style={{ width: "100%" }} />
           <div className="links">
-            <Link className="task" href={"/dashboard"}>
+
+            <Link href={"/dashboard"} className="active link_info">
               {" "}
               <p>
                 <TaskIcon />
                 My Tasks
               </p>
             </Link>
-            {/* <Link href={"/dashboard"}>
+            <Link href={"/dashboard"} className="inactive link_info">
               {" "}
               <p>
-                <SpannerIcon />
-                Task Request
+                <MarketplaceIcon />
+                Taskwalker Marketplace
               </p>
-            </Link> */}
-            <Link href={"/dashboard"}>
+            </Link>
+
+            <Link href={"/dashboard"} className="inactive link_info">
               {" "}
               <p>
-                <SharedIcon />
+                <UserIcon />
                 Saved Taskwalkers
               </p>
             </Link>
-            <Link href={"/card"}>
+            <Link href={"/card"} className="inactive link_info">
               {" "}
               <p>
                 <CardIcon />
                 Wallets & Payment
               </p>
             </Link>
-            <Link href={"/dashboard"}>
+            <Link href={"/dashboard"} className="inactive link_info">
               {" "}
               <p>
                 <CalendarIcon />
                 Schedule Prefrences
               </p>
             </Link>
-            <Link href={"/dashboard"}>
+            <Link href={"/dashboard"} className="inactive link_info">
               {" "}
               <p>
                 <LockIcon />
@@ -124,22 +123,45 @@ const SideNavbar = ({ showNav, setShowNav, info }) => {
               </p>
             </Link>
 
-            <Link href={"/address"}>
+            <Link href={"/address"} className="inactive link_info">
               <p>
-                <AddressIcon /> Location Settings
+                <AddressIcon />  Address Settings
               </p>
             </Link>
 
-            <Link href={"/message"}>
+            <Link href={"/message"} className="inactive link_info">
               {" "}
               <p>
                 <MessageIcon /> Messages
               </p>
             </Link>
+
+            <hr style={{ width: "100%" }} />
+
+            <Link href={"/message"} className="inactive link_info">
+              {" "}
+              <p>
+                <ActiveOrdersIcon /> Active Orders
+              </p>
+            </Link>
+            <Link href={"/message"} className="inactive link_info">
+              {" "}
+              <p>
+                <NotificationIcon /> Notifications
+              </p>
+            </Link>
+            <Link href={"/message"} className="inactive link_info">
+              {" "}
+              <p>
+                <SettingsAndPrivacyIcon /> Settings and Privacy
+              </p>
+            </Link>
           </div>
         </div>
 
-        <Accordion allowMultiple>
+
+
+        {/* <Accordion allowMultiple>
           <AccordionItem
             background={"transparent"}
             border={"none"}
@@ -177,22 +199,34 @@ const SideNavbar = ({ showNav, setShowNav, info }) => {
                 </p>
 
                 <div className="task-work">
-                  {/* <p className="logo">
-                    <W_Logo />
-                    Walcr
-                  </p>
-
-                  <p className="orange">
-                    {" "}
-                    <p className="dot"></p> TaskWalcr{" "}
-                  </p> */}
+                  
                   <p>Get Started with Walcr Taskwalker</p>
                   <NextIcon />
                 </div>
               </div>
             </AccordionPanel>
           </AccordionItem>
-        </Accordion>
+        </Accordion> */}
+
+        <div className="info">
+          <div className="info_details">
+            <div className="image-container">
+              <Image
+                src={"/images/profile.svg"}
+                height={35}
+                width={35}
+                alt="profile-picture"
+              />
+            </div>
+            <div className="name-address">
+              <p>
+                {info?.firstname} {info?.lastname}
+              </p>
+              <span>{info?.address}</span>
+            </div>
+          </div>
+          <button><EllipsisIcon /></button>
+        </div>
       </div>
       <div className="left" onClick={() => setShowNav(!showNav)}></div>
 
