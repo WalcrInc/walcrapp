@@ -1,34 +1,54 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { AuthStyle } from "./AuthLayout.style";
 
 const AuthLayout = ({ children }) => {
+  const containerRef = useRef(null);
+
   useEffect(() => {
-    const preventDefault = (e) => e.preventDefault();
+    const container = containerRef.current;
+    let startY;
 
-    // Add the class to the body to prevent scrolling
-    document.body.classList.add("no-scroll");
+    const handleTouchStart = (e) => {
+      startY = e.touches[0].clientY;
+    };
 
-    // Add event listeners to prevent touch and drag on the body
-    document.body.addEventListener('touchmove', preventDefault, { passive: false });
-    document.body.addEventListener('wheel', preventDefault, { passive: false });
+    const handleTouchMove = (e) => {
+      const currentY = e.touches[0].clientY;
+      const scrollTop = container.scrollTop;
+      const scrollHeight = container.scrollHeight;
+      const clientHeight = container.clientHeight;
 
-    // Cleanup function to remove the class and event listeners
+      // Prevent scrolling up when already at the top
+      if (scrollTop <= 0 && currentY > startY) {
+        e.preventDefault();
+      }
+
+      // Prevent scrolling down when already at the bottom
+      if (scrollTop + clientHeight >= scrollHeight && currentY < startY) {
+        e.preventDefault();
+      }
+    };
+
+    container.addEventListener('touchstart', handleTouchStart);
+    container.addEventListener('touchmove', handleTouchMove, { passive: false });
+
     return () => {
-      document.body.classList.remove("no-scroll");
-      document.body.removeEventListener('touchmove', preventDefault);
-      document.body.removeEventListener('wheel', preventDefault);
+      container.removeEventListener('touchstart', handleTouchStart);
+      container.removeEventListener('touchmove', handleTouchMove);
     };
   }, []);
 
   return (
     <div
+      ref={containerRef}
       style={{
-        height: "100vh",
+        height: "100dvh",
         padding: "0rem 0 3rem",
-        overflowY: "auto", // Allow vertical scrolling inside this div
+        overflowY: "auto",
+        overflowX: "hidden",
         display: "flex",
         flexDirection: "column",
-        overscrollBehavior: "none"
+        WebkitOverflowScrolling: "touch",
       }}
     >
       <AuthStyle>{children}</AuthStyle>
