@@ -212,12 +212,12 @@ export const SideNavContainer = styled.div`
     font-weight:700 ;
     color:#1a1a1a ;
   }
-  .links a:hover {
-    background-color: #1a1a1a;
-    color: #fff;
-    padding: 3%;
-    border-radius: 4px;
-  }
+  // .links a:hover {
+  //   background-color: #1a1a1a;
+  //   color: #fff;
+  //   padding: 3%;
+  //   border-radius: 4px;
+  // }
   /* .task-work {
     position: absolute;
     bottom: 20px;
