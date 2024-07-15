@@ -76,6 +76,7 @@ export const SideNavContainer = styled.div`
     font-size: 12px;
   }
   .info{
+    margin-top: auto;
     display:flex;
     align-items: center;
     justify-content: space-between;
@@ -101,6 +102,7 @@ export const SideNavContainer = styled.div`
     color: #fff;
     font-size:12px;
     font-weight: 700;
+    font-style: normal;
   }
   .info span{
     margin-top:5px ;
@@ -119,8 +121,8 @@ export const SideNavContainer = styled.div`
   .links{
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    font-size: 14px;
+    gap: 2rem;
+    font-size: 0.9375rem;
 
     /* background-color:red ; */
     /* height: 15dvh; */
@@ -144,7 +146,14 @@ export const SideNavContainer = styled.div`
   .inactive {
     opacity: 0.7;
     color: #1a1a1a
-    }
+  }
+
+  .account_header {
+    font-size: 10px;
+    font-weight: 700;
+    margin: 0 0 -1.5rem;
+    opacity:0.7;
+  }
 
   .task{
     border:1px dotted #1a1a1a ;
