@@ -15,7 +15,7 @@ export const SideNavContainer = styled.div`
     width: 100%;
     background-color: #ffffff;
     height: 100vh;
-    padding: 3rem 4%;
+    padding: 3rem 2rem;
   }
 
   .right-info{
@@ -42,13 +42,20 @@ export const SideNavContainer = styled.div`
     opacity: 0.3;
 
   }
+  .name-address{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
   .name-address p {
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 700;
+    line-height: 24px;
+    margin-bottom:-8px;
   }
   .name-address span {
     color: #5b6178;
-    font-size: 14px;
+    font-size: 10px;
   }
   .info-link{
     display:flex ;
@@ -66,13 +73,13 @@ export const SideNavContainer = styled.div`
   .info-link > form > input {
     outline: none;
     flex: 1;
+    font-size: 12px;
   }
   .info{
-    margin-top:auto ;
     display:flex;
     align-items: center;
     justify-content: space-between;
-    padding:1rem 1.25rem;
+    padding: 1.25rem;
     border-radius: 2.25rem;
     border: 1px solid rgba(0, 0, 0, 0.21);
   }
@@ -80,7 +87,7 @@ export const SideNavContainer = styled.div`
   .info_details {
     display: flex;
     align-items: center;
-    gap:10px;
+    gap:15px;
   }
 
   .badge {
