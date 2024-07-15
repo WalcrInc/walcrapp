@@ -10,6 +10,8 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 // import { useEffect } from "react";
+import useServiceWorker from '../hooks/useServiceWorker';
+
 
 const queryClient = new QueryClient();
 
@@ -17,6 +19,7 @@ const queryClient = new QueryClient();
 
 export default function App({ Component, pageProps }) {
   
+  useServiceWorker();
 
   return (
     <ThemeProvider theme={theme}>
