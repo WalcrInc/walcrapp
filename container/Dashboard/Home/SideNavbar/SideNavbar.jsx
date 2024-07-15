@@ -66,105 +66,106 @@ const SideNavbar = ({ showNav, setShowNav, info }) => {
   return (
     <SideNavContainer>
       <div className="right">
-        <div className="info-link">
-          <button onClick={() => setShowNav(false)} style={{ marginLeft: "-8px" }}><BackIconX /></button>
-          <form>
-            <input
-              type="text"
-              placeholder="Search Walcr Marketplace"
-            />
-            <button><SearchIconSmall /></button>
-          </form>
-
-          <hr style={{ width: "100%" }} />
-          <div className="links">
-
-            <Link href={"/dashboard"} className="active link_info">
-              {" "}
-              <p>
-                <TaskIcon />
-                My Tasks
-              </p>
-            </Link>
-            <Link href={"/dashboard"} className="inactive link_info">
-              {" "}
-              <p>
-                <MarketplaceIcon />
-                Taskwalker Marketplace
-              </p>
-            </Link>
-
-            <Link href={"/dashboard"} className="inactive link_info">
-              {" "}
-              <p>
-                <UserIcon />
-                Saved Taskwalkers
-              </p>
-            </Link>
-            <Link href={"/card"} className="inactive link_info">
-              {" "}
-              <p>
-                <CardIcon />
-                Wallets & Payment
-              </p>
-            </Link>
-            <Link href={"/dashboard"} className="inactive link_info">
-              {" "}
-              <p>
-                <CalendarIcon />
-                Schedule Prefrences
-              </p>
-              <i className="badge">3</i>
-            </Link>
-            <Link href={"/dashboard"} className="inactive link_info">
-              {" "}
-              <p>
-                <LockIcon />
-                Privacy & Data Settings
-              </p>
-            </Link>
-
-            <Link href={"/address"} className="inactive link_info">
-              <p>
-                <AddressIcon />  Address Settings
-              </p>
-            </Link>
-
-            <Link href={"/message"} className="inactive link_info">
-              {" "}
-              <p>
-                <MessageIcon /> Messages
-              </p>
-            </Link>
+        <div className="right-info">
+          <div className="info-link">
+            <button onClick={() => setShowNav(false)} style={{ marginLeft: "-8px" }}><BackIconX /></button>
+            <form>
+              <input
+                type="text"
+                placeholder="Search Walcr Marketplace"
+              />
+              <button><SearchIconSmall /></button>
+            </form>
 
             <hr style={{ width: "100%" }} />
+            <div className="links">
 
-            <Link href={"/message"} className="inactive link_info">
-              {" "}
-              <p>
-                <ActiveOrdersIcon /> Active Orders
-              </p>
-              <i className="badge">8</i>
-            </Link>
-            <Link href={"/message"} className="inactive link_info">
-              {" "}
-              <p>
-                <NotificationIcon /> Notifications
-              </p>
-              <i className="badge">5</i>              
-            </Link>
-            <Link href={"/message"} className="inactive link_info">
-              {" "}
-              <p>
-                <SettingsAndPrivacyIcon /> Settings and Privacy
-              </p>
-            </Link>
+              <Link href={"/dashboard"} className="active link_info">
+                {" "}
+                <p>
+                  <TaskIcon />
+                  My Tasks
+                </p>
+              </Link>
+              <Link href={"/dashboard"} className="inactive link_info">
+                {" "}
+                <p>
+                  <MarketplaceIcon />
+                  Taskwalker Marketplace
+                </p>
+              </Link>
+
+              <Link href={"/dashboard"} className="inactive link_info">
+                {" "}
+                <p>
+                  <UserIcon />
+                  Saved Taskwalkers
+                </p>
+              </Link>
+              <Link href={"/card"} className="inactive link_info">
+                {" "}
+                <p>
+                  <CardIcon />
+                  Wallets & Payment
+                </p>
+              </Link>
+              <Link href={"/dashboard"} className="inactive link_info">
+                {" "}
+                <p>
+                  <CalendarIcon />
+                  Schedule Prefrences
+                </p>
+                <i className="badge">3</i>
+              </Link>
+              <Link href={"/dashboard"} className="inactive link_info">
+                {" "}
+                <p>
+                  <LockIcon />
+                  Privacy & Data Settings
+                </p>
+              </Link>
+
+              <Link href={"/address"} className="inactive link_info">
+                <p>
+                  <AddressIcon />  Address Settings
+                </p>
+              </Link>
+
+              <Link href={"/message"} className="inactive link_info">
+                {" "}
+                <p>
+                  <MessageIcon /> Messages
+                </p>
+              </Link>
+
+              <hr style={{ width: "100%" }} />
+
+              <Link href={"/message"} className="inactive link_info">
+                {" "}
+                <p>
+                  <ActiveOrdersIcon /> Active Orders
+                </p>
+                <i className="badge">8</i>
+              </Link>
+              <Link href={"/message"} className="inactive link_info">
+                {" "}
+                <p>
+                  <NotificationIcon /> Notifications
+                </p>
+                <i className="badge">5</i>
+              </Link>
+              <Link href={"/message"} className="inactive link_info">
+                {" "}
+                <p>
+                  <SettingsAndPrivacyIcon /> Settings and Privacy
+                </p>
+              </Link>
+            </div>
           </div>
-        </div>
 
 
 
-        {/* <Accordion allowMultiple>
+          {/* <Accordion allowMultiple>
           <AccordionItem
             background={"transparent"}
             border={"none"}
@@ -211,24 +212,25 @@ const SideNavbar = ({ showNav, setShowNav, info }) => {
           </AccordionItem>
         </Accordion> */}
 
-        <div className="info">
-          <div className="info_details">
-            <div className="image-container">
-              <Image
-                src={"/images/profile.svg"}
-                height={35}
-                width={35}
-                alt="profile-picture"
-              />
+          <div className="info">
+            <div className="info_details">
+              <div className="image-container">
+                <Image
+                  src={"/images/profile.svg"}
+                  height={35}
+                  width={35}
+                  alt="profile-picture"
+                />
+              </div>
+              <div className="name-address">
+                <p>
+                  {info?.firstname} {info?.lastname}
+                </p>
+                <span>{info?.address}</span>
+              </div>
             </div>
-            <div className="name-address">
-              <p>
-                {info?.firstname} {info?.lastname}
-              </p>
-              <span>{info?.address}</span>
-            </div>
+            <button><EllipsisIcon /></button>
           </div>
-          <button><EllipsisIcon /></button>
         </div>
       </div>
       <div className="left" onClick={() => setShowNav(!showNav)}></div>

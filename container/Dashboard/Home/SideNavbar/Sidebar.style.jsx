@@ -14,16 +14,20 @@ export const SideNavContainer = styled.div`
   .right {
     width: 100%;
     background-color: #ffffff;
-    padding: 3rem 4%;
     height: 100vh;
-    overflow-y:scroll ;
+    padding: 3rem 4%;
+  }
+
+  .right-info{
     display:flex ;
     flex-direction:column ;
     gap: 50px;
+    height: 100%;
+    overflow:scroll;
   }
 
    /* Hide scrollbar */
-   .right::-webkit-scrollbar {
+   .right-info::-webkit-scrollbar {
     display: none;
   }
 
