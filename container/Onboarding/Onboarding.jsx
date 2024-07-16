@@ -4,9 +4,11 @@ import { BackIcon, BackIconX, Next_Icon } from "@/assets";
 import { useRouter } from "next/router";
 import { Page } from "./Home";
 import { Options } from "./Options/Options";
+import SplashScreen from "./SplashScreen";
 
 const Onboarding = () => {
-  const [currentStep, setCurrentStep] = useState(1);
+  const [currentStep, setCurrentStep] = useState(0); // Start with 0 for splash screen
+  const [showSplashScreen, setShowSplashScreen] = useState(true);
   const totalSteps = 5;
   const router = useRouter();
 
@@ -20,8 +22,15 @@ const Onboarding = () => {
 
   // Save the current step to local storage
   useEffect(() => {
-    localStorage.setItem("currentStep", currentStep.toString());
+    if (currentStep > 0) {
+      localStorage.setItem("currentStep", currentStep.toString());
+    }
   }, [currentStep]);
+
+  const handleSplashScreenFinish = () => {
+    setShowSplashScreen(false);
+    setCurrentStep(1);
+  };
 
   const handleNext = () => {
     if (currentStep === totalSteps) {
@@ -41,6 +50,11 @@ const Onboarding = () => {
   };
 
   console.log(currentStep);
+
+  if (showSplashScreen) {
+    return <SplashScreen onFinish={handleSplashScreenFinish} />;
+  }
+
 
   return (
     <>
