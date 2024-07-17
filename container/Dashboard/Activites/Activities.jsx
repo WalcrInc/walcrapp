@@ -14,27 +14,27 @@ const Activities = () => {
 
   const handleSelected = (activity) => {
     setSelectedActivity(activity);
-    setStep(prev=>prev+1); 
+    setStep(prev => prev + 1);
   };
 
   const handleNext = () => {
-    setStep(prev=>prev+1); 
+    setStep(prev => prev + 1);
   };
   const handlePrev = () => {
-    setStep(prev=> prev-1); // Move back to step 1
+    setStep(prev => prev - 1); // Move back to step 1
   };
 
   const renderActivity = (activity) => {
     if (!activity) return null;
     switch (activity.status) {
       case "Completed":
-        return <Completed handlePrev={handlePrev} handleNext={handleNext}/>;
+        return <Completed handlePrev={handlePrev} handleNext={handleNext} />;
       case "In Transit":
         return <div>In Transit Activity Details</div>;
       case "Delivered":
         return <div>Delivered Activity Details</div>;
       case "On Going":
-        return <Ongoing handlePrev={handlePrev}/>;
+        return <Ongoing handlePrev={handlePrev} />;
       default:
         return null;
     }
@@ -43,7 +43,7 @@ const Activities = () => {
   return (
     <ActivitiesStyle>
       {step === 1 && (
-        <>
+        <main>
           <header>
             <h1>Activities</h1>
           </header>
@@ -67,7 +67,7 @@ const Activities = () => {
                     <div
                       className={
                         activity.status === "Completed" ||
-                        activity.status === "Delivered"
+                          activity.status === "Delivered"
                           ? "completed"
                           : "status"
                       }
@@ -89,11 +89,11 @@ const Activities = () => {
             </div>
           </div>
           <BottomNavbar />
-        </>
+        </main>
       )}
       {step === 2 && (
         <>
-         
+
           <div className="activity-detail">
             {renderActivity(selectedActivity)}
           </div>
@@ -101,8 +101,8 @@ const Activities = () => {
       )}
       {step === 3 && (
         <>
-         
-         <Report setStep={setStep}/>
+
+          <Report setStep={setStep} />
         </>
       )}
     </ActivitiesStyle>

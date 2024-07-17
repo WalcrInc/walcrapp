@@ -1,13 +1,28 @@
 import styled from "styled-components";
 
 export const ActivitiesStyle = styled.div`
-  padding: 3%;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+  padding: 3rem 3% 5.25rem;
+  height: 100vh;
+  overflow:hidden;
+
+  main {
+    display: flex;
+    flex-direction: column;
+    z-index: 9999;
+    gap: 30px;
+    height: 100%;
+    overflow:hidden;
+  }
   header h1 {
     font-size: 34px;
     font-weight: 700;
+  }
+  .body {
+    overflow: scroll;    
+  }
+
+  .body::-webkit-scrollbar {
+    display: none;
   }
   .body .box {
     display: flex;

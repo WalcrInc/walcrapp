@@ -66,7 +66,7 @@ export const ActivityData = [
   },
   {
     id: 3,
-    name: "Food Delivery",
+    name: "Home Delivery",
     price:"$18.00",
     status: "In Transit",
     time: "08:30 - 9:00 AM",
@@ -75,8 +75,8 @@ export const ActivityData = [
   },
   {
     id: 3,
-    name: "Food Delivery",
-    price:"$18.00",
+    name: "Car Delivery",
+    price:"$180.00",
     status: "In Transit",
     time: "08:30 - 9:00 AM",
     date: "Thur. 11 Apr.",
