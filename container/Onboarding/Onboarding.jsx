@@ -87,9 +87,9 @@ const Onboarding = () => {
               <div className="step-two">
                 <div className="icon"></div>
                 <div className="text">
-                  <h1>Lorem ipsum dolor sit amet</h1>
+                  <h1>Task it Done. Save up time.</h1>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Find your perfect fit from our pool of TaskWalkers quickly, and get great work done in less time, every time.
                   </p>
                 </div>
               </div>
