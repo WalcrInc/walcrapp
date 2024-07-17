@@ -8,6 +8,11 @@ export const CardStyle = styled.div`
     justify-content: space-between;
     align-items: center;
   }
+
+  header span {
+    margin-left: -8px;
+  }
+
   header h1 {
     font-size: 18px;
     font-weight: 700;
@@ -24,21 +29,28 @@ export const CardStyle = styled.div`
   .step-1 {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 3rem;
     text-align: center;
+    align-items: center;
   }
 
   .image {
     margin: auto;
   }
   .step-1 h1 {
-    font-size: 22px;
+    font-size:2rem;
     font-weight: 700;
   }
+
   .step-1 p {
+   color: #5B6178;
+    text-align: center;
+    font-family: Mulish;
     font-size: 16px;
+    font-style: normal;
     font-weight: 400;
-    color: #5b6178;
+    line-height: 24px;
+    text-align: center;
   }
 
   //step 2

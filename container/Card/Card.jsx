@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { CardStyle } from "./Card.style";
-import { BackIcon, CardIconX, DeleteIconX } from "@/assets";
+import { BackIconX, CardIconX, DeleteIconX } from "@/assets";
 import { StepOne } from "./Steps/StepOne";
 import { StepThree } from "./Steps/StepThree";
 import { StepTwo } from "./Steps/StepTwo";
@@ -61,22 +61,22 @@ const Card = () => {
       <header>
         {step === 1 && (
           <span onClick={handleDashboardRoute}>
-            <BackIcon />
+            <BackIconX />
           </span>
         )}
         {step == 2 && (
           <span onClick={handlePrev}>
-            <BackIcon />
+            <BackIconX />
           </span>
         )}
         {step == 3 && (
           <span onClick={handleDashboardRoute}>
-            <BackIcon />
+            <BackIconX />
           </span>
         )}
         <h1>{headerText()}</h1>
 
-        {step === 1 && <span style={{ color: "white" }}>.</span>}
+        {step === 1 && <div style={{ color: "white" }}>.</div>}
         {step === 2 && (
           <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
             <p>{cards?.length}/5</p>
@@ -96,12 +96,12 @@ const Card = () => {
         {cards?.length > 0
           ? step === 3 && <StepThree cards={cards} setStep={setStep} />
           : step === 1 && (
-              <StepOne
-                handleNext={handleNext}
-                cards={cards}
-                setStep={setStep}
-              />
-            )}
+            <StepOne
+              handleNext={handleNext}
+              cards={cards}
+              setStep={setStep}
+            />
+          )}
 
         {step === 2 && (
           <Elements stripe={stripePromise}>

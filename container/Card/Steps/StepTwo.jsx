@@ -123,6 +123,7 @@ const StepTwo = ({ handleNext, cards }) => {
             handleNext();
           })
           .catch((error) => {
+            console.log(error)
             setLoading(false);
             toast.error(error);
           });

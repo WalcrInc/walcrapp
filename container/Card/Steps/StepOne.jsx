@@ -19,16 +19,20 @@ const StepOne = ({ handleNext }) => {
         <p> Looks like you haven’t saved any credit card yet.</p>
       </div>
 
-      <Button
-        background={"#1A1A1A"}
-        color={"#fff"}
-        borderRadius={"8px"}
-        size={"lg"}
+      <button
+        style={{
+          background: "#1a1a1a",
+          color: "#fff",
+          padding: "1rem",
+          width: "100%",
+          borderRadius: "1rem",
+          fontWeight: "700"
+        }}
         onClick={handleNext}
       >
-        Add Card
-      </Button>
-    </div>
+        Add a new card
+      </button>
+    </div >
   );
 };
 
