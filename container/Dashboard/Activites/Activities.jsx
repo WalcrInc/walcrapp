@@ -45,7 +45,7 @@ const Activities = () => {
       {step === 1 && (
         <main>
           <header>
-            <h1>Activities</h1>
+            <h1>Activity</h1>
           </header>
           <div className="body">
             <div className="box">

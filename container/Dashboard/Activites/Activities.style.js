@@ -33,6 +33,7 @@ export const ActivitiesStyle = styled.div`
   .box .sub-box {
     display: flex;
     justify-content: space-between;
+    padding: 0 1rem;
     /* align-items: center; */
   }
   .sub-box .a {
