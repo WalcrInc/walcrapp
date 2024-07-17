@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const ActivitiesStyle = styled.div`
-  padding: 3rem 3% 5.25rem;
+  padding: 3rem 3% 0;
   height: 100vh;
-  overflow:hidden;
+  overflow:scroll;
 
   main {
     display: flex;
@@ -18,7 +18,8 @@ export const ActivitiesStyle = styled.div`
     font-weight: 700;
   }
   .body {
-    overflow: scroll;    
+    overflow: scroll;  
+    padding-bottom: 5.25rem;  
   }
 
   .body::-webkit-scrollbar {
@@ -107,5 +108,11 @@ export const ActivitiesStyle = styled.div`
     font-size: 12px;
     font-weight: 400;
     color: #5b6178;
+  }
+
+  .activity-detail{
+    height: 100%;
+    overflow:hidden;
+    padding-bottom: 3rem;
   }
 `;
