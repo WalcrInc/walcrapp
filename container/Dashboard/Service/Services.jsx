@@ -1,4 +1,4 @@
-import { BackIcon } from "@/assets";
+import { BackIconX } from "@/assets";
 import React, { useEffect, useState } from "react";
 import { ServicesTypes } from "./data";
 import { ServiceStyle } from "./Style.style";
@@ -50,59 +50,61 @@ const Service = () => {
 
   return (
     <ServiceStyle>
-      <header>
-        {step === 1 && (
-          <>
-            <span onClick={handlePrev}>
-              <BackIcon />
-            </span>
-            <h1>Select service type</h1>
-          </>
-        )}
-        {step === 2 && (
-          <>
-            <span onClick={handlePrev}>
-              <BackIcon />
-            </span>
-            <h1>{selectedService.header}</h1>
-          </>
-        )}
-      </header>
+      <main>
+        <header>
+          {step === 1 && (
+            <>
+              <span onClick={handlePrev}>
+                <BackIconX />
+              </span>
+              <h1>Select service type</h1>
+            </>
+          )}
+          {step === 2 && (
+            <>
+              <span onClick={handlePrev}>
+                <BackIconX />
+              </span>
+              <h1>{selectedService.header}</h1>
+            </>
+          )}
+        </header>
 
-      <div className="body">
-        {step === 1 && (
-          <div className="big-box">
-            {service?.map(({ name, _id, icon }) => (
-              <div key={_id} className="box" onClick={() => handleClick(name)}>
-                <span>{icon}</span>
-                <h1>{name}</h1>
-                {/* <p>{details}</p> */}
-              </div>
-            ))}
-          </div>
-        )}
-        {step === 2 && selectedService && (
-          <div className="questions">
-            <div>
-              {selectedService.questions.map((question, index) => (
-                <label key={index}>
-                  <p>{question}</p>
-                  <input type="radio" />
-                </label>
+        <div className="body">
+          {step === 1 && (
+            <div className="big-box">
+              {service?.map(({ name, _id, icon }) => (
+                <div key={_id} className="box" onClick={() => handleClick(name)}>
+                  <span>{icon}</span>
+                  <h1>{name}</h1>
+                  {/* <p>{details}</p> */}
+                </div>
               ))}
             </div>
+          )}
+          {step === 2 && selectedService && (
+            <div className="questions">
+              <div>
+                {selectedService.questions.map((question, index) => (
+                  <label key={index}>
+                    <p>{question}</p>
+                    <input type="radio" />
+                  </label>
+                ))}
+              </div>
 
-            <Button
-              size={"lg"}
-              width={"100%"}
-              color={"#fff"}
-              background={"#1a1a1a"}
-            >
-              Continue
-            </Button>
-          </div>
-        )}
-      </div>
+              <Button
+                size={"lg"}
+                width={"100%"}
+                color={"#fff"}
+                background={"#1a1a1a"}
+              >
+                Continue
+              </Button>
+            </div>
+          )}
+        </div>
+      </main>
     </ServiceStyle>
   );
 };

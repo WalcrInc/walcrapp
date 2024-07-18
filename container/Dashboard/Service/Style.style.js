@@ -1,15 +1,35 @@
 import styled from "styled-components";
 
 export const ServiceStyle = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  padding: 6%;
+  
+  padding: 3rem 6%;
+  height: 100vh;
+  
+  /* Hide scrollbar for WebKit browsers (Chrome, Safari, Edge) */
+  main::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE and Edge */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  
+  main {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    gap: 30px;
+    overflow: scroll;
+  }
 
   header {
     display: flex;
     flex-direction: column;
     gap: 15px;
+  }
+
+  header span {
+    margin-left: -8px;
   }
 
   header h1 {
