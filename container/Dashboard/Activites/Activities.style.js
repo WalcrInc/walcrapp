@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ActivitiesStyle = styled.div`
-  padding: 3rem 3% 0;
+  padding: 0rem 3% 0;
   height: 100vh;
   overflow:scroll;
 
