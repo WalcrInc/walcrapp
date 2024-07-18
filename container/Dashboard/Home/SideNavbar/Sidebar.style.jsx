@@ -145,7 +145,7 @@ export const SideNavContainer = styled.div`
 
   .inactive {
     opacity: 0.7;
-    color: #1a1a1a
+    color: #000000
   }
 
   .account_header {
