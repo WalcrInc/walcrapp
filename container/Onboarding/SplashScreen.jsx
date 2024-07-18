@@ -9,12 +9,12 @@ const SplashScreen = ({ onFinish }) => {
         const timer = setTimeout(() => {
             setIsAnimationFinished(true);
             onFinish();
-        }, 2000); // Adjust this value to match your SVG animation duration
+        }, 1000); // Adjust this value to match your SVG animation duration
 
         return () => clearTimeout(timer);
     }, [onFinish]);
 
-   
+
     return (
         <div className="splash-screen">
             <img src='/images/onboarding.svg' />

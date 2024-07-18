@@ -56,6 +56,8 @@ const Card = () => {
     }
   };
 
+  console.log(step)
+
   return (
     <CardStyle>
       <header>

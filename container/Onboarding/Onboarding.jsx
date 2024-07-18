@@ -29,7 +29,12 @@ const Onboarding = () => {
 
   const handleSplashScreenFinish = () => {
     setShowSplashScreen(false);
-    setCurrentStep(1);
+    const savedStep = localStorage.getItem("currentStep");
+    if (savedStep) {
+      setCurrentStep(parseInt(savedStep, 10));
+    } else {
+      setCurrentStep(1);
+    }
   };
 
   const handleNext = () => {
@@ -54,7 +59,6 @@ const Onboarding = () => {
   if (showSplashScreen) {
     return <SplashScreen onFinish={handleSplashScreenFinish} />;
   }
-
 
   return (
     <>

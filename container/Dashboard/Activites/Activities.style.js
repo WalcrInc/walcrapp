@@ -13,18 +13,21 @@ export const ActivitiesStyle = styled.div`
     height: 100%;
     overflow:hidden;
   }
+
   header h1 {
     font-size: 34px;
     font-weight: 700;
   }
+
   .body {
     overflow: scroll;  
-    padding-bottom: 5.25rem;  
+    padding-bottom: 5.5rem;  
   }
 
   .body::-webkit-scrollbar {
     display: none;
   }
+
   .body .box {
     display: flex;
     flex-direction: column;
@@ -37,10 +40,12 @@ export const ActivitiesStyle = styled.div`
     padding: 0 1rem;
     /* align-items: center; */
   }
+
   .sub-box .a {
     display: flex;
     gap: 20px;
   }
+
   .sub-box .icon {
     background-color: #f0f2f6;
     width: 50px;
@@ -50,6 +55,7 @@ export const ActivitiesStyle = styled.div`
     align-items: center;
     justify-content: center;
   }
+    
   .sub-box .a .text {
     display: flex;
     flex-direction: column;
