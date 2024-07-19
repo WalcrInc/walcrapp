@@ -52,10 +52,11 @@ import {
   Text,
 } from "@chakra-ui/react";
 
-const SideNavbar = ({ showNav, setShowNav, info }) => {
+const SideNavbar = ({ showNav, setShowNav, info, setShowNotification }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { handleLoginRoute } = useRoutes();
   const dispatch = useDispatch();
+
   const handleLogout = () => {
     dispatch(reset());
     toast.success("You have been successfully logged out", {
@@ -63,6 +64,12 @@ const SideNavbar = ({ showNav, setShowNav, info }) => {
     });
     handleLoginRoute();
   };
+
+  const handleShowNotification = () => {
+    setShowNav(false)
+    setShowNotification(true)
+  }
+
   return (
     <SideNavContainer>
       <div className="right">
@@ -142,7 +149,7 @@ const SideNavbar = ({ showNav, setShowNav, info }) => {
                 </p>
                 <i className="badge">8</i>
               </Link>
-              <Link href={"/message"} className="inactive link_info">
+              <Link href={"/dashboard"} onClick={handleShowNotification} className="inactive link_info">
                 {" "}
                 <p>
                   <NotificationIcon /> Notifications

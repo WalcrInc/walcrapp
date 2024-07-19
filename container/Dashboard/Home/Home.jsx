@@ -4,7 +4,7 @@ import {
   ForwardIcon,
   Hamburger,
   LocationIcon,
-  NotificationIcon,
+  HomeNotificationIcon,
   Wrench_Green
 } from "@/assets";
 import useFetchData, { BASE_URL } from "@/hooks/useFetchDataHook/useFetchData";
@@ -72,7 +72,7 @@ const Home = () => {
             <Hamburger />
           </span>
           <span onClick={handleShowNotification}>
-            <NotificationIcon />
+            <HomeNotificationIcon />
           </span>
         </div>
         <div className="text">
@@ -145,7 +145,13 @@ const Home = () => {
 
       {/* SideNavbar */}
       {showNav && (
-        <SideNavbar info={info} showNav={showNav} setShowNav={setShowNav} />
+        <SideNavbar
+          info={info}
+          showNav={showNav}
+          setShowNav={setShowNav}
+          showNotification={showNotification}
+          setShowNotification={setShowNotification}
+        />
       )}
       {/* Notification */}
       {showNotification && (
