@@ -149,7 +149,6 @@ const Home = () => {
           info={info}
           showNav={showNav}
           setShowNav={setShowNav}
-          showNotification={showNotification}
           setShowNotification={setShowNotification}
         />
       )}

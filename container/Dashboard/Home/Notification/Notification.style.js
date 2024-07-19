@@ -10,8 +10,8 @@ export const NotificationContainer = styled.div`
   height: 100vh;
   width: 100%;
   z-index: 100000;
-  gap: 40px;
-  padding: 6%;
+  gap: 20px;
+  padding: 3rem 6%;
   font-size: 16px;
  
   header {
@@ -19,9 +19,14 @@ export const NotificationContainer = styled.div`
     justify-content: space-between;
     align-items:center ;
   }
+
   header h1 {
     font-size: 18px;
-    font-weight: 700px;
+    font-weight: 700;
+  }
+
+  header span {
+     margin-left: -8px;
   }
   .body{
     overflow:scroll ;
