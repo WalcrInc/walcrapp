@@ -1,5 +1,5 @@
-import { BackIcon } from "@/assets";
-import { Box, Button, Select, Textarea } from "@chakra-ui/react";
+import { BackIconX } from "@/assets";
+import { Box, Button, Modal, Select, Textarea } from "@chakra-ui/react";
 import React from "react";
 import { StatusContainer } from "./Style/Status.style";
 
@@ -8,7 +8,7 @@ const Report = ({ setStep }) => {
     <StatusContainer>
       <header>
         <span onClick={() => setStep(2)}>
-          <BackIcon />
+          <BackIconX />
         </span>
         <h1>Report an issue</h1>
         <span style={{ color: "#fff" }}>.</span>
@@ -42,6 +42,9 @@ const Report = ({ setStep }) => {
         {" "}
         Submit
       </Button>
+      <Modal>
+        
+      </Modal>
     </StatusContainer>
   );
 };

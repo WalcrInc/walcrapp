@@ -7,6 +7,7 @@ import { BackIcon } from "@/assets";
 import { Ongoing } from "./Status/Ongoing";
 import { Completed } from "./Status/Completed";
 import { Report } from "./Status/Report";
+import { InTransit } from "./Status/InTransit";
 
 const Activities = () => {
   const [step, setStep] = useState(1);
@@ -30,7 +31,7 @@ const Activities = () => {
       case "Completed":
         return <Completed handlePrev={handlePrev} handleNext={handleNext} />;
       case "In Transit":
-        return <div>In Transit Activity Details</div>;
+        return<InTransit handlePrev={handlePrev} handleNext={handleNext} />;
       case "Delivered":
         return <div>Delivered Activity Details</div>;
       case "On Going":

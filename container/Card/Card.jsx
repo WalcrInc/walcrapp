@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { CardStyle } from "./Card.style";
-import { BackIconX, CardIconX, DeleteIconX } from "@/assets";
+import { BackIconX, CardIconX, DeleteIconX, Spinner } from "@/assets";
 import { StepOne } from "./Steps/StepOne";
 import { StepThree } from "./Steps/StepThree";
 import { StepTwo } from "./Steps/StepTwo";
@@ -56,63 +56,77 @@ const Card = () => {
     }
   };
 
-  console.log(step)
+  console.log(isLoading, data)
 
   return (
-    <CardStyle>
-      <header>
-        {step === 1 && (
-          <span onClick={handleDashboardRoute}>
-            <BackIconX />
-          </span>
-        )}
-        {step == 2 && (
-          <span onClick={handlePrev}>
-            <BackIconX />
-          </span>
-        )}
-        {step == 3 && (
-          <span onClick={handleDashboardRoute}>
-            <BackIconX />
-          </span>
-        )}
-        <h1>{headerText()}</h1>
+    <>
+      {isLoading ?
+        <div style={{
+          height: "100vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          color: "#000000"
+        }}>
+          {/* <Spinner /> */}
+          Loading ...
+        </div> :
+        <CardStyle>
+          <header>
+            {step === 1 && (
+              <span onClick={handleDashboardRoute}>
+                <BackIconX />
+              </span>
+            )}
+            {step == 2 && (
+              <span onClick={handlePrev}>
+                <BackIconX />
+              </span>
+            )}
+            {step == 3 && (
+              <span onClick={handleDashboardRoute}>
+                <BackIconX />
+              </span>
+            )}
+            <h1>{headerText()}</h1>
 
-        {step === 1 && <div style={{ color: "white" }}>.</div>}
-        {step === 2 && (
-          <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-            <p>{cards?.length}/5</p>
-            <span>
-              <CardIconX />
-            </span>
+            {step === 1 && <div style={{ color: "white" }}>.</div>}
+            {step === 2 && (
+              <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+                <p>{cards?.length}/5</p>
+                <span>
+                  <CardIconX />
+                </span>
+              </div>
+            )}
+            {step === 3 && (
+              <span>
+                <DeleteIconX />
+              </span>
+            )}
+          </header>
+
+          <div className="body">
+            {cards?.length > 0
+              ? step === 3 && <StepThree cards={cards} setStep={setStep} />
+              : step === 1 && (
+                <StepOne
+                  handleNext={handleNext}
+                  cards={cards}
+                  setStep={setStep}
+                />
+              )}
+
+            {step === 2 && (
+              <Elements stripe={stripePromise}>
+                <StepTwo handleNext={handleNext} cards={cards} />
+              </Elements>
+            )}
+            {step === 3 && <StepThree cards={cards} setStep={setStep} />}
           </div>
-        )}
-        {step === 3 && (
-          <span>
-            <DeleteIconX />
-          </span>
-        )}
-      </header>
-
-      <div className="body">
-        {cards?.length > 0
-          ? step === 3 && <StepThree cards={cards} setStep={setStep} />
-          : step === 1 && (
-            <StepOne
-              handleNext={handleNext}
-              cards={cards}
-              setStep={setStep}
-            />
-          )}
-
-        {step === 2 && (
-          <Elements stripe={stripePromise}>
-            <StepTwo handleNext={handleNext} cards={cards} />
-          </Elements>
-        )}
-        {step === 3 && <StepThree cards={cards} setStep={setStep} />}
-      </div>
-    </CardStyle>
+        </CardStyle>
+      }
+    </>
   );
 };
 

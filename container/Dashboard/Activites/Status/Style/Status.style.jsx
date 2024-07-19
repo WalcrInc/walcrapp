@@ -23,6 +23,11 @@ export const StatusContainer = styled.div`
     justify-content: space-between;
     align-items: center;
   }
+
+  header span {
+    margin-left:-8px;
+  }
+
   header h1 {
     font-size: 18px;
     font-weight: 700;
@@ -99,6 +104,17 @@ export const StatusContainer = styled.div`
     padding: 1%;
     border-radius: 3px;
     color: #2bc128;
+  }
+
+  .d {
+    margin-top: auto;
+    border-radius: 3px;
+    background: rgba(255, 177, 25, 0.10);
+    font-size: 12px;
+    font-weight: 400;
+    text-align: left;
+    padding: 1%;
+    color: #FFB119;
   }
 
   .section-2 {
