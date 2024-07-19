@@ -64,9 +64,9 @@ export const NotificationContainer = styled.div`
     height:40px ;
     border-radius:50% ;
     display:flex ;
-    align-items:center ;
-    justify-content:center ;
-    padding:3% ;
+    align-items:center;
+    justify-content:center;
+    padding:12px;
   }
 
   .sub-info .text{
