@@ -4,6 +4,7 @@ import Stepper from 'react-stepper-horizontal';
 import PersonalInfo from './Pages/PersonalInfo';
 import CreateGig from './Pages/CreateGig';
 import PublishGig from './Pages/PublishGig';
+import Range from './Pages/Range';
 import { BackIcon2 } from '@/Assets';
 import { useRouter } from 'next/router';
 // import './App.css';
@@ -14,6 +15,10 @@ function UserDetails() {
 
 function Payment() {
     return <CreateGig />;
+}
+
+function Transportation() {
+    return <Range />;
 }
 
 function Confirmation() {
@@ -27,6 +32,7 @@ function Gig() {
     const steps = [
         { title: 'Personal Info' },
         { title: 'Create Gig' },
+        { title: 'Range' },
         { title: 'Publish' },
     ];
 
@@ -34,7 +40,8 @@ function Gig() {
         switch (activeStep) {
             case 0: return <UserDetails />;
             case 1: return <Payment />;
-            case 2: return <Confirmation />;
+            case 2: return <Transportation />;
+            case 3: return <Confirmation />;
             default: return null;
         }
     }

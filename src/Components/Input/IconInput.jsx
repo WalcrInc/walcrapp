@@ -1,5 +1,5 @@
 import React from "react";
-import { EmailIcon,} from "Src/Assets/index";
+import { EmailIcon, LocationGig,} from "Src/Assets/index";
 import {
   InputGroup,
   Input,
@@ -7,6 +7,8 @@ import {
   FormLabel,
   FormControl,
 } from "@chakra-ui/react";
+import location from '../../Assets/images/location.svg'
+import Image from "next/image";
 
 const IconInput = () => {
   return (
@@ -27,5 +29,27 @@ const IconInput = () => {
     </div>
   )
 }
+const LocationIconInput = () => {
+  return (
+    <div>
+      <FormControl>
+          <InputGroup
+            boxShadow={" 0px 0px 0px 1px #CDD1DC"}
+            borderRadius={"8px"}
+            size={"lg"}
+          >
+            <InputLeftElement>
+            <Image 
+            src={location}
+            alt="location"
+            style={{}}
+            />
+            </InputLeftElement>
+            <Input placeholder="places" style={{textAlign:'center'}}/>
+          </InputGroup>
+        </FormControl>
+    </div>
+  )
+}
 
-export default IconInput
+export {IconInput, LocationIconInput}
