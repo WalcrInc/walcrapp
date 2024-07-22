@@ -46,12 +46,14 @@ export const ServiceStyle = styled.div`
   }
 
   .box {
-    background-color: #f0f2f6;
+    // background-color: #f0f2f6;
+    border-radius: 16px;
+    border: 1px solid var(--black-10, #F0F2F6);
     padding: 6%;
     border-radius: 16px;
     display: flex;
     flex-direction: column;
-    gap: 30px; /* Added gap between boxes */
+    gap: 10px; /* Added gap between boxes */
     /* margin-bottom: 40px; */
   }
   .box h1 {

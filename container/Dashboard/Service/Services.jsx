@@ -33,6 +33,7 @@ const Service = () => {
 
   const { data } = useFetchData({ url: `${BASE_URL}/service` });
 
+  console.log(data);
   useEffect(() => {
     if (data) {
       const servicesWithIcons = data.data.map((service) => {
@@ -47,6 +48,8 @@ const Service = () => {
       setService(servicesWithIcons);
     }
   }, [data]);
+
+  console.log(service)
 
   return (
     <ServiceStyle>
@@ -73,11 +76,11 @@ const Service = () => {
         <div className="body">
           {step === 1 && (
             <div className="big-box">
-              {service?.map(({ name, _id, icon }) => (
+              {service?.map(({ name, _id, icon, details }) => (
                 <div key={_id} className="box" onClick={() => handleClick(name)}>
                   <span>{icon}</span>
                   <h1>{name}</h1>
-                  {/* <p>{details}</p> */}
+                  <p>{details}</p>
                 </div>
               ))}
             </div>
