@@ -1,4 +1,4 @@
-import { BackIconX } from "@/assets";
+import { BackIconX, SearchIconFlipped } from "@/assets";
 import React, { useEffect, useState } from "react";
 import { ServicesTypes } from "./data";
 import { ServiceStyle } from "./Style.style";
@@ -10,6 +10,7 @@ const Service = () => {
   const [selectedService, setSelectedService] = useState(null);
   const [service, setService] = useState([]);
   const [step, setStep] = useState(1);
+  const [searchService, setSearchService] = useState("");
   const router = useRouter();
   const handleClick = (serviceName) => {
     const selectedService = service.find(
@@ -33,7 +34,6 @@ const Service = () => {
 
   const { data } = useFetchData({ url: `${BASE_URL}/service` });
 
-  console.log(data);
   useEffect(() => {
     if (data) {
       const servicesWithIcons = data.data.map((service) => {
@@ -48,8 +48,6 @@ const Service = () => {
       setService(servicesWithIcons);
     }
   }, [data]);
-
-  console.log(service)
 
   return (
     <ServiceStyle>
@@ -73,38 +71,78 @@ const Service = () => {
           )}
         </header>
 
+
+
         <div className="body">
           {step === 1 && (
-            <div className="big-box">
-              {service?.map(({ name, _id, icon, details }) => (
-                <div key={_id} className="box" onClick={() => handleClick(name)}>
-                  <span>{icon}</span>
-                  <h1>{name}</h1>
-                  <p>{details}</p>
+            <>
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+
+                }}
+              >
+                <div className="search_form">
+                  <i><SearchIconFlipped /></i>
+                  <input
+                    type="text"
+                    value={searchService}
+                    required
+                    placeholder="Search tasks"
+                    onChange={(e) => setSearchService(e.target.value)}
+                  />
                 </div>
-              ))}
-            </div>
-          )}
-          {step === 2 && selectedService && (
-            <div className="questions">
-              <div>
-                {selectedService.questions.map((question, index) => (
-                  <label key={index}>
-                    <p>{question}</p>
-                    <input type="radio" />
-                  </label>
+              </form>
+              <div className="big-box">
+                {service?.map(({ name, _id, icon, details }) => (
+                  <div key={_id} className="box" onClick={() => handleClick(name)}>
+                    <span>{icon}</span>
+                    <h1>{name}</h1>
+                    <p>{details}</p>
+                  </div>
                 ))}
               </div>
+            </>
+          )}
+          {step === 2 && selectedService && (
+            <>
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
 
-              <Button
-                size={"lg"}
-                width={"100%"}
-                color={"#fff"}
-                background={"#1a1a1a"}
+                }}
               >
-                Continue
-              </Button>
-            </div>
+                <div className="search_form">
+                  <i><SearchIconFlipped /></i>
+                  <input
+                    type="text"
+                    value={searchService}
+                    required
+                    placeholder="Search Sub Category"
+                    onChange={(e) => setSearchService(e.target.value)}
+                  />
+                </div>
+              </form>
+              <div className="questions">
+                <div>
+                  {selectedService.questions.map((question, index) => (
+                    <label key={index}>
+                      <p>{question}</p>
+                      <input type="radio" />
+                    </label>
+                  ))}
+                </div>
+
+                <Button
+                  size={"lg"}
+                  width={"100%"}
+                  color={"#fff"}
+                  background={"#1a1a1a"}
+                >
+                  Continue
+                </Button>
+              </div>
+            </>
           )}
         </div>
       </main>

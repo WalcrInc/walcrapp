@@ -1836,6 +1836,13 @@ export const EllipsisIcon = () => (
     </g>
   </svg>
 )
+
+export const SearchIconFlipped = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+    <rect width="20" height="20" transform="matrix(-1 0 0 1 20 0)" fill="white" />
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.95189 13.2265C8.90919 13.8223 10.0394 14.1665 11.25 14.1665C14.7018 14.1665 17.5 11.3683 17.5 7.9165C17.5 4.46472 14.7018 1.6665 11.25 1.6665C7.79822 1.6665 5 4.46472 5 7.9165C5 9.55459 5.63019 11.0455 6.66134 12.16L1.91074 16.9106C1.58531 17.236 1.58531 17.7637 1.91074 18.0891C2.23618 18.4145 2.76382 18.4145 3.08926 18.0891L7.95189 13.2265ZM6.66667 7.9165C6.66667 10.4478 8.71869 12.4998 11.25 12.4998C13.7813 12.4998 15.8333 10.4478 15.8333 7.9165C15.8333 5.3852 13.7813 3.33317 11.25 3.33317C8.71869 3.33317 6.66667 5.3852 6.66667 7.9165Z" fill="#1A1A1A" />
+  </svg>
+)
 export const SearchIconSmall = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
     <path

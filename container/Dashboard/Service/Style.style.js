@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ServiceStyle = styled.div`
   
-  padding: 0 6% 3rem;
+  padding: 0 1rem 3rem;
   height: 100vh;
   
   /* Hide scrollbar for WebKit browsers (Chrome, Safari, Edge) */
@@ -36,6 +36,33 @@ export const ServiceStyle = styled.div`
     font-size: 22px;
     font-weight: 700;
   }
+
+  .search_form{
+    border-radius: 6px;
+    border: 1px solid #CDD1DC;
+    /* Borders/Text Input/Field Border */
+    box-shadow: 0px 0px 0px 1px #CDD1DC;
+    padding: 4px 12px;
+    display:flex;
+    align-items: center;
+    gap:10px;
+    margin-bottom: 26px;
+  }
+
+  .search_form input {
+    outline:none;
+    background: transparent;
+  }
+
+  .search_form input::placeholder {
+    color: var(--black-30, #C1C7DE);
+    font-family: Alata;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 141.176% */
+  }
+
   .big-box {
     /* background-color: red; */
     display: flex;
