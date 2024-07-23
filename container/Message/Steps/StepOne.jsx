@@ -1,35 +1,58 @@
-import { BackIcon, SearchIcon } from "@/assets";
+import { ArchiveIcon, BackIconX, SearchIcon } from "@/assets";
 import useRoutes from "@/hooks/Routes/Routes";
 import { Input, InputGroup, InputRightElement } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
 import { messageData } from "./data";
 import Image from "next/image";
 
 const StepOne = ({ handleSelected }) => {
   const { handleDashboardRoute } = useRoutes();
+  const [filter, setFilter] = useState('all');
+
+  function filterMessages(by) {
+    setFilter(by);
+
+  }
+
   return (
     <div className="step-one">
       <div className="header">
         <>
           <span onClick={handleDashboardRoute}>
-            <BackIcon />
+            <BackIconX />
           </span>
           <h1>Messages</h1>
-          <span style={{ color: "white" }}>.</span>
+          <div>
+            <ArchiveIcon />
+          </div>
         </>
       </div>
       <div className="body">
         <InputGroup width={"100%"} size={"lg"} background={"#f4f4f4"}>
-          <Input placeholder="Search for chat" />
+          <Input placeholder="Search Messages" />
           <InputRightElement>
             <SearchIcon />
           </InputRightElement>
         </InputGroup>
         <div className="option">
-          <p>General</p>
-          <p>
-            <span></span> My TaskWalkers
-          </p>
+          <button
+            onClick={() => filterMessages("all")}
+            className={`${filter === "all" ? "active" : ""}`}
+          >
+            All Chats
+          </button>
+          <button
+            onClick={() => filterMessages("active")}
+            className={`${filter === "active" ? "active" : ""}`}
+          >
+            Active Orders
+          </button>
+          <button
+            onClick={() => filterMessages("saved")}
+            className={`${filter === "saved" ? "active" : ""}`}
+          >
+            Saved TaskWalkers
+          </button>
         </div>
         <div className="message-body">
           {messageData.map((message) => (

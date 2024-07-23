@@ -2,13 +2,17 @@ import styled from "styled-components";
 
 export const MessageStyle = styled.div`
   padding: 3% ;
-height:100vh ;
+  height:100vh ;
   //step 1
   .step-one .header,
   .step-two .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .step-one .header span {
+    margin-left: -8px;
   }
 
   .step-one h1{
@@ -25,10 +29,10 @@ height:100vh ;
 
   .body .option {
     display: flex;
-    gap: 20px;
+    gap: 10px;
   }
 
-  .option p {
+  .option button {
     font-size: 12px;
     font-weight: 400px;
     background-color: #f4f4f4;
@@ -39,6 +43,12 @@ height:100vh ;
     gap: 10px;
     align-items: center;
   }
+
+  .option .active {
+    background-color: #1a1a1a;
+    color: #fff;
+  }
+
   .option span {
     display: flex;
     justify-content: center;
