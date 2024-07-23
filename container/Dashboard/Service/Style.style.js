@@ -37,6 +37,26 @@ export const ServiceStyle = styled.div`
     font-weight: 700;
   }
 
+  header p {
+    color: #1a1a1a;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px; /* 133.333% */
+  }
+
+  .service_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
   .search_form{
     border-radius: 6px;
     border: 1px solid #CDD1DC;
@@ -108,5 +128,130 @@ export const ServiceStyle = styled.div`
   }
   input[type="radio"]{
 accent-color:#1a1a1a ;
+  }
+
+  .location {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+    flex-grow: 1;
+  }
+  .location h1 {
+    color: #1A1A1A;
+    font-family: Mulish;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 26.4px;
+  }
+
+  .location p {
+    font-family: Mulish;
+    color:#5B6178;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  .location-area {
+    display: flex;
+    flex-direction: column;
+    gap: 55px;
+  }
+
+  .options-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap:20px;
+  }
+
+  .option-label > p  {
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px; 
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .option-box {
+    padding: 15px;
+    cursor: pointer;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .radio-input {
+    align-self: start;
+  }
+
+  .option-box:has(.radio-input:checked) {
+    border-radius: 11px;
+    border: 1px solid #E9EAED;
+  }
+
+  .location-tracking{
+    display: flex;
+    align-items:center;
+    flex-direction: column;
+    gap: 2rem;
+    flex-grow: 1;
+  }
+
+  .location-tracking button {
+    margin-top: auto;
+  }
+
+  .icon {
+    flex: 1;
+    background: url("/images/location-tracking.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    margin: 10px;
+    width: 100%;
+  }
+
+  .location-tracking .details {
+    text-align:center;
+    margin-bottom: 55px;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .location-tracking .details h2 {
+    color: #000;
+    text-align: center;
+    font-family: Mulish;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  .location-tracking .details p {
+    color: #5B6178;
+    text-align: center;
+    font-family: Mulish;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  .modal-heading {
+    color: #000;
+    text-align: center;
+    font-family: Mulish;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
   }
 `;
