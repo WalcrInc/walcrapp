@@ -37,7 +37,7 @@ export const MessageStyle = styled.div`
     font-weight: 400px;
     background-color: #f4f4f4;
     border-radius: 9px;
-    padding: 5px 20px;
+    padding: 5px 16px;
     border: 1px solid #f0f2f6;
     display: flex;
     gap: 10px;
