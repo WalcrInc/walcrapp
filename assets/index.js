@@ -3,7 +3,7 @@ export const Logo = () => (
     width={34}
     height={34}
     viewBox="0 0 34 34"
-    fill="none"
+    fill="none" FAc
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
   //   {...props}
@@ -704,6 +704,12 @@ export const HomeIconInActive = () => (
   </svg>
 );
 
+export const UserPlusIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
+    <path d="M6.5 2.16602V10.8327" stroke="#1E202C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M2.1665 6.5H10.8332" stroke="#1E202C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  </svg>
+)
 export const UserIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
     <g opacity="0.7">

@@ -4,6 +4,7 @@ import {
   CallIcon,
   SendMessageIcon,
   UserIcon,
+  UserPlusIcon,
 } from "@/assets";
 import Image from "next/image";
 import React from "react";
@@ -33,7 +34,10 @@ const StepTwo = ({ handlePrev, message }) => {
         </div>
 
         <div className="icons">
-          <UserIcon />
+          <div className="add-user">
+            <UserIcon />
+            <i><UserPlusIcon /></i>
+          </div>
           <CallIcon />
         </div>
       </div>

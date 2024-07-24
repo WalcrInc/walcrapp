@@ -11,6 +11,9 @@ export const MessageStyle = styled.div`
     align-items: center;
   }
 
+  .step-one {
+    // overflow-x: hidden;
+  }
   .step-one .header span {
     margin-left: -8px;
   }
@@ -18,6 +21,17 @@ export const MessageStyle = styled.div`
   .step-one h1{
     font-size:18px ;
     font-weight:700 ;
+  }
+
+  .active-messages{
+    position: relative;
+    margin-right: 2px;
+  }
+
+  .active-messages > i {
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
   }
 
   .body {
@@ -154,8 +168,18 @@ export const MessageStyle = styled.div`
 
   .step-two .icons {
     display: flex;
-    gap: 10px;
+    gap: 20px;
     align-items: center;
+  }
+
+  .step-two .icons .add-user{
+    position: relative;
+  }
+
+  .step-two .icons .add-user i{
+    position: absolute;
+    top: -4px;
+    right: -6px;
   }
 
   .step-two .header .icon {

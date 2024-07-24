@@ -1,4 +1,4 @@
-import { ArchiveIcon, BackIconX, SearchIcon } from "@/assets";
+import { ActiveRedIcon, ArchiveIcon, BackIconX, SearchIcon } from "@/assets";
 import useRoutes from "@/hooks/Routes/Routes";
 import { Input, InputGroup, InputRightElement } from "@chakra-ui/react";
 import React, { useState } from "react";
@@ -22,9 +22,10 @@ const StepOne = ({ handleSelected }) => {
             <BackIconX />
           </span>
           <h1>Messages</h1>
-          <div>
+          <button className="active-messages">
             <ArchiveIcon />
-          </div>
+            <i><ActiveRedIcon /></i>
+          </button>
         </>
       </div>
       <div className="body">
