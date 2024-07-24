@@ -114,18 +114,16 @@ export const CardStyle = styled.div`
   //step 3
   .cards {
     position: relative;
-    width:100% ;
-    height:50%; /* Adjust height as necessary to accommodate card stacking */
-    margin:auto ;
-    left:0 ;
+    // width:100% ;
+    // height:50%;
+    // margin:auto ;
+    // left:0 ;
   }
 
   .card-1,
   .card-2,
   .card-3 {
     position: absolute;
-    // width: 100%;
-    // max-width: 300px;
     height: 185px;
     border-radius: 20px;
     margin: 0 auto;
@@ -158,9 +156,40 @@ export const CardStyle = styled.div`
   }
 
   .add-new{
+    position:absolute ;
+    top:500px ;
+    width:100% ;
+    left:0 ;
     display:flex ;
     justify-content:center ;
     gap:10px;
     align-items:center ;
+  }
+
+  .set-primary{
+    position:absolute;
+    bottom:50px ;
+    width:100%; 
+    left:0 ;
+     display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+
+  .set-primary > div{
+    display:flex;
+    justify-content:center ;
+    gap:10px;
+    align-items:center ;
+    font-family: Mulish;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    border-radius: 12px;
+    border: 1px solid #F0F2F6;
+    background: rgba(255, 255, 255, 0.00);
+    padding: 16px;
+    padding: 0px: 50px
   }
 `;

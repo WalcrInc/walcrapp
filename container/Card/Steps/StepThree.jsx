@@ -13,6 +13,7 @@ const brandBackgrounds = {
 
 const StepThree = ({ cards, setStep }) => {
   const [cardOrder, setCardOrder] = useState([]);
+  const [selectedCardIndex, setSelectedCardIndex] = useState(null);
 
   useEffect(() => {
     if (cards) {
@@ -28,6 +29,7 @@ const StepThree = ({ cards, setStep }) => {
       ...cardOrder.filter((_, index) => index !== clickedCardIndex)
     ];
     setCardOrder(updatedCardOrder);
+    setSelectedCardIndex(0); // The clicked card is now at the front
   };
 
   const getCardClass = (index) => `card-${index + 1}`;
@@ -43,9 +45,10 @@ const StepThree = ({ cards, setStep }) => {
             className={getCardClass(index)}
             style={{
               backgroundImage: `url(${getCardBackground(card.brand)})`,
-              backgroundSize: 'contain',
+              backgroundSize: 'cover',
               backgroundRepeat: "no-repeat",
-              backgroundPosition: "center"
+              backgroundPosition: "center",
+              border: selectedCardIndex === index ? '2px solid blue' : 'none'
             }}
             onClick={() => handleCardClick(index)}
           >
@@ -62,6 +65,11 @@ const StepThree = ({ cards, setStep }) => {
 
       <div className="add-new" onClick={() => setStep(2)}>
         <AddIcon_Square /> Add new card
+      </div>
+      <div className="set-primary">
+        <div>
+          <input type="checkbox" /> Set selected card as the primary card
+        </div>
       </div>
     </>
   );
