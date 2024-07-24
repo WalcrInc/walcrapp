@@ -93,7 +93,7 @@ const Card = () => {
             {step === 1 && <div style={{ color: "white" }}>.</div>}
             {step === 2 && (
               <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-                <p>{cards?.length}/5</p>
+                <p>{cards?.length}/3</p>
                 <span>
                   <CardIconX />
                 </span>

@@ -87,7 +87,7 @@ const StepTwo = ({ handleNext, cards }) => {
 
     try {
       const token = await generateToken();
-      if (cards?.length === 5) {
+      if (cards?.length === 3) {
         onOpen();
       } else if (token) {
         setLoading(true);
@@ -187,7 +187,7 @@ const StepTwo = ({ handleNext, cards }) => {
             </div>
           </div>
         )}
-        <span>View all cards</span>
+        <span onClick={handleNext}>View all cards</span>
       </div>
       <Button
         width={"100%"}
@@ -227,7 +227,7 @@ const StepTwo = ({ handleNext, cards }) => {
             }}
           >
             <Text fontSize={"22px"} fontWeight={"700"}>
-              Sorry you can’t add more than five cards
+              Sorry you can’t add more than three cards
             </Text>
             <Text color={"#8C92AB"} fontSize={"14px"} fontWeight={"400"}>
               Tap Edit Cards to delete unused cards.

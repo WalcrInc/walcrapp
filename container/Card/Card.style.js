@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const CardStyle = styled.div`
-  padding: 6%;
+  padding: 16px;
   height:100vh ;
   header {
     display: flex;
@@ -122,14 +122,12 @@ export const CardStyle = styled.div`
 
   .card-1,
   .card-2,
-  .card-3,
-  .card-4,
-  .card-5 {
+  .card-3 {
     position: absolute;
-    width: 100%;
+    // width: 100%;
+    // max-width: 300px;
     height: 185px;
     border-radius: 20px;
-    border: 1px solid grey;
     margin: 0 auto;
     display: flex;
     flex-direction: column; /* Updated for vertical layout */
@@ -142,40 +140,24 @@ export const CardStyle = styled.div`
   }
 
   .card-1 {
-    z-index: 5;
+    z-index: 3;
     top: 200px;
+    left: 40px;
+    width: calc(100% - 35px);
   }
   .card-2 {
-    z-index: 4;
+    z-index: 2;
     top: 150px;
+    left: 20px;
+    width: calc(100% - 40px);
   }
   .card-3 {
-    z-index: 3;
-    top: 100px;
-  }
-  .card-4 {
-    z-index: 2;
-    top: 50px;
-  }
-  .card-5 {
     z-index: 1;
-    top: 0px;
+    top: 100px;
+    width: calc(100% - 45px);
   }
 
-  .card-1:hover,
-  .card-2:hover,
-  .card-3:hover,
-  .card-4:hover,
-  .card-5:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  }
-
-.add-new{
-    position:absolute ;
-    bottom:50px ;
-    width:100% ;
-    left:0 ;
+  .add-new{
     display:flex ;
     justify-content:center ;
     gap:10px;
