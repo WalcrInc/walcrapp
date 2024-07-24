@@ -1278,6 +1278,11 @@ export const HeavyIcon_Coloured = () => (
   </svg>
 );
 
+export const SendMessageIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+    <path d="M26.8751 13.8744L4.50007 2.62442C3.37507 2.12442 2.12507 3.12442 2.62507 4.24942L5.75007 12.6244L20.0001 14.9994L5.75007 17.3744L2.62507 25.7494C2.25007 26.8744 3.37507 27.8744 4.50007 27.2494L26.8751 15.9994C27.7501 15.6244 27.7501 14.3744 26.8751 13.8744Z" fill="#1A1A1A" />
+  </svg>
+)
 export const SendIcon = () => (
   <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
@@ -2014,6 +2019,13 @@ export const FrontIcon = () => (
     />
   </svg>
 );
+
+export const AddIconThin = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+    <path d="M15 5V25" stroke="#DADADA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M5 15H25" stroke="#D1D1D1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  </svg>
+)
 export const ChattingIcon = () => (
   <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
