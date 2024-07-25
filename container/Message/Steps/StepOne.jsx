@@ -55,7 +55,7 @@ const StepOne = ({ handleSelected }) => {
             Saved TaskWalkers
           </button>
         </div>
-        <div className="message-body">
+        <div className="message-body no-scrollbar">
           {messageData.map((message) => (
             <div
               key={message.id}

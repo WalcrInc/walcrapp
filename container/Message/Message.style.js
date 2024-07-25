@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const MessageStyle = styled.div`
-  padding: 3% ;
+  padding: 0px 3% ;
   height:100vh ;
   //step 1
   .step-one .header,
@@ -35,17 +35,28 @@ export const MessageStyle = styled.div`
   }
 
   .body {
-    padding-top: 6%;
+    padding: 6% 0px;
     display: flex;
     flex-direction: column;
     gap: 30px;
     height: 100%;
-    overflow: scroll;
+    // overflow: scroll;
   }
 
   .body .option {
     display: flex;
     gap: 18px;
+  }
+
+  .step-one {
+    flex-grow: 1;
+    overflow: hidden;
+  }
+
+  .step-one > .body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
   }
 
   .option button {
@@ -80,6 +91,9 @@ export const MessageStyle = styled.div`
     display: flex;
     flex-direction: column;
     gap: 30px;
+    flex-grow: 1;
+    overflow: scroll;
+    padding: 6% 0;
   }
 
   .message-body .message-info {
