@@ -67,12 +67,13 @@ const Service = () => {
       <main>
         <header>
           {step === 1 && (
-            <>
+            <div className="step_one_header">
               <span onClick={handlePrev}>
                 <BackIconX />
               </span>
-              <h1>Select service type</h1>
-            </>
+              <h1>Book Taskwalker</h1>
+              <div></div>
+            </div>
           )}
           {step === 2 && (
             <>
@@ -80,10 +81,10 @@ const Service = () => {
                 <span onClick={handlePrev}>
                   <BackIconX />
                 </span>
-                <p>{selectedService.name}</p>
+                <h1>{selectedService.name}</h1>
                 <div></div>
               </div>
-              <h1>{selectedService.header}</h1>
+              <p>{selectedService.header}</p>
             </>
           )}
           {step === 3 && (
@@ -92,7 +93,7 @@ const Service = () => {
                 <span onClick={handlePrev}>
                   <BackIconX />
                 </span>
-                <p>{selectedService.name}</p>
+                <h1>{selectedService.name}</h1>
                 <div></div>
               </div>
 

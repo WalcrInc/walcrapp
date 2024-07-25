@@ -33,16 +33,22 @@ export const ServiceStyle = styled.div`
   }
 
   header h1 {
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 700;
   }
 
   header p {
     color: #1a1a1a;
-    font-size: 18px;
+    font-size: 22px;
     font-style: normal;
     font-weight: 700;
     line-height: 24px; /* 133.333% */
+  }
+
+  .step_one_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .service_header {
@@ -60,9 +66,7 @@ export const ServiceStyle = styled.div`
   .search_form{
     border-radius: 6px;
     border: 1px solid #CDD1DC;
-    /* Borders/Text Input/Field Border */
-    box-shadow: 0px 0px 0px 1px #CDD1DC;
-    padding: 4px 12px;
+    padding: 6px 12px;
     display:flex;
     align-items: center;
     gap:10px;
@@ -80,7 +84,7 @@ export const ServiceStyle = styled.div`
     font-size: 17px;
     font-style: normal;
     font-weight: 400;
-    line-height: 24px; /* 141.176% */
+    line-height: 24px;
   }
 
   .big-box {
