@@ -35,7 +35,7 @@ export const MessageStyle = styled.div`
   }
 
   .body {
-    padding: 6% 0px;
+    padding: 0px 0px 3rem;
     display: flex;
     flex-direction: column;
     gap: 30px;
