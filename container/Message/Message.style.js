@@ -35,7 +35,7 @@ export const MessageStyle = styled.div`
   }
 
   .body {
-    padding: 2rem 0;
+    padding: 0rem 0 2rem;
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -57,6 +57,7 @@ export const MessageStyle = styled.div`
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    margin-top: 2rem;
   }
 
   .option button {
