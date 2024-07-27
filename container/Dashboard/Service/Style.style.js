@@ -51,6 +51,10 @@ export const ServiceStyle = styled.div`
     justify-content: space-between;
   }
 
+  .step_one_header h1 {
+  background: blue;
+  }
+
   .service_header {
     display: flex;
     align-items: center;
