@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "@emotion/styled";
 import { AddIconThin } from "@/assets";
 
@@ -115,10 +115,20 @@ const StepFour = ({ handleNext }) => {
   const removeImage = (index) => {
     const newImages = images.filter((_, i) => i !== index);
     setImages(newImages);
-    if (selectedImage === images[index]) {
-      setSelectedImage(null);
+
+    // If the removed image was the selected one, or if it was the last image
+    if (selectedImage === images[index] || newImages.length === 0) {
+      setSelectedImage(newImages[0] || null);
     }
   };
+
+  useEffect(() => {
+    if (images.length > 0 && !images.includes(selectedImage)) {
+      setSelectedImage(images[0]);
+    } else if (images.length === 0) {
+      setSelectedImage(null);
+    }
+  }, [images, selectedImage]);
 
   console.log({ selectedImage: selectedImage });
 
