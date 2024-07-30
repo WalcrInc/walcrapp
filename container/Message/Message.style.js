@@ -93,7 +93,7 @@ export const MessageStyle = styled.div`
     gap: 30px;
     flex-grow: 1;
     overflow: scroll;
-    padding: 6% 0 2rem;
+    padding: 6% 0;
   }
 
   .message-body .message-info {
