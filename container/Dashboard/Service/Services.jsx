@@ -14,6 +14,7 @@ import StepOne from "./steps/StepOne";
 import StepTwo from "./steps/StepTwo";
 import StepThree from "./steps/StepThree";
 import StepFour from "./steps/StepFour";
+import StepFive from "./steps/StepFive";
 
 const Service = () => {
   const [selectedService, setSelectedService] = useState(null);
@@ -120,6 +121,17 @@ const Service = () => {
               </p>
             </>
           )}
+          {step === 5 && (
+            <>
+              <div className="service_header">
+                <span onClick={handlePrev}>
+                  <BackIconX />
+                </span>
+                {/* <h1>{selectedService.name}</h1>
+                <div></div> */}
+              </div>
+            </>
+          )}
         </header>
 
         <div className="body">
@@ -142,6 +154,7 @@ const Service = () => {
 
           {step === 3 && <StepThree handleNext={handleNext} />}
           {step === 4 && <StepFour handleNext={handleNext} />}
+          {step === 5 && <StepFive handleNext={handleNext} />}
         </div>
       </main>
     </ServiceStyle>

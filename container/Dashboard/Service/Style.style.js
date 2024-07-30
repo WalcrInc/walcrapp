@@ -270,4 +270,61 @@ accent-color:#1a1a1a ;
     font-weight: 700;
     line-height: normal;
   }
+
+  .step_five_info {
+    padding: 2rem 1rem;
+    border-radius: 40px 40px 0px 0px;
+    background: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    box-shadow: 0px 18px 34px 0px rgba(5, 16, 55, 0.30);
+  }
+
+  .step_five_info h2{
+    color: var(--Primary-black, #1A1A1A);
+    text-align: center;
+    font-family: Mulish;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px; /* 120% */
+  }
+
+  .step_five_info .addresses {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .step_five_info .addresses > div {
+    display: flex;
+    gap: 12px;
+    align-items:center;
+  }
+
+  .step_five_info .input {
+    color: var(--black-70, #5B6178);
+    /* Body 16px Regular */
+    font-family: Mulish;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
+  }
+  .step_five_info .addresses > div > input {
+    flex-grow: 1;
+    border-radius: 10px;
+    padding: 10px 20px;
+    border: 1px solid var(--Primary-black, #1A1A1A);
+  }
+
+  .step_five_info .addresses > .other_address > input{
+    border-radius: 10px;
+    border: 1px solid #D9DDEA;
+  }
 `;

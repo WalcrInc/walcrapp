@@ -27,7 +27,7 @@ const Home = () => {
   const [showNav, setShowNav] = useState(false);
   const [showNotification, setShowNotification] = useState(false);
 
-  const { handleAddCashRoute, handleLoginRoute } = useRoutes();
+  const { handleAddCashRoute } = useRoutes();
 
   const { data, isLoading } = useFetchData({
     url: `${BASE_URL}/auth/user`,

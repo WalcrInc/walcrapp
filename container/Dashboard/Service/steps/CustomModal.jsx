@@ -17,7 +17,7 @@ const ModalOverlay = styled.div`
 const ModalContent = styled.div`
   background-color: #f0f2f6;
   border-radius: 16px;
-  padding: 24px 0px;
+  padding: 24px 0 0;
   width: 90%;
   max-width: 320px;
   margin: 3rem;
@@ -56,14 +56,14 @@ const Divider = styled.hr`
   width: 100%;
   border: none;
   border-bottom: 1px solid #969696;
-  margin: 1rem 0;
+  margin: 1rem 0 0;
 `;
 
 const ButtonGroup = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 0px 28px;
+  padding: 12px 28px;
 `;
 
 const Button = styled.button`
