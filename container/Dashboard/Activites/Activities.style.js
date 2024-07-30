@@ -119,6 +119,6 @@ export const ActivitiesStyle = styled.div`
   .activity-detail{
     height: 100%;
     overflow:hidden;
-    padding-bottom: 3rem;
+    padding-bottom: 2rem;
   }
 `;

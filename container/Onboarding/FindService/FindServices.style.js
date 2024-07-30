@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const FindServicesStyle = styled.div`
-  padding: 1rem 0rem 3rem;
+  padding: 1rem 0rem 2re,;
   height: 100vh;
   overflow: scroll;
 
@@ -89,7 +89,7 @@ export const FindServicesStyle = styled.div`
     display: flex;
     flex-direction: column;
     gap: 20px;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
 
   .others h1 {

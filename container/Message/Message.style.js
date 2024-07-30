@@ -247,7 +247,7 @@ export const MessageStyle = styled.div`
     left:0;
     width:100%;
     padding: 0 1rem;
-    bottom: 3rem;
+    bottom: 2rem;
   }
 
   .step-two .input input {

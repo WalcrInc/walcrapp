@@ -15,7 +15,7 @@ export const SideNavContainer = styled.div`
     width: 100%;
     background-color: #ffffff;
     height: 100vh;
-    padding: 3rem 2rem;
+    padding: 3rem 2rem 2rem;
   }
 
   .right-info{

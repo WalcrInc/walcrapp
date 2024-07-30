@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const HomeStyle = styled.div`
   .header {
-    padding: 3rem 6%;
+    padding: 3rem 6% 2rem;
     height: 250px;
     background: #1a1a1a;
     display: flex;

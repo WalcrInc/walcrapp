@@ -11,7 +11,7 @@ export const NotificationContainer = styled.div`
   width: 100%;
   z-index: 100000;
   gap: 20px;
-  padding: 3rem 6%;
+  padding: 3rem 6% 2rem;
   font-size: 16px;
  
   header {

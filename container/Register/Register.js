@@ -22,7 +22,7 @@ const Register = () => {
     <div
       style={{
         height: "100vh",
-        padding: "0rem 0 3rem",
+        padding: "0rem 0 2rem",
         overflow: "scroll",
         display: "flex",
         flexDirection: "column",

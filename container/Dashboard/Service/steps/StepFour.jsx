@@ -31,10 +31,11 @@ const ThumbnailContainer = styled.div`
   margin-bottom: 20px;
   margin-top: 10px;
   overflow: scroll;
+  // background: blue;
 `;
 
 const Thumbnail = styled.div`
-  min-width: 100px;
+  width: 100px;
   height: 100px;
   background-color: #b9b9b933;
   border-radius: 10px;
@@ -46,7 +47,7 @@ const Thumbnail = styled.div`
 `;
 
 const AddThumbnail = styled.div`
-  min-width: 100px;
+  width: 100px;
   height: 100px;
   border-radius: 10px;
   display: flex;
@@ -115,9 +116,11 @@ const StepFour = ({ handleNext }) => {
     const newImages = images.filter((_, i) => i !== index);
     setImages(newImages);
     if (selectedImage === images[index]) {
-      setSelectedImage(newImages[0] || null);
+      setSelectedImage(null);
     }
   };
+
+  console.log({ selectedImage: selectedImage });
 
   return (
     <PageWrapper>
