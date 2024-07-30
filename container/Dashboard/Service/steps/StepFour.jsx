@@ -104,10 +104,10 @@ const StepFour = ({ handleNext }) => {
   };
 
   const handleButtonClick = () => {
-    if (images.length === 0) {
-      document.getElementById("image-upload").click();
-    } else if (images.length >= 2) {
+    if (images.length >= 2) {
       handleNext();
+    } else {
+      document.getElementById("image-upload").click();
     }
   };
 
@@ -168,11 +168,7 @@ const StepFour = ({ handleNext }) => {
         <TipItem>• Maintain a clear focus.</TipItem>
       </TipsList>
 
-      <button
-        className="black-button"
-        onClick={handleButtonClick}
-        disabled={images.length < 2}
-      >
+      <button className="black-button" onClick={handleButtonClick}>
         {images.length === 0
           ? "Capture"
           : images.length < 2
