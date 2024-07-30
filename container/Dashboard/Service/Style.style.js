@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ServiceStyle = styled.div`
   
-  padding: 0 1rem 2rem;
+  padding:  1rem 2rem;
   height: 100vh;
   
   /* Hide scrollbar for WebKit browsers (Chrome, Safari, Edge) */
