@@ -7,7 +7,7 @@ export default function StepFive({ handleNext }) {
         src="/images/map.png"
         style={{
           position: "absolute",
-          top: "-3rem",
+          top: "0",
           left: "0",
           zIndex: "-1",
         }}
