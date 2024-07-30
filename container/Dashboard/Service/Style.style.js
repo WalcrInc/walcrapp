@@ -42,7 +42,19 @@ export const ServiceStyle = styled.div`
     font-size: 22px;
     font-style: normal;
     font-weight: 700;
+    margin-top: 1rem;
     line-height: 24px; /* 133.333% */
+  }
+
+  header .small_paragraph {
+    color: var(--Primary-black, var(--Hyperlink, #1A1A1A));
+    /* Body 16px Regular */
+    font-family: Mulish;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
+    margin-top: 0px;
   }
 
   .step_one_header {
