@@ -46,6 +46,9 @@ const useRoutes = () => {
   const handleHoursRoute = () => {
     return router.push("/hours");
   };
+  const handleServiceRoute = () => {
+    return router.push("/services");
+  };
   const handleTasksRoute = () => {
     return router.push("/tasts");
   };
@@ -66,6 +69,7 @@ const useRoutes = () => {
     handleCancelRoute,
     handleHoursRoute,
     handleTasksRoute,
+    handleServiceRoute,
   };
 };
 

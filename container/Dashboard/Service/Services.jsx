@@ -15,6 +15,8 @@ import StepTwo from "./steps/StepTwo";
 import StepThree from "./steps/StepThree";
 import StepFour from "./steps/StepFour";
 import StepFive from "./steps/StepFive";
+import StepSix from "./steps/StepSix";
+import StepSeven from "./steps/StepSeven";
 
 const Service = () => {
   const [selectedService, setSelectedService] = useState(null);
@@ -45,9 +47,7 @@ const Service = () => {
   };
 
   const handleNext = () => {
-    if (step !== 5) {
-      setStep((prev) => prev + 1);
-    }
+    setStep((prev) => prev + 1);
 
     window.scrollTo(0, 0); // Scroll to the top of the page
   };
@@ -135,7 +135,7 @@ const Service = () => {
         </header>
 
         <div className="body">
-          {step === 1 && (
+          {step === 7 && (
             <StepOne
               searchService={searchService}
               setSearchService={setSearchService}
@@ -155,6 +155,10 @@ const Service = () => {
           {step === 3 && <StepThree handleNext={handleNext} />}
           {step === 4 && <StepFour handleNext={handleNext} />}
           {step === 5 && <StepFive handleNext={handleNext} />}
+          {step === 6 && <StepSix handleNext={handleNext} />}
+          {step === 1 && (
+            <StepSeven searchService={searchService} handleNext={handleNext} />
+          )}
         </div>
       </main>
     </ServiceStyle>

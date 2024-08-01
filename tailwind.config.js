@@ -1,12 +1,19 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx}',   // Includes all files in the pages directory with the specified extensions
-    './components/**/*.{js,ts,jsx,tsx}', // Includes all files in the components directory with the specified extensions
-    './hooks/**/*.{js,ts,jsx,tsx}', // Includes all files in the hooks directory with the specified extensions
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./container/**/*.{js,ts,jsx,tsx,mdx}",
+
+    // Or if using `src` directory:
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {},
+    fontFamily: {
+      "mulish": ["Mulish", "sans-serif"]
+    }
   },
   plugins: [],
 }

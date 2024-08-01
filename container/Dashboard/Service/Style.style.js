@@ -327,4 +327,147 @@ accent-color:#1a1a1a ;
     border-radius: 10px;
     border: 1px solid #D9DDEA;
   }
+
+  .available_walkers_map {
+    width: 100%;
+    position: absolute;
+     top: 0;
+    left: 0;
+    z-index: -1;
+    max-height: 100vh;
+    width: 100%;
+  }
+
+  .available_taskwalker {
+    position: absolute;
+    top: calc(20% + 112px);
+    background: #fff;
+    // background: linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.00) 100%);
+    padding: 1rem;
+    width: 100%;
+    margin-left: -1rem;
+    height: calc(100vh - 20% - 112px);
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+  }
+
+   .overlay {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    width: 100%;
+    height: 112px;
+    background: url("/images/overlay.svg");
+  }
+
+  .available_taskwalker h2 {
+    color: var(--Primary-black, #1A1A1A);
+    font-family: Mulish;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px; /* 96% */
+  }
+
+  .walker_specs {
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+  }
+
+  .walker_info {
+    flex-grow: 1;
+    overflow; scroll;
+    margin-top: 1rem;
+  }
+  
+  .walker_details {
+    display: flex;
+    gap: 10px;
+    align-items:center;
+  }
+
+  .profile_image_component {
+    padding: 4px;
+    background: #F3F3F3;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .online_icon{
+    position: absolute;
+    bottom: 4px;
+    right:4px;
+  }
+  .image_wrapper {
+    display: flex;
+    align-items: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+  }
+
+  .walker_basics{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .walker_basics > p {
+    color: var(--Black, #000);
+    font-family: Mulish;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 10px; /* 90.909% */
+  }
+
+  .walker_name,
+  .walker_location {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .walker_name > p {
+    color: var(--Black, #000);
+    font-family: Mulish;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 10px; /* 66.667% */
+  }
+
+  .walker_location > p {
+    color: #979797;
+    font-family: Mulish;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 10px; /* 76.923% */
+  }  
+    
+  .walker_contacts {
+    border-radius: 13px;
+    background: rgba(245, 245, 245, 0.82);
+    padding: 6px 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .walker_contacts > .message{
+    position: relative;
+  }
+    
+  .walker_contacts > .message > span {
+    position: absolute;
+    top: -2px;
+    left:-2px;
+  }
 `;

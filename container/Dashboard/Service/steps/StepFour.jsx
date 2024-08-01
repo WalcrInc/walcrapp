@@ -130,8 +130,6 @@ const StepFour = ({ handleNext }) => {
     }
   }, [images, selectedImage]);
 
-  console.log({ selectedImage: selectedImage });
-
   return (
     <PageWrapper>
       <ImagePreview>
