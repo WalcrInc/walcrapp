@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import CustomModal from "./CustomModal";
 import styled from "@emotion/styled";
-import { Spinner } from "@/assets";
+import { Spinner } from "@chakra-ui/react";
 
 const PageWrapper = styled.div`
   filter: ${(props) => (props.blackAndWhite ? "grayscale(100%)" : "none")};
