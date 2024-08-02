@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import CustomModal from "./CustomModal";
 import styled from "@emotion/styled";
+import { Spinner } from "@/assets";
 
 const PageWrapper = styled.div`
   filter: ${(props) => (props.blackAndWhite ? "grayscale(100%)" : "none")};
@@ -29,6 +30,7 @@ export default function StepThree({ handleNext }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [locationPermission, setLocationPermission] = useState("prompt");
   const [blackAndWhite, setBlackAndWhite] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
@@ -39,43 +41,35 @@ export default function StepThree({ handleNext }) {
   };
 
   const requestLocationAccess = async () => {
+    setLoading(true);
     if (navigator.permissions && navigator.geolocation) {
       try {
         const permission = await navigator.permissions.query({
           name: "geolocation",
         });
 
-        if (permission.state === "granted") {
-          // Permission already granted, get position
+        if (permission.state === "granted" || permission.state === "prompt") {
           getPosition();
-        } else if (permission.state === "prompt") {
-          // Will show a prompt, get position
-          getPosition();
-        } else if (permission.state === "denied") {
-          // Permission denied, show instructions to enable
-          setLocationPermission("denied");
-          setBlackAndWhite(true);
-          alert(
-            "Please enable location access in your browser settings to use this feature."
-          );
+        } else {
+          handlePermissionDenied();
         }
 
-        // Listen for changes to the permission state
         permission.onchange = () => {
           if (permission.state === "granted") {
             getPosition();
           } else {
-            setLocationPermission("denied");
-            setBlackAndWhite(true);
+            handlePermissionDenied();
           }
         };
       } catch (error) {
         console.error("Error checking permission:", error);
-        setLocationPermission("denied");
-        setBlackAndWhite(true);
+        handlePermissionDenied();
+      } finally {
+        setLoading(false);
       }
     } else {
       alert("Geolocation is not supported by this browser.");
+      setLoading(false);
     }
   };
 
@@ -88,9 +82,16 @@ export default function StepThree({ handleNext }) {
       },
       (error) => {
         console.error("Error getting position:", error);
-        setLocationPermission("denied");
-        setBlackAndWhite(true);
+        handlePermissionDenied();
       }
+    );
+  };
+
+  const handlePermissionDenied = () => {
+    setLocationPermission("denied");
+    setBlackAndWhite(true);
+    alert(
+      "Please enable location access in your browser settings to use this feature."
     );
   };
 
@@ -120,7 +121,7 @@ export default function StepThree({ handleNext }) {
           </p>
         </div>
         <button className="black-button" onClick={requestLocationAccess}>
-          Allow Access
+          {loading ? <Spinner /> : "Allow Access"}
         </button>
         {locationPermission === "denied" && (
           <LinkButton>Address Settings</LinkButton>
