@@ -49,7 +49,7 @@ const Subtitle = styled.p`
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  padding: 0px 1.5rem;
+  padding: 0.5rem 2.5rem;
 `;
 
 const Divider = styled.hr`
