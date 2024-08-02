@@ -138,11 +138,11 @@ const SideNavbar = ({ showNav, setShowNav, info, setShowNotification }) => {
                 </p>
               </Link>
 
-              <Link href={"/message"} className="inactive link_info">
+              {/* <Link href={"/message"} className="inactive link_info">
                 <p>
                   <MessageIcon />  Messages
                 </p>
-              </Link>
+              </Link> */}
 
 
               <hr style={{ width: "100%" }} />
