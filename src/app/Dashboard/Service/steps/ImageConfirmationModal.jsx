@@ -71,7 +71,7 @@ export const ImageConfirmationModal = ({ image, onConfirm, onCancel }) => (
         Take a clear picture of the task or you need help with
       </ModalTitle>
       <ModalDescription>
-        This will allow us to give you a precise estimate of the task's duration
+        This will allow us to give you a precise estimate of the task&apos;s duration
         and charges.
       </ModalDescription>
       <PreviewImage src={image} alt="Preview" />

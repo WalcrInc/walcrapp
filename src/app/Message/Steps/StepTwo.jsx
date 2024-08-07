@@ -57,7 +57,7 @@ const StepTwo = ({ handlePrev, message }) => {
             <p>Hi!</p>
           </div>
           <div className="message sent">
-            <p>I'm on my way already</p>
+            <p>I&apos; on my way already</p>
           </div>
         </div>
 

@@ -1,4 +1,4 @@
-import { Message } from "@app/Message";
+import { Message } from "@/app/Message";
 import React from "react";
 
 const message = () => {
