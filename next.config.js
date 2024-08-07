@@ -6,7 +6,8 @@ const withPWA = require('next-pwa')({
 })
 
 module.exports = withPWA({
-  // next.js config
   reactStrictMode: false,
   swcMinify: false,
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx'],
+  dir: 'src',
 })

@@ -1,0 +1,30 @@
+.Container span{
+    font-size: 14px;
+}
+.Container h1{
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 7px;
+}
+.Container p{
+    font-size: 16px;
+    margin-bottom: 7px;
+}
+
+.RadioContainer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #c8c8c88d;
+    border-radius: 10px;
+    padding: 3px 10px;
+    margin: 10px 0;
+}
+.RadioContainer h1{
+    margin-bottom: -3px;
+}
+.Image{
+    margin-right: 10px;
+}

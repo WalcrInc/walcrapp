@@ -1,1 +1,0 @@
-export {ForgotPass} from "./ForgotPass"
