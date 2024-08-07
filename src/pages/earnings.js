@@ -1,9 +1,11 @@
 import React from 'react'
-import { Earnings } from '../app/Earnings/Earnings'
+import Earnings from './Earnings/Earnings'
 
 const earnings = () => {
   return (
-    <Earnings />
+    <div>
+      <Earnings />
+    </div>
   )
 }
 

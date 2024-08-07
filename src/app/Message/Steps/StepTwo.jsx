@@ -1,6 +1,8 @@
 import {
-  BackIcon,
+  AddIconThin,
+  BackIconX,
   CallIcon,
+<<<<<<< HEAD:src/app/Message/Steps/StepTwo.jsx
   CameraIcon,
   Location_Grey,
   MicrophoneIcon,
@@ -11,6 +13,12 @@ import {
   InputLeftElement,
   InputRightElement,
 } from "@chakra-ui/react";
+=======
+  SendMessageIcon,
+  UserIcon,
+  UserPlusIcon,
+} from "@/assets";
+>>>>>>> 159f54632072f5ad3ee4ea0b777b3cac67432db1:container/Message/Steps/StepTwo.jsx
 import Image from "next/image";
 import React from "react";
 
@@ -20,7 +28,7 @@ const StepTwo = ({ handlePrev, message }) => {
       <div className="header">
         <div className="back-icon-text">
           <span onClick={handlePrev}>
-            <BackIcon />
+            <BackIconX />
           </span>
           <div className="icon-text">
             <div className="icon">
@@ -39,12 +47,16 @@ const StepTwo = ({ handlePrev, message }) => {
         </div>
 
         <div className="icons">
+          <div className="add-user">
+            <UserIcon />
+            <i><UserPlusIcon /></i>
+          </div>
           <CallIcon />
-          <CameraIcon />
         </div>
       </div>
 
       <div className="body">
+<<<<<<< HEAD:src/app/Message/Steps/StepTwo.jsx
         <div className="info">
           <div className="info-icon">
             <Image
@@ -53,29 +65,33 @@ const StepTwo = ({ handlePrev, message }) => {
               width={100}
               alt="profile-picture"
             />
+=======
+        <div className="messages">
+          <div className="date-holder">
+            <span className="date">Today</span>
           </div>
-          <h1>{message.name}</h1>
-          <p>
-            <Location_Grey /> {message.location}
-          </p>
+          <div className="message received">
+            <span className="time">15:29</span>
+            <p>Hello!</p>
+            <p>Oh okay I can see you from...</p>
+          </div>
+          <div className="message sent">
+            <p className="time">15:29</p>
+            <p>Hi!</p>
+          </div>
+          <div className="message sent">
+            <p>I'm on my way already</p>
+>>>>>>> 159f54632072f5ad3ee4ea0b777b3cac67432db1:container/Message/Steps/StepTwo.jsx
+          </div>
         </div>
 
+
         <div className="input">
-          <InputGroup
-            box-shadow="0px 0px 0px 1px #CDD1DC"
-            width={"320px"}
-            size={"lg"}
-            borderRadius={"16px"}
-          >
-            <InputLeftElement>😁</InputLeftElement>
-            <Input placeholder="Send message" />
-            <InputRightElement>
-              <CameraIcon />
-            </InputRightElement>
-          </InputGroup>
-          <span className="microphone">
-            <MicrophoneIcon />
-          </span>
+          <i><AddIconThin /></i>
+          <input
+            type="text"
+          />
+          <i><SendMessageIcon /></i>
         </div>
       </div>
     </div>

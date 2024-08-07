@@ -1,13 +1,9 @@
 import React from "react";
 import { TaskwalkerStyle } from "./TaskWalcr.style";
-import {
-  BackIcon,
-  CreateIcon,
-  LocationIconX,
-  ShieldIcon,
-} from "@/assets/index";
+import { BackIcon, CreateIcon, LocationIconX, ShieldIcon } from "@/assets";
 import { Button } from "@chakra-ui/react";
 import useRoutes from "@/features/Hooks/Routes/Routes";
+import Image from "next/image";
 
 const TaskWalcr = () => {
   const { handleHomeRoute, handleLoginRoute, handleWalcrOnboardingRoute } =
@@ -51,31 +47,71 @@ const TaskWalcr = () => {
 
       <div className="section-2">
         <div className="box">
-          <div className="sub-box">
+          {/* <Image
+            src={"/images/dots.svg"}
+            width={16}
+            height={100}
+            alt="Dots"
+            style={{
+              position: "absolute",
+              left: "5rem",
+            }}
+          /> */}
+          <div className="sub-box" style={{ position: "relative" }}>
             <span>
               <CreateIcon />
             </span>
+            <Image
+              src={"/images/dots.svg"}
+              alt={"Dots"}
+              width={16}
+              height={100}
+              style={{
+                position: "absolute",
+                left: "3.65rem",
+                top: "8px",
+              }}
+            />
             <div className="text">
               <h1>Create a Task</h1>
               <p>Offer your services to a global audience and start earning.</p>
             </div>
           </div>
-          <div className="sub-box">
+          <div className="sub-box" style={{ position: "relative" }}>
             <span>
               <LocationIconX />
             </span>
+            <Image
+              src="/images/Radio copy.svg"
+              alt={"radio button"}
+              height={16}
+              width={16}
+              style={{
+                position: "absolute",
+                left: "3.65rem",
+                top: "8px",
+              }}
+            />
             <div className="text">
               <h1>Complete your task</h1>
-              <p>
-                Use our built-in tools to communicate with your customers and
-                deliver their orders.
-              </p>
+              <p>Use our tools to connect with customers and deliver orders.</p>
             </div>
           </div>
-          <div className="sub-box">
+          <div className="sub-box" style={{ position: "relative" }}>
             <span>
               <ShieldIcon />
             </span>
+            <Image
+              src="/images/Radio copy.svg"
+              alt={"radio button"}
+              height={16}
+              width={16}
+              style={{
+                position: "absolute",
+                left: "3.65rem",
+                top: "8px",
+              }}
+            />
             <div className="text">
               <h1>Get paid</h1>
               <p>
@@ -86,16 +122,18 @@ const TaskWalcr = () => {
           </div>
         </div>
       </div>
-      <Button
-        size={"lg"}
-        background={"#1a1a1a"}
-        color={"#fff"}
-        width={"100%"}
-        borderReadius={"16px"}
+      <button
+        style={{
+          background: "#1a1a1a",
+          padding: "1rem",
+          color: "#ffffff",
+          borderRadius: "1rem",
+          width: "100%",
+        }}
         onClick={handleWalcrOnboardingRoute}
       >
         Continue
-      </Button>
+      </button>
     </TaskwalkerStyle>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Map from "./Map";
 import AddressInput from "./Input";
-import { BackIcon } from "@/assets/index";
+import { BackIcon, Spinner } from "@/assets";
 
 const FinalMap = ({ handleNext, handlePrev }) => {
   const [address, setAddress] = useState("");
@@ -77,16 +77,18 @@ const FinalMap = ({ handleNext, handlePrev }) => {
       );
   };
   return (
-    <div style={{ height: "100dvh", overflow: "hidden" }}>
+    <div style={{ height: "100%", overflow: "hidden" }}>
       {isLoading ? (
-        <div>Loading...</div>
+        <div style={{ height: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <Spinner />
+        </div>
       ) : (
         <>
           <div
             style={{
               position: "absolute",
               zIndex: "1",
-              padding: "5%",
+              padding: "2rem 4%",
             }}
             onClick={handlePrev}
           >

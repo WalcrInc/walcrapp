@@ -1,18 +1,34 @@
-import { BackIcon } from "@/assets/index";
+import {
+  BackIconX,
+  ElsewhereIconLarge,
+  HomeLarge,
+  SearchIconFlipped,
+} from "@/assets";
 import React, { useEffect, useState } from "react";
 import { ServicesTypes } from "./data";
 import { ServiceStyle } from "./Style.style";
-import { Button } from "@chakra-ui/react";
 import useFetchData, {
   BASE_URL,
 } from "@/features/Hooks/useFetchDataHook/useFetchData";
 import { useRouter } from "next/router";
+import { Bubble } from "react-chartjs-2";
+import StepOne from "./steps/StepOne";
+import StepTwo from "./steps/StepTwo";
+import StepThree from "./steps/StepThree";
+import StepFour from "./steps/StepFour";
+import StepFive from "./steps/StepFive";
+import StepSix from "./steps/StepSix";
+import StepSeven from "./steps/StepSeven";
+import StepEight from "./steps/StepEight";
 
 const Service = () => {
   const [selectedService, setSelectedService] = useState(null);
   const [service, setService] = useState([]);
   const [step, setStep] = useState(1);
+  const [location, setLocation] = useState("home");
+  const [searchService, setSearchService] = useState("");
   const router = useRouter();
+
   const handleClick = (serviceName) => {
     const selectedService = service.find(
       (service) => service.name === serviceName
@@ -29,6 +45,12 @@ const Service = () => {
     } else {
       setStep((prev) => prev - 1);
     }
+
+    window.scrollTo(0, 0); // Scroll to the top of the page
+  };
+
+  const handleNext = () => {
+    setStep((prev) => prev + 1);
 
     window.scrollTo(0, 0); // Scroll to the top of the page
   };
@@ -52,59 +74,94 @@ const Service = () => {
 
   return (
     <ServiceStyle>
-      <header>
-        {step === 1 && (
-          <>
+      <main>
+        <header>
+          {step === 1 && (
             <span onClick={handlePrev}>
-              <BackIcon />
+              <BackIconX />
             </span>
-            <h1>Select service type</h1>
-          </>
-        )}
-        {step === 2 && (
-          <>
-            <span onClick={handlePrev}>
-              <BackIcon />
-            </span>
-            <h1>{selectedService.header}</h1>
-          </>
-        )}
-      </header>
-
-      <div className="body">
-        {step === 1 && (
-          <div className="big-box">
-            {service?.map(({ name, _id, icon }) => (
-              <div key={_id} className="box" onClick={() => handleClick(name)}>
-                <span>{icon}</span>
-                <h1>{name}</h1>
-                {/* <p>{details}</p> */}
+          )}
+          {step === 2 && (
+            <>
+              <div className="service_header">
+                <span onClick={handlePrev}>
+                  <BackIconX />
+                </span>
+                <h1>{selectedService.name}</h1>
+                <div></div>
               </div>
-            ))}
-          </div>
-        )}
-        {step === 2 && selectedService && (
-          <div className="questions">
-            <div>
-              {selectedService.questions.map((question, index) => (
-                <label key={index}>
-                  <p>{question}</p>
-                  <input type="radio" />
-                </label>
-              ))}
-            </div>
+            </>
+          )}
+          {step === 3 && (
+            <>
+              <div className="service_header">
+                <span onClick={handlePrev}>
+                  <BackIconX />
+                </span>
+              </div>
+            </>
+          )}
+          {step === 4 && (
+            <>
+              <div className="service_header">
+                <span onClick={handlePrev}>
+                  <BackIconX />
+                </span>
+              </div>
+            </>
+          )}
+          {step === 5 && (
+            <>
+              <div className="service_header">
+                <span onClick={handlePrev}>
+                  <BackIconX />
+                </span>
+              </div>
+            </>
+          )}
+          {step === 7 && (
+            <>
+              <div className="service_header">
+                <span onClick={handlePrev}>
+                  <BackIconX />
+                </span>
+              </div>
+            </>
+          )}
+        </header>
 
-            <Button
-              size={"lg"}
-              width={"100%"}
-              color={"#fff"}
-              background={"#1a1a1a"}
-            >
-              Continue
-            </Button>
-          </div>
-        )}
-      </div>
+        <div className="body">
+          {step === 1 && (
+            <StepOne
+              searchService={searchService}
+              setSearchService={setSearchService}
+              service={service}
+              handleClick={handleClick}
+            />
+          )}
+          {step === 2 && selectedService && (
+            <StepTwo
+              searchService={searchService}
+              setSearchService={setSearchService}
+              handleNext={handleNext}
+              selectedService={selectedService}
+            />
+          )}
+
+          {step === 3 && <StepThree handleNext={handleNext} />}
+          {step === 4 && <StepFour handleNext={handleNext} />}
+          {step === 5 && <StepFive handleNext={handleNext} />}
+          {step === 6 && <StepSix handleNext={handleNext} />}
+          {step === 7 && (
+            <StepSeven
+              searchService={searchService}
+              handleNext={handleNext}
+              handlePrev={handlePrev}
+            />
+          )}
+          {step === 8 && <StepEight />}
+        </div>
+      </main>
     </ServiceStyle>
   );
 };

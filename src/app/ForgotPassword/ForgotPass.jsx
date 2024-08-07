@@ -21,7 +21,7 @@ const ForgotPass = () => {
 
       <div className="header">
         <h1> Enter your number</h1>
-        <p>We’ll send a code for verification</p>
+        <p>We&apos;ll send a code for verification</p>
       </div>
 
       <form>

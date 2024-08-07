@@ -11,10 +11,18 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { ImageProvider } from "@/components/Capture/ImageContext";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+// import { useEffect } from "react";
+import useServiceWorker from "@/features/Hooks/useServiceWorker";
+
 
 const queryClient = new QueryClient();
 
+
 export default function App({ Component, pageProps }) {
+
+  useServiceWorker();
+
   return (
     <ThemeProvider theme={theme}>
       <ToastContainer />

@@ -1,10 +1,12 @@
-import { Onboarding } from '@/app/Onboarding/Onboarding'
-import React from 'react'
+import { Onboarding } from "@app/Onboarding";
+import React from "react";
 
 const onboarding = () => {
   return (
-    <div><Onboarding /></div>
-  )
-}
+    <div>
+      <Onboarding />
+    </div>
+  );
+};
 
-export default onboarding
+export default onboarding;

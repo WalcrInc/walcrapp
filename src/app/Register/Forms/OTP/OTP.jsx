@@ -34,10 +34,12 @@ const OTP = ({ handlePrev, handleNext }) => {
       setOtpValues(newValues);
     };
 
+
     const pinInput = document.getElementById("pin-input");
     pinInput?.addEventListener("paste", handlePaste);
 
     return () => {
+
       pinInput?.removeEventListener("paste", handlePaste);
     };
   }, []);
@@ -75,7 +77,9 @@ const OTP = ({ handlePrev, handleNext }) => {
                 _focus={{
                   border: "2px solid #1A1A1A",
                   outline: "none",
+                  backgroundColor: "#ffffff"
                 }}
+                type="tel"
               />
             ))}
           </PinInput>

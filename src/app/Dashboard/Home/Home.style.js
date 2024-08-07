@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const HomeStyle = styled.div`
   .header {
-    padding: 6%;
-    height: 230px;
+    padding: 3rem 6% 2rem;
+    height: 250px;
     background: #1a1a1a;
     display: flex;
     flex-direction: column;
@@ -20,7 +20,7 @@ export const HomeStyle = styled.div`
     font-size: 24px;
   }
   .header .text h1 span {
-   font-weight:800;
+    font-weight: 800;
     font-size: 24px;
   }
   .header .text p {
@@ -31,11 +31,11 @@ export const HomeStyle = styled.div`
   }
 
   .wallet-balance {
-    background: #F7F7F7;
+    background: #f7f7f7;
     position: relative;
-    border-radius:  16px;
-    height:100px ;
-    padding:7% 5%;
+    border-radius: 16px;
+    height: 100px;
+    padding: 7% 5%;
     width: 90%;
     left: 0;
     margin: auto;
@@ -49,12 +49,11 @@ export const HomeStyle = styled.div`
     display: flex;
     flex-direction: column;
     gap: 2px;
-    margin:31px 0 ;
+    margin: 31px 0;
   }
   .wallet-balance .text p {
     font-size: 14px;
     font-weight: 400;
-    
   }
   .wallet-balance .text h1 {
     font-size: 34px;
@@ -67,7 +66,7 @@ export const HomeStyle = styled.div`
     gap: 20px;
     padding: 0 6%;
     position: relative;
-    top:-20px;
+    top: -20px;
   }
 
   .quick-actions h1 {
@@ -86,7 +85,7 @@ export const HomeStyle = styled.div`
     display: flex;
     flex-direction: column;
     gap: 15px;
-    padding: 5% 2%;
+    padding: 1rem;
     border: 1px solid #f0f2f6;
     width: 100%;
     border-radius: 16px;

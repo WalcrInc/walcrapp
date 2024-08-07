@@ -4,7 +4,7 @@ export const ForgotStyle = styled.div`
   display: flex;
   flex-direction: column;
   gap: 40px;
-  padding: 6% 4% 3% 4%;
+  padding: 2rem 4% 3% 4%;
 
   .header h1 {
     font-size: 30px;
@@ -17,12 +17,11 @@ export const ForgotStyle = styled.div`
   }
 
   form {
-    display:flex ;
+    display: flex;
     flex-direction: column;
     gap: 40px;
   }
-  button:focus{
-   background: black;
+  button:focus {
+    background: black;
   }
-
 `;

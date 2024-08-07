@@ -3,10 +3,10 @@
   "short_name": "Walcr",
   "start_url": "/",
   "background_color": "#ffffff",
-  "display": "standalone",
-  "orientation":"portrait",
-  "theme_color": "#f00000",
+  "display": "fullscreen",
+  "orientation": "portrait",
   "scope": "/",
+  "categories": ["productivity", "business"],
   "icons": [
     {
       "src": "images/walcr-l-144.png",
@@ -25,10 +25,9 @@
     },
     {
       "src": "images/walcr-l-512.png",
-      "type": "image/png",                                       
+      "type": "image/png",
       "sizes": "512x512"
     }
-   
   ],
   "screenshot": [
     {
@@ -43,5 +42,6 @@
       "sizes": "any",
       "form_factor": "wide"
     }
-  ]
+  ],
+  "lang": "en"
 }

@@ -44,7 +44,7 @@ const Phone = ({ handlePrev }) => {
     e.preventDefault();
     if (formik.isValid) {
       console.log(mergedData);
-      await dispatch(register(mergedData));
+      await dispatch(register(mergedData))
     }
   };
 
@@ -100,17 +100,21 @@ const Phone = ({ handlePrev }) => {
             />
           </Box>
         </FormControl>
-        <Button
-          border={"none"}
-          outline={"none"}
-          color={"#fff"}
-          background={"#1A1A1A"}
-          padding={"25px 14px"}
-          borderRadius={"16px"}
+        <button
           type="submit"
+          style={{
+            backgroundColor: "#1a1a1a",
+            color: "#fff",
+            padding: "1rem",
+            borderRadius: "1rem",
+            width: "100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center"
+          }}
         >
           {isLoading ? <Spinner /> : "Continue"}
-        </Button>
+        </button>
       </form>
     </ForgotStyle>
   );

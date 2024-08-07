@@ -4,20 +4,21 @@ export const AuthStyle = styled.div`
   display: flex;
   flex-direction: column;
   gap: 30px;
-  padding: 6% 4% 3% 4%;
-  height:100dvh;
-  overflow:scroll ;
-  input:focus{
+  padding: 6% 4% 2% 4%;
+  height: 100%;
+  overflow: scroll;
+
+  input:focus {
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
   }
-  button:focus{
-   background: grey;
+  button:focus {
+    background: grey;
   }
 
-  .header{
-    display:flex ;
-    flex-direction:column ;
-    gap:5px;
+  .header {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
   }
   .header h1 {
     font-size: 30px;
@@ -28,25 +29,26 @@ export const AuthStyle = styled.div`
     font-weight: 400;
     color: #5b6178;
   }
-.custom-phone-input{
-    box-shadow:0 0 0 1px #CDD1DC ;
-    border:none ;
-}
+  .custom-phone-input {
+    box-shadow: 0 0 0 1px #cdd1dc;
+    border: none;
+  }
   .active {
-    border-bottom: 2px solid #f18341;
     transition: 0.5s ease-in-out;
+    color: #1a1a1a;
   }
-  .error{
-    color:#FB2047 ;
-    font-size:12px ;
-    display:flex ;
-    gap:2px;
-    align-items:center ;
-    margin-top:10px ;
+  .error {
+    color: #fb2047;
+    font-size: 12px;
+    display: flex;
+    gap: 2px;
+    align-items: center;
+    margin-top: 10px;
   }
- .options {
+  .options {
     display: flex;
     gap: 20px;
+    color: #8c92ab;
   }
 
   /* .option {
@@ -74,9 +76,9 @@ export const AuthStyle = styled.div`
     gap: 15px;
   }
   .checkbox {
-    display:flex ;
-    align-items:center ;
-    gap:5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
     color: #1a1a1a;
     font-size: 16px;
     font-weight: 400;

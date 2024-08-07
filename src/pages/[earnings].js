@@ -1,65 +1,50 @@
-import React from 'react';
-import { useRouter } from 'next/router';
-import { Box, Heading } from '@chakra-ui/react';
+import React from "react";
+import { useRouter } from "next/router";
+import { Box, Heading } from "@chakra-ui/react";
 
+// Fetch the list of paths we want to pre-render
 export async function getStaticPaths() {
-  try {
-    // Example API call to fetch earnings data
-    const res = await fetch('https://api.example.com/earnings');
-    const earningsData = await res.json();
+  // Example data fetching from an API
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+  const posts = await res.json();
 
-    // Map the earnings data to paths
-    const paths = earningsData.map((earning) => ({
-      params: { earnings: earning.id.toString() },
-    }));
+  // Get the paths we want to pre-render based on posts
+  const paths = posts.map((post) => ({
+    params: { earnings: post.id.toString() },
+  }));
 
-    // Return the paths
-    return { paths, fallback: false };
-  } catch (error) {
-    console.error('Error fetching static paths:', error);
-    return { paths: [], fallback: false };
-  }
+  // We'll pre-render only these paths at build time.
+  // { fallback: false } means other routes should 404.
+  return { paths, fallback: false };
 }
 
+// Fetch the data for a specific post
 export async function getStaticProps({ params }) {
-  try {
-    // Fetch data for a specific earnings entry
-    const res = await fetch(`https://api.example.com/earnings/${params.earnings}`);
-    const earning = await res.json();
+  // params contains the post `earnings`.
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${params.earnings}`);
+  const post = await res.json();
 
-    // Return the earnings data as props
-    return { props: { earning } };
-  } catch (error) {
-    console.error('Error fetching static props:', error);
-    return { props: { earning: null } };
-  }
+  // Pass post data to the page via props
+  return { props: { post } };
 }
 
-const EarningsPage = ({ earning }) => {
+const Post = ({ post }) => {
   const router = useRouter();
 
+  // If the page is not yet generated, this will be displayed initially until
+  // the page is generated.
   if (router.isFallback) {
     return <div>Loading...</div>;
-  }
-
-  if (!earning) {
-    return (
-      <Box textAlign="center" py={10} px={6}>
-        <Heading as="h1" size="xl" mb={6}>
-          Earning data not found
-        </Heading>
-      </Box>
-    );
   }
 
   return (
     <Box textAlign="center" py={10} px={6}>
       <Heading as="h1" size="xl" mb={6}>
-        Earnings: {earning.title}
+        {post.title}
       </Heading>
-      <p>{earning.description}</p>
+      <p>{post.body}</p>
     </Box>
   );
 };
 
-export default EarningsPage;
+export default Post;

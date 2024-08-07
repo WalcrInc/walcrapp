@@ -1,18 +1,41 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { OnboardingStyle } from "./Onboarding.style";
-import { BackIcon, BackIconX, Next_Icon } from "@/assets/index";
-import Image from "next/image";
+import { BackIcon, BackIconX, Next_Icon } from "@/assets";
 import { useRouter } from "next/router";
-import { Page } from "./Home";
+import { Page } from "./Home/Page";
 import { Options } from "./Options/Options";
-import AroundTheWorld from "./images/around-the-world-animate.svg";
-import GutterCleaning from "./images/gutter-cleaning-animate.svg";
-import QualityTime from "./images/quality-time-in-nature-animate.svg";
+import SplashScreen from "./SplashScreen";
 
 const Onboarding = () => {
-  const [currentStep, setCurrentStep] = useState(1);
+  const [currentStep, setCurrentStep] = useState(0); // Start with 0 for splash screen
+  const [showSplashScreen, setShowSplashScreen] = useState(true);
   const totalSteps = 5;
   const router = useRouter();
+
+  // Initialize step from local storage if available
+  useEffect(() => {
+    const savedStep = localStorage.getItem("currentStep");
+    if (savedStep) {
+      setCurrentStep(parseInt(savedStep, 10));
+    }
+  }, []);
+
+  // Save the current step to local storage
+  useEffect(() => {
+    if (currentStep > 0) {
+      localStorage.setItem("currentStep", currentStep.toString());
+    }
+  }, [currentStep]);
+
+  const handleSplashScreenFinish = () => {
+    setShowSplashScreen(false);
+    const savedStep = localStorage.getItem("currentStep");
+    if (savedStep) {
+      setCurrentStep(parseInt(savedStep, 10));
+    } else {
+      setCurrentStep(1);
+    }
+  };
 
   const handleNext = () => {
     if (currentStep === totalSteps) {
@@ -30,6 +53,12 @@ const Onboarding = () => {
   const handleRoute = () => {
     return router.push("/login");
   };
+
+  console.log(currentStep);
+
+  if (showSplashScreen) {
+    return <SplashScreen onFinish={handleSplashScreenFinish} />;
+  }
 
   return (
     <>
@@ -49,12 +78,7 @@ const Onboarding = () => {
           <div className="body">
             {currentStep === 2 && (
               <div className="step-one">
-                {/* <div className="icon"></div> */}
-                <Image
-                  src={AroundTheWorld}
-                  alt="around the world"
-                  style={{ width: "350px", margin: "auto" }}
-                />
+                <div className="icon"></div>
                 <div className="text">
                   <h1>Lorem ipsum dolor sit amet</h1>
                   <p>
@@ -65,28 +89,19 @@ const Onboarding = () => {
             )}
             {currentStep === 3 && (
               <div className="step-two">
-                {/* <div className="icon"></div> */}
-                <Image
-                  src={GutterCleaning}
-                  alt="image 2"
-                  style={{ width: "350px", margin: "auto" }}
-                />
+                <div className="icon"></div>
                 <div className="text">
-                  <h1>Lorem ipsum dolor sit amet</h1>
+                  <h1>Task it Done. Save up time.</h1>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Find your perfect fit from our pool of TaskWalkers quickly,
+                    and get great work done in less time, every time.
                   </p>
                 </div>
               </div>
             )}
             {currentStep === 4 && (
               <div className="step-three">
-                {/* <div className="icon"></div> */}
-                <Image
-                  src={QualityTime}
-                  alt="image 3"
-                  style={{ width: "350px", margin: "auto" }}
-                />
+                <div className="icon"></div>
                 <div className="text">
                   <h1>Lorem ipsum dolor sit amet</h1>
                   <p>

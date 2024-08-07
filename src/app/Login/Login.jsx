@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Link from "next/link";
-import { AppleIcon, GoogleIcon, Spinner } from "@/assets/index";
+import { AppleIcon, GoogleIcon, Spinner, SearchIconSmall } from "@/assets";
 import { FormWithEmail } from "./Form/FormWithEmail";
 import { FormWithPhone } from "./Form/FormWithPhone";
 import { Box } from "@chakra-ui/react";
@@ -72,7 +72,19 @@ const Login = () => {
             Keep me signed in
           </label>
           <span className="span">
-            <Link href={"/forgot-password"}>Forgot password?</Link>
+            <Link
+              href={"/forgot-password"}
+              style={{
+                textDecoration: "none",
+                color: "#1a1a1a",
+                display: "flex",
+                gap: "8px",
+                alignItems: "center"
+              }}
+            >
+              <i style={{ fontSize: "1rem" }}><SearchIconSmall /></i>
+              <p>Find my account</p>
+            </Link>
           </span>
         </Box>
         {/* <button type="submit">heyy</button> */}
@@ -98,22 +110,26 @@ const Login = () => {
             "Continue"
           )}
         </CustomButton>
+        <Link
+          href={"/become_taskwalcr"}
+          style={{
+            textAlign: "center",
+            color: "#8C92AB",
+          }}
+        >
+          Not a regular user? Sign in as Taskwalker
+        </Link>
       </form>
 
-      <Box
-        color={"#8C92AB"}
-        margin={"20px auto"}
-        left={"0%"}
-        width={"100%"}
-        textAlign={"center"}
-        bottom={"30px"}
+      <div
+        style={{ marginTop: "auto", textAlign: 'center' }}
       >
         Don’t have an account?
         <span style={{ color: "#1A1A1A", fontWeight: "700" }}>
           {" "}
           <Link href={"/register"}>Sign up</Link>{" "}
         </span>
-      </Box>
+      </div>
     </>
   );
 };

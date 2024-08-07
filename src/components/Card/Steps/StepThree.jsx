@@ -1,6 +1,5 @@
-import { AddIcon_Square } from "@/assets/index";
-import React from "react";
-import styled from "styled-components";
+import { AddIcon_Square } from "@/assets";
+import React, { useState, useEffect } from "react";
 
 // Define a mapping of brand names to background styles
 const brandBackgrounds = {
@@ -12,7 +11,25 @@ const brandBackgrounds = {
 };
 
 const StepThree = ({ cards, setStep }) => {
-  const reversedCards = cards ? [...cards].reverse() : [];
+  const [cardOrder, setCardOrder] = useState([]);
+  const [selectedCardIndex, setSelectedCardIndex] = useState(null);
+
+  useEffect(() => {
+    if (cards) {
+      // Initialize card order based on the reversed cards
+      setCardOrder([...cards].reverse());
+    }
+  }, [cards]);
+
+  const handleCardClick = (clickedCardIndex) => {
+    // Move the clicked card to the front
+    const updatedCardOrder = [
+      cardOrder[clickedCardIndex],
+      ...cardOrder.filter((_, index) => index !== clickedCardIndex),
+    ];
+    setCardOrder(updatedCardOrder);
+    setSelectedCardIndex(0); // The clicked card is now at the front
+  };
 
   const getCardClass = (index) => `card-${index + 1}`;
 
@@ -22,14 +39,18 @@ const StepThree = ({ cards, setStep }) => {
   return (
     <>
       <div className="cards">
-        {reversedCards.map((card, index) => (
+        {cardOrder.map((card, index) => (
           <div
             key={index}
             className={getCardClass(index)}
             style={{
               backgroundImage: `url(${getCardBackground(card.brand)})`,
               backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+              border: selectedCardIndex === index ? "2px solid blue" : "none",
             }}
+            onClick={() => handleCardClick(index)}
           >
             <header>{/* <h1>Credit</h1> */}</header>
             <div className="body">
@@ -42,6 +63,11 @@ const StepThree = ({ cards, setStep }) => {
 
       <div className="add-new" onClick={() => setStep(2)}>
         <AddIcon_Square /> Add new card
+      </div>
+      <div className="set-primary">
+        <div>
+          <input type="checkbox" /> Set selected card as the primary card
+        </div>
       </div>
     </>
   );

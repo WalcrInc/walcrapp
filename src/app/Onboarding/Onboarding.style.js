@@ -4,7 +4,7 @@ export const OnboardingStyle = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100dvh;
+  height: 100vh;
 
   .header {
     padding: 6%;
@@ -12,7 +12,7 @@ export const OnboardingStyle = styled.div`
     justify-content: space-between;
     align-items: center;
     height: 10vh;
-    padding-top: 3rem;
+    padding-top: 5rem;
   }
 
   .mainBody {
@@ -50,7 +50,7 @@ export const OnboardingStyle = styled.div`
   }
 
   .step-one > .icon {
-    background: url("App/Onboarding/images/around-the-world-animate.svg");
+    background: url("/images/around-the-world-animate.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;
@@ -113,7 +113,7 @@ export const OnboardingStyle = styled.div`
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 0rem 2rem 3rem;
+    padding: 0rem 2rem 2rem;
   }
 
   .page-indicator {

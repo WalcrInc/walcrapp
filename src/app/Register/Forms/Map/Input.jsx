@@ -24,15 +24,18 @@ const AddressInput = ({ value, onChange, onSubmit }) => {
           onChange={handleChange}
           size={"lg"}
         />
-        <Button
-          type="submit" 
-          size={"lg"}
-          background={"#1A1A1A"}
-          color={"#fff"}
-          width={"100%"}
+        <button
+          type="submit"
+          style={{
+            backgroundColor: "#1a1a1a",
+            width: "100%",
+            color: "#ffffff",
+            padding: "1rem",
+            borderRadius: "1rem"
+          }}
         >
           Continue
-        </Button>
+        </button>
       </form>
     </InputStyle>
   );

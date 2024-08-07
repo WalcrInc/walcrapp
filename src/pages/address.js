@@ -1,10 +1,8 @@
 // Address.js
-import { Address } from '@/app/Address/Address';
-import React, { useState, useEffect } from 'react';
+import { Address } from "@app/Address";
+import React, { useState, useEffect } from "react";
 
 const address = () => {
-
-
   return (
     <>
       <Address />

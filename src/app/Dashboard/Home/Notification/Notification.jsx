@@ -1,6 +1,6 @@
 import React from "react";
 import { NotificationContainer } from "./Notification.style";
-import { BackIcon } from "@/assets/index";
+import { BackIconX } from "@/assets";
 import { notification } from "./data";
 
 const Notification = ({ handleShowNotification }) => {
@@ -43,7 +43,7 @@ const Notification = ({ handleShowNotification }) => {
     <NotificationContainer>
       <header>
         <span onClick={handleShowNotification}>
-          <BackIcon />
+          <BackIconX />
         </span>
         <h1>Notifications</h1>
         <span style={{ color: "white" }}>.</span>

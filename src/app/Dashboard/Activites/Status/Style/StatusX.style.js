@@ -5,7 +5,7 @@ export const StatusXContainer = styled.div`
   grid-template-rows:repeat(4, 1fr) ;
   /* gap: 30px; */
   position:relative ;
-  height:100dvh ;
+  height:100vh ;
   header {
     display: flex;
     justify-content: space-between;
