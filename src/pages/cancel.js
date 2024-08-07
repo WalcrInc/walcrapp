@@ -1,5 +1,5 @@
 import React from 'react'
-import Cancel from '../app/Earnings/Cancel'
+import Cancel from './Earnings/Cancel'
 
 const cancel = () => {
   return (

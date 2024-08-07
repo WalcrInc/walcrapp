@@ -6,7 +6,7 @@ export const AddCashStyle = styled.div`
   text-align: center;
   /* gap: 80px; */
   align-items: center;
-  height: 100dvh;
+  height: 100vh;
   /* border: 1px solid red; */
 
   margin: 0;

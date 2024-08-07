@@ -1,18 +1,24 @@
 import styled from "styled-components";
 
 export const TaskwalkerStyle = styled.div`
-  padding: 6%;
+  padding: 1rem 1rem 2rem;
   display: flex;
   flex-direction: column;
   gap: 40px;
+
   header {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    align-items: start;
+  }
+  
+  header span {
+    margin-left:-8px;
   }
 
   header h1 {
-    font-size: 22px;
+    font-size: 34px;
     font-weight: 700;
   }
 
@@ -27,7 +33,7 @@ export const TaskwalkerStyle = styled.div`
   .box .sub-box {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 16px;
     text-align: center;
   }
 
@@ -44,24 +50,30 @@ export const TaskwalkerStyle = styled.div`
   .section-2 .box {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 36px;
     text-align: left;
   }
   .section-2 .box .sub-box {
     display: flex !important;
     flex-direction: row;
-    gap: 20px;
+    gap: 32px;
     /* border: 1px solid red; */
     text-align: left;
   }
+
+  // .section-2 .box .sub-box {
+  //   margin-top:-8px;
+  // }
+
   .section-2 .box .sub-box .text {
     display: flex !important;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
   }
   .text h1 {
     font-size: 22px;
     font-weight: 700;
+    line-height:26.4px;
   }
   .text p {
     font-size: 14px;

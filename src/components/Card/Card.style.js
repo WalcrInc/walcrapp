@@ -1,13 +1,18 @@
 import styled from "styled-components";
 
 export const CardStyle = styled.div`
-  padding: 6%;
-  height:100dvh ;
+  padding: 16px;
+  height:100vh ;
   header {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
+
+  header span {
+    margin-left: -8px;
+  }
+
   header h1 {
     font-size: 18px;
     font-weight: 700;
@@ -24,21 +29,28 @@ export const CardStyle = styled.div`
   .step-1 {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 3rem;
     text-align: center;
+    align-items: center;
   }
 
   .image {
     margin: auto;
   }
   .step-1 h1 {
-    font-size: 22px;
+    font-size:2rem;
     font-weight: 700;
   }
+
   .step-1 p {
+   color: #5B6178;
+    text-align: center;
+    font-family: Mulish;
     font-size: 16px;
+    font-style: normal;
     font-weight: 400;
-    color: #5b6178;
+    line-height: 24px;
+    text-align: center;
   }
 
   //step 2
@@ -102,22 +114,18 @@ export const CardStyle = styled.div`
   //step 3
   .cards {
     position: relative;
-    width:100% ;
-    height:50%; /* Adjust height as necessary to accommodate card stacking */
-    margin:auto ;
-    left:0 ;
+    // width:100% ;
+    // height:50%;
+    // margin:auto ;
+    // left:0 ;
   }
 
   .card-1,
   .card-2,
-  .card-3,
-  .card-4,
-  .card-5 {
+  .card-3 {
     position: absolute;
-    width: 100%;
     height: 185px;
     border-radius: 20px;
-    border: 1px solid grey;
     margin: 0 auto;
     display: flex;
     flex-direction: column; /* Updated for vertical layout */
@@ -130,43 +138,58 @@ export const CardStyle = styled.div`
   }
 
   .card-1 {
-    z-index: 5;
+    z-index: 3;
     top: 200px;
+    left: 40px;
+    width: calc(100% - 35px);
   }
   .card-2 {
-    z-index: 4;
+    z-index: 2;
     top: 150px;
+    left: 20px;
+    width: calc(100% - 40px);
   }
   .card-3 {
-    z-index: 3;
-    top: 100px;
-  }
-  .card-4 {
-    z-index: 2;
-    top: 50px;
-  }
-  .card-5 {
     z-index: 1;
-    top: 0px;
+    top: 100px;
+    width: calc(100% - 45px);
   }
 
-  .card-1:hover,
-  .card-2:hover,
-  .card-3:hover,
-  .card-4:hover,
-  .card-5:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  }
-
-.add-new{
+  .add-new{
     position:absolute ;
-    bottom:50px ;
+    top:500px ;
     width:100% ;
     left:0 ;
     display:flex ;
     justify-content:center ;
     gap:10px;
     align-items:center ;
+  }
+
+  .set-primary{
+    position:absolute;
+    bottom:50px ;
+    width:100%; 
+    left:0 ;
+     display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+
+  .set-primary > div{
+    display:flex;
+    justify-content:center ;
+    gap:10px;
+    align-items:center ;
+    font-family: Mulish;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    border-radius: 12px;
+    border: 1px solid #F0F2F6;
+    background: rgba(255, 255, 255, 0.00);
+    padding: 16px;
+    padding: 0px: 50px
   }
 `;

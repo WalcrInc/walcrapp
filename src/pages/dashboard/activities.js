@@ -1,6 +1,6 @@
-import { BottomNavbar } from '@/components/BottomNavbar'
-import { Activities } from '@/app/Dashboard/Activites'
-import React from 'react'
+import { BottomNavbar } from "@/components/BottomNavbar";
+import { Activities } from "@/container/Dashboard/Activites";
+import React from "react";
 
 const activities = () => {
   return (
@@ -8,7 +8,7 @@ const activities = () => {
       <Activities />
       {/* <BottomNavbar/> */}
     </div>
-  )
-}
+  );
+};
 
-export default activities
+export default activities;

@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const TaskWorkerStyle = styled.div`
   /* display: flex;
   flex-direction: column; */
-  height: 100dvh;
+  height: 100vh;
   overflow: hidden;
   .top {
     /* height: 40dvh; */

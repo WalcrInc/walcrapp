@@ -1,42 +1,44 @@
 import { Button } from "@chakra-ui/react";
-import Image from "next/image";
 import React from "react";
-// import { PageContainer } from "./index";
-import style from "./Page.module.css";
+import { PageContainer } from "./Page.style";
 import useRoutes from "@/features/Hooks/Routes/Routes";
-// import { LogoWhiteX } from "@/components/Logo";
-import { Next_Icon, NextIconX } from "@/assets/index";
-import HomeImage from "@/assets/images/home.png";
+import { Next_Icon, NextIconX } from "@/assets";
 
 const Page = ({ handleNext }) => {
   const { handleOnboardingRoute } = useRoutes();
 
   return (
-    <div className={style.Container}>
-      <div>
-        <Image src={HomeImage} className={style.Image} alt="Home Image"/>
-      </div>
+    <PageContainer>
+      <header>
+        {/* <div className="logo">
+          <LogoWhiteX />
+        </div> */}
+        <div className="overlay" />
+      </header>
 
-      <div className={style.text}>
+      <div className="text">
         <h1>Lorem ipsum dolor amet</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <Button
+        <button
           onClick={handleNext}
-          color={"#fff"}
-          background={"#1a1a1a"}
-          size={"lg"}
-          width={"100%"}
-          display={"flex"}
-          alignItems={"center"}
-          borderReadius={"16px"}
+          style={{
+            backgroundColor: "#1a1a1a",
+            color: "#fff",
+            margin: "0 10%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "10px",
+            borderRadius: "1rem",
+            width: "100%",
+            padding: "1rem",
+          }}
         >
-          <p style={{ marginRight: "10px", color: "#fff" }}>Get Started</p>
-
-          <NextIconX />
-        </Button>
+          Get Started <NextIconX />
+        </button>
       </div>
-    </div>
+    </PageContainer>
   );
 };
 
-export default Page;
+export { Page };

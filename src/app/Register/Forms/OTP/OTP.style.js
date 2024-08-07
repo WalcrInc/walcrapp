@@ -19,6 +19,7 @@ export const OTPStyle = styled.div`
     flex-direction: column;
     gap: 40px;
   }
+    
   .form {
     display: flex !important ;
     gap: 20px;

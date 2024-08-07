@@ -8,6 +8,7 @@ import { BackIcon } from "@/assets/index";
 import { Ongoing } from "./Status/Ongoing";
 import { Completed } from "./Status/Completed";
 import { Report } from "./Status/Report";
+import { InTransit } from "./Status/InTransit";
 
 const Activities = () => {
   const [step, setStep] = useState(1);
@@ -15,14 +16,14 @@ const Activities = () => {
 
   const handleSelected = (activity) => {
     setSelectedActivity(activity);
-    setStep((prev) => prev + 1);
+    setStep(prev => prev + 1);
   };
 
   const handleNext = () => {
-    setStep((prev) => prev + 1);
+    setStep(prev => prev + 1);
   };
   const handlePrev = () => {
-    setStep((prev) => prev - 1); // Move back to step 1
+    setStep(prev => prev - 1); // Move back to step 1
   };
 
   const renderActivity = (activity) => {
@@ -31,7 +32,7 @@ const Activities = () => {
       case "Completed":
         return <Completed handlePrev={handlePrev} handleNext={handleNext} />;
       case "In Transit":
-        return <div>In Transit Activity Details</div>;
+        return<InTransit handlePrev={handlePrev} handleNext={handleNext} />;
       case "Delivered":
         return <div>Delivered Activity Details</div>;
       case "On Going":
@@ -44,9 +45,9 @@ const Activities = () => {
   return (
     <ActivitiesStyle>
       {step === 1 && (
-        <>
+        <main>
           <header>
-            <h1>Activities</h1>
+            <h1>Activity</h1>
           </header>
           <div className="body">
             <div className="box">
@@ -68,7 +69,7 @@ const Activities = () => {
                     <div
                       className={
                         activity.status === "Completed" ||
-                        activity.status === "Delivered"
+                          activity.status === "Delivered"
                           ? "completed"
                           : "status"
                       }
@@ -90,10 +91,11 @@ const Activities = () => {
             </div>
           </div>
           <BottomNavbar />
-        </>
+        </main>
       )}
       {step === 2 && (
         <>
+
           <div className="activity-detail">
             {renderActivity(selectedActivity)}
           </div>
@@ -101,6 +103,7 @@ const Activities = () => {
       )}
       {step === 3 && (
         <>
+
           <Report setStep={setStep} />
         </>
       )}

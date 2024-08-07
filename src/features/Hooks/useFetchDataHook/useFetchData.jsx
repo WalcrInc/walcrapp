@@ -9,7 +9,7 @@ export const BASE_URL = "https://reluctant-jean-cliqpod-e187c94a.koyeb.app/v1";
 const useFetchData = ({ url }) => {
   const { user } = useSelector((state) => state.auth);
   const accessToken = user ? user.data : null;
-const router = useRouter()
+  const router = useRouter()
   return useQuery({
     queryKey: [url],
     queryFn: async () => {

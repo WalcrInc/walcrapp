@@ -77,7 +77,7 @@ const FinalMap = ({ handleNext, handlePrev }) => {
       );
   };
   return (
-    <div style={{ height: "100dvh", overflow: "hidden" }}>
+    <div style={{ height: "100vh", overflow: "hidden" }}>
       {isLoading ? (
         <div>Loading...</div>
       ) : (

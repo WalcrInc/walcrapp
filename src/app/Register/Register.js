@@ -9,6 +9,7 @@ const Register = () => {
   const [step, setStep] = useState(1);
   const { formik } = useRegister();
 
+
   const handleNext = () => {
     setStep((prevStep) => prevStep + 1);
   };
@@ -16,15 +17,22 @@ const Register = () => {
     setStep((prevStep) => prevStep - 1);
   };
 
+
   return (
-    <>
+    <div
+      style={{
+        height: "100vh",
+        padding: "0rem 0 2rem",
+        overflow: "scroll",
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
       {step === 1 && <BasicInfo handleNext={handleNext} />}
-      {step === 2 && (
-        <FinalMap handlePrev={handlePrev} handleNext={handleNext} />
-      )}
-      {step === 3 && <Phone handlePrev={handlePrev} handleNext={handleNext} />}
-      {step === 4 && <OTP handlePrev={handlePrev} handleNext={handleNext} />}
-    </>
+      {step === 2 && <FinalMap handlePrev={handlePrev} handleNext={handleNext} />}
+      {step === 3&& <Phone handlePrev={handlePrev} handleNext={handleNext} />}
+      {step === 4&& <OTP handlePrev={handlePrev} handleNext={handleNext} />}
+    </div>
   );
 };
 

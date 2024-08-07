@@ -1,10 +1,12 @@
-import React from 'react'
-import { AddCash } from '@/app/AddCash/AddCash'
+import { AddCash } from "@/container/AddCash";
+import React from "react";
 
 const add_cash = () => {
   return (
-    <AddCash />
-  )
-}
+    <div>
+      <AddCash />
+    </div>
+  );
+};
 
-export default add_cash
+export default add_cash;

@@ -1,12 +1,12 @@
 import {
   AddIcon,
-  Delivery_Box_Green,
   Delivery_Box_Orange,
   ForwardIcon,
   Hamburger,
   LocationIcon,
-  NotificationIcon,
-} from "@/assets/index";
+  HomeNotificationIcon,
+  Wrench_Green,
+} from "@/assets";
 import useFetchData, {
   BASE_URL,
 } from "@/features/Hooks/useFetchDataHook/useFetchData";
@@ -29,7 +29,7 @@ const Home = () => {
   const [showNav, setShowNav] = useState(false);
   const [showNotification, setShowNotification] = useState(false);
 
-  const { handleAddCashRoute, handleLoginRoute } = useRoutes();
+  const { handleAddCashRoute } = useRoutes();
 
   const { data, isLoading } = useFetchData({
     url: `${BASE_URL}/auth/user`,
@@ -57,7 +57,7 @@ const Home = () => {
       <div
         style={{
           display: "flex",
-          height: "100dvh",
+          height: "100vh",
           alignItems: "center",
           justifyContent: "center",
         }}
@@ -74,7 +74,7 @@ const Home = () => {
             <Hamburger />
           </span>
           <span onClick={handleShowNotification}>
-            <NotificationIcon />
+            <HomeNotificationIcon />
           </span>
         </div>
         <div className="text">
@@ -102,7 +102,19 @@ const Home = () => {
         <h1>Quick Actions</h1>
         <div className="options">
           <div className="option">
-            <Delivery_Box_Orange />
+            <i
+              style={{
+                backgroundColor: "rgba(241, 131, 65, 0.10)",
+                borderRadius: "8px",
+                width: "40px",
+                height: "40px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Delivery_Box_Orange />
+            </i>
             <h1> Package delivery</h1>
             <p>Send and receive a package with our Walcr</p>
             <span>
@@ -111,8 +123,20 @@ const Home = () => {
           </div>
 
           <div className="option">
-            <Delivery_Box_Orange />
-            <h1>Heavy lifting</h1>
+            <i
+              style={{
+                backgroundColor: "rgba(200, 255, 199, 0.50)",
+                borderRadius: "8px",
+                width: "40px",
+                height: "40px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Wrench_Green />
+            </i>
+            <h1>Book a service</h1>
             <p>Send and receive a package with our Walcr</p>
             <span>
               <ForwardIcon />
@@ -123,7 +147,12 @@ const Home = () => {
 
       {/* SideNavbar */}
       {showNav && (
-        <SideNavbar info={info} showNav={showNav} setShowNav={setShowNav} />
+        <SideNavbar
+          info={info}
+          showNav={showNav}
+          setShowNav={setShowNav}
+          setShowNotification={setShowNotification}
+        />
       )}
       {/* Notification */}
       {showNotification && (

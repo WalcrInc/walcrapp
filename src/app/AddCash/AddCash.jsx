@@ -124,7 +124,7 @@ const AddCash = () => {
       <div
         style={{
           display: "flex",
-          height: "100dvh",
+          height: "100vh",
           alignItems: "center",
           justifyContent: "center",
         }}
