@@ -1,5 +1,5 @@
 // Address.js
-import { Address } from "@/container/Address";
+import { Address } from "@app/Address";
 import React, { useState, useEffect } from "react";
 
 const address = () => {

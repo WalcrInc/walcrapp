@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { BottomNavbar } from "@/components/BottomNavbar";
-// import { Home } from "@/container/Dashboard/Home";
-import { Home  } from "@/app/Dashboard/Home";
+// import { Home } from "@app/Dashboard/Home";
+import { Home } from "@/app/Dashboard/Home";
 import React from "react";
 
 const dashboard = () => {
@@ -18,9 +18,9 @@ const dashboard = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
       </Head>
       <div>
-      <Home />
-      <BottomNavbar />
-    </div>
+        <Home />
+        <BottomNavbar />
+      </div>
     </>
   );
 };

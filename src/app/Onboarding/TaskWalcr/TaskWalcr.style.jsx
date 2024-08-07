@@ -12,9 +12,9 @@ export const TaskwalkerStyle = styled.div`
     gap: 20px;
     align-items: start;
   }
-  
+
   header span {
-    margin-left:-8px;
+    margin-left: -8px;
   }
 
   header h1 {
@@ -73,7 +73,7 @@ export const TaskwalkerStyle = styled.div`
   .text h1 {
     font-size: 22px;
     font-weight: 700;
-    line-height:26.4px;
+    line-height: 26.4px;
   }
   .text p {
     font-size: 14px;

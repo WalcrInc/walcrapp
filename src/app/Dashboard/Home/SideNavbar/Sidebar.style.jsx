@@ -165,6 +165,9 @@ export const SideNavContainer = styled.div`
     flex-direction: column;
     gap: 20px;
     font-size:14px ;
+    /* color:red ; */
+    /* background-color:red ; */
+    /* height: 15dvh; */
   }
   .task-work {
     display: flex;
@@ -172,11 +175,15 @@ export const SideNavContainer = styled.div`
     align-items:center ;
     align-items:center ;
     border: 1px solid #F0F2F6;
+    /* border: 1px solid #1a1a1a; */
     padding:4% 3% ;
     border-radius:8px ;
     font-size:15px ;
+    
+    /* color:red ; */
+    /* background-color:red ; */
+    /* height: 15dvh; */
   }
-
   .task-work .logo{
     font-size:14px ;
     font-weight:700 ;
@@ -194,7 +201,6 @@ export const SideNavContainer = styled.div`
     color:#F18341 ;
     display: flex;
   }
-
   p {
     display: flex;
     gap: 10px;
@@ -205,8 +211,6 @@ export const SideNavContainer = styled.div`
     font-size:16px ;
     font-weight:700 ;
     color:#1a1a1a ;
-    padding: 3%;
-    transition: .2s ease-out ;
   }
   // .links a:hover {
   //   background-color: #1a1a1a;

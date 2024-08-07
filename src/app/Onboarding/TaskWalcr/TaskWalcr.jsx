@@ -1,8 +1,8 @@
 import React from "react";
 import { TaskwalkerStyle } from "./TaskWalcr.style";
-import { BackIconX, CreateIcon, LocationIconX, ShieldIcon } from "@/assets";
+import { BackIcon, CreateIcon, LocationIconX, ShieldIcon } from "@/assets";
 import { Button } from "@chakra-ui/react";
-import useRoutes from "@/hooks/Routes/Routes";
+import useRoutes from "@/features/Hooks/Routes/Routes";
 import Image from "next/image";
 
 const TaskWalcr = () => {
@@ -12,7 +12,7 @@ const TaskWalcr = () => {
     <TaskwalkerStyle>
       <header>
         <span onClick={handleHomeRoute}>
-          <BackIconX />
+          <BackIcon />
         </span>
         <h1>Work your way</h1>
         <p>
@@ -69,7 +69,7 @@ const TaskWalcr = () => {
               style={{
                 position: "absolute",
                 left: "3.65rem",
-                top: "8px"
+                top: "8px",
               }}
             />
             <div className="text">
@@ -82,21 +82,19 @@ const TaskWalcr = () => {
               <LocationIconX />
             </span>
             <Image
-              src="/images/Radio.svg"
+              src="/images/Radio copy.svg"
               alt={"radio button"}
               height={16}
               width={16}
               style={{
                 position: "absolute",
                 left: "3.65rem",
-                top: "8px"
+                top: "8px",
               }}
             />
             <div className="text">
               <h1>Complete your task</h1>
-              <p>
-                Use our tools to connect with customers and deliver orders.
-              </p>
+              <p>Use our tools to connect with customers and deliver orders.</p>
             </div>
           </div>
           <div className="sub-box" style={{ position: "relative" }}>
@@ -104,14 +102,14 @@ const TaskWalcr = () => {
               <ShieldIcon />
             </span>
             <Image
-              src="/images/Radio.svg"
+              src="/images/Radio copy.svg"
               alt={"radio button"}
               height={16}
               width={16}
               style={{
                 position: "absolute",
                 left: "3.65rem",
-                top: "8px"
+                top: "8px",
               }}
             />
             <div className="text">
@@ -130,9 +128,9 @@ const TaskWalcr = () => {
           padding: "1rem",
           color: "#ffffff",
           borderRadius: "1rem",
-          width: "100%"
+          width: "100%",
         }}
-        onClick={handleLoginRoute}
+        onClick={handleWalcrOnboardingRoute}
       >
         Continue
       </button>

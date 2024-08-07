@@ -1,4 +1,4 @@
-import { AddCash } from "@/container/AddCash";
+import { AddCash } from "@/app/AddCash";
 import React from "react";
 
 const add_cash = () => {

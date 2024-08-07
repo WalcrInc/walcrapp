@@ -1,5 +1,4 @@
-import { BottomNavbar } from "@/components/BottomNavbar";
-import { Activities } from "@/container/Dashboard/Activites";
+import { Activities } from "@/app/Dashboard/Activites";
 import React from "react";
 
 const activities = () => {

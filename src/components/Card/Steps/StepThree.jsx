@@ -1,11 +1,5 @@
-<<<<<<< HEAD:src/components/Card/Steps/StepThree.jsx
-import { AddIcon_Square } from "@/assets/index";
-import React from "react";
-=======
 import { AddIcon_Square } from "@/assets";
 import React, { useState, useEffect } from "react";
->>>>>>> 159f54632072f5ad3ee4ea0b777b3cac67432db1:container/Card/Steps/StepThree.jsx
-import styled from "styled-components";
 
 // Define a mapping of brand names to background styles
 const brandBackgrounds = {
@@ -31,7 +25,7 @@ const StepThree = ({ cards, setStep }) => {
     // Move the clicked card to the front
     const updatedCardOrder = [
       cardOrder[clickedCardIndex],
-      ...cardOrder.filter((_, index) => index !== clickedCardIndex)
+      ...cardOrder.filter((_, index) => index !== clickedCardIndex),
     ];
     setCardOrder(updatedCardOrder);
     setSelectedCardIndex(0); // The clicked card is now at the front
@@ -51,17 +45,12 @@ const StepThree = ({ cards, setStep }) => {
             className={getCardClass(index)}
             style={{
               backgroundImage: `url(${getCardBackground(card.brand)})`,
-<<<<<<< HEAD:src/components/Card/Steps/StepThree.jsx
               backgroundSize: "cover",
-            }}
-=======
-              backgroundSize: 'cover',
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
-              border: selectedCardIndex === index ? '2px solid blue' : 'none'
+              border: selectedCardIndex === index ? "2px solid blue" : "none",
             }}
             onClick={() => handleCardClick(index)}
->>>>>>> 159f54632072f5ad3ee4ea0b777b3cac67432db1:container/Card/Steps/StepThree.jsx
           >
             <header>{/* <h1>Credit</h1> */}</header>
             <div className="body">
