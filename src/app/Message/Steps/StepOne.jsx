@@ -1,15 +1,7 @@
-<<<<<<< HEAD:src/app/Message/Steps/StepOne.jsx
-import { BackIcon, SearchIcon } from "@/assets/index";
-import useRoutes from "@/features/Hooks/Routes/Routes";
-import { Input, InputGroup, InputRightElement } from "@chakra-ui/react";
-import Profile from "@/assets/images/profile.svg";
-import React from "react";
-=======
 import { ActiveRedIcon, ArchiveIcon, BackIconX, SearchIcon } from "@/assets";
 import useRoutes from "@/hooks/Routes/Routes";
 import { Input, InputGroup, InputRightElement } from "@chakra-ui/react";
 import React, { useState } from "react";
->>>>>>> 159f54632072f5ad3ee4ea0b777b3cac67432db1:container/Message/Steps/StepOne.jsx
 import { messageData } from "./data";
 import Image from "next/image";
 

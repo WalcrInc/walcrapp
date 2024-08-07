@@ -2,23 +2,10 @@ import {
   AddIconThin,
   BackIconX,
   CallIcon,
-<<<<<<< HEAD:src/app/Message/Steps/StepTwo.jsx
-  CameraIcon,
-  Location_Grey,
-  MicrophoneIcon,
-} from "@/assets/index";
-import {
-  Input,
-  InputGroup,
-  InputLeftElement,
-  InputRightElement,
-} from "@chakra-ui/react";
-=======
   SendMessageIcon,
   UserIcon,
   UserPlusIcon,
 } from "@/assets";
->>>>>>> 159f54632072f5ad3ee4ea0b777b3cac67432db1:container/Message/Steps/StepTwo.jsx
 import Image from "next/image";
 import React from "react";
 
@@ -56,16 +43,6 @@ const StepTwo = ({ handlePrev, message }) => {
       </div>
 
       <div className="body">
-<<<<<<< HEAD:src/app/Message/Steps/StepTwo.jsx
-        <div className="info">
-          <div className="info-icon">
-            <Image
-              src={"@/assets/images/profile.svg"}
-              height={100}
-              width={100}
-              alt="profile-picture"
-            />
-=======
         <div className="messages">
           <div className="date-holder">
             <span className="date">Today</span>
@@ -81,7 +58,6 @@ const StepTwo = ({ handlePrev, message }) => {
           </div>
           <div className="message sent">
             <p>I'm on my way already</p>
->>>>>>> 159f54632072f5ad3ee4ea0b777b3cac67432db1:container/Message/Steps/StepTwo.jsx
           </div>
         </div>
 
