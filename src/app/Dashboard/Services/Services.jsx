@@ -5,13 +5,9 @@ import { RecieveIcon, SendIcon } from "@/assets/index";
 import useRoutes from "@/features/Hooks/Routes/Routes";
 
 const Services = () => {
-<<<<<<< HEAD:src/app/Dashboard/Services/Services.jsx
-  const { handleTaskWorkerRoute } = useRoutes();
-=======
 
   const { handleTaskWorkerRoute } = useRoutes()
   
->>>>>>> 159f54632072f5ad3ee4ea0b777b3cac67432db1:container/Dashboard/Services/Services.jsx
   return (
     <ServicesStyle>
       <div className="top"></div>

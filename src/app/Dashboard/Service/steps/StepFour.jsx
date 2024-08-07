@@ -137,7 +137,7 @@ const StepFour = ({ handleNext }) => {
           Take a clear picture of the task or you need help with
         </p>
         <p className="font-mulish text-[#1a1a1a]">
-          This will allow us to give you a precise estimate of the task's
+          This will allow us to give you a precise estimate of the task&apos;s
           duration and charges.
         </p>
       </div>
