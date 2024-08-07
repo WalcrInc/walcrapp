@@ -272,7 +272,7 @@ accent-color:#1a1a1a ;
   }
 
   .step_five_info {
-    padding: 2rem 1rem;
+    padding:  64px 1rem 2rem;
     border-radius: 40px 40px 0px 0px;
     background: #fff;
     position: absolute;
@@ -281,7 +281,6 @@ accent-color:#1a1a1a ;
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
     box-shadow: 0px 18px 34px 0px rgba(5, 16, 55, 0.30);
   }
 

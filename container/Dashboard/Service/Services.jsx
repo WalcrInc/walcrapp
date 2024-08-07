@@ -75,13 +75,9 @@ const Service = () => {
       <main>
         <header>
           {step === 1 && (
-            <div className="step_one_header">
-              <span onClick={handlePrev}>
-                <BackIconX />
-              </span>
-              <h1>Book Taskwalker</h1>
-              <div></div>
-            </div>
+            <span onClick={handlePrev}>
+              <BackIconX />
+            </span>
           )}
           {step === 2 && (
             <>
@@ -92,7 +88,6 @@ const Service = () => {
                 <h1>{selectedService.name}</h1>
                 <div></div>
               </div>
-              <p>{selectedService.header}</p>
             </>
           )}
           {step === 3 && (
@@ -101,8 +96,6 @@ const Service = () => {
                 <span onClick={handlePrev}>
                   <BackIconX />
                 </span>
-                {/* <h1>{selectedService.name}</h1>
-                <div></div> */}
               </div>
             </>
           )}
@@ -112,14 +105,7 @@ const Service = () => {
                 <span onClick={handlePrev}>
                   <BackIconX />
                 </span>
-                {/* <h1>{selectedService.name}</h1>
-                <div></div> */}
               </div>
-              <p>Take a clear picture of the task or you need help with</p>
-              <p className="small_paragraph">
-                This will allow us to give you a precise estimate of the task's
-                duration and charges.
-              </p>
             </>
           )}
           {step === 5 && (
@@ -128,8 +114,6 @@ const Service = () => {
                 <span onClick={handlePrev}>
                   <BackIconX />
                 </span>
-                {/* <h1>{selectedService.name}</h1>
-                <div></div> */}
               </div>
             </>
           )}
@@ -139,8 +123,6 @@ const Service = () => {
                 <span onClick={handlePrev}>
                   <BackIconX />
                 </span>
-                {/* <h1>{selectedService.name}</h1>
-                <div></div> */}
               </div>
             </>
           )}

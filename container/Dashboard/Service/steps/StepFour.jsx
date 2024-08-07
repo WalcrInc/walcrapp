@@ -132,6 +132,15 @@ const StepFour = ({ handleNext }) => {
 
   return (
     <PageWrapper>
+      <div className="flex flex-col gap-2 mb-[1.375rem]">
+        <p className="text-[1.375rem] font-mulish font-bold leading-6 text-[#1a1a1a]">
+          Take a clear picture of the task or you need help with
+        </p>
+        <p className="font-mulish text-[#1a1a1a]">
+          This will allow us to give you a precise estimate of the task's
+          duration and charges.
+        </p>
+      </div>
       <ImagePreview>
         {selectedImage ? (
           <Image src={selectedImage} alt="Selected task" />
@@ -158,6 +167,9 @@ const StepFour = ({ handleNext }) => {
             <RemoveButton onClick={() => removeImage(index)}>✕</RemoveButton>
           </Thumbnail>
         ))}
+        {images.length < 2 && (
+          <div className="h-[100px] w-[100px] bg-[#B9B9B933] rounded-xl"></div>
+        )}
         {images.length < 5 && (
           <AddThumbnail as="label" htmlFor="image-upload">
             <AddIconThin />
